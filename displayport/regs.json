@@ -1,0 +1,4820 @@
+[
+  {
+    "name": "DP_TX_VERSION",
+    "address": "Base + 0x0010",
+    "type": "RO",
+    "description": "DP_TX version register",
+    "reset_value": "0x00000060",
+    "bit_ranges": [
+      {
+        "name": "DP_TX_VERSION",
+        "bits": "[31:0]",
+        "description": "<7:5> process \n011 (Global Foundry 28nm) \n<4:3>: Version \n00: Rev A \n<2:0>: Minor revision \n000: rev .1 \nNotion: It is effective when PAD_DVDD is \nsupplied",
+        "initial_value": "0x60"
+      }
+    ]
+  },
+  {
+    "name": "FUNC_EN_1",
+    "address": "Base + 0x0018",
+    "type": "R/W",
+    "description": "Function Enable Register 1",
+    "reset_value": "0x0000007D",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "VID_CAP_FUNC_EN_N",
+        "bits": "[6]",
+        "description": "Video capture functions enable. \n0: Normal operation, \n1: Disable video capture.",
+        "initial_value": "1"
+      },
+      {
+        "name": "VID_FIFO_FUNC_EN_N",
+        "bits": "[5]",
+        "description": "Video FIFO functions enable. \n0: Normal operation, \n1: Disable video FIFO.",
+        "initial_value": "1"
+      },
+      {
+        "name": "-",
+        "bits": "[4:1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SW_FUNC_EN_N",
+        "bits": "[0]",
+        "description": "Software defined function enable. \n0: Normal operation, \n1: Disable All the function modules. \nThe bit has the highest priority, if the bit is 1, \nother function enable bits does not work.",
+        "initial_value": "1"
+      }
+    ]
+  },
+  {
+    "name": "FUNC_EN_2",
+    "address": "Base + 0x001C",
+    "type": "R/W",
+    "description": "Function Enable Register 2",
+    "reset_value": "0x00000087",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SSC_FUNC_EN_N",
+        "bits": "[7]",
+        "description": "SSC module enable. \n0: Normal mode, \n1: Disable SSC module. \nTo apply updated SSC parameters into \nSSC operation, firmware must disable \nand enable this bit.",
+        "initial_value": "1"
+      },
+      {
+        "name": "-",
+        "bits": "[6:3]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_FUNC_EN_N",
+        "bits": "[2]",
+        "description": "AUX channel module function enable. \n0: Normal operation, \n1: Disable AUX channel module.",
+        "initial_value": "1"
+      },
+      {
+        "name": "SERDES_FIFO_FUNC_EN_N",
+        "bits": "[1]",
+        "description": "Serdes FIFO function enable. \n0: Normal mode, \n1: Disable Serdes FIFO. \nTo reset the serdes fifo, firmware must \ndisable and enable this bit.",
+        "initial_value": "1"
+      },
+      {
+        "name": "LS_CLK_DOMAIN_FUNC_EN_N",
+        "bits": "[0]",
+        "description": "Link symbol clock domain modules \nfunctions enable. \n0: Normal mode, \n1: Disable the modules in link symbol \nclock domain. \nTo reset the modules in link symbol \nclock domain, firmware must disable \nand enable this bit.",
+        "initial_value": "1"
+      }
+    ]
+  },
+  {
+    "name": "VIDEO_CTL_1",
+    "address": "Base + 0x0020",
+    "type": "R/W",
+    "description": "Video Control 1",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "VIDEO_EN",
+        "bits": "[7]",
+        "description": "Video data input enable. \n0: Disable video data input. \n1: Enable video data input, \nIt takes effect at next video frame.",
+        "initial_value": "0"
+      },
+      {
+        "name": "VIDEO_MUTE",
+        "bits": "[6]",
+        "description": "Video mute enable. In video mute mode, the solid \ncolor, specified in Base + 0x04A8 ~ Base + 0x04B0, \nis displayed. \n0: Disable, 1: Enable. \nOutput video data is changed properly as soon as this \nbit is configured.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[5:0]",
+        "description": "Reserved",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "VIDEO_CTL_2",
+    "address": "Base + 0x0024",
+    "type": "R/W",
+    "description": "Video Control 2",
+    "reset_value": "0x00000010",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "IN_D_RANGE",
+        "bits": "[7]",
+        "description": "Dynamic range. This bit field is used to specify video \ndata format in main stream attribute data. \n1: CEA range (16 ~ 235), \n0: VESA range (0 ~ 255).",
+        "initial_value": "0"
+      },
+      {
+        "name": "IN_BPC",
+        "bits": "[6:4]",
+        "description": "Video input bit per color/ component (bpc). This bit \nfield is used to specify video data format in main \nstream attribute data. Note that 6 bpc mode is invalid \nin YCbCr 422 mode. \n100, 101, 110, 111: Reserved, \n011: 12 bits, \n010: 10 bits, \n001: 8 bits, \n000: 6 bits.",
+        "initial_value": "001"
+      },
+      {
+        "name": "-",
+        "bits": "[3:2]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "IN_COLOR_F",
+        "bits": "[1:0]",
+        "description": "Colorimetric format of input video. This is used to \nspecify video data format in main stream attribute \ndata. \n11: Reserved, \n10: YCbCr444, \n01: YcbCr422, \n00: RGB.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "VIDEO_CTL_3",
+    "address": "Base + 0x0028",
+    "type": "R/W",
+    "description": "Video Control 3",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "IN_YC_COEFFI",
+        "bits": "[7]",
+        "description": "YCbCr Coefficients of input video. This is used \nto specify video data format in main stream \nattribute data. \n1: ITU709. \n0: ITU601.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[6:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "VID_CHK_UPDATE_TYPE",
+        "bits": "[4]",
+        "description": "Select video format stability check method in \nvideo capture block. \n1: Check stability with the difference between \nadjacent frames. \n0: Check stability with the difference of \ndifferences between adjacent frames. \nCompares difference of 1st and 2nd to \ndifference of 3rd and 4th frame.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[3:0]",
+        "description": "Reserved",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "VIDEO_CTL_4",
+    "address": "Base + 0x002C",
+    "type": "R/W",
+    "description": "Video Control 4",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "BIST_EN",
+        "bits": "[3]",
+        "description": "Video BIST enable. \n1: Enable video BIST, \n0: Normal operation mode.",
+        "initial_value": "0"
+      },
+      {
+        "name": "BIST_WIDTH",
+        "bits": "[2]",
+        "description": "Control display BIST color bar width. \n1: Each bar is 64 pixel width, \n0: Each bar is 32 pixel width.",
+        "initial_value": "0"
+      },
+      {
+        "name": "BIST_TYPE",
+        "bits": "[1:0]",
+        "description": "Display BIST type. \n00: Color bar, \n01: White, gray and black bar, \n10: Mobile white bar, \n11: Reserved.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "VIDEO_CTL_8",
+    "address": "Base + 0x003C",
+    "type": "R/W",
+    "description": "Video Control 8",
+    "reset_value": "0x00000020",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "VID_HRES_TH",
+        "bits": "[7:4]",
+        "description": "Video Frame Horizontal Resolution variation threshold \nfor video capture block. This bit field is used by \nCAPTURE block to determine whether STRM_VALID \nshould be asserted.",
+        "initial_value": "2"
+      },
+      {
+        "name": "VID_VRES_TH",
+        "bits": "[3:0]",
+        "description": "Video Frame Vertical Resolution variation threshold for \nvideo capture block. This bit field is used by CAPTURE \nblock to determine whether STRM_VALID should be \nasserted.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "VIDEO_CTL_10",
+    "address": "Base + 0x0044",
+    "type": "R/W",
+    "description": "Video Control 10",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "F_SEL",
+        "bits": "[4]",
+        "description": "Video format select. \n1: Video format information from register, \n0: Video format information from video_capture \nmodule. \nAccording to the configuration of this bit field, \nthe values of video format status registers in \nBase + 0x008C~ 0x00D0 are determined, which \nare transferred as main stream attribute packet. \nNote that if BIST_EN is set to 1, F_SEL must be \ncleared to 0 although video format information \ncomes from registers set by user.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[3]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SLAVE_I_SCAN_CFG",
+        "bits": "[2]",
+        "description": "Interlace scan mode configuration. \n0: Progressive, 1: Interlace. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      },
+      {
+        "name": "SLAVE_VSYNC_P_CFG",
+        "bits": "[1]",
+        "description": "Slave mode VSYNC polarity configuration. \n1: Low is active, \n0: High is active. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      },
+      {
+        "name": "SLAVE_HSYNC_P_CFG",
+        "bits": "[0]",
+        "description": "Slave mode HSYNC polarity configuration. \n1: Low is active, \n0: High is active. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "TOTAL_LINE_CFG_L",
+    "address": "Base + 0x0048",
+    "type": "R/W",
+    "description": "Total Line Low Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TOTAL_LINE_CFG_L",
+        "bits": "[7:0]",
+        "description": "TOTAL_LINE_CFG is used to specify the number \nof lines in each frame. This register is \nTOTAL_LINE_CFG [7:0]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "TOTAL_LINE_CFG_H",
+    "address": "Base + 0x004C",
+    "type": "R/W",
+    "description": "Total Line High Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TOTAL_LINE_CFG_H",
+        "bits": "[3:0]",
+        "description": "TOTAL_LINE_CFG is used to specify the \nnumber of lines in each frame. This register is \nTOTAL_LINE_CFG [11:8]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen Video BIST_EN is enabled, this bit must \nbe configured right to generate right video \nformat.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ACTIVE_LINE_CFG_L",
+    "address": "Base + 0x0050",
+    "type": "R/W",
+    "description": "Active Line Low Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ACTIVE_LINE_CFG_L",
+        "bits": "[7:0]",
+        "description": "ACTIVE_LINE_CFG is used to specify the \nnumber of active lines in each frame. This \nregister is ACTIVE_LINE_CFG [7:0]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ACTIVE_LINE_CFG_H",
+    "address": "Base + 0x0054",
+    "type": "R/W",
+    "description": "Active Line High Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ACTIVE_LINE_CFG_H",
+        "bits": "[3:0]",
+        "description": "ACTIVE_LINE_CFG is used to specify the \nnumber of active lines in each frame. This \nregister is ACTIVE_LINE_CFG [11:8]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "V_F_PORCH_CFG",
+    "address": "Base + 0x0058",
+    "type": "R/W",
+    "description": "Vertical Front Porch Configure Register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "V_SYNC_WIDTH_CFG",
+    "address": "Base + 0x005C",
+    "type": "R/W",
+    "description": "Vertical Sync Width Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "V_SYNC_WIDTH_CFG",
+        "bits": "[7:0]",
+        "description": "This is used to specify the number of lines in \nVSYNC period. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "V_B_PORCH_CFG",
+    "address": "Base + 0x0060",
+    "type": "R/W",
+    "description": "Vertical Back Porch Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "V_B_PORCH_CFG",
+        "bits": "[7:0]",
+        "description": "This is used to specify the number of lines in frame \nback porch part. \nWhen F_SEL is 1, this value is sent in main stream \nattribute packet. \nWhen BIST_EN is 1, this bit field is used to specify \nthe BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "TOTAL_PIXEL_CFG_L",
+    "address": "Base + 0x0064",
+    "type": "R/W",
+    "description": "Total Pixel Low Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TOTAL_PIXEL_CFG_L",
+        "bits": "[7:0]",
+        "description": "TOTAL_PIXEL_CFG is used to specify the \nnumber of pixels in each line. This register is \nTOTAL_PIXEL_CFG[7:0]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "TOTAL_PIXEL_CFG_H",
+    "address": "Base + 0x0068",
+    "type": "R/W",
+    "description": "Total Pixel High Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TOTAL_PIXEL_CFG_H",
+        "bits": "[5:0]",
+        "description": "TOTAL_PIXEL_CFG is used to specify the \nnumber of pixels in each line. This register is \nTOTAL_PIXEL_CFG [13:8]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ACTIVE_PIXEL_CFG_L",
+    "address": "Base + 0x006C",
+    "type": "R/W",
+    "description": "Active Pixel Low Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ACTIVE_PIXEL_CFG_L",
+        "bits": "[7:0]",
+        "description": "ACTIVE_PIXEL_CFG is used to specify the \nnumber of active pixels in each line. This \nregister is ACTIVE_PIXEL_CFG [7:0]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ACTIVE_PIXEL_CFG_H",
+    "address": "Base + 0x0070",
+    "type": "R/W",
+    "description": "Active Pixel High Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ACTIVE_PIXEL_CFG_H",
+        "bits": "[5:0]",
+        "description": "ACTIVE_PIXEL_CFG is used to specify the \nnumber of active pixels in each line. This \nregister is ACTIVE_PIXEL_CFG [13:8]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_F_PORCH_CFG_L",
+    "address": "Base + 0x0074",
+    "type": "R/W",
+    "description": "Horizon Front Porch Low Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_F_PORCH_CFG_L",
+        "bits": "[7:0]",
+        "description": "H_F_PORCH_CFG is used to specify the number \nof pixels in frame horizon front porch part. This \nregister is H_F_PORCH_CFG[7:0] \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_F_PORCH_CFG_H",
+    "address": "Base + 0x0078",
+    "type": "R/W",
+    "description": "Horizon Front Porch High Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_F_PORCH_CFG_H",
+        "bits": "[3:0]",
+        "description": "H_F_PORCH_CFG is used to specify the number \nof pixels in frame horizon front porch part. This \nregister is H_F_PORCH_CFG [11:8] \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_SYNC_CFG_L",
+    "address": "Base + 0x007C",
+    "type": "R/W",
+    "description": "Horizon Sync Width Low Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_SYNC_CFG_L",
+        "bits": "[7:0]",
+        "description": "H_SYNC_CFG is used to specify the number of \npixels in HSYNC period. This register is \nH_SYNC_CFG [7:0]. \nWhen F_SEL is 1, this value is sent in main stream \nattribute packet. \nWhen BIST_EN is 1, this bit field is used to specify \nthe BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_SYNC_CFG_H",
+    "address": "Base + 0x0080",
+    "type": "R/W",
+    "description": "Horizon Sync Width High Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_SYNC_CFG_H",
+        "bits": "[3:0]",
+        "description": "H_SYNC_CFG is used to specify the number of \npixels in HSYNC period. This register is \nH_SYNC_CFG [11:8]. \nWhen F_SEL is 1, this value is sent in main stream \nattribute packet. \nWhen BIST_EN is 1, this bit field is used to specify \nthe BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_B_PORCH_CFG_L",
+    "address": "Base + 0x0084",
+    "type": "R/W",
+    "description": "Horizon Back Porch Low Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_B_PORCH_CFG_L",
+        "bits": "[7:0]",
+        "description": "H_B_PORCH_CFG is used to specify the number \nof pixel in frame horizon back porch part. This \nregister is H_B_PORCH_CFG [7:0]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_B_PORCH_CFG_H",
+    "address": "Base + 0x0088",
+    "type": "R/W",
+    "description": "Horizon Back Porch High Byte Configure Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_B_PORCH_CFG_H",
+        "bits": "[3:0]",
+        "description": "H_B_PORCH_CFG is used to specify the number \nof pixel in frame horizon back porch part. This \nregister is H_B_PORCH_CFG [11:8]. \nWhen F_SEL is 1, this value is sent in main \nstream attribute packet. \nWhen BIST_EN is 1, this bit field is used to \nspecify the BIST video stream format.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "VIDEO_STATUS",
+    "address": "Base + 0x008C",
+    "type": "RO",
+    "description": "Video Status Register",
+    "reset_value": "0x00000003",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "FIELD_S",
+        "bits": "[3]",
+        "description": "Interlace scan field status. \n1: Second field, \n0: First field. \nThis bit field is valid only when STRM_VALID is high. \nAnd STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "0"
+      },
+      {
+        "name": "I_SCAN_S",
+        "bits": "[2]",
+        "description": "Auto-detect interlace or progressive scan status: \n1: Interlace scan, \n0: Progressive scan. \nThis bit field is valid only when STRM_VALID is high. \nAnd STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "0"
+      },
+      {
+        "name": "VSYNC_P_S",
+        "bits": "[1]",
+        "description": "Auto-detect VSYNC polarity: \n1: Low is active, \n0: High is active. \nThis bit field is valid only when STRM_VALID is high. \nAnd STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "1"
+      },
+      {
+        "name": "HSYNC_P_S",
+        "bits": "[0]",
+        "description": "Auto-detect HSYNC polarity: \n1: Low is active, \n0: High is active. \nThis bit field is valid only when STRM_VALID is high. \nAnd STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "1"
+      }
+    ]
+  },
+  {
+    "name": "TOTAL_LINE_STA_L",
+    "address": "Base + 0x0090",
+    "type": "RO",
+    "description": "Total Line Status Low Byte Register",
+    "reset_value": "0x00000001",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TOTAL_LINE_STA_L",
+        "bits": "[7:0]",
+        "description": "TOTAL_LINE [7:0] which is detected by video \ncapture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "1"
+      }
+    ]
+  },
+  {
+    "name": "TOTAL_LINE_STA_H",
+    "address": "Base + 0x0094",
+    "type": "RO",
+    "description": "Total Line Status High Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TOTAL_LINE_STA_H",
+        "bits": "[4:0]",
+        "description": "TOTAL_LINE [11:8] which is detected by video \ncapture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ACTIVE_LINE_STA_L",
+    "address": "Base + 0x0098",
+    "type": "RO",
+    "description": "Active Line Status Low Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ACTIVE_LINE_STA_L",
+        "bits": "[7:0]",
+        "description": "ACTIVE_LINE [7:0] which is detected by video \ncapture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when \ntwo successive frames are determined as \nstable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ACTIVE_LINE_STA_H",
+    "address": "Base + 0x009C",
+    "type": "RO",
+    "description": "Active Line Status High Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ACTIVE_LINE_STA_H",
+        "bits": "[4:0]",
+        "description": "ACTIVE_LINE [11:8] which is detected by \nvideo capture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when \ntwo successive frames are determined as \nstable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "V_F_PORCH_STA",
+    "address": "Base + 0x00A0",
+    "type": "RO",
+    "description": "Vertical Front Porch Status Register",
+    "reset_value": "0x00000001",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "V_F_PORCH_STA",
+        "bits": "[7:0]",
+        "description": "V_F_PORCH (vertical front porch) which is detected \nby video capture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "1"
+      }
+    ]
+  },
+  {
+    "name": "V_SYNC_STA",
+    "address": "Base + 0x00A4",
+    "type": "RO",
+    "description": "Vertical Sync Width Status Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "V_SYNC_STA",
+        "bits": "[7:0]",
+        "description": "V_SYNC_WIDTH (vertical sync width) which is detected \nby video capture module. \nThis bit field is valid only when STRM_VALID is high. \nAnd STRM_VALID becomes high when two successive \nframes are determined as stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "V_B_PORCH_STA",
+    "address": "Base + 0x00A8",
+    "type": "RO",
+    "description": "Vertical Back Porch Status Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "V_B_PORCH_STA",
+        "bits": "[7:0]",
+        "description": "V_B_PORCH (vertical back porch) which is \ndetected by video capture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "TOTAL_PIXEL_STA_L",
+    "address": "Base + 0x00AC",
+    "type": "RO",
+    "description": "Total Pixel Status Low",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TOTAL_PIXEL_STA_L",
+        "bits": "[7:0]",
+        "description": "TOTAL_PIXEL [7:0] which is detected by video \ncapture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when \ntwo successive frames are determined as \nstable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "TOTAL_PIXEL_STA_H",
+    "address": "Base + 0x00B0",
+    "type": "RO",
+    "description": "Total Pixel Status High Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TOTAL_PIXEL_STA_H",
+        "bits": "[5:0]",
+        "description": "TOTAL_PIXEL [13:8] which is detected by \nvideo capture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when \ntwo successive frames are determined as \nstable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ACTIVE_PIXEL_STA_L",
+    "address": "Base + 0x00B4",
+    "type": "RO",
+    "description": "Active Pixel Status Low Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ACTIVE_PIXEL_STA_L",
+        "bits": "[7:0]",
+        "description": "ACTIVE_PIXEL [7:0] which is detected by \nvideo capture module. \nThis bit field is valid only when STRM_VALID \nis high. And STRM_VALID becomes high when \ntwo successive frames are determined as \nstable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ACTIVE_PIXEL_STA_H",
+    "address": "Base + 0x00B8",
+    "type": "RO",
+    "description": "Active Pixel Status High Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ACTIVE_PIXEL_STA_H",
+        "bits": "[5:0]",
+        "description": "ACTIVE_PIXEL [13:8] which is detected by \nvideo capture module. \nThis bit field is valid only when STRM_VALID \nis high. And STRM_VALID becomes high \nwhen two successive frames are determined \nas stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_F_PORCH_STA_L",
+    "address": "Base + 0x00BC",
+    "type": "RO",
+    "description": "Horizon Front Porch Status Low Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_F_PORCH_STA_L",
+        "bits": "[7:0]",
+        "description": "H_F_PORCH [7:0] (horizon front porch) which is \ndetected by video capture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_F_PORCH_STA_H",
+    "address": "Base + 0x00C0",
+    "type": "RO",
+    "description": "Horizon Front Porch Status High Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_F_PORCH_STA_H",
+        "bits": "[3:0]",
+        "description": "H_F_PORCH [11:8] (horizon front porch) \nwhich is detected by video capture module. \nThis bit field is valid only when \nSTRM_VALID is high. And STRM_VALID \nbecomes high when two successive frames \nare determined as stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_SYNC_STA_L",
+    "address": "Base + 0x00C4",
+    "type": "RO",
+    "description": "Horizon Sync Width Status Low Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_SYNC_STA_L",
+        "bits": "[7:0]",
+        "description": "H_SYNC [7:0] (horizon sync width) which is \ndetected by video capture module. \nThis bit field is valid only when STRM_VALID is high. \nAnd STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_SYNC_STA_H",
+    "address": "Base + 0x00C8",
+    "type": "RO",
+    "description": "Horizon Sync Width Status High Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_SYNC_STA_H",
+        "bits": "[3:0]",
+        "description": "H_SYNC [11:8] (horizon sync width) which is \ndetected by video capture module. \nThis bit field is valid only when STRM_VALID is high. \nAnd STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_B_PORCH_STA_L",
+    "address": "Base + 0x00CC",
+    "type": "RO",
+    "description": "Horizon Back Porch Status Low Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_B_PORCH_STA_L",
+        "bits": "[7:0]",
+        "description": "H_B_PORCH [7:0] (horizon back porch) which is \ndetected by video capture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "H_B_PORCH_STA_H",
+    "address": "Base + 0x00D0",
+    "type": "RO",
+    "description": "Horizon Back Porch Status High Byte Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "H_B_PORCH_STA_H",
+        "bits": "[3:0]",
+        "description": "H_B_PORCH [11:8] (horizon back porch) which \nis detected by video capture module. \nThis bit field is valid only when STRM_VALID is \nhigh. And STRM_VALID becomes high when two \nsuccessive frames are determined as stable.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "AVI_DB1~AVI_DB13",
+    "address": "Base + 0x01D0~ Base + 0x0200",
+    "type": "R/W",
+    "description": "AVI InfoFrame Packet Data Byte",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "IF_TYPE",
+    "address": "Base + 0x0244",
+    "type": "R/W",
+    "description": "InfoFrame Packet Type Code.",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "IF_TYPE",
+        "bits": "[7:0]",
+        "description": "InfoFrame Packet Type Code. It can be set as (0x80 + \nInfoFrame Type Code) and send any type of infoframe \ndefined in CEA-861C. \nCommonly, we set it as 0x83(0x80 + 0x03, 0x03 is the type \ncode of SPD InfoFrame) and send SPD infoframe.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "IF_PKT_DB1~IF_PKT_DB25",
+    "address": "Base + 0x0254~ Base + 0x02B4",
+    "type": "R/W",
+    "description": "InfoFrame Packet Data Byte",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "MPEG_DB1~MPEG_DB10",
+    "address": "Base + 0x02D0~ Base + 0x02F4",
+    "type": "R/W",
+    "description": "MPEG Source InfoFrame Packet Data Byte",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "PSR_FRAME_UPDATA_CTRL",
+    "address": "Base + 0x0318",
+    "type": "R/W",
+    "description": "Frame update control for PSR",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:2]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "PSR_FRAME_UP_TYPE",
+        "bits": "[1]",
+        "description": "Select PSR Frame Update type. \n1 = Burst single frame update. \n0 = Single frame update. \nVSC packet is only sent once \nafter PSR_FRAME_UPDATE is \nwritten with 1. IF_EN bit will be \nself-cleared after the VSYNC \nleading edge.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PSR_VSC_PACKET_VERSION",
+        "bits": "[0]",
+        "description": "PSR VSC packet version select. \n1 = PSR 2. \n0 = PSR 1.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "VSC_SHADOW_DB0~VSC_SHADOW_DB7",
+    "address": "Base+ 0x031C~ Base+ 0x0338",
+    "type": "R/W",
+    "description": "VSC shadow data bytes 0 ~ 7",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "VSC_SHADOW_PB0~VSC_SHADOW_PB1",
+    "address": "Base+ 0x033C~ Base+ 0x0340",
+    "type": "R/W",
+    "description": "VSC shadow parity byte 0 ~ 1",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "LANE_MAP",
+    "address": "Base + 0x035C",
+    "type": "R/W",
+    "description": "Lane Map Register",
+    "reset_value": "0x000000E4",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "LANE3_MAP",
+        "bits": "[7:6]",
+        "description": "Control physical lane 3 will map to which logic lane: \n0x11: Logic lane 3, \n0x10: Logic lane 2, \n0x01: Logic lane 1, \n0x00: Logic lane 0,",
+        "initial_value": "3"
+      },
+      {
+        "name": "LANE2_MAP",
+        "bits": "[5:4]",
+        "description": "Control physical lane 2 will map to which logic lane: \n0x11: Logic lane 3, \n0x10: Logic lane 2, \n0x01: Logic lane 1, \n0x00: Logic lane 0,",
+        "initial_value": "2"
+      },
+      {
+        "name": "LANE1_MAP",
+        "bits": "[3:2]",
+        "description": "Control physical lane 1 will map to which logic lane: \n0x11: Logic lane 3, \n0x10: Logic lane 2, \n0x01: Logic lane 1, \n0x00: Logic lane 0,",
+        "initial_value": "1"
+      },
+      {
+        "name": "LANE0_MAP",
+        "bits": "[1:0]",
+        "description": "Control physical lane 0 will map to which logic lane: \n0x11: Logic lane 3, \n0x10: Logic lane 2, \n0x01: Logic lane 1, \n0x00: Logic lane 0,",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_2",
+    "address": "Base + 0x0374",
+    "type": "R/W",
+    "description": "Analog Control Register 2",
+    "reset_value": "0x00000008",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SEL_24M",
+        "bits": "[3]",
+        "description": "Choose the reference clock of PHY use \n24M or 27M: \n1: Use 24M clock, \n0: Use 27M clock.",
+        "initial_value": "1"
+      }
+    ]
+  },
+  {
+    "name": "HIDDEN_REG",
+    "address": "Base + 0x0390",
+    "type": "R/W",
+    "description": "Debug Register",
+    "reset_value": "0x00000003"
+  },
+  {
+    "name": "INT_STATE",
+    "address": "Base + 0x03C0",
+    "type": "RO",
+    "description": "Interrupt Status Register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "COMMON_INT_STA_1",
+    "address": "Base + 0x03C4",
+    "type": "R/W",
+    "description": "Common Interrupt Status Register 1",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "VSYNC_DET",
+        "bits": "[7]",
+        "description": "1: VSYNC active edge has been detected. \nWrite 1 to clear.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PLL_LOCK_CHG",
+        "bits": "[6]",
+        "description": "1: PLL lock state is changed. \nWrite 1 to clear. \nCheck PLL_LOCK of register \nDP_DEBUG_CTL for PLL lock status.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[5:0]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "VID_FORMAT_CHG",
+        "bits": "[3]",
+        "description": "1: Video input format change is detected. \nWrite 1 to clear.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PSR_VID_CRC_VALID",
+        "bits": "[2]",
+        "description": "1: PSR video CRC value is valid.",
+        "initial_value": "0"
+      },
+      {
+        "name": "VID_CLK_CHG",
+        "bits": "[1]",
+        "description": "1: Video input clock change is detected.",
+        "initial_value": "0"
+      },
+      {
+        "name": "SW_INT",
+        "bits": "[0]",
+        "description": "1: Software-induced interrupt. \nWrite 1 to clear.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "COMMON_INT_STA_3",
+    "address": "Base + 0x03CC",
+    "type": "R/W/C1",
+    "description": "Common Interrupt Status Register 3",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DPCD_SPECIFIC_IRQ",
+        "bits": "[4]",
+        "description": "1: Sink specific interrupt in DPCD is \ndetected. \nWrite 1 to clear",
+        "initial_value": "0"
+      },
+      {
+        "name": "MYDP_PLUG_IN",
+        "bits": "[3]",
+        "description": "1: MYDP plug out event is detected. \nWrite 1 to clear",
+        "initial_value": "0"
+      },
+      {
+        "name": "MYDP_PLUG_OUT",
+        "bits": "[2]",
+        "description": "1: MYDP plug out event is detected. \nWrite 1 to clear",
+        "initial_value": "0"
+      },
+      {
+        "name": "MYDP_HPD_IRQ",
+        "bits": "[1]",
+        "description": "1: MYDP HPD interrupt is detected. \nWrite 1 to clear",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[0]",
+        "description": "Reserved",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "COMMON_INT_STA_4",
+    "address": "Base + 0x03D0",
+    "type": "R/W/C1",
+    "description": "Common Interrupt Status Register 4",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:3]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "HOTPLUG_CHG",
+        "bits": "[2]",
+        "description": "1: Hot plug change detected. Write 1 to clear. \nHOTPLUG_CHG happens whenever the pin \nI_DP_HDP changes and the change remains for \nat least hot plug deglitch time. And the hot plug \ndeglitch time is defined in HPD_DEGLITCH_L \nand HPD_DEGLITCH_H. When HOTPLUG_CHG is \nhigh, software shall check the status of HPD \nsignal on register HPD_STATUS.",
+        "initial_value": "0"
+      },
+      {
+        "name": "HPD_LOST",
+        "bits": "[1]",
+        "description": "Hot plug detect signal lost timer larger than \n2ms, that means cable is plugged out: \n1: Interrupt assert, \n0: Not interrupt occurred \nWrite 1 to this bit to clear this interrupt source.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PLUG",
+        "bits": "[0]",
+        "description": "Hot plug detect signal lost time is larger than \n2ms before cable plugged, it means cable is \nplugged in: \n1: Interrupt assert, \n0: Not interrupt occurred \nWrite 1 to this bit to clear this interrupt source.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "DP_INT_STA",
+    "address": "Base + 0x03DC",
+    "type": "R/W/C1",
+    "description": "DisplayPort Interrupt Status Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "INT_HPD",
+        "bits": "[6]",
+        "description": "IRQ (HPD de-asserted less than 2ms) detect \ninterrupt: \n1: IRQ interrupt assert, \n0: Not interrupt occurred \nWrite 1 to this bit to clear this interrupt \nsource.",
+        "initial_value": "0"
+      },
+      {
+        "name": "HW_TRAINING_FINISH",
+        "bits": "[5]",
+        "description": "Training FSM module finish link training \nprocedure: \n1: Hardware link training finished, \n0: Not interrupt occurred \nWrite 1 to this bit to clear this interrupt \nsource.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SINK_LOST",
+        "bits": "[3]",
+        "description": "Sink lost interrupt \n1: Sink lost occurred \n0: Not interrupt occurred \nWrite 1 to this bit to clear this interrupt \nsource.",
+        "initial_value": "0"
+      },
+      {
+        "name": "LINK_LOST",
+        "bits": "[2]",
+        "description": "Link lost interrupt \n1: Link lost occurred \n0: Not interrupt occurred \nWrite 1 to this bit to clear this interrupt \nsource.",
+        "initial_value": "0"
+      },
+      {
+        "name": "RPLY_RECEIV",
+        "bits": "[1]",
+        "description": "AUX channel command reply is received: \n1: Interrupt assert, \n0: Not interrupt occurred \nWrite 1 to this bit to clear this interrupt \nsource.",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_ERR",
+        "bits": "[0]",
+        "description": "AUX channel access error interrupt: \n1: Interrupt assert, \n0: Not interrupt occurred \nWrite 1 to this bit to clear this interrupt \nsource.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "COMMON_INT_MASK_1",
+    "address": "Base + 0x03E0",
+    "type": "R/W",
+    "description": "Common Interrupt Mask Register1",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "COMMON_INT_MASK_1[7:0]",
+        "bits": "[7:0]",
+        "description": "Each bit corresponds to the same bit in \nCommon Interrupt Status Register 1. \n0: Mask interrupt \n1: Enable interrupt",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "COMMON_INT_MASK_3",
+    "address": "Base + 0x03E8",
+    "type": "R/W",
+    "description": "Common Interrupt Mask Register3",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "COMMON_INT_MASK_3[4:1]",
+        "bits": "[4:1]",
+        "description": "Each bit corresponds to the same bit in \nCommon Interrupt Status Register 3. \n0: Mask interrupt \n1: Enable interrupt",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[0]",
+        "description": "Reserved",
+        "initial_value": ""
+      }
+    ]
+  },
+  {
+    "name": "COMMON_INT_MASK_4",
+    "address": "Base + 0x03EC",
+    "type": "R/W",
+    "description": "Common Interrupt Mask Register4",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:3]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "COMMON_INT_MASK_4[2:0]",
+        "bits": "[2:0]",
+        "description": "Each bit corresponds to the same bit in \nCommon Interrupt Status Register 3. \n0: Mask interrupt \n1: Enable interrupt",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "DP_INT_STA_MASK",
+    "address": "Base + 0x03F8",
+    "type": "R/W",
+    "description": "DisplayPort Interrupt enable Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_INT_STA_MASK",
+        "bits": "[6:0]",
+        "description": "Each bit corresponds to the same bit in \nDisplayPort Interrupt Status Register \n(DP_INT_STA). \n1: Enable interrupt. \n0: Mask interrupt.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "INT_CTL",
+    "address": "Base + 0x03FC",
+    "type": "R/W",
+    "description": "Interrupt Control Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SERDES_OVERFLOW_CLEAR",
+        "bits": "[5]",
+        "description": "1: clear SerDes FIFO overflow flag",
+        "initial_value": "0"
+      },
+      {
+        "name": "SERDES_UNDERFLOW_CLEAR",
+        "bits": "[4]",
+        "description": "1: clear SerDes FIFO underflow flag",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[3]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SOFT_INT_CTRL",
+        "bits": "[2]",
+        "description": "Set Software Interrupt: \n1: Set interrupt, \n0: Do not set interrupt,",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "INT_POL",
+        "bits": "[0]",
+        "description": "INT pin assertion polarity: \n1: Assert high, \n0: Assert low",
+        "initial_value": "1"
+      }
+    ]
+  },
+  {
+    "name": "SYS_CTL_1",
+    "address": "Base + 0x0600",
+    "type": "R/W",
+    "description": "System Control Register #1",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "HBR2_EYE_SY_CTRL",
+        "bits": "[4:3]",
+        "description": "HBR2 pattern control",
+        "initial_value": "0"
+      },
+      {
+        "name": "DET_STA",
+        "bits": "[2]",
+        "description": "Video stream clock detect status, It will not \naffect video output. \n1: Stream clock detected \n0: Stream clock not detected \nWrite any value to update the current \nstatus.",
+        "initial_value": "0"
+      },
+      {
+        "name": "FORCE_DET",
+        "bits": "[1]",
+        "description": "Force video stream clock detect, this bit is \nonly active when DET_CTRL is 1 \n1: Force video stream clock detected \n0: Force video stream clock not detected \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "DET_CTRL",
+        "bits": "[0]",
+        "description": "Video stream clock detect status control: \n1: Use force detect status \n0: Use auto-detected status \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "SYS_CTL_2",
+    "address": "Base + 0x0604",
+    "type": "R/W",
+    "description": "System Control Register #2",
+    "reset_value": "0X00000040",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "CHA_CRI",
+        "bits": "[7:4]",
+        "description": "Pixel clock change detection threshold. \nThe incoming pixel clock input is counted \ncontinuously by the 24Mhz reference clock. \nThis register defines a number, if the \ncounter number change is more than this \nvalue for 2 pixel clock edges, the CHA_STA \nbit is asserted. \nThis bit\u2019s type is R/W.",
+        "initial_value": "4"
+      },
+      {
+        "name": "-",
+        "bits": "[3]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "CHA_STA",
+        "bits": "[2]",
+        "description": "Video stream clock change status, It will \nnot affect video output \n1: Clock frequency changed \n0: Clock frequency not changed \nWrite any value to update the current \nstatus.",
+        "initial_value": "0"
+      },
+      {
+        "name": "FORCE_CHA",
+        "bits": "[1]",
+        "description": "Force stream clock change status, this bit \nonly active when CHA_CTRL is 1 \n1: Force clock change. When asserted, \nCHA_STA is \u20181\u2019. \n0: Force clock not change \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "CHA_CTRL",
+        "bits": "[0]",
+        "description": "Pixel clock frequency change status control \n1: Use force change status \n0: Use auto-detected status \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "SYS_CTL_3",
+    "address": "Base + 0x0608",
+    "type": "R/W,RO",
+    "description": "System Control Register #3",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "HPD_STATUS(RO)",
+        "bits": "[6]",
+        "description": "Hot plug detect status. \n1: HPD is 1, \n0: HPD is 0. \nThis bit\u2019s type is RO. \nWhen this bit is 0, AUX CH will not work. \nNote that the HPD_STATUS is only changed \nafter the change of the pin I_DP_HPD \nremains for no less than hot plug deglitch \ntime. And the hot plug deglitch time is \ndefined in HPD_DEGLITCH_L and \nHPD_DEGLITCH_H.",
+        "initial_value": "0"
+      },
+      {
+        "name": "F_HPD",
+        "bits": "[5]",
+        "description": "Force hot plug detect. \n1: Force HPD 1, \n0: Force HPD 0. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "HPD_CTRL",
+        "bits": "[4]",
+        "description": "Hot plug detect manual control. \n1: Force HPD with F_HPD, \n0: Use PIN_HPD state. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "HDCP_RDY(RO)",
+        "bits": "[3]",
+        "description": "HDCP ready status. \n1: HDCP is ready, \n0: HDCP is not ready. \nThis bit\u2019s type is RO. \nThis bit is an indicator of whether HDCP is \nready to perform. Usually, it is set as soon \nas HPD signal is detected as plugged.",
+        "initial_value": "0"
+      },
+      {
+        "name": "STRM_VALID",
+        "bits": "[2]",
+        "description": "Input stream have constant video format, \nand this stream is valid to send out \nthrough link. \n1: Input stream is valid, \n0: Input stream is not valid. \nWrite any value to update the current \nstatus. \nHardware will not send out video through \nlink when this bit is 0.",
+        "initial_value": "0"
+      },
+      {
+        "name": "F_VALID",
+        "bits": "[1]",
+        "description": "Force stream valid, this bit only active \nwhen VALID_CTRL is 1. \n1: Force input video stream valid, \n0: Force input video stream not valid. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "VALID_CTRL",
+        "bits": "[0]",
+        "description": "Stream valid control. \n1: Use F_VALID bit to control video stream \nvalid status \n0: Use video stream valid auto-detect \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "SYS_CTL_4",
+    "address": "Base + 0x060C",
+    "type": "R/W",
+    "description": "System Control Register #4",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ENHANCED",
+        "bits": "[3]",
+        "description": "DisplayPort Enhanced mode enable \n1: Enhanced mode, \n0: Normal mode.",
+        "initial_value": "0"
+      },
+      {
+        "name": "FIX_M_VID",
+        "bits": "[2]",
+        "description": "Fix M_VID value \n1: Use register M_VID value to be sent out, \n0: Use calculates M_VID value to be sent \nout.",
+        "initial_value": "0"
+      },
+      {
+        "name": "M_VID_UPDATE_CTRL",
+        "bits": "[1:0]",
+        "description": "Control M_VID update frequency \n11: 1/8 X update rate, \n10: 1/4 X update rate, \n01: 1/2 X update rate, \n00: Normal rate.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "DP_VID_CTL",
+    "address": "Base + 0x0610",
+    "type": "RO",
+    "description": "DP Video Control Register",
+    "reset_value": "0x00000020",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "BPC",
+        "bits": "[7:5]",
+        "description": "Bit per color/ component with video which \ntransferred via DP main link \n101, 110, 111, 100: Reserved, \n011: 12 bits, \n010: 10 bits, \n001: 8 bits, \n000: 6 bits.",
+        "initial_value": "1"
+      },
+      {
+        "name": "YC_COEFF",
+        "bits": "[4]",
+        "description": "YcbCr Coefficients with video which \ntransferred via DP main link \n1: ITU709, \n0: ITU601.",
+        "initial_value": "0"
+      },
+      {
+        "name": "D_RANGE",
+        "bits": "[3]",
+        "description": "Dynamic range \n1: CEA range, \n0: VESA range (from 0 to the maximum).",
+        "initial_value": "0"
+      },
+      {
+        "name": "COLOR_F",
+        "bits": "[2:1]",
+        "description": "Colorimetric format with video which \ntransferred via DP main link \n11: Reserved, \n10: YcbCr444, \n01: YcbCr422, \n00: RGB.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[0]",
+        "description": "Reserved",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "PKT_SEND_CTL",
+    "address": "Base + 0x0640",
+    "type": "R/W",
+    "description": "Packet Send Control Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUDIO_INFO_UP(C)",
+        "bits": "[7]",
+        "description": "Audio InfoFrame content has been \nupdated. \n1: Updated, \n0: Don\u2019t care. \nWrite 1 to this bit after Audio Packet \nContent Registers have been configured as \nAudio InfoFrame content has been \nupdated. \nThis bit\u2019s type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
+        "initial_value": "0"
+      },
+      {
+        "name": "AVI_INFO_UP(C)",
+        "bits": "[6]",
+        "description": "AVI InfoFrame content has been updated. \n1: Updated, \n0: Don\u2019t care. \nWrite 1 to this bit after AVI Packet Content \nRegisters have been configured as AVI \nInfoFrame content has been updated. \nThis bit\u2019s type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
+        "initial_value": "0"
+      },
+      {
+        "name": "MPEG_INFO_UP(C)",
+        "bits": "[5]",
+        "description": "MPEG InfoFrame content has been \nupdated. \n1: Updated, \n0: Don\u2019t care. \nWrite 1 to this bit after MPEG Packet \nContent Registers have been configured as \nMPEG InfoFrame content has been \nupdated. \nThis bit\u2019s type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
+        "initial_value": "0"
+      },
+      {
+        "name": "IF_UP(C)",
+        "bits": "[4]",
+        "description": "Configurable InfoFrame content has been \nupdated. \n1: Updated, \n0: Don\u2019t care. \nWrite 1 to this bit after IF_TYPE and \nIF_PKT_DB1~25 Registers have been \nconfigured as configurable InfoFrame \ncontent have been updated. \nThis bit\u2019s type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUDIO_INFO_EN",
+        "bits": "[3]",
+        "description": "Audio InfoFrame send enable. \n1: Send Audio InfoFrame, \n0: Don\u2019t send Audio InfoFrame. \nMake sure that the Audio Packet Content \nRegisters had been configured correctly \nand the AUDIO_INFO_UP had been written \nwith 1. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "AVI_INFO_EN",
+        "bits": "[2]",
+        "description": "AVI InfoFrame send enable. \n1: Send AVI InfoFrame, \n0: Don\u2019t send AVI InfoFrame. \nMake sure that the AVI Packet Content \nRegisters had been configured correctly \nand the AVI_INFO_UP had been written \nwith 1. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "MPEG_INFO_EN",
+        "bits": "[1]",
+        "description": "MPEG InfoFrame send enable. \n1: Send MPEG InfoFrame, \n0: Don\u2019t send MPEG InfoFrame. \nMake sure that the MPEG Packet Content \nRegisters had been configured correctly \nand the MPEG_INFO_UP had been written \nwith 1. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "IF_EN",
+        "bits": "[0]",
+        "description": "Configurable InfoFrame send enable. \n1: Send InfoFrame defined in IF_TYPE and \nIF_PKT_DB1~25, \n0: Don\u2019t send InfoFrame. \nMake sure that the IF_TYPE and \nIF_PKT_DB1~25 Registers had been \nconfigured correctly and the IF_UP had \nbeen written with 1. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "LINK_BW_SET",
+    "address": "Base + 0x0680",
+    "type": "R/W",
+    "description": "Main Link Bandwidth Setting Register",
+    "reset_value": "0x0000000A",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "LINK_BW_SET",
+        "bits": "[3:0]",
+        "description": "Main link bandwidth setting: \n0x06: 1.62Gpbs per lane \n0x0a: 2.7Gpbs per lane \nother: Reserved",
+        "initial_value": "A"
+      }
+    ]
+  },
+  {
+    "name": "LANE_COUNT_SET",
+    "address": "Base + 0x0684",
+    "type": "R/W",
+    "description": "DP Main Link Lane Number Register",
+    "reset_value": "0x00000004",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:3]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "LANE_COUNT_SET",
+        "bits": "[2:0]",
+        "description": "Main link lane count \n0x1: one lane \n0x2: two lanes \n0x4:four lanes \nother: Reserved",
+        "initial_value": "4"
+      }
+    ]
+  },
+  {
+    "name": "DP_TRAINING_PTN_SET",
+    "address": "Base + 0x0688",
+    "type": "R/W",
+    "description": "DP Training Pattern Set Register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_LN0_LINK_TRAINING_CTL",
+    "address": "Base + 0x068C",
+    "type": "R/W,RO",
+    "description": "DP Lane 0 Link Training Control Register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_LN1_LINK_TRAINING_CTL",
+    "address": "Base + 0x0690",
+    "type": "R/W,RO",
+    "description": "DP Lane 1 Link Training Control Register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_LN2_LINK_TRAINING_CTL",
+    "address": "Base + 0x0694",
+    "type": "R/W,RO",
+    "description": "DP Lane 2 Link Training Control Register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_LN3_LINK_TRAINING_CTL",
+    "address": "Base + 0x0698",
+    "type": "R/W,RO",
+    "description": "DP Lane 3 Link Training Control Register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_HW_LINK_TRAINING_CTL",
+    "address": "Base + 0x06A0",
+    "type": "R/W,RO",
+    "description": "DP HW LINK TRAINING_CONTROL Register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_DEBUG_CTL",
+    "address": "Base + 0x06C0",
+    "type": "RR/W",
+    "description": "DP Debug Control Register #1",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "MYDP_HPD_POLLIN_EN",
+        "bits": "[6]",
+        "description": "Enable the MYDP HPD status polling. If this \nbit and POLLING_EN are enabled and \nBYPASS_STATUS_POLLING is 0, hardware \npolling both of link status and MYDP HPD \nstatus. \n1: Enabled \n0: Disabled. \nThis bit\u2019s type is RW.",
+        "initial_value": "0"
+      },
+      {
+        "name": "BYPASS_STATUS_POLLIN G",
+        "bits": "[5]",
+        "description": "Bypass link status polling. If this bit, \nMYDP_HPD_POLLIN_EN and POLLING_EN \nare all enabled, hardware only polling \nMYDP HPD status. \n1: Enabled \n0: Disabled. \nThis bit\u2019s type is RW.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PLL_LOCK(RO)",
+        "bits": "[4]",
+        "description": "PLL lock status \n1: PLL lock, \n0: PLL unlock. \nThis bit\u2019s type is RO.",
+        "initial_value": "0"
+      },
+      {
+        "name": "F_PLL_LOCK",
+        "bits": "[3]",
+        "description": "Force PLL lock, this bit is active when \nPLL_LOCK_CTRL is 1: \n1: Force PLL lock, \n0: Force PLL non-lock. \nThis bit\u2019s type is R/W",
+        "initial_value": "0"
+      },
+      {
+        "name": "PLL_LOCK_CTRL",
+        "bits": "[2]",
+        "description": "PLL lock register control enable \n1: PLL lock signal is controlled by register, \n0: PLL lock signal is controlled by PLL. \nThis bit\u2019s type is R/W",
+        "initial_value": "0"
+      },
+      {
+        "name": "POLLING_EN",
+        "bits": "[1]",
+        "description": "Enable hardware state machine to polling \nthe HPD status or link status. The interval \nof each polling is controlled by \nPOLLING_PERIOD \n1: Enable polling function. \n0: Disable polling function \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PN_INV",
+        "bits": "[0]",
+        "description": "Invert SERDES output polarity \n1: Invert output polarity, \n0: Normal operation. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "HPD_DEGLITCH_L",
+    "address": "Base + 0x06C4",
+    "type": "R/W",
+    "description": "DP HPD De-glitch Low Byte Register",
+    "reset_value": "0x0000005E",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "HPD_DEGLITCH_L",
+        "bits": "[7:0]",
+        "description": "HPD_DEGLITCH, which is counted at 24 \nMHz, is used to de-glitch the HPD signal \nThis register is HPD_DEGLITCH [7:0]. The \ndefault value is 0x5E for 280.75 us deglitch \ntime.",
+        "initial_value": "0x5E"
+      }
+    ]
+  },
+  {
+    "name": "HPD_DEGLITCH_H",
+    "address": "Base + 0x06C8",
+    "type": "R/W",
+    "description": "DP HPD De-glitch High Byte Register",
+    "reset_value": "0x0000001A",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "HPD_DEGLITCH_H",
+        "bits": "[5:0]",
+        "description": "HPD_DEGLITCH, which is counted at 24 \nMHz, is used to de-glitch the HPD signal. \nThis register is HPD_DEGLITCH [13:8]. The \ndefault value is 0x1A for 280.75 us deglitch \ntime.",
+        "initial_value": "0x1A"
+      }
+    ]
+  },
+  {
+    "name": "POLLING_PERIOD",
+    "address": "Base + 0x06CC",
+    "type": "R/W",
+    "description": "DP polling period",
+    "reset_value": "0x0000000E",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "POLLING_PERIOD",
+        "bits": "[7:0]",
+        "description": "This register controls the interval between \neach time of polling operation. Interval \ntime = POLLING_PERIOD * 2^16 * Period \nof 24M clock.",
+        "initial_value": "0xE"
+      }
+    ]
+  },
+  {
+    "name": "DP_LINK_DEBUG_CTL",
+    "address": "Base + 0x06E0",
+    "type": "R/W",
+    "description": "DP Link Debug Control Register",
+    "reset_value": "0x00000010",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "NEW_PRBS7",
+        "bits": "[4]",
+        "description": "Control the PRBS 7 formula. \n1: Use new PRBS7 formula in DP 1.1 \nversion \n0: Use old PRBS7 formula in DP 1.0 version",
+        "initial_value": "1"
+      },
+      {
+        "name": "DIS_FIFO_RST",
+        "bits": "[3]",
+        "description": "Disable video FIFO reset every line \n1: Disable, \n0: Reset video FIFO every line.",
+        "initial_value": "0"
+      },
+      {
+        "name": "DISABLE_AUTO_RESET_E NCODER",
+        "bits": "[2]",
+        "description": "Disable 8b/10 encoder auto reset \n1: Disabled auto reset 8b/10 encode before \nsending Link Training Pattern 2 \n0: Auto reset 8b/10 encode before sending \nLink Training Pattern 2",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "PRBS31_EN",
+        "bits": "[0]",
+        "description": "Enable DisplayPort PRBS 31. \n1: Enabled, \n0: Normal mode.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "DP_SINK_COUNT",
+    "address": "Base + 0x06E4",
+    "type": "RO",
+    "description": "DP Sink Count",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_IRD_VECTOR",
+    "address": "Base + 0x06E8",
+    "type": "RO",
+    "description": "DP Irq Vector",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_LINK_STATUS0",
+    "address": "Base + 0x06EC",
+    "type": "RO",
+    "description": "DP Lane0 and Lane1 Status",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "LN1_SYBOL_LOCK",
+        "bits": "[6]",
+        "description": "Lane1 symbol lock",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN_EQ_DONE",
+        "bits": "[5]",
+        "description": "Lane1 EQ done",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN_CR_DONE",
+        "bits": "[4]",
+        "description": "Lane1 CR done",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "-",
+        "bits": "[3]",
+        "description": "Reserved",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN0_SYBOL_LOCK",
+        "bits": "[2]",
+        "description": "Lane0 symbol lock",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN0_EQ_DONE",
+        "bits": "[1]",
+        "description": "Lane0 EQ done",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN0_CR_DONE",
+        "bits": "[0]",
+        "description": "Lane0 CR done",
+        "initial_value": "0x0"
+      }
+    ]
+  },
+  {
+    "name": "DP_LINK_STATUS1",
+    "address": "Base + 0x06F0",
+    "type": "RO",
+    "description": "DP Lane2 and Lane3 Status",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "INTER_LN_ALIGN",
+        "bits": "[7]",
+        "description": "Interlace align",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN3_SYMBOL_LOCK",
+        "bits": "[6]",
+        "description": "Lane3 symbol lock",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN3_EQ_DONE",
+        "bits": "[5]",
+        "description": "Lane3 EQ done",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN3_CR_DONE",
+        "bits": "[4]",
+        "description": "Lane3 CR done",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "-",
+        "bits": "[3]",
+        "description": "Reserved",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN2_SYMBOL_LOCK",
+        "bits": "[2]",
+        "description": "Lane2 symbol lock",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN2_EQ_DONE",
+        "bits": "[1]",
+        "description": "Lane2 EQ done",
+        "initial_value": "0x0"
+      },
+      {
+        "name": "LN2_CR_DONE",
+        "bits": "[0]",
+        "description": "Lane2 CR done",
+        "initial_value": "0x0"
+      }
+    ]
+  },
+  {
+    "name": "DP_ALIGN_STATUS`",
+    "address": "Base + 0x06F4",
+    "type": "RO",
+    "description": "DP Align Status",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_SINK_STATUS",
+    "address": "Base + 0x06F8",
+    "type": "RO",
+    "description": "DP Sink Status",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:2]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SINK_STA_1",
+        "bits": "[1]",
+        "description": "Debug register",
+        "initial_value": "0"
+      },
+      {
+        "name": "SINK_STA_0",
+        "bits": "[0]",
+        "description": "Debug register",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "M_VID_0",
+    "address": "Base + 0x0700",
+    "type": "R/W",
+    "description": "DP M_VID Configure Register #0",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "M_VID_0",
+        "bits": "[7:0]",
+        "description": "M_VID [7:0]. If FIX_M_VID is 1, this \nM_VID is used. Otherwise the M_VID value \nwhich chip calculated is used",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "M_VID_1",
+    "address": "Base + 0x0704",
+    "type": "R/W",
+    "description": "DP M_VID Configure Register #1",
+    "reset_value": ".0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "M_VID_1",
+        "bits": "[7:0]",
+        "description": "M_VID [15:8]. If FIX_M_VID is 1, this \nM_VID is used. Otherwise the M_VID value \nwhich chip calculated is used",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "M_VID_2",
+    "address": "Base + 0x0708",
+    "type": "R/W",
+    "description": "DP M_VID Configure Register #2",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "M_VID_2",
+        "bits": "[7:0]",
+        "description": "M_VID [23:16]. If FIX_M_VID is 1, this \nM_VID is used. Otherwise the M_VID value \nwhich chip calculated is used",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "N_VID_0",
+    "address": "Base + 0x070C",
+    "type": "R/W",
+    "description": "DP N_VID Configure Register #0",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "N_VID_0",
+        "bits": "[7:0]",
+        "description": "N_VID[7:0] \nThe maximum value of M_VID is 0xFFFF in \nASYNC mode.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "N_VID_1",
+    "address": "Base + 0x0710",
+    "type": "R/W",
+    "description": "DP N_VID Configure Register #1",
+    "reset_value": "0x00000080",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "N_VID_1",
+        "bits": "[7:0]",
+        "description": "N_VID[15:8]",
+        "initial_value": "0x80"
+      }
+    ]
+  },
+  {
+    "name": "N_VID_2",
+    "address": "Base + 0x0714",
+    "type": "R/W",
+    "description": "DP N_VID Configure Register #2",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "N_VID_2",
+        "bits": "[7:0]",
+        "description": "N_VID[23:16]",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "M_VID_MON",
+    "address": "Base + 0x0718",
+    "type": "RO",
+    "description": "DP M_VID value monitoring register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:24]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "M_VID_MON",
+        "bits": "[23:0]",
+        "description": "This register shows M_VID value which is actually \ntransmitted to Rx for monitoring purpose.",
+        "initial_value": "0x0"
+      }
+    ]
+  },
+  {
+    "name": "DP_VIDEO_FIFO_THRD",
+    "address": "Base + 0x0730",
+    "type": "R/W",
+    "description": "DP FIFO Threshold Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "VIDEO_TH_CTRL",
+        "bits": "[4]",
+        "description": "Video Data FIFO threshold control enables. \n1: Video Data FIFO threshold uses \nVIDEO_TH_VALUE. \n0: Video Data FIFO threshold uses internal \ncalculate value automatically.",
+        "initial_value": "0"
+      },
+      {
+        "name": "VIDEO_TH_VALUE",
+        "bits": "[3:0]",
+        "description": "Video Data FIFO threshold value. If \nVIDEO_TH_CTRL is 1, and data count in video \ndata FIFO have reached FIFO threshold value, \nvideo data is read out from FIFO.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "DP_M_CAL_CTL",
+    "address": "Base + 0x0760",
+    "type": "R/W",
+    "description": "DP M Value Calculation Control Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:3]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "M_VID_GEN_FILTER_EN",
+        "bits": "[2]",
+        "description": "Enable M_VID value generation filter to \nreduce the variation of M_VID value. This \nfilter is a low-pass filter to smooth out the \nM_VID variation \n1: Enable the filter \n0: Disable the filter \nNote: Refer to page 22 for details.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "M_GEN_CLK_SEL",
+        "bits": "[0]",
+        "description": "Select which link clock is used to generate \nthe M value \n1: Clock with down spreading is used \n0: Clock without down spreading is used",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "M_VID_GEN_FILTER_TH",
+    "address": "Base + 0x0764",
+    "type": "R/W",
+    "description": "DP M_VID Value Calculation Control Register",
+    "reset_value": "0x00000004",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "M_VID_GEN_FILTER_TH",
+        "bits": "[7:0]",
+        "description": "The threshold of M_VID generation filter \nIt only takes effect when \nM_VID_GEN_FILTER_EN is set to 1",
+        "initial_value": "4"
+      }
+    ]
+  },
+  {
+    "name": "AUX_CH_STA",
+    "address": "Base + 0x0780",
+    "type": "R/W",
+    "description": "AUX Channel Access Status Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_BUSY",
+        "bits": "[4]",
+        "description": "AUX channel status bit. If this bit is read as 1, AUX \nchannel access should be halted. \n1: AUX CH is busy \n0: AUX CH is idle",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_STATUS",
+        "bits": "[3:0]",
+        "description": "This register indicate the AUX channel access status \n0: OK \n1: NACK_ERROR \n2: TIMEOUT_ERROR \n3: UNKNOWN_ERROR \n4: MUCH_DEFER_ERROR \n5: TX_SHORT_ERROR \n6: RX_SHORT_ERROR \n7: NACK_WITHOUT_M_ERROR \n8: I2C_NACK_ERROR \nOther: Reserved.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "AUX_ERR_NUM",
+    "address": "Base + 0x0784",
+    "type": "RO",
+    "description": "AUX Channel Access Error Code Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_ERR_NUM",
+        "bits": "[7:0]",
+        "description": "The error number counter of AUX channel \ncounts when AUX channel access failed. \nIn AUX CH reading, this number indicates the \nnumber of read back byte. \nIn AUX CH writing, this number indicates the \nnumber of reply command.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "AUX_CH_DEFER_CTL",
+    "address": "Base + 0x0788",
+    "type": "R/W",
+    "description": "DP AUX CH DEFER Control Register",
+    "reset_value": "0x0000007F",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DEFER_CTRL_EN",
+        "bits": "[7]",
+        "description": "AUX CH received DEFER command count \ncontrol enable \n1: If the count that AUX CH receive DEFER \ncommand equal to (DEFER_COUNT * 64), \nthe AUX CH transaction is terminated, and \nthe AUX_STATUS is 0100 \n0: The count that AUX CH receive DEFER \ncommand is unlimited",
+        "initial_value": "0"
+      },
+      {
+        "name": "DEFER_COUNT",
+        "bits": "[6:0]",
+        "description": "The count is defined to limit the max count \nAUX CH receive DEFER command \nWhen DEFER_CTRL_EN is 1 and AUX CH \nreceived (DEFER_COUNT * 64) DEFER \ncommand, the AUX CH will terminate the \ntransaction",
+        "initial_value": "0x7F"
+      }
+    ]
+  },
+  {
+    "name": "AUX_RX_COMM",
+    "address": "Base + 0x078C",
+    "type": "RO",
+    "description": "DP AUX RX Command Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_RX_COMM",
+        "bits": "[3:0]",
+        "description": "AUX CH received command",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "BUFFER_DATA_CTL",
+    "address": "Base + 0x0790",
+    "type": "R/W,RO",
+    "description": "DP Buffer Data Count Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "BUF_CLR(C)",
+        "bits": "[7]",
+        "description": "Write 1 to this bit to clear AUX CH data \nbuffer (BUF_DATA_0 ~ BUF_DATA_15). \nAlways read back 0 from this bit. \nThis bit\u2019s type is R/W. This bit is self \ncleared. \nNote: For the write operation, set this bit \nto 1 before writing data to \nBUF_DATA_0~15. And for READ \noperation, this bit has only to be set \nbefore starting data transfer by setting \nAUX_EN.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[6:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "BUF_HAVE_DATA(RO)",
+        "bits": "[4]",
+        "description": "0:buffer have data,1:buffer have not data",
+        "initial_value": "0"
+      },
+      {
+        "name": "BUF_DATA_COUNT(RO)",
+        "bits": "[3:0]",
+        "description": "The counts of data AUX CH buffer have. \nThis bit\u2019s type is RO.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "AUX_CH_CTL_1",
+    "address": "Base + 0x0794",
+    "type": "R/W",
+    "description": "DP AUX Channel Control Register 1",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_LENGTH",
+        "bits": "[7:4]",
+        "description": "Register control AUX CH transaction length.",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_TX_COMM",
+        "bits": "[3:0]",
+        "description": "Register control AUX CH transaction \ncommand.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "AUX_ADDR_7_0",
+    "address": "Base + 0x0798",
+    "type": "R/W",
+    "description": "DP AUX CH Address Register #0",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_ADDR_7_0",
+        "bits": "[7:0]",
+        "description": "AUX_ADDR[7:0], Register control AUX CH \naddress",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "AUX_ADDR_15_8",
+    "address": "Base + 0x079C",
+    "type": "R/W",
+    "description": "DP AUX CH Address Register #1",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_ADDR_15_8",
+        "bits": "[7:0]",
+        "description": "AUX_ADDR[15:8], Register control AUX \nCH address",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "AUX_ADDR_19_16",
+    "address": "Base + 0x07A0",
+    "type": "R/W",
+    "description": "DP AUX CH Address Register #2",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_ADDR_19_16",
+        "bits": "[3:0]",
+        "description": "AUX_ADDR[7:0], Register control AUX CH \naddress",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "AUX_CH_CTL_2",
+    "address": "Base + 0x07A4",
+    "type": "R/W",
+    "description": "DP AUX CH Control Register 2",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "PD_AUX_IDLE",
+        "bits": "[3]",
+        "description": "Power down AUX CH when AUX CH is in \nidle state. \n1 : Power down AUX CH in idle state. \n0 : Keep AUX CH power up in idle state.",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_PN_INV",
+        "bits": "[2]",
+        "description": "Invert AUX CH PN \n1: Invert PN \n0: Normal mode",
+        "initial_value": "0"
+      },
+      {
+        "name": "ADDR_ONLY",
+        "bits": "[1]",
+        "description": "AUX CH issue \u201caddress only\u201d command \n1: Issue \u201caddress only\u201d command \n0: Normal AUX CH command",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_EN(C)",
+        "bits": "[0]",
+        "description": "Register control AUX CH operation enable \nWrite 1 to this bit to enable AUX CH \noperation \nThis bit will self-clear when AUX CH \noperation is finished. This bit is self \ncleared.",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "BUF_DATA_0",
+    "address": "Base + 0x07C0",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_1",
+    "address": "Base + 0x07C4",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_2",
+    "address": "Base + 0x07C8",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_3",
+    "address": "Base + 0x07CC",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_4",
+    "address": "Base + 0x07D0",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_5",
+    "address": "Base + 0x07D4",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_6",
+    "address": "Base + 0x07D8",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_7",
+    "address": "Base + 0x07DC",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_8",
+    "address": "Base + 0x07E0",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_9",
+    "address": "Base + 0x07E4",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_10",
+    "address": "Base + 0x07E8",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_11",
+    "address": "Base + 0x07EC",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_12",
+    "address": "Base + 0x07F0",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_13",
+    "address": "Base + 0x07F4",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_14",
+    "address": "Base + 0x07F8",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "BUF_DATA_15",
+    "address": "Base + 0x07FC",
+    "type": "R/W",
+    "description": "AUX CH buffer data",
+    "reset_value": "0x000000FF"
+  },
+  {
+    "name": "ATE_TEST_CTL",
+    "address": "Base + 0x0804",
+    "type": "R/WSC",
+    "description": "ATE test control register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:9]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TX_ATE",
+        "bits": "[15:8]",
+        "description": "ATE test enable \nBit 15~12: Reserved for analog test. \nBit 11: ate_en in ch3, \nBit 10: ate_en in ch2, \nBit 9: ate_en in ch1 \nBit 8: ate_en in ch0",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[7:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ATE_TEST_DATA_INV",
+        "bits": "[5]",
+        "description": "Invert ate test data",
+        "initial_value": "0"
+      },
+      {
+        "name": "ATE_ERR_GEN_EN_IN(C)",
+        "bits": "[4]",
+        "description": "Insert a ERR for PHY ATE test. Self clear",
+        "initial_value": "0"
+      },
+      {
+        "name": "ATE_CLR_ERR(C)",
+        "bits": "[3:0]",
+        "description": "Clear error counter \n[3]:lane3,[2]:lane2,[1]:lane1,[0]:lane0",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ATE_TEST_STATUS",
+    "address": "Base + 0x0808",
+    "type": "RO",
+    "description": "ATE test status register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "ATE_TEST_ERR_CNT",
+        "bits": "[31:0]",
+        "description": "ATE test error counter register.0x080C\u2014lane0, \n0x0810\u2014lane1, 0x0814\u2014lane2, 0x0818\u2014lane3",
+        "initial_value": "0"
+      },
+      {
+        "name": "Register",
+        "bits": "Address",
+        "description": "Type",
+        "initial_value": "DescriptionReset Value"
+      }
+    ]
+  },
+  {
+    "name": "ATE_TEST_ERR_CNT0",
+    "address": "Base + 0x080C",
+    "type": "RO",
+    "description": "Lane0 ATE test error counter register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "ATE_TEST_ERR_CNT1",
+    "address": "Base + 0x0810",
+    "type": "RO",
+    "description": "Lane1 ATE test error counter register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "ATE_TEST_ERR_CNT2",
+    "address": "Base + 0x0814",
+    "type": "RO",
+    "description": "Lane2 ATE test error counter register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "ATE_TEST_ERR_CNT3",
+    "address": "Base + 0x0818",
+    "type": "RO",
+    "description": "Lane3 ATE test error counter register",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_TEST_80B_PATTERN0",
+    "address": "Base + 0x081C",
+    "type": "R/W",
+    "description": "80b pattern [29:0]",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:16]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_TEST_HBR2_PATTERN",
+        "bits": "[15:0]",
+        "description": "Hbr2 compliance SR count",
+        "initial_value": "0x0000_0010"
+      }
+    ]
+  },
+  {
+    "name": "DP_TEST_80B_PATTERN1",
+    "address": "Base + 0x0820",
+    "type": "R/W",
+    "description": "80b pattern [59:30]",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:30]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_TEST_80B_PATTERN1",
+        "bits": "[29:0]",
+        "description": "DP test 80bit pattern0[59:30]",
+        "initial_value": "0x0000_0000"
+      }
+    ]
+  },
+  {
+    "name": "DP_TEST_80B_PATTERN2",
+    "address": "Base + 0x0824",
+    "type": "R/W",
+    "description": "80b pattern [79:60]",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "DP_TEST_HBR2_PATTERN",
+    "address": "Base + 0x0828",
+    "type": "R/W",
+    "description": "Hbr2 compliance SR count",
+    "reset_value": "0x00000000"
+  },
+  {
+    "name": "CRC_CON",
+    "address": "Base + 0x0890",
+    "type": "R/W",
+    "description": "CRC control register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:3]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "PSR_VID_CRC_FLUSH",
+        "bits": "[2]",
+        "description": "PSR Video CRC flush enable. The PSR video CRC \nvalue is initialized at every v-sync leading edge.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "PSR_VID_CRC_ENABLE",
+        "bits": "[0]",
+        "description": "PSR Video CRC enable. 0: Disable, 1: Enable",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_5",
+    "address": "Base + 0x0914",
+    "type": "R/W",
+    "description": "PC2 Control Register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "CH3_PC2_SEL",
+        "bits": "[7:6]",
+        "description": "Ch3 post cursor2 setting: \nCH3_PC2_SEL: post cursor2 \n0x0: 0 \n0x1: 0.05 \n0x2: 0.1 \n0x3: 0.15",
+        "initial_value": "0"
+      },
+      {
+        "name": "CH3_PC2_SEL",
+        "bits": "[5:4]",
+        "description": "Ch2 post cursor2 setting: \nCH2_PC2_SEL: post cursor2 \n0x0: 0 \n0x1: 0.05 \n0x2: 0.1 \n0x3: 0.15",
+        "initial_value": "0"
+      },
+      {
+        "name": "CH3_PC2_SEL",
+        "bits": "[3:2]",
+        "description": "Ch1 post cursor2 setting: \nCH1_PC2_SEL: post cursor2 \n0x0: 0 \n0x1: 0.05 \n0x2: 0.1 \n0x3: 0.15",
+        "initial_value": "0"
+      },
+      {
+        "name": "CH3_PC2_SEL",
+        "bits": "[1:0]",
+        "description": "Ch0 post cursor2 setting: \nCH0_PC2_SEL: post cursor2 \n0x0: 0 \n0x1: 0.05 \n0x2: 0.1 \n0x3: 0.15",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_6",
+    "address": "Base + 0x0918",
+    "type": "R/W",
+    "description": "AMP_400MV_0DB",
+    "reset_value": "0x00000050",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_400MV_0DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is 400mv \nand Pre_emphasis is 0 db.",
+        "initial_value": "0x50"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_7",
+    "address": "Base + 0x091C",
+    "type": "R/W",
+    "description": "AMP_600MV_0DB",
+    "reset_value": "0x00000078",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_600MV_0DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is 600mv \nand Pre_emphasis is 0 db.",
+        "initial_value": "0x78"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_8",
+    "address": "Base + 0x0920",
+    "type": "R/W",
+    "description": "AMP_800MV_0DB",
+    "reset_value": "0x000000A0",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_800MV_0DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is 800mv \nand Pre_emphasis is 0 db.",
+        "initial_value": "0xA0"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_9",
+    "address": "Base + 0x0924",
+    "type": "R/W",
+    "description": "AMP_1200MV_0DB",
+    "reset_value": "0x000000F0",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_1200MV_0DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is \n1200mv and Pre_emphasis is 0 db.",
+        "initial_value": "0xF0"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_10",
+    "address": "Base + 0x0928",
+    "type": "R/W",
+    "description": "AMP_400MV_3P5DB",
+    "reset_value": "0x00000064",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_400MV_3P5DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is 400mv \nand Pre_emphasis is 3.5 db.",
+        "initial_value": "0x64"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_11",
+    "address": "Base + 0x092C",
+    "type": "R/W",
+    "description": "AMP_600MV_3P5DB",
+    "reset_value": "0x00000096",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_600MV_3P5DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is 600mv \nand Pre_emphasis is 3.5 db.",
+        "initial_value": "0x96"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_12",
+    "address": "Base + 0x0930",
+    "type": "R/W",
+    "description": "AMP_800MV_3P5DB",
+    "reset_value": "0x000000C8",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_800MV_3P5DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is 800mv \nand Pre_emphasis is 3.5 db.",
+        "initial_value": "0XC8"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_13",
+    "address": "Base + 0x0934",
+    "type": "R/W",
+    "description": "AMP_400MV_6DB",
+    "reset_value": "0x00000078",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_400MV_6DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is 400mv \nand Pre_emphasis is 6db.",
+        "initial_value": "0x78"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_14",
+    "address": "Base + 0x0938",
+    "type": "R/W",
+    "description": "AMP_600MV_6DB",
+    "reset_value": "0x000000B4",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_600MV_6DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is 600mv \nand Pre_emphasis is 6db.",
+        "initial_value": "0xB4"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_15",
+    "address": "Base + 0x093C",
+    "type": "R/W",
+    "description": "AMP_400MV_9DB",
+    "reset_value": "0x000000A0",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_AMP_400MV_9DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 1(for calculating \nchx_swing_bit) value when V_diff is 400mv \nand Pre_emphasis is 9db.",
+        "initial_value": "0xA0"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_16",
+    "address": "Base + 0x0940",
+    "type": "R/W",
+    "description": "EMP_400MV_0DB",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_400MV_0DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n400mv and Pre_emphasis is 0db.",
+        "initial_value": "0x00"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_17",
+    "address": "Base + 0x0944",
+    "type": "R/W",
+    "description": "EMP_600MV_0DB",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_600MV_0DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n600mv and Pre_emphasis is 0 db.",
+        "initial_value": "0x00"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_18",
+    "address": "Base + 0x0948",
+    "type": "R/W",
+    "description": "EMP_800MV_0DB",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_800MV_0DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n800mv and Pre_emphasis is 0 db.",
+        "initial_value": "0x00"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_19",
+    "address": "Base + 0x094C",
+    "type": "R/W",
+    "description": "EMP_1200MV_0DB",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_1200MV_0DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n1200mv and Pre_emphasis is 0 db.",
+        "initial_value": "0x00"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_20",
+    "address": "Base + 0x0950",
+    "type": "R/W",
+    "description": "EMP_400MV_3P5DB",
+    "reset_value": "0x00000028",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_400MV_3P5DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n400mv and Pre_emphasis is 3.5 db.",
+        "initial_value": "0x28"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_21",
+    "address": "Base + 0x0954",
+    "type": "R/W",
+    "description": "EMP_600MV_3P5DB",
+    "reset_value": "0x0000003C",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_600MV_3P5DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n600mv and Pre_emphasis is 3.5 db.",
+        "initial_value": "0x3C"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_22",
+    "address": "Base + 0x0958",
+    "type": "R/W",
+    "description": "EMP_800MV_3P5DB",
+    "reset_value": "0x00000050",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_800MV_3P5DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n800mv and Pre_emphasis is 3.5 db.",
+        "initial_value": "0X50"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_23",
+    "address": "Base + 0x095C",
+    "type": "R/W",
+    "description": "EMP_400MV_6DB",
+    "reset_value": "0x00000050",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_400MV_6DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n400mv and Pre_emphasis is 6db.",
+        "initial_value": "0x50"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_24",
+    "address": "Base + 0x0960",
+    "type": "R/W",
+    "description": "EMP_600MV_6DB",
+    "reset_value": "0x00000078",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_600MV_6DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n600mv and Pre_emphasis is 6db.",
+        "initial_value": "0x78"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_25",
+    "address": "Base + 0x0964",
+    "type": "R/W",
+    "description": "EMP_400MV_9DB",
+    "reset_value": "0x000000A0",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_EMP_400MV_9DB",
+        "bits": "[7:0]",
+        "description": "The lookup-table 2(for calculating \nchx_pre_emp_bit) value when V_diff is \n400mv and Pre_emphasis is 9db.",
+        "initial_value": "0xA0"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_26",
+    "address": "Base + 0x0968",
+    "type": "R/W",
+    "description": "PC2_400MV_0DB",
+    "reset_value": "0x00000004",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_400MV_0DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 400mv and Pre_emphasis is \n0db.",
+        "initial_value": "0x04"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_27",
+    "address": "Base + 0x096C",
+    "type": "R/W",
+    "description": "PC2_600MV_0DB",
+    "reset_value": "0x00000006",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_600MV_0DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 600mv and Pre_emphasis is \n0 db.",
+        "initial_value": "0x06"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_28",
+    "address": "Base + 0x0970",
+    "type": "R/W",
+    "description": "PC2_800MV_0DB",
+    "reset_value": "0x00000008",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_800MV_0DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 800mv and Pre_emphasis \nis 0 db.",
+        "initial_value": "0x08"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_29",
+    "address": "Base + 0x0974",
+    "type": "R/W",
+    "description": "PC2_1200MV_0DB",
+    "reset_value": "0x0000000C",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_1200MV_0DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 1200mv and Pre_emphasis \nis 0 db.",
+        "initial_value": "0x0C"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_30",
+    "address": "Base + 0x0978",
+    "type": "R/W",
+    "description": "PC2_400MV_3P5DB",
+    "reset_value": "0x00000006",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_400MV_3P5DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 400mv and Pre_emphasis is \n3.5 db.",
+        "initial_value": "0x06"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_31",
+    "address": "Base + 0x097C",
+    "type": "R/W",
+    "description": "PC2_600MV_3P5DB",
+    "reset_value": "0x00000009",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_600MV_3P5DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 600mv and Pre_emphasis \nis 3.5 db.",
+        "initial_value": "0x09"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_32",
+    "address": "Base + 0x0980",
+    "type": "R/W",
+    "description": "PC2_800MV_3P5DB",
+    "reset_value": "0x0000000C",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_800MV_3P5DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 800mv and Pre_emphasis \nis 3.5 db.",
+        "initial_value": "0X0C"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_33",
+    "address": "Base + 0x0984",
+    "type": "R/W",
+    "description": "PC2_400MV_6DB",
+    "reset_value": "0x00000008",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_400MV_6DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 400mv and Pre_emphasis \nis 6db.",
+        "initial_value": "0x08"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_34",
+    "address": "Base + 0x0988",
+    "type": "R/W",
+    "description": "PC2_600MV_6DB",
+    "reset_value": "0x0000000C",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_600MV_6DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 600mv and Pre_emphasis \nis 6db.",
+        "initial_value": "0x0C"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_35",
+    "address": "Base + 0x098C",
+    "type": "R/W",
+    "description": "PC2_400MV_9DB",
+    "reset_value": "0x0000000C",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_PC2_400MV_9DB",
+        "bits": "[5:0]",
+        "description": "The lookup-table 3(for calculating \nchx_swing_bit and chx_pc2_bit) value \nwhen V_diff is 400mv and Pre_emphasis \nis 9db.",
+        "initial_value": "0x0C"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_36",
+    "address": "Base + 0x0990",
+    "type": "R/W",
+    "description": "CH0_AMP_FORCE_VALUE",
+    "reset_value": "0x00000050",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH0_AMP_FORCE_VALUE",
+        "bits": "[7:0]",
+        "description": "The forced ch0 amp value (for \ncalculating ch0_swing_bit) value in \nspecific V_diff and Pre_emphasis.",
+        "initial_value": "0x50"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_37",
+    "address": "Base + 0x0994",
+    "type": "R/W",
+    "description": "CH0_EMP_FORCE_VALUE",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH0_EMP_FORCE_VALUE",
+        "bits": "[7:0]",
+        "description": "The forced ch0 emp value (for \ncalculating ch0_pre_emphasis_bit) value \nin specific V_diff and Pre_emphasis.",
+        "initial_value": "0x00"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_38",
+    "address": "Base + 0x0998",
+    "type": "R/W",
+    "description": "CH0_PC2_FORCE_VALUE",
+    "reset_value": "0x00000004",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH0_PC2_FORCE_VALUE",
+        "bits": "[5:0]",
+        "description": "The forced ch0 PC2 value (for calculating \nch0_swing_bit and ch0_pc2_bit) value in \nspecific V_diff and Pre_emphasis.",
+        "initial_value": "0x04"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_39",
+    "address": "Base + 0x099C",
+    "type": "R/W",
+    "description": "CH1_AMP_FORCE_VALUE",
+    "reset_value": "0x00000050",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH1_AMP_FORCE_VALUE",
+        "bits": "[7:0]",
+        "description": "The forced ch1 amp value (for \ncalculating ch1_swing_bit) value in \nspecific V_diff and Pre_emphasis.",
+        "initial_value": "0x50"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_40",
+    "address": "Base + 0x09A0",
+    "type": "R/W",
+    "description": "CH1_EMP_FORCE_VALUE",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH1_EMP_FORCE_VALUE",
+        "bits": "[7:0]",
+        "description": "The forced ch1 emp value (for \ncalculating ch1_pre_emphasis_bit) value \nin specific V_diff and Pre_emphasis.",
+        "initial_value": "0x00"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_41",
+    "address": "Base + 0x09A4",
+    "type": "R/W",
+    "description": "CH1_PC2_FORCE_VALUE",
+    "reset_value": "0x00000004",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH1_PC2_FORCE_VALUE",
+        "bits": "[5:0]",
+        "description": "The forced ch1 PC2 value (for calculating \nch1_swing_bit and ch1_pc2_bit) value in \nspecific V_diff and Pre_emphasis.",
+        "initial_value": "0x04"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_42",
+    "address": "Base + 0x09A8",
+    "type": "R/W",
+    "description": "CH0_CH1_FORCE_CTRL",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH1_AMP",
+        "bits": "[5]",
+        "description": "0x1: The result of ch1 swing bit is decide by \nR_CH1_AMP_FORCE_VALUE value \n0x0: The result of ch1 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH1_EMP",
+        "bits": "[4]",
+        "description": "0x1: The result of ch1 pre emphasis bit is \ndecide by R_CH1_EMP_FORCE_VALUE value \n0x0: The result of ch1 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH1_PC2",
+        "bits": "[3]",
+        "description": "0x1: The result of ch1 pc2 bit is decide by \nR_CH1_PC2_FORCE_VALUE value \n0x0: The result of ch1 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH0_AMP",
+        "bits": "[2]",
+        "description": "0x1: The result of ch0 swing bit is decide by \nR_CH1_AMP_FORCE_VALUE value \n0x0: The result of ch0 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH0_EMP",
+        "bits": "[1]",
+        "description": "0x1: The result of ch0 pre emphasis bit is \ndecide by R_CH1_EMP_FORCE_VALUE value \n0x0: The result of ch0 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH0_PC2",
+        "bits": "[0]",
+        "description": "0x1: The result of ch0 pc2 bit is decide by \nR_CH1_PC2_FORCE_VALUE value \n0x0: The result of ch0 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_43",
+    "address": "Base + 0x09AC",
+    "type": "R/W",
+    "description": "CH2_AMP_FORCE_VALUE",
+    "reset_value": "0x00000050",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH2_AMP_FORCE_VALUE",
+        "bits": "[7:0]",
+        "description": "The forced ch2 amp value (for \ncalculating ch2_swing_bit) value in \nspecific V_diff and Pre_emphasis.",
+        "initial_value": "0x50"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_44",
+    "address": "Base + 0x09B0",
+    "type": "R/W",
+    "description": "CH2_EMP_FORCE_VALUE",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH2_EMP_FORCE_VALUE",
+        "bits": "[7:0]",
+        "description": "The forced ch2 emp value (for \ncalculating ch2_pre_emphasis_bit) value \nin specific V_diff and Pre_emphasis.",
+        "initial_value": "0x00"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_45",
+    "address": "Base + 0x09B4",
+    "type": "R/W",
+    "description": "CH2_PC2_FORCE_VALUE",
+    "reset_value": "0x00000004",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH2_PC2_FORCE_VALUE",
+        "bits": "[5:0]",
+        "description": "The forced ch2 PC2 value (for calculating \nch2_swing_bit and ch2_pc2_bit) value in \nspecific V_diff and Pre_emphasis.",
+        "initial_value": "0x04"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_46",
+    "address": "Base + 0x09B8",
+    "type": "R/W",
+    "description": "CH3_AMP_FORCE_VALUE",
+    "reset_value": "0x00000050",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH3_AMP_FORCE_VALUE",
+        "bits": "[7:0]",
+        "description": "The forced ch3 amp value (for calculating \nch3_swing_bit) value in specific V_diff and \nPre_emphasis.",
+        "initial_value": "0x50"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_47",
+    "address": "Base + 0x09BC",
+    "type": "R/W",
+    "description": "CH3_EMP_FORCE_VALUE",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH3_EMP_FORCE_VAL UE",
+        "bits": "[7:0]",
+        "description": "The forced ch3 emp value (for calculating \nch3_pre_emphasis_bit) value in specific V_diff \nand Pre_emphasis.",
+        "initial_value": "0x00"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_48",
+    "address": "Base + 0x09C0",
+    "type": "R/W",
+    "description": "CH3_PC2_FORCE_VALUE",
+    "reset_value": "0x00000004",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_CH3_PC2_FORCE_VALUE",
+        "bits": "[5:0]",
+        "description": "The forced ch3 PC2 value (for calculating \nch3_swing_bit and ch3_pc2_bit) value in \nspecific V_diff and Pre_emphasis.",
+        "initial_value": "0x04"
+      }
+    ]
+  },
+  {
+    "name": "ANALOG_CTL_49",
+    "address": "Base + 0x09C4",
+    "type": "R/W",
+    "description": "CH2_CH3_FORCE_CTRL",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH3_AMP",
+        "bits": "[5]",
+        "description": "0x1: The result of ch3 swing bit is decide by \nR_CH1_AMP_FORCE_VALUE value \n0x0: The result of ch3 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH3_EMP",
+        "bits": "[4]",
+        "description": "0x1: The result of ch3 pre emphasis bit is \ndecide by R_CH1_EMP_FORCE_VALUE value \n0x0: The result of ch3 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH3_PC2",
+        "bits": "[3]",
+        "description": "0x1: The result of ch3 pc2 bit is decide by \nR_CH1_PC2_FORCE_VALUE value \n0x0: The result of ch3 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH2_AMP",
+        "bits": "[2]",
+        "description": "0x1: The result of ch2 swing bit is decide by \nR_CH1_AMP_FORCE_VALUE value \n0x0: The result of ch2 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH2_EMP",
+        "bits": "[1]",
+        "description": "0x1: The result of ch2 pre emphasis bit is \ndecide by R_CH1_EMP_FORCE_VALUE value \n0x0: The result of ch2 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_FORCE_CH2_PC2",
+        "bits": "[0]",
+        "description": "0x1: The result of ch2 pc2 bit is decide by \nR_CH1_PC2_FORCE_VALUE value \n0x0: The result of ch2 swing bit is decide by \ndifferent V_diff and Pre_emphasis",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "LINK_POLICY",
+    "address": "Base + 0x09D8",
+    "type": "R/W",
+    "description": "Dp Link Policy",
+    "reset_value": "0x00000050",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ALTERNATE_SR_EN",
+        "bits": "[7]",
+        "description": "Alternate SR enable",
+        "initial_value": "0"
+      },
+      {
+        "name": "LINK_TRAIN_CR_LP_IN",
+        "bits": "[6:4]",
+        "description": "Link training CR loop in",
+        "initial_value": "5"
+      },
+      {
+        "name": "LINK_TRAIN_WR_EN",
+        "bits": "[3]",
+        "description": "Training first write en",
+        "initial_value": "0"
+      },
+      {
+        "name": "LINK_TRAIN_405G",
+        "bits": "[2]",
+        "description": "405g training enable",
+        "initial_value": "0"
+      },
+      {
+        "name": "LINK_TRAIN_INV",
+        "bits": "[1]",
+        "description": "Invert training bit enable",
+        "initial_value": "0"
+      },
+      {
+        "name": "FRAME_CHANGE_EN",
+        "bits": "[0]",
+        "description": "Framing change enable",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "PLL_REG_1",
+    "address": "Base + 0x00FC",
+    "type": "R/W",
+    "description": "Pll_control_1",
+    "reset_value": "0x00000011",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "LINK_SPEED(RO)",
+        "bits": "[5:4]",
+        "description": "FVCO: \n00:1.62G \n01:2.7G \n1x:Reserved",
+        "initial_value": "1"
+      },
+      {
+        "name": "-",
+        "bits": "[3:1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "PLL_REF_CLK_FREQ",
+        "bits": "[0]",
+        "description": "reference CLOCK frequency: \n1(default):24MHz \n0:27MHz",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "PLL_REG_2",
+    "address": "Base + 0x09E4",
+    "type": "R/W",
+    "description": "Pll_control_2",
+    "reset_value": "0x00000011",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "LDO_OUTPUT_V_SEL",
+        "bits": "[7:6]",
+        "description": "1.5v LDO output voltage select \n00:1.35v \n01:1.40v \n10:1.45v(default) \n11:1.50v",
+        "initial_value": "2\u2019b10"
+      },
+      {
+        "name": "KVCO",
+        "bits": "[5:4]",
+        "description": "KVCO to control VCO band \n00: decrease KVCO by 15% \n01:(default) \n10:increase KVCO by 10% \n11:increase KVCO by 20%",
+        "initial_value": "2\u2019b01"
+      },
+      {
+        "name": "CHG_PUMP_CURRENT_SEL",
+        "bits": "[3:2]",
+        "description": "charge pump current select \n00:2.5u \n01(default):5u \n10:7.5u \n11:10u",
+        "initial_value": "2\u2019b01"
+      },
+      {
+        "name": "V2I_CURRENT_SEL",
+        "bits": "[1:0]",
+        "description": "v2i current select \n00: no adding current \n01: adding 1mA current(default) \n10: adding 2mA current \n11: adding 4.5mA current",
+        "initial_value": "2\u2019b01"
+      }
+    ]
+  },
+  {
+    "name": "PLL_REG_3",
+    "address": "Base + 0x09E8",
+    "type": "R/W",
+    "description": "Pll_control_3",
+    "reset_value": "0x0000002B",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "LOCK_DET_CNT_SEL",
+        "bits": "[6:5]",
+        "description": "lock detector output counter select, \ncounter period is twice of reference clock \n00: 64 cycle \n01: 128 cycle \n10: 256 cycle (default) \n11: 512 cycle",
+        "initial_value": "2\u2019b10"
+      },
+      {
+        "name": "LOOP_FILTER_RESET_SEL",
+        "bits": "[4]",
+        "description": "loop filter control voltage reset select \n1: reset to the value below DVDD \n0: reset to DVDD (default)",
+        "initial_value": "0"
+      },
+      {
+        "name": "PALL_SSC_RESET",
+        "bits": "[3]",
+        "description": "PLL and ssc reset control \n1: reset \n0: normal",
+        "initial_value": "0"
+      },
+      {
+        "name": "LOCK_DET_BYPASS",
+        "bits": "[2]",
+        "description": "lock detector bypass select \n0: not bypass (default) \n1: bypass lock detector in ssc",
+        "initial_value": "0"
+      },
+      {
+        "name": "PLL_LOCK_DET_MODE",
+        "bits": "[1]",
+        "description": "PLL lock detector mode select \n0: fractional N (default) \n1: integer N",
+        "initial_value": "0"
+      },
+      {
+        "name": "PLL_LOCK_DET_FORCE",
+        "bits": "[0]",
+        "description": "force PLL lock detector lock \n0: not force lock (default) \n1: force PLL lock",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "PLL_REG_4",
+    "address": "Base + 0x09EC",
+    "type": "R/W",
+    "description": "Pll_control_4",
+    "reset_value": "0x00000023",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[7:0]",
+        "description": "Reserved",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "PLL_REG_5",
+    "address": "Base + 0x0A00",
+    "type": "R/W",
+    "description": "Pll_control_5",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "REGULATOR_V_SEL",
+        "bits": "[6:4]",
+        "description": "slave regulator output voltage select \n000 900V \n001 0.925V \n010 0.950V(default) \n011 0.975V \n100 1.000V \n101 1.025V \n110 1.050V",
+        "initial_value": "3\u2019b010"
+      },
+      {
+        "name": "STANDBY_CURRENT_SEL",
+        "bits": "[3]",
+        "description": "slave standby current select \n1: adding 200uA standby current \n0: keep 300uA standby current (default)",
+        "initial_value": "0"
+      },
+      {
+        "name": "CHG_PUMP_INPUT_CTRL",
+        "bits": "[2:1]",
+        "description": "control charge pump input voltage for \n0.95V master regulator \n00: 1.1V \n01: 1.2V(default) \n10: 1.3V \n11: 1.4V",
+        "initial_value": "2\u2019b01"
+      },
+      {
+        "name": "CHG_PUMP_INPUT_CTRL_ OP",
+        "bits": "[0]",
+        "description": "option to control charge pump input \nvoltage for 0.95V master regulator \n0: set by pll_reg5<2:1>(default) \n1: 1.8V",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "PLL_REG_MAC",
+    "address": "Base + 0x0A04",
+    "type": "R/W",
+    "description": "Pll_control_MAC",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "ANALOG_BACKUP1",
+        "bits": "[7:0]",
+        "description": "Reserved",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "FREQ_IN_REG",
+    "address": "Base + 0x0A10",
+    "type": "R/W",
+    "description": "freq_in_reg",
+    "reset_value": "0x00000080",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "FREQ_REG",
+        "bits": "[7:0]",
+        "description": "frequency set from register for freq counter",
+        "initial_value": "80"
+      }
+    ]
+  },
+  {
+    "name": "P_REG_FRQ",
+    "address": "Base + 0x0A14",
+    "type": "RO",
+    "description": "frequency counter ,digital output for debug",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "FRQ",
+        "bits": "[7:0]",
+        "description": "digital output for debug, controlled by \npll_reg1<7> and pll_reg4<4> \nwhen pll_reg1<7>=0 & pll_reg4<4>=0: \nhalf video clock frequency calculated by \nfrequency counter \nWhen pll_reg1<7>=0 & pll_reg4<4>=1: \nhalf video clock frequency calculated \nfrq_vid_ck_in<8:0> \nwhen pll_reg1<7>=1: \nfrq<1:0>: <n_over, n_under> \nfrq<3:2>: band<1:0> \nfrq<7:4>: 0",
+        "initial_value": "00"
+      }
+    ]
+  },
+  {
+    "name": "P_REG_FRQ_COUNT_RDY",
+    "address": "Base + 0x0A18",
+    "type": "RO",
+    "description": "frequency counter ready indicator",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "FRQ_COUNT_RDY",
+        "bits": "[0]",
+        "description": "frequency counter ready indicator \n(frequency counter for VCO band \nselection) \n1: frequency counter ready, its output is \nthe real value of video PLL \n0: frequency counter not ready, its \noutput is not the real value",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "P_BAND_DEC_RESET",
+    "address": "Base + 0x0A1C",
+    "type": "WO",
+    "description": "reset band decoder",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "R_BAND_DEC_RESET",
+        "bits": "[0]",
+        "description": "1: reset band decoder \n0: band decoder works",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "SSC_REG",
+    "address": "Base + 0x0104",
+    "type": "R/W",
+    "description": "SSC control",
+    "reset_value": "0x0000000A",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SSC_OFFSET",
+        "bits": "[7:6]",
+        "description": "00: no \n01: up 100ppm \n10: down 100ppm \n11: down 200ppm",
+        "initial_value": "0"
+      },
+      {
+        "name": "SSC_MODE",
+        "bits": "[5:4]",
+        "description": "00:disable \n01:down spread \n10:center spread \n11:up spread",
+        "initial_value": "2\u2019b01"
+      },
+      {
+        "name": "SSC_DEPTH",
+        "bits": "[3:0]",
+        "description": "0000:disable \n0001:500ppm \n0010:1000ppm \n0011:1500ppm \n0100:2000ppm \n0101:2500ppm \n0110:3000ppm \n0111:3500ppm \n1000:4000ppm \n1001:4500ppm \n1010:5000ppm \n1011:5500ppm \n1100-1111:6000ppm",
+        "initial_value": "4\u2019h9"
+      }
+    ]
+  },
+  {
+    "name": "TX_COMMON",
+    "address": "Base + 0x0114",
+    "type": "R/W",
+    "description": "Tx terminal resistor control",
+    "reset_value": "0x0000003A",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TX_SWING_PRE_EMP_MO DE_SEL",
+        "bits": "[7]",
+        "description": "TX swing and pre emphasis control mode \nselection \n1: TX swing and pre emphasis control by \nregister dp_reserv2<7:0> \n0: TX swing and pre emphasis control by \nregister chx_reg_swing<7:0> and \nchx_reg_pre<7:0>",
+        "initial_value": "1"
+      },
+      {
+        "name": "PRE_DRIVER_PW_CTRL1",
+        "bits": "[6:5]",
+        "description": "Pre-driver extra power control \n0: disable \n1: enable",
+        "initial_value": "0"
+      },
+      {
+        "name": "LP_MODE_CLK_REGULAT OR",
+        "bits": "[4]",
+        "description": "Low power mode control for clock regulator \n0:low power mode \n1:high power mode",
+        "initial_value": "0"
+      },
+      {
+        "name": "RESISTOR_MSB_CTRL",
+        "bits": "[3]",
+        "description": "TX terminal resistor MSB control",
+        "initial_value": "0"
+      },
+      {
+        "name": "RESISTOR_CTRL",
+        "bits": "[2:0]",
+        "description": "TX terminal resistor control \nwhen tx_common<3>=0 \n000: 58.54 \n. . . . . . \n011:54.6 \n. . . . . . \n111:50 \nwhen tx_common<6>=1 \n000: 49 \n. . . . . . \n011:46 \n. . . . . . \n111:42.6",
+        "initial_value": "3\u2019h7"
+      }
+    ]
+  },
+  {
+    "name": "TX_COMMON2",
+    "address": "Base + 0x0118",
+    "type": "R/W",
+    "description": "Tx terminal resistor control2",
+    "reset_value": "0x00000050",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "TX_OUTPUT_PN_INVERSE_CH3",
+        "bits": "[7]",
+        "description": "TX ch3 output p-n inverse control: \n0: not inverse \n1: output p and n inverse",
+        "initial_value": "0"
+      },
+      {
+        "name": "TX_OUTPUT_PN_INVERSE_CH2",
+        "bits": "[6]",
+        "description": "TX ch2 output p-n inverse control: \n0: not inverse \n1: output p and n inverse",
+        "initial_value": "1"
+      },
+      {
+        "name": "TX_OUTPUT_PN_INVERSE_CH1",
+        "bits": "[5]",
+        "description": "TX ch1 output p-n inverse control: \n0: not inverse \n1: output p and n inverse",
+        "initial_value": "0"
+      },
+      {
+        "name": "TX_OUTPUT_PN_INVERSE_CH0",
+        "bits": "[4]",
+        "description": "TX ch0 output p-n inverse control: \n0: not inverse \n1: output p and n inverse",
+        "initial_value": "1"
+      },
+      {
+        "name": "TX_OUT_PATTERN_EN",
+        "bits": "[3]",
+        "description": "TX output pattern enable \n0: normal TX \n1: dedicate pattern",
+        "initial_value": "0"
+      },
+      {
+        "name": "TX_DATA_PATTEN",
+        "bits": "[2:0]",
+        "description": "TX data Patten \n000:all zero \n001:all one \n010:D10.2 \n011:1100 \n100:K28.5 \n101:K28.7 \n110:1111100000 \n111:11111111110000000000",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "TX_COMMON3",
+    "address": "Base + 0x0A08",
+    "type": "R/W",
+    "description": "Tx terminal resistor control3",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "CLK_DLY_SEL",
+        "bits": "[7:3]",
+        "description": "Select /20 clock delay (clk_div2_ssc & \ntx_txd_clk) \n00000 : delay=150ps \n00001 : delay=150ps+1*70ps \n00010 : delay=150ps+2*70ps \n00011: delay=150ps+3*70ps \n. . . . . .",
+        "initial_value": "0"
+      },
+      {
+        "name": "CLK_INVERSE_EN",
+        "bits": "[2]",
+        "description": "TX input clock inverse enable \n0: normal \n1: TX input clock inverse",
+        "initial_value": "0"
+      },
+      {
+        "name": "SCAN_CLK_SEL",
+        "bits": "[1]",
+        "description": "ch0 select i_ref_clk_24m for scan \n0:select  tx_bscan_data<0> \n1:select  i_ref_clk_24m",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[0]",
+        "description": "Reserved",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "DP_AUX",
+    "address": "Base + 0x0120",
+    "type": "R/W",
+    "description": "Aux control",
+    "reset_value": "0x00000007",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:5]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_AUX_COMMON_MODE",
+        "bits": "[4]",
+        "description": "AUX RX CM voltage control \n0: AUX CH use VCC1/2 as CM voltage \n(have static current consumption) \n1: use VCC1 as CM voltage",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_AUX_EN(R/O)",
+        "bits": "[3]",
+        "description": "AUX TX enable \n0: AUX CH configured as RX \n1: AUX CH configured as TX",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[2]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_TERM",
+        "bits": "[1:0]",
+        "description": "AUX CH impedance control bits: \nonly control TX impedance \n00 : 500ohm \n01 : 250ohm \n10 : 100ohm \n11 : 50ohm",
+        "initial_value": "3"
+      }
+    ]
+  },
+  {
+    "name": "DP_BIAS",
+    "address": "Base + 0x0124",
+    "type": "R/W",
+    "description": "Bias control",
+    "reset_value": "0x00000034",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_BG_OUT_SEL",
+        "bits": "[6:4]",
+        "description": "Select band gap out \n000:0.56V \n100:0.6V(default) \n111:0.63V",
+        "initial_value": "4"
+      },
+      {
+        "name": "DP_DB_CUREENT_CTRL",
+        "bits": "[3]",
+        "description": "Band gap start up current control \n0: balance \n1: unbalance",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_BG_SEL",
+        "bits": "[2]",
+        "description": "Select band gap \n0:sel Register \n1:sel Band gap",
+        "initial_value": "1"
+      },
+      {
+        "name": "DP_RESISTOR_TUNE_BG_CTRL",
+        "bits": "[1:0]",
+        "description": "Resistor tune for band gap TC \ncontrol \n00 : 25uV/\u00b0C \n01: 10uV/\u00b0C \n10: -10uV/\u00b0C \n11: -25uV/\u00b0C",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "DP_TEST",
+    "address": "Base + 0x0128",
+    "type": "R/W",
+    "description": "Test mode",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_TEST_MODE",
+        "bits": "[7:6]",
+        "description": "00&01: test disables dc_tp/atesto/dtesto output hiz. \n10: atesto test enable \n11: dtesto test enable",
+        "initial_value": "0"
+      },
+      {
+        "name": "",
+        "bits": "[5:3]",
+        "description": "When <7:6> ==10, test analog blocks: \n000-- disable analog test \n001: enable ch0 analog test mux \n<1:0>(00/01/10/11)-- \n->(avdd10_pre_drv,avdd10_p2s, vddu_p2s,avss) \n010: enable ch1 analog test mux \n<1:0>(00/01/10/11)-- \n->(avdd10_pre_drv,avdd10_p2s, vddu_p2s,avss) \n011: enable ch2 analog test mux \n<1:0>(00/01/10/11)-- \n->(avdd10_pre_drv,avdd10_p2s, vddu_p2s,avss) \n100: enable ch3 analog test mux \n<1:0>(00/01/10/11)-- \n->(avdd10_pre_drv,avdd10_p2s, vddu_p2s,avss) \n101: enable pll analog test mux \n<1:0>(00/01/10/11)--->(vdd10_cln,v1p45_v2i, \navdd18,vco_ctrl) \n110: enable charge pump regulator analog test mux \n<1:0> (00/01/10/11)---->(v1v_regu, \nvregu_out,v0.5_ref,null) \n111: test band gap output \nWhen<7:6>==11, test digital blocks: \n000-- disable digital test \n001: enable pll digital test mux \n<1:0>--(00/01/10/11)--->pll_ref,vco_fb, vss,vss. \n010: test charge pump regulator OSC clock.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[2:0]",
+        "description": "Reserved",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "DP_PD",
+    "address": "Base + 0x012C",
+    "type": "R/W",
+    "description": "Power down control",
+    "reset_value": "0x000000FF",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "PD_INC_BG",
+        "bits": "[7]",
+        "description": "Power down all including band gap",
+        "initial_value": "1"
+      },
+      {
+        "name": "PD_EXP_BG",
+        "bits": "[6]",
+        "description": "Power down all except band gap",
+        "initial_value": "1"
+      },
+      {
+        "name": "PD_AUX_CH",
+        "bits": "[5]",
+        "description": "Power down AUX channel",
+        "initial_value": "1"
+      },
+      {
+        "name": "PD_PLL",
+        "bits": "[4]",
+        "description": "Power down PLL",
+        "initial_value": "1"
+      },
+      {
+        "name": "PD_CH3",
+        "bits": "[3]",
+        "description": "Power down ch3",
+        "initial_value": "1"
+      },
+      {
+        "name": "PD_CH2",
+        "bits": "[2]",
+        "description": "Power down ch2",
+        "initial_value": "1"
+      },
+      {
+        "name": "PD_CH1",
+        "bits": "[1]",
+        "description": "Power down ch1",
+        "initial_value": "1"
+      },
+      {
+        "name": "PD_CH0",
+        "bits": "[0]",
+        "description": "Power down ch0",
+        "initial_value": "1"
+      }
+    ]
+  },
+  {
+    "name": "DP_RESERV1",
+    "address": "Base + 0x0130",
+    "type": "R/W",
+    "description": "RESERVD1",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:4]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SSC_MODE_LOCK",
+        "bits": "[7]",
+        "description": "SSC mode lock",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "PRE_DRIVER_PW_CTRL2",
+        "bits": "[5:4]",
+        "description": "Pre-driver extra power control \n0: disable \n1:enable",
+        "initial_value": "0"
+      },
+      {
+        "name": "ATE_EN_CH3",
+        "bits": "[3]",
+        "description": "Set 1 to enable CH3 ATE test",
+        "initial_value": "0"
+      },
+      {
+        "name": "ATE_EN_CH2",
+        "bits": "[2]",
+        "description": "Set 1 to enable CH2 ATE test",
+        "initial_value": "0"
+      },
+      {
+        "name": "ATE_EN_CH1",
+        "bits": "[1]",
+        "description": "Set 1 to enable CH1 ATE test",
+        "initial_value": "0"
+      },
+      {
+        "name": "ATE_EN_CH0",
+        "bits": "[0]",
+        "description": "Set 1 to enable CH0 ATE test",
+        "initial_value": "0"
+      }
+    ]
+  },
+  {
+    "name": "DP_RESERV2",
+    "address": "Base + 0x0134",
+    "type": "R/W",
+    "description": "RESERVD2",
+    "reset_value": "0x00000011",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "CH1_CH3_SWING_EMP_CTRL",
+        "bits": "[7:4]",
+        "description": "ch1,3 swing and pre emphasis control \nfor firmware \nwhen tx_common<7>=1 \n0000 : swing0 pre emphasis 0 dB \n0001 : swing1 pre emphasis 0 dB \n0010 : swing2 pre emphasis 0 dB \n0011 : swing3 pre emphasis 0 dB \n0100 : swing0 pre emphasis 3.5 dB \n0101 : swing1 pre emphasis 3.5 dB \n0110 : swing2 pre emphasis 3.5 dB \n1000 : swing0 pre emphasis 6 dB \n1001 : swing1 pre emphasis 6 dB \n1100 : swing0 pre emphasis 9.5 dB \nothers : swing0 pre emphasis 9.5 dB",
+        "initial_value": "5"
+      },
+      {
+        "name": "CH0_CH2_SWING_EMP_CTRL",
+        "bits": "[3:0]",
+        "description": "ch0,2 swing and pre emphasis control \nfor firmware \nwhen tx_common<7>=1 \n0000 : swing0 pre emphasis 0 dB \n0001 : swing1 pre emphasis 0 dB \n0010 : swing2 pre emphasis 0 dB \n0011 : swing3 pre emphasis 0 dB \n0100 : swing0 pre emphasis 3.5 dB \n0101 : swing1 pre emphasis 3.5 dB \n0110 : swing2 pre emphasis 3.5 dB \n1000 : swing0 pre emphasis 6 dB \n1001 : swing1 pre emphasis 6 dB \n1100 : swing0 pre emphasis 9.5 dB \nothers : swing0 pre emphasis 9.5 dB",
+        "initial_value": "5"
+      }
+    ]
+  }
+]

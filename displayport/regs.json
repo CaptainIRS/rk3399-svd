@@ -1,7 +1,7 @@
 [
   {
     "name": "DP_TX_VERSION",
-    "address": "Base + 0x0010",
+    "address": "Base+0x0010",
     "type": "RO",
     "description": "DP_TX version register",
     "reset_value": "0x00000060",
@@ -16,7 +16,7 @@
   },
   {
     "name": "FUNC_EN_1",
-    "address": "Base + 0x0018",
+    "address": "Base+0x0018",
     "type": "R/W",
     "description": "Function Enable Register 1",
     "reset_value": "0x0000007D",
@@ -55,7 +55,7 @@
   },
   {
     "name": "FUNC_EN_2",
-    "address": "Base + 0x001C",
+    "address": "Base+0x001C",
     "type": "R/W",
     "description": "Function Enable Register 2",
     "reset_value": "0x00000087",
@@ -100,7 +100,7 @@
   },
   {
     "name": "VIDEO_CTL_1",
-    "address": "Base + 0x0020",
+    "address": "Base+0x0020",
     "type": "R/W",
     "description": "Video Control 1",
     "reset_value": "0x00000000",
@@ -133,7 +133,7 @@
   },
   {
     "name": "VIDEO_CTL_2",
-    "address": "Base + 0x0024",
+    "address": "Base+0x0024",
     "type": "R/W",
     "description": "Video Control 2",
     "reset_value": "0x00000010",
@@ -172,7 +172,7 @@
   },
   {
     "name": "VIDEO_CTL_3",
-    "address": "Base + 0x0028",
+    "address": "Base+0x0028",
     "type": "R/W",
     "description": "Video Control 3",
     "reset_value": "0x00000000",
@@ -211,7 +211,7 @@
   },
   {
     "name": "VIDEO_CTL_4",
-    "address": "Base + 0x002C",
+    "address": "Base+0x002C",
     "type": "R/W",
     "description": "Video Control 4",
     "reset_value": "0x00000000",
@@ -244,7 +244,7 @@
   },
   {
     "name": "VIDEO_CTL_8",
-    "address": "Base + 0x003C",
+    "address": "Base+0x003C",
     "type": "R/W",
     "description": "Video Control 8",
     "reset_value": "0x00000020",
@@ -271,7 +271,7 @@
   },
   {
     "name": "VIDEO_CTL_10",
-    "address": "Base + 0x0044",
+    "address": "Base+0x0044",
     "type": "R/W",
     "description": "Video Control 10",
     "reset_value": "0x00000000",
@@ -316,7 +316,7 @@
   },
   {
     "name": "TOTAL_LINE_CFG_L",
-    "address": "Base + 0x0048",
+    "address": "Base+0x0048",
     "type": "R/W",
     "description": "Total Line Low Byte Configure Register",
     "reset_value": "0x00000000",
@@ -337,7 +337,7 @@
   },
   {
     "name": "TOTAL_LINE_CFG_H",
-    "address": "Base + 0x004C",
+    "address": "Base+0x004C",
     "type": "R/W",
     "description": "Total Line High Byte Configure Register",
     "reset_value": "0x00000000",
@@ -358,7 +358,7 @@
   },
   {
     "name": "ACTIVE_LINE_CFG_L",
-    "address": "Base + 0x0050",
+    "address": "Base+0x0050",
     "type": "R/W",
     "description": "Active Line Low Byte Configure Register",
     "reset_value": "0x00000000",
@@ -379,7 +379,7 @@
   },
   {
     "name": "ACTIVE_LINE_CFG_H",
-    "address": "Base + 0x0054",
+    "address": "Base+0x0054",
     "type": "R/W",
     "description": "Active Line High Byte Configure Register",
     "reset_value": "0x00000000",
@@ -400,14 +400,28 @@
   },
   {
     "name": "V_F_PORCH_CFG",
-    "address": "Base + 0x0058",
+    "address": "Base+0x0058",
     "type": "R/W",
     "description": "Vertical Front Porch Configure Register",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "V_F_PORCH_CFG",
+        "bits": "[7:0]",
+        "description": "This is used to specify the number of \nlines in vertical front porch part. \nWhen F_SEL is 1, this value is sent in \nmain stream attribute packet. \nWhen BIST_EN is 1, this bit field is \nused to specify the BIST video stream \nformat.",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "V_SYNC_WIDTH_CFG",
-    "address": "Base + 0x005C",
+    "address": "Base+0x005C",
     "type": "R/W",
     "description": "Vertical Sync Width Configure Register",
     "reset_value": "0x00000000",
@@ -428,7 +442,7 @@
   },
   {
     "name": "V_B_PORCH_CFG",
-    "address": "Base + 0x0060",
+    "address": "Base+0x0060",
     "type": "R/W",
     "description": "Vertical Back Porch Configure Register",
     "reset_value": "0x00000000",
@@ -449,7 +463,7 @@
   },
   {
     "name": "TOTAL_PIXEL_CFG_L",
-    "address": "Base + 0x0064",
+    "address": "Base+0x0064",
     "type": "R/W",
     "description": "Total Pixel Low Byte Configure Register",
     "reset_value": "0x00000000",
@@ -470,7 +484,7 @@
   },
   {
     "name": "TOTAL_PIXEL_CFG_H",
-    "address": "Base + 0x0068",
+    "address": "Base+0x0068",
     "type": "R/W",
     "description": "Total Pixel High Byte Configure Register",
     "reset_value": "0x00000000",
@@ -491,7 +505,7 @@
   },
   {
     "name": "ACTIVE_PIXEL_CFG_L",
-    "address": "Base + 0x006C",
+    "address": "Base+0x006C",
     "type": "R/W",
     "description": "Active Pixel Low Byte Configure Register",
     "reset_value": "0x00000000",
@@ -512,7 +526,7 @@
   },
   {
     "name": "ACTIVE_PIXEL_CFG_H",
-    "address": "Base + 0x0070",
+    "address": "Base+0x0070",
     "type": "R/W",
     "description": "Active Pixel High Byte Configure Register",
     "reset_value": "0x00000000",
@@ -533,7 +547,7 @@
   },
   {
     "name": "H_F_PORCH_CFG_L",
-    "address": "Base + 0x0074",
+    "address": "Base+0x0074",
     "type": "R/W",
     "description": "Horizon Front Porch Low Byte Configure Register",
     "reset_value": "0x00000000",
@@ -554,7 +568,7 @@
   },
   {
     "name": "H_F_PORCH_CFG_H",
-    "address": "Base + 0x0078",
+    "address": "Base+0x0078",
     "type": "R/W",
     "description": "Horizon Front Porch High Byte Configure Register",
     "reset_value": "0x00000000",
@@ -575,7 +589,7 @@
   },
   {
     "name": "H_SYNC_CFG_L",
-    "address": "Base + 0x007C",
+    "address": "Base+0x007C",
     "type": "R/W",
     "description": "Horizon Sync Width Low Byte Configure Register",
     "reset_value": "0x00000000",
@@ -596,7 +610,7 @@
   },
   {
     "name": "H_SYNC_CFG_H",
-    "address": "Base + 0x0080",
+    "address": "Base+0x0080",
     "type": "R/W",
     "description": "Horizon Sync Width High Byte Configure Register",
     "reset_value": "0x00000000",
@@ -617,7 +631,7 @@
   },
   {
     "name": "H_B_PORCH_CFG_L",
-    "address": "Base + 0x0084",
+    "address": "Base+0x0084",
     "type": "R/W",
     "description": "Horizon Back Porch Low Byte Configure Register",
     "reset_value": "0x00000000",
@@ -638,7 +652,7 @@
   },
   {
     "name": "H_B_PORCH_CFG_H",
-    "address": "Base + 0x0088",
+    "address": "Base+0x0088",
     "type": "R/W",
     "description": "Horizon Back Porch High Byte Configure Register",
     "reset_value": "0x00000000",
@@ -659,7 +673,7 @@
   },
   {
     "name": "VIDEO_STATUS",
-    "address": "Base + 0x008C",
+    "address": "Base+0x008C",
     "type": "RO",
     "description": "Video Status Register",
     "reset_value": "0x00000003",
@@ -698,7 +712,7 @@
   },
   {
     "name": "TOTAL_LINE_STA_L",
-    "address": "Base + 0x0090",
+    "address": "Base+0x0090",
     "type": "RO",
     "description": "Total Line Status Low Byte Register",
     "reset_value": "0x00000001",
@@ -719,7 +733,7 @@
   },
   {
     "name": "TOTAL_LINE_STA_H",
-    "address": "Base + 0x0094",
+    "address": "Base+0x0094",
     "type": "RO",
     "description": "Total Line Status High Byte Register",
     "reset_value": "0x00000000",
@@ -740,7 +754,7 @@
   },
   {
     "name": "ACTIVE_LINE_STA_L",
-    "address": "Base + 0x0098",
+    "address": "Base+0x0098",
     "type": "RO",
     "description": "Active Line Status Low Byte Register",
     "reset_value": "0x00000000",
@@ -761,7 +775,7 @@
   },
   {
     "name": "ACTIVE_LINE_STA_H",
-    "address": "Base + 0x009C",
+    "address": "Base+0x009C",
     "type": "RO",
     "description": "Active Line Status High Byte Register",
     "reset_value": "0x00000000",
@@ -782,7 +796,7 @@
   },
   {
     "name": "V_F_PORCH_STA",
-    "address": "Base + 0x00A0",
+    "address": "Base+0x00A0",
     "type": "RO",
     "description": "Vertical Front Porch Status Register",
     "reset_value": "0x00000001",
@@ -803,7 +817,7 @@
   },
   {
     "name": "V_SYNC_STA",
-    "address": "Base + 0x00A4",
+    "address": "Base+0x00A4",
     "type": "RO",
     "description": "Vertical Sync Width Status Register",
     "reset_value": "0x00000000",
@@ -824,7 +838,7 @@
   },
   {
     "name": "V_B_PORCH_STA",
-    "address": "Base + 0x00A8",
+    "address": "Base+0x00A8",
     "type": "RO",
     "description": "Vertical Back Porch Status Register",
     "reset_value": "0x00000000",
@@ -845,7 +859,7 @@
   },
   {
     "name": "TOTAL_PIXEL_STA_L",
-    "address": "Base + 0x00AC",
+    "address": "Base+0x00AC",
     "type": "RO",
     "description": "Total Pixel Status Low",
     "reset_value": "0x00000000",
@@ -866,7 +880,7 @@
   },
   {
     "name": "TOTAL_PIXEL_STA_H",
-    "address": "Base + 0x00B0",
+    "address": "Base+0x00B0",
     "type": "RO",
     "description": "Total Pixel Status High Byte Register",
     "reset_value": "0x00000000",
@@ -887,7 +901,7 @@
   },
   {
     "name": "ACTIVE_PIXEL_STA_L",
-    "address": "Base + 0x00B4",
+    "address": "Base+0x00B4",
     "type": "RO",
     "description": "Active Pixel Status Low Byte Register",
     "reset_value": "0x00000000",
@@ -908,7 +922,7 @@
   },
   {
     "name": "ACTIVE_PIXEL_STA_H",
-    "address": "Base + 0x00B8",
+    "address": "Base+0x00B8",
     "type": "RO",
     "description": "Active Pixel Status High Byte Register",
     "reset_value": "0x00000000",
@@ -929,7 +943,7 @@
   },
   {
     "name": "H_F_PORCH_STA_L",
-    "address": "Base + 0x00BC",
+    "address": "Base+0x00BC",
     "type": "RO",
     "description": "Horizon Front Porch Status Low Byte Register",
     "reset_value": "0x00000000",
@@ -950,7 +964,7 @@
   },
   {
     "name": "H_F_PORCH_STA_H",
-    "address": "Base + 0x00C0",
+    "address": "Base+0x00C0",
     "type": "RO",
     "description": "Horizon Front Porch Status High Byte Register",
     "reset_value": "0x00000000",
@@ -971,7 +985,7 @@
   },
   {
     "name": "H_SYNC_STA_L",
-    "address": "Base + 0x00C4",
+    "address": "Base+0x00C4",
     "type": "RO",
     "description": "Horizon Sync Width Status Low Byte Register",
     "reset_value": "0x00000000",
@@ -992,7 +1006,7 @@
   },
   {
     "name": "H_SYNC_STA_H",
-    "address": "Base + 0x00C8",
+    "address": "Base+0x00C8",
     "type": "RO",
     "description": "Horizon Sync Width Status High Byte Register",
     "reset_value": "0x00000000",
@@ -1013,7 +1027,7 @@
   },
   {
     "name": "H_B_PORCH_STA_L",
-    "address": "Base + 0x00CC",
+    "address": "Base+0x00CC",
     "type": "RO",
     "description": "Horizon Back Porch Status Low Byte Register",
     "reset_value": "0x00000000",
@@ -1034,7 +1048,7 @@
   },
   {
     "name": "H_B_PORCH_STA_H",
-    "address": "Base + 0x00D0",
+    "address": "Base+0x00D0",
     "type": "RO",
     "description": "Horizon Back Porch Status High Byte Register",
     "reset_value": "0x00000000",
@@ -1055,14 +1069,28 @@
   },
   {
     "name": "AVI_DB1~AVI_DB13",
-    "address": "Base + 0x01D0~ Base + 0x0200",
+    "address": "Base+0x01D0~Base+0x0200",
     "type": "R/W",
     "description": "AVI InfoFrame Packet Data Byte",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AVI_DB1~AVI_DB13",
+        "bits": "[7:0]",
+        "description": "AVI Data Byte 1 ~ 13",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "IF_TYPE",
-    "address": "Base + 0x0244",
+    "address": "Base+0x0244",
     "type": "R/W",
     "description": "InfoFrame Packet Type Code.",
     "reset_value": "0x00000000",
@@ -1083,21 +1111,49 @@
   },
   {
     "name": "IF_PKT_DB1~IF_PKT_DB25",
-    "address": "Base + 0x0254~ Base + 0x02B4",
+    "address": "Base+0x0254~Base+0x02B4",
     "type": "R/W",
     "description": "InfoFrame Packet Data Byte",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "IF_PKT_DB1~IF_PKT_DB25",
+        "bits": "[7:0]",
+        "description": "InfoFrame Packet Data Byte 1 ~ 25. The \nregisters define the data in the InfoFrame and \nthe InfoFrame type is defined by IF_TYPE.",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "MPEG_DB1~MPEG_DB10",
-    "address": "Base + 0x02D0~ Base + 0x02F4",
+    "address": "Base+0x02D0~Base+0x02F4",
     "type": "R/W",
     "description": "MPEG Source InfoFrame Packet Data Byte",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "MPEG_DB1~MPEG_DB10",
+        "bits": "[7:0]",
+        "description": "MPEG InfoFrame Data Byte 1 ~ 10",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "PSR_FRAME_UPDATA_CTRL",
-    "address": "Base + 0x0318",
+    "address": "Base+0x0318",
     "type": "R/W",
     "description": "Frame update control for PSR",
     "reset_value": "0x00000000",
@@ -1124,21 +1180,49 @@
   },
   {
     "name": "VSC_SHADOW_DB0~VSC_SHADOW_DB7",
-    "address": "Base+ 0x031C~ Base+ 0x0338",
+    "address": "Base+0x031C~Base+0x0338",
     "type": "R/W",
     "description": "VSC shadow data bytes 0 ~ 7",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "VSC_SHADOW_DB0~VSC_SHADOW_DB7",
+        "bits": "[7:0]",
+        "description": "VSC shadow data bytes 0 ~ 7",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "VSC_SHADOW_PB0~VSC_SHADOW_PB1",
-    "address": "Base+ 0x033C~ Base+ 0x0340",
+    "address": "Base+0x033C~Base+0x0340",
     "type": "R/W",
     "description": "VSC shadow parity byte 0 ~ 1",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "VSC_SHADOW_PB0~VSC_SHADOW_PB1",
+        "bits": "[7:0]",
+        "description": "VSC shadow parity bytes 0 ~ 1",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "LANE_MAP",
-    "address": "Base + 0x035C",
+    "address": "Base+0x035C",
     "type": "R/W",
     "description": "Lane Map Register",
     "reset_value": "0x000000E4",
@@ -1177,7 +1261,7 @@
   },
   {
     "name": "ANALOG_CTL_2",
-    "address": "Base + 0x0374",
+    "address": "Base+0x0374",
     "type": "R/W",
     "description": "Analog Control Register 2",
     "reset_value": "0x00000008",
@@ -1197,22 +1281,98 @@
     ]
   },
   {
-    "name": "HIDDEN_REG",
-    "address": "Base + 0x0390",
+    "name": "INT_STATE_0",
+    "address": "Base+0x0390",
     "type": "R/W",
     "description": "Debug Register",
-    "reset_value": "0x00000003"
+    "reset_value": "0x00000003",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:12]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_CH_DATA_IN(RO)",
+        "bits": "[11]",
+        "description": "AUX received data for debug when \nAUX_CH_TEST_MODE = 1 and \nAUX_CH_EN_TEST=0 \nThis bit is read only",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_SEND_0_1_EN",
+        "bits": "[10]",
+        "description": "1: Force 0/1 toggle in AUX CH when \nAUX_CH_TEST_MODE = 0 \n0: normal AUX data transmitting in AUX CH \nwhen AUX_CH_TEST_MODE = 0",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_CH_TEST_MODE",
+        "bits": "[9]",
+        "description": "1: AUX CH is in test mode. \n0: AUX CH is in normal mode.",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_CH_T_TEST",
+        "bits": "[8]",
+        "description": "AUX transmitted data when \nAUX_CH_TEST_MODE = 1",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_CH_EN_TEST",
+        "bits": "[7]",
+        "description": "AUX TX enable when AUX_CH_TEST_MODE = \n1. \n0: disable \n1: enable",
+        "initial_value": "0"
+      },
+      {
+        "name": "M_VID_DEBUG_EN",
+        "bits": "[6]",
+        "description": "Enable M_VID debugging",
+        "initial_value": "0"
+      },
+      {
+        "name": "BIST_YCBCR422_CRL",
+        "bits": "[5]",
+        "description": "For YCbCr422 BIST control",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_TC",
+        "bits": "[4:3]",
+        "description": "AUX TC Register",
+        "initial_value": "0"
+      },
+      {
+        "name": "AUX_RETRY_TIMER",
+        "bits": "[2:0]",
+        "description": "AUX Retry Timer Register",
+        "initial_value": "3"
+      }
+    ]
   },
   {
-    "name": "INT_STATE",
-    "address": "Base + 0x03C0",
+    "name": "INT_STATE_1",
+    "address": "Base+0x03C0",
     "type": "RO",
     "description": "Interrupt Status Register",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "INT_STATE",
+        "bits": "[0]",
+        "description": "Interrupt request status \n1: Interrupt service is requested, \n0: No interrupt service is requested.",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "COMMON_INT_STA_1",
-    "address": "Base + 0x03C4",
+    "address": "Base+0x03C4",
     "type": "R/W",
     "description": "Common Interrupt Status Register 1",
     "reset_value": "0x00000000",
@@ -1269,7 +1429,7 @@
   },
   {
     "name": "COMMON_INT_STA_3",
-    "address": "Base + 0x03CC",
+    "address": "Base+0x03CC",
     "type": "R/W/C1",
     "description": "Common Interrupt Status Register 3",
     "reset_value": "0x00000000",
@@ -1314,7 +1474,7 @@
   },
   {
     "name": "COMMON_INT_STA_4",
-    "address": "Base + 0x03D0",
+    "address": "Base+0x03D0",
     "type": "R/W/C1",
     "description": "Common Interrupt Status Register 4",
     "reset_value": "0x00000000",
@@ -1347,7 +1507,7 @@
   },
   {
     "name": "DP_INT_STA",
-    "address": "Base + 0x03DC",
+    "address": "Base+0x03DC",
     "type": "R/W/C1",
     "description": "DisplayPort Interrupt Status Register",
     "reset_value": "0x00000000",
@@ -1404,7 +1564,7 @@
   },
   {
     "name": "COMMON_INT_MASK_1",
-    "address": "Base + 0x03E0",
+    "address": "Base+0x03E0",
     "type": "R/W",
     "description": "Common Interrupt Mask Register1",
     "reset_value": "0x00000000",
@@ -1425,7 +1585,7 @@
   },
   {
     "name": "COMMON_INT_MASK_3",
-    "address": "Base + 0x03E8",
+    "address": "Base+0x03E8",
     "type": "R/W",
     "description": "Common Interrupt Mask Register3",
     "reset_value": "0x00000000",
@@ -1452,7 +1612,7 @@
   },
   {
     "name": "COMMON_INT_MASK_4",
-    "address": "Base + 0x03EC",
+    "address": "Base+0x03EC",
     "type": "R/W",
     "description": "Common Interrupt Mask Register4",
     "reset_value": "0x00000000",
@@ -1473,7 +1633,7 @@
   },
   {
     "name": "DP_INT_STA_MASK",
-    "address": "Base + 0x03F8",
+    "address": "Base+0x03F8",
     "type": "R/W",
     "description": "DisplayPort Interrupt enable Register",
     "reset_value": "0x00000000",
@@ -1494,7 +1654,7 @@
   },
   {
     "name": "INT_CTL",
-    "address": "Base + 0x03FC",
+    "address": "Base+0x03FC",
     "type": "R/W",
     "description": "Interrupt Control Register",
     "reset_value": "0x00000000",
@@ -1545,7 +1705,7 @@
   },
   {
     "name": "SYS_CTL_1",
-    "address": "Base + 0x0600",
+    "address": "Base+0x0600",
     "type": "R/W",
     "description": "System Control Register #1",
     "reset_value": "0x00000000",
@@ -1584,7 +1744,7 @@
   },
   {
     "name": "SYS_CTL_2",
-    "address": "Base + 0x0604",
+    "address": "Base+0x0604",
     "type": "R/W",
     "description": "System Control Register #2",
     "reset_value": "0X00000040",
@@ -1629,7 +1789,7 @@
   },
   {
     "name": "SYS_CTL_3",
-    "address": "Base + 0x0608",
+    "address": "Base+0x0608",
     "type": "R/W,RO",
     "description": "System Control Register #3",
     "reset_value": "0x00000000",
@@ -1686,7 +1846,7 @@
   },
   {
     "name": "SYS_CTL_4",
-    "address": "Base + 0x060C",
+    "address": "Base+0x060C",
     "type": "R/W",
     "description": "System Control Register #4",
     "reset_value": "0x00000000",
@@ -1719,7 +1879,7 @@
   },
   {
     "name": "DP_VID_CTL",
-    "address": "Base + 0x0610",
+    "address": "Base+0x0610",
     "type": "RO",
     "description": "DP Video Control Register",
     "reset_value": "0x00000020",
@@ -1764,7 +1924,7 @@
   },
   {
     "name": "PKT_SEND_CTL",
-    "address": "Base + 0x0640",
+    "address": "Base+0x0640",
     "type": "R/W",
     "description": "Packet Send Control Register",
     "reset_value": "0x00000000",
@@ -1827,7 +1987,7 @@
   },
   {
     "name": "LINK_BW_SET",
-    "address": "Base + 0x0680",
+    "address": "Base+0x0680",
     "type": "R/W",
     "description": "Main Link Bandwidth Setting Register",
     "reset_value": "0x0000000A",
@@ -1848,7 +2008,7 @@
   },
   {
     "name": "LANE_COUNT_SET",
-    "address": "Base + 0x0684",
+    "address": "Base+0x0684",
     "type": "R/W",
     "description": "DP Main Link Lane Number Register",
     "reset_value": "0x00000004",
@@ -1869,49 +2029,229 @@
   },
   {
     "name": "DP_TRAINING_PTN_SET",
-    "address": "Base + 0x0688",
+    "address": "Base+0x0688",
     "type": "R/W",
     "description": "DP Training Pattern Set Register",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "SCRAMBLING_DISABLE",
+        "bits": "[5]",
+        "description": "Disable scramble \n1: Disable \n0: Normal operation",
+        "initial_value": "0"
+      },
+      {
+        "name": "LINK_QUAL_PATTERN_SET",
+        "bits": "[4:2]",
+        "description": "Link quality pattern setting. \n101 = HBR2 Compliance \n100 = 80 bit test pattern \n011 = PRBS 7 bit \n010 = symbol error rate measurement \npattern is sent; \n001 = D10.2 test pattern is sent; \n000= link quality test pattern not sent",
+        "initial_value": "0"
+      },
+      {
+        "name": "SW_TRAINING_PATTERN_SET",
+        "bits": "[1:0]",
+        "description": "Link training pattern setting. \nSW_TRAINING_PATTERN_SET has higher \npriority than LINK_QUAL_PATTER_SET. \n11: Reserved \n10: Sending training pattern 2 \n01: Sending training pattern 1 \n00: Training pattern not sent",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "DP_LN0_LINK_TRAINING_CTL",
-    "address": "Base + 0x068C",
+    "address": "Base+0x068C",
     "type": "R/W,RO",
     "description": "DP Lane 0 Link Training Control Register",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "MAX_PRE_REACH_0(RO)",
+        "bits": "[5]",
+        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nThis bit\u2019s type is RO. \nNote that the MAX_PRE_REACH_0 and \nMAX_DRIVE_REACH_0 have the same \nvalue like the following table.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PRE_EMPHASIS_SET_0",
+        "bits": "[4:3]",
+        "description": "Lane 0 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "MAX_DRIVE_REACH_0(RO)",
+        "bits": "[2]",
+        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For test purpose only. This bit\u2019s \ntype is RO. For more information, refer to \nMAX_PRE_REACH_0.",
+        "initial_value": "0"
+      },
+      {
+        "name": "DRIVE_CURRENT_SET_0",
+        "bits": "[1:0]",
+        "description": "Lane 0 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "DP_LN1_LINK_TRAINING_CTL",
-    "address": "Base + 0x0690",
+    "address": "Base+0x0690",
     "type": "R/W,RO",
     "description": "DP Lane 1 Link Training Control Register",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "MAX_PRE_REACH_1(RO)",
+        "bits": "[5]",
+        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nNote that the MAX_PRE_REACH_1 and \nMAX_DRIVE_REACH_1 have the same \nvalue like the following table. \nBoth of MAX_PRE_REACH_1 and \nMAX_DRIVE_REACH_1 are for test purpose \nonly. \nThis bit\u2019s type is RO.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PRE_EMPHASIS_SET_1",
+        "bits": "[4:3]",
+        "description": "Lane 1 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "MAX_DRIVE_REACH_1(RO)",
+        "bits": "[2]",
+        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For more information, refer to \nMAX_PRE_REACH_1. For test purpose only. \nThis bit\u2019s type is RO.",
+        "initial_value": "0"
+      },
+      {
+        "name": "DRIVE_CURRENT_SET_1",
+        "bits": "[1:0]",
+        "description": "Lane 1 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "DP_LN2_LINK_TRAINING_CTL",
-    "address": "Base + 0x0694",
+    "address": "Base+0x0694",
     "type": "R/W,RO",
     "description": "DP Lane 2 Link Training Control Register",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "MAX_PRE_REACH_2(RO)",
+        "bits": "[5]",
+        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nNote that the MAX_PRE_REACH_2 and \nMAX_DRIVE_REACH_2 have the same \nvalue like the following table. \nBoth of MAX_PRE_REACH_1 and \nMAX_DRIVE_REACH_2 are for test purpose \nonly. \nThis bit\u2019s type is RO.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PRE_EMPHASIS_SET_2",
+        "bits": "[4:3]",
+        "description": "Lane 2 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "MAX_DRIVE_REACH_2(RO)",
+        "bits": "[2]",
+        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For more information, refer to \nMAX_PRE_REACH_2. For test purpose only. \nThis bit\u2019s type is RO.",
+        "initial_value": "0"
+      },
+      {
+        "name": "DRIVE_CURRENT_SET_2",
+        "bits": "[1:0]",
+        "description": "Lane 2 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "DP_LN3_LINK_TRAINING_CTL",
-    "address": "Base + 0x0698",
+    "address": "Base+0x0698",
     "type": "R/W,RO",
     "description": "DP Lane 3 Link Training Control Register",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:6]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "MAX_PRE_REACH_3(RO)",
+        "bits": "[5]",
+        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nNote that the MAX_PRE_REACH_3 and \nMAX_DRIVE_REACH_3 have the same \nvalue like the following table. \nBoth of MAX_PRE_REACH_3 and \nMAX_DRIVE_REACH_3 are for test purpose \nonly. \nThis bit\u2019s type is RO.",
+        "initial_value": "0"
+      },
+      {
+        "name": "PRE_EMPHASIS_SET_3",
+        "bits": "[4:3]",
+        "description": "Lane 3 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      },
+      {
+        "name": "MAX_DRIVE_REACH_3(RO)",
+        "bits": "[2]",
+        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For more information, refer to \nMAX_PRE_REACH_3. For test purpose only. \nThis bit\u2019s type is RO.",
+        "initial_value": "0"
+      },
+      {
+        "name": "DRIVE_CURRENT_SET_3",
+        "bits": "[1:0]",
+        "description": "Lane 3 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit\u2019s type is R/W.",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "DP_HW_LINK_TRAINING_CTL",
-    "address": "Base + 0x06A0",
+    "address": "Base+0x06A0",
     "type": "R/W,RO",
     "description": "DP HW LINK TRAINING_CONTROL Register",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:7]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "HW_TRAINING_ERROR_CODE(RO)",
+        "bits": "[6:4]",
+        "description": "Training error code \n0: OK \n1: AUX_WRITE_ERROR \n2: MAX_DRIVE_REACHED \n3: WRONG_LANE_COUNT_SETTING \n4: LOOP_SAME_5_TIME \n5: CR_FAIL_IN_EQ \n6: EQ_LOOP_5_TIME \nThis bit\u2019s type is RO.",
+        "initial_value": "0"
+      },
+      {
+        "name": "-",
+        "bits": "[3:1]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "HW_TRAINING_EN(C)",
+        "bits": "[0]",
+        "description": "Link training sequence enable \nWrite 1 to enable training sequence, write \n0 to force training sequence stop, this bit \nwill self-clear when training done. \nThis bit\u2019s type is R/W. This bit is self \ncleared.",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "DP_DEBUG_CTL",
-    "address": "Base + 0x06C0",
+    "address": "Base+0x06C0",
     "type": "RR/W",
     "description": "DP Debug Control Register #1",
     "reset_value": "0x00000000",
@@ -1929,7 +2269,7 @@
         "initial_value": "0"
       },
       {
-        "name": "BYPASS_STATUS_POLLIN G",
+        "name": "BYPASS_STATUS_POLLING",
         "bits": "[5]",
         "description": "Bypass link status polling. If this bit, \nMYDP_HPD_POLLIN_EN and POLLING_EN \nare all enabled, hardware only polling \nMYDP HPD status. \n1: Enabled \n0: Disabled. \nThis bit\u2019s type is RW.",
         "initial_value": "0"
@@ -1968,7 +2308,7 @@
   },
   {
     "name": "HPD_DEGLITCH_L",
-    "address": "Base + 0x06C4",
+    "address": "Base+0x06C4",
     "type": "R/W",
     "description": "DP HPD De-glitch Low Byte Register",
     "reset_value": "0x0000005E",
@@ -1989,7 +2329,7 @@
   },
   {
     "name": "HPD_DEGLITCH_H",
-    "address": "Base + 0x06C8",
+    "address": "Base+0x06C8",
     "type": "R/W",
     "description": "DP HPD De-glitch High Byte Register",
     "reset_value": "0x0000001A",
@@ -2010,7 +2350,7 @@
   },
   {
     "name": "POLLING_PERIOD",
-    "address": "Base + 0x06CC",
+    "address": "Base+0x06CC",
     "type": "R/W",
     "description": "DP polling period",
     "reset_value": "0x0000000E",
@@ -2031,7 +2371,7 @@
   },
   {
     "name": "DP_LINK_DEBUG_CTL",
-    "address": "Base + 0x06E0",
+    "address": "Base+0x06E0",
     "type": "R/W",
     "description": "DP Link Debug Control Register",
     "reset_value": "0x00000010",
@@ -2055,7 +2395,7 @@
         "initial_value": "0"
       },
       {
-        "name": "DISABLE_AUTO_RESET_E NCODER",
+        "name": "DISABLE_AUTO_RESET_ENCODER",
         "bits": "[2]",
         "description": "Disable 8b/10 encoder auto reset \n1: Disabled auto reset 8b/10 encode before \nsending Link Training Pattern 2 \n0: Auto reset 8b/10 encode before sending \nLink Training Pattern 2",
         "initial_value": "0"
@@ -2076,21 +2416,49 @@
   },
   {
     "name": "DP_SINK_COUNT",
-    "address": "Base + 0x06E4",
+    "address": "Base+0x06E4",
     "type": "RO",
     "description": "DP Sink Count",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_SINK_COUNT",
+        "bits": "[7:0]",
+        "description": "Sink Count",
+        "initial_value": "0x0"
+      }
+    ]
   },
   {
-    "name": "DP_IRD_VECTOR",
-    "address": "Base + 0x06E8",
+    "name": "DP_IRQ_VECTOR",
+    "address": "Base+0x06E8",
     "type": "RO",
     "description": "DP Irq Vector",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_IRQ_VECTOR",
+        "bits": "[7:0]",
+        "description": "Irq_vector",
+        "initial_value": "0x0"
+      }
+    ]
   },
   {
     "name": "DP_LINK_STATUS0",
-    "address": "Base + 0x06EC",
+    "address": "Base+0x06EC",
     "type": "RO",
     "description": "DP Lane0 and Lane1 Status",
     "reset_value": "0x00000000",
@@ -2147,7 +2515,7 @@
   },
   {
     "name": "DP_LINK_STATUS1",
-    "address": "Base + 0x06F0",
+    "address": "Base+0x06F0",
     "type": "RO",
     "description": "DP Lane2 and Lane3 Status",
     "reset_value": "0x00000000",
@@ -2209,15 +2577,29 @@
     ]
   },
   {
-    "name": "DP_ALIGN_STATUS`",
-    "address": "Base + 0x06F4",
+    "name": "DP_ALIGN_STATUS",
+    "address": "Base+0x06F4",
     "type": "RO",
     "description": "DP Align Status",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_ALIGN_STATUS",
+        "bits": "[7:0]",
+        "description": "DP_ALIGN_STATUS",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "DP_SINK_STATUS",
-    "address": "Base + 0x06F8",
+    "address": "Base+0x06F8",
     "type": "RO",
     "description": "DP Sink Status",
     "reset_value": "0x00000000",
@@ -2244,7 +2626,7 @@
   },
   {
     "name": "M_VID_0",
-    "address": "Base + 0x0700",
+    "address": "Base+0x0700",
     "type": "R/W",
     "description": "DP M_VID Configure Register #0",
     "reset_value": "0x00000000",
@@ -2265,7 +2647,7 @@
   },
   {
     "name": "M_VID_1",
-    "address": "Base + 0x0704",
+    "address": "Base+0x0704",
     "type": "R/W",
     "description": "DP M_VID Configure Register #1",
     "reset_value": ".0x00000000",
@@ -2286,7 +2668,7 @@
   },
   {
     "name": "M_VID_2",
-    "address": "Base + 0x0708",
+    "address": "Base+0x0708",
     "type": "R/W",
     "description": "DP M_VID Configure Register #2",
     "reset_value": "0x00000000",
@@ -2307,7 +2689,7 @@
   },
   {
     "name": "N_VID_0",
-    "address": "Base + 0x070C",
+    "address": "Base+0x070C",
     "type": "R/W",
     "description": "DP N_VID Configure Register #0",
     "reset_value": "0x00000000",
@@ -2328,7 +2710,7 @@
   },
   {
     "name": "N_VID_1",
-    "address": "Base + 0x0710",
+    "address": "Base+0x0710",
     "type": "R/W",
     "description": "DP N_VID Configure Register #1",
     "reset_value": "0x00000080",
@@ -2349,7 +2731,7 @@
   },
   {
     "name": "N_VID_2",
-    "address": "Base + 0x0714",
+    "address": "Base+0x0714",
     "type": "R/W",
     "description": "DP N_VID Configure Register #2",
     "reset_value": "0x00000000",
@@ -2370,7 +2752,7 @@
   },
   {
     "name": "M_VID_MON",
-    "address": "Base + 0x0718",
+    "address": "Base+0x0718",
     "type": "RO",
     "description": "DP M_VID value monitoring register",
     "reset_value": "0x00000000",
@@ -2391,7 +2773,7 @@
   },
   {
     "name": "DP_VIDEO_FIFO_THRD",
-    "address": "Base + 0x0730",
+    "address": "Base+0x0730",
     "type": "R/W",
     "description": "DP FIFO Threshold Register",
     "reset_value": "0x00000000",
@@ -2418,7 +2800,7 @@
   },
   {
     "name": "DP_M_CAL_CTL",
-    "address": "Base + 0x0760",
+    "address": "Base+0x0760",
     "type": "R/W",
     "description": "DP M Value Calculation Control Register",
     "reset_value": "0x00000000",
@@ -2451,7 +2833,7 @@
   },
   {
     "name": "M_VID_GEN_FILTER_TH",
-    "address": "Base + 0x0764",
+    "address": "Base+0x0764",
     "type": "R/W",
     "description": "DP M_VID Value Calculation Control Register",
     "reset_value": "0x00000004",
@@ -2472,7 +2854,7 @@
   },
   {
     "name": "AUX_CH_STA",
-    "address": "Base + 0x0780",
+    "address": "Base+0x0780",
     "type": "R/W",
     "description": "AUX Channel Access Status Register",
     "reset_value": "0x00000000",
@@ -2499,7 +2881,7 @@
   },
   {
     "name": "AUX_ERR_NUM",
-    "address": "Base + 0x0784",
+    "address": "Base+0x0784",
     "type": "RO",
     "description": "AUX Channel Access Error Code Register",
     "reset_value": "0x00000000",
@@ -2520,7 +2902,7 @@
   },
   {
     "name": "AUX_CH_DEFER_CTL",
-    "address": "Base + 0x0788",
+    "address": "Base+0x0788",
     "type": "R/W",
     "description": "DP AUX CH DEFER Control Register",
     "reset_value": "0x0000007F",
@@ -2547,7 +2929,7 @@
   },
   {
     "name": "AUX_RX_COMM",
-    "address": "Base + 0x078C",
+    "address": "Base+0x078C",
     "type": "RO",
     "description": "DP AUX RX Command Register",
     "reset_value": "0x00000000",
@@ -2568,7 +2950,7 @@
   },
   {
     "name": "BUFFER_DATA_CTL",
-    "address": "Base + 0x0790",
+    "address": "Base+0x0790",
     "type": "R/W,RO",
     "description": "DP Buffer Data Count Register",
     "reset_value": "0x00000000",
@@ -2607,7 +2989,7 @@
   },
   {
     "name": "AUX_CH_CTL_1",
-    "address": "Base + 0x0794",
+    "address": "Base+0x0794",
     "type": "R/W",
     "description": "DP AUX Channel Control Register 1",
     "reset_value": "0x00000000",
@@ -2634,7 +3016,7 @@
   },
   {
     "name": "AUX_ADDR_7_0",
-    "address": "Base + 0x0798",
+    "address": "Base+0x0798",
     "type": "R/W",
     "description": "DP AUX CH Address Register #0",
     "reset_value": "0x00000000",
@@ -2655,7 +3037,7 @@
   },
   {
     "name": "AUX_ADDR_15_8",
-    "address": "Base + 0x079C",
+    "address": "Base+0x079C",
     "type": "R/W",
     "description": "DP AUX CH Address Register #1",
     "reset_value": "0x00000000",
@@ -2676,7 +3058,7 @@
   },
   {
     "name": "AUX_ADDR_19_16",
-    "address": "Base + 0x07A0",
+    "address": "Base+0x07A0",
     "type": "R/W",
     "description": "DP AUX CH Address Register #2",
     "reset_value": "0x00000000",
@@ -2697,7 +3079,7 @@
   },
   {
     "name": "AUX_CH_CTL_2",
-    "address": "Base + 0x07A4",
+    "address": "Base+0x07A4",
     "type": "R/W",
     "description": "DP AUX CH Control Register 2",
     "reset_value": "0x00000000",
@@ -2735,120 +3117,29 @@
     ]
   },
   {
-    "name": "BUF_DATA_0",
-    "address": "Base + 0x07C0",
+    "name": "BUF_DATA_0~BUF_DATA_15",
+    "address": "Base+0x07C0~Base+0x07FC",
     "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_1",
-    "address": "Base + 0x07C4",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_2",
-    "address": "Base + 0x07C8",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_3",
-    "address": "Base + 0x07CC",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_4",
-    "address": "Base + 0x07D0",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_5",
-    "address": "Base + 0x07D4",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_6",
-    "address": "Base + 0x07D8",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_7",
-    "address": "Base + 0x07DC",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_8",
-    "address": "Base + 0x07E0",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_9",
-    "address": "Base + 0x07E4",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_10",
-    "address": "Base + 0x07E8",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_11",
-    "address": "Base + 0x07EC",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_12",
-    "address": "Base + 0x07F0",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_13",
-    "address": "Base + 0x07F4",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_14",
-    "address": "Base + 0x07F8",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
-  },
-  {
-    "name": "BUF_DATA_15",
-    "address": "Base + 0x07FC",
-    "type": "R/W",
-    "description": "AUX CH buffer data",
-    "reset_value": "0x000000FF"
+    "description": "AUX CH buffer data 0 ~ 15",
+    "reset_value": "0x000000FF",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:8]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "BUF_DATA_0~BUF_DATA_15",
+        "bits": "[7:0]",
+        "description": "AUX CH buffer data 0 ~ 15",
+        "initial_value": "0xFF"
+      }
+    ]
   },
   {
     "name": "ATE_TEST_CTL",
-    "address": "Base + 0x0804",
+    "address": "Base+0x0804",
     "type": "R/WSC",
     "description": "ATE test control register",
     "reset_value": "0x00000000",
@@ -2893,77 +3184,70 @@
   },
   {
     "name": "ATE_TEST_STATUS",
-    "address": "Base + 0x0808",
+    "address": "Base+0x0808",
     "type": "RO",
     "description": "ATE test status register",
     "reset_value": "0x00000000",
     "bit_ranges": [
       {
-        "name": "ATE_TEST_ERR_CNT",
-        "bits": "[31:0]",
-        "description": "ATE test error counter register.0x080C\u2014lane0, \n0x0810\u2014lane1, 0x0814\u2014lane2, 0x0818\u2014lane3",
+        "name": "-",
+        "bits": "[31:20 ]",
+        "description": "Reserved",
         "initial_value": "0"
       },
       {
-        "name": "Register",
-        "bits": "Address",
-        "description": "Type",
-        "initial_value": "DescriptionReset Value"
+        "name": "ERROR_INC",
+        "bits": "[19:16 ]",
+        "description": "ERROR indicator \n[19]:lane3,[18]:lane2,[17]:lane1,[16]:lane0",
+        "initial_value": "0"
+      },
+      {
+        "name": "PRBS7CHECKFSMSTATE",
+        "bits": "[15:0]",
+        "description": "PRBS7 check FSM state \n[15:12]:lane3,[11:8]:lane2,[7:4]:lane1,[3:0]:lane \n0",
+        "initial_value": "0"
       }
     ]
   },
   {
-    "name": "ATE_TEST_ERR_CNT0",
-    "address": "Base + 0x080C",
+    "name": "ATE_TEST_ERR_CNT0~ATE_TEST_ERR_CNT3",
+    "address": "Base+0x080C~Base+0x0818",
     "type": "RO",
-    "description": "Lane0 ATE test error counter register",
-    "reset_value": "0x00000000"
-  },
-  {
-    "name": "ATE_TEST_ERR_CNT1",
-    "address": "Base + 0x0810",
-    "type": "RO",
-    "description": "Lane1 ATE test error counter register",
-    "reset_value": "0x00000000"
-  },
-  {
-    "name": "ATE_TEST_ERR_CNT2",
-    "address": "Base + 0x0814",
-    "type": "RO",
-    "description": "Lane2 ATE test error counter register",
-    "reset_value": "0x00000000"
-  },
-  {
-    "name": "ATE_TEST_ERR_CNT3",
-    "address": "Base + 0x0818",
-    "type": "RO",
-    "description": "Lane3 ATE test error counter register",
-    "reset_value": "0x00000000"
+    "description": "ATE test error counter register",
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "ATE_TEST_ERR_CNT0~ATE_TEST_ERR_CNT3",
+        "bits": "[31:0]",
+        "description": "ATE test error counter register.0x080C\u2014lane0, \n0x0810\u2014lane1, 0x0814\u2014lane2, 0x0818\u2014lane3",
+        "initial_value": "0"
+      }
+    ]
   },
   {
     "name": "DP_TEST_80B_PATTERN0",
-    "address": "Base + 0x081C",
+    "address": "Base+0x081C",
     "type": "R/W",
     "description": "80b pattern [29:0]",
     "reset_value": "0x00000000",
     "bit_ranges": [
       {
         "name": "-",
-        "bits": "[31:16]",
+        "bits": "[31:30]",
         "description": "Reserved",
         "initial_value": "0"
       },
       {
-        "name": "DP_TEST_HBR2_PATTERN",
-        "bits": "[15:0]",
-        "description": "Hbr2 compliance SR count",
-        "initial_value": "0x0000_0010"
+        "name": "DP_TEST_80B_PATTERN0",
+        "bits": "[29:0]",
+        "description": "DP test 80bit pattern0[29:0]",
+        "initial_value": "0"
       }
     ]
   },
   {
     "name": "DP_TEST_80B_PATTERN1",
-    "address": "Base + 0x0820",
+    "address": "Base+0x0820",
     "type": "R/W",
     "description": "80b pattern [59:30]",
     "reset_value": "0x00000000",
@@ -2984,21 +3268,49 @@
   },
   {
     "name": "DP_TEST_80B_PATTERN2",
-    "address": "Base + 0x0824",
+    "address": "Base+0x0824",
     "type": "R/W",
     "description": "80b pattern [79:60]",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:20]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_TEST_80B_PATTERN2",
+        "bits": "[19:0]",
+        "description": "DP test 80bit pattern0[79:60]",
+        "initial_value": "0x0000_0000"
+      }
+    ]
   },
   {
     "name": "DP_TEST_HBR2_PATTERN",
-    "address": "Base + 0x0828",
+    "address": "Base+0x0828",
     "type": "R/W",
     "description": "Hbr2 compliance SR count",
-    "reset_value": "0x00000000"
+    "reset_value": "0x00000000",
+    "bit_ranges": [
+      {
+        "name": "-",
+        "bits": "[31:16]",
+        "description": "Reserved",
+        "initial_value": "0"
+      },
+      {
+        "name": "DP_TEST_HBR2_PATTERN",
+        "bits": "[15:0]",
+        "description": "Hbr2 compliance SR count",
+        "initial_value": "0x0000_0010"
+      }
+    ]
   },
   {
     "name": "CRC_CON",
-    "address": "Base + 0x0890",
+    "address": "Base+0x0890",
     "type": "R/W",
     "description": "CRC control register",
     "reset_value": "0x00000000",
@@ -3031,7 +3343,7 @@
   },
   {
     "name": "ANALOG_CTL_5",
-    "address": "Base + 0x0914",
+    "address": "Base+0x0914",
     "type": "R/W",
     "description": "PC2 Control Register",
     "reset_value": "0x00000000",
@@ -3070,7 +3382,7 @@
   },
   {
     "name": "ANALOG_CTL_6",
-    "address": "Base + 0x0918",
+    "address": "Base+0x0918",
     "type": "R/W",
     "description": "AMP_400MV_0DB",
     "reset_value": "0x00000050",
@@ -3091,7 +3403,7 @@
   },
   {
     "name": "ANALOG_CTL_7",
-    "address": "Base + 0x091C",
+    "address": "Base+0x091C",
     "type": "R/W",
     "description": "AMP_600MV_0DB",
     "reset_value": "0x00000078",
@@ -3112,7 +3424,7 @@
   },
   {
     "name": "ANALOG_CTL_8",
-    "address": "Base + 0x0920",
+    "address": "Base+0x0920",
     "type": "R/W",
     "description": "AMP_800MV_0DB",
     "reset_value": "0x000000A0",
@@ -3133,7 +3445,7 @@
   },
   {
     "name": "ANALOG_CTL_9",
-    "address": "Base + 0x0924",
+    "address": "Base+0x0924",
     "type": "R/W",
     "description": "AMP_1200MV_0DB",
     "reset_value": "0x000000F0",
@@ -3154,7 +3466,7 @@
   },
   {
     "name": "ANALOG_CTL_10",
-    "address": "Base + 0x0928",
+    "address": "Base+0x0928",
     "type": "R/W",
     "description": "AMP_400MV_3P5DB",
     "reset_value": "0x00000064",
@@ -3175,7 +3487,7 @@
   },
   {
     "name": "ANALOG_CTL_11",
-    "address": "Base + 0x092C",
+    "address": "Base+0x092C",
     "type": "R/W",
     "description": "AMP_600MV_3P5DB",
     "reset_value": "0x00000096",
@@ -3196,7 +3508,7 @@
   },
   {
     "name": "ANALOG_CTL_12",
-    "address": "Base + 0x0930",
+    "address": "Base+0x0930",
     "type": "R/W",
     "description": "AMP_800MV_3P5DB",
     "reset_value": "0x000000C8",
@@ -3217,7 +3529,7 @@
   },
   {
     "name": "ANALOG_CTL_13",
-    "address": "Base + 0x0934",
+    "address": "Base+0x0934",
     "type": "R/W",
     "description": "AMP_400MV_6DB",
     "reset_value": "0x00000078",
@@ -3238,7 +3550,7 @@
   },
   {
     "name": "ANALOG_CTL_14",
-    "address": "Base + 0x0938",
+    "address": "Base+0x0938",
     "type": "R/W",
     "description": "AMP_600MV_6DB",
     "reset_value": "0x000000B4",
@@ -3259,7 +3571,7 @@
   },
   {
     "name": "ANALOG_CTL_15",
-    "address": "Base + 0x093C",
+    "address": "Base+0x093C",
     "type": "R/W",
     "description": "AMP_400MV_9DB",
     "reset_value": "0x000000A0",
@@ -3280,7 +3592,7 @@
   },
   {
     "name": "ANALOG_CTL_16",
-    "address": "Base + 0x0940",
+    "address": "Base+0x0940",
     "type": "R/W",
     "description": "EMP_400MV_0DB",
     "reset_value": "0x00000000",
@@ -3301,7 +3613,7 @@
   },
   {
     "name": "ANALOG_CTL_17",
-    "address": "Base + 0x0944",
+    "address": "Base+0x0944",
     "type": "R/W",
     "description": "EMP_600MV_0DB",
     "reset_value": "0x00000000",
@@ -3322,7 +3634,7 @@
   },
   {
     "name": "ANALOG_CTL_18",
-    "address": "Base + 0x0948",
+    "address": "Base+0x0948",
     "type": "R/W",
     "description": "EMP_800MV_0DB",
     "reset_value": "0x00000000",
@@ -3343,7 +3655,7 @@
   },
   {
     "name": "ANALOG_CTL_19",
-    "address": "Base + 0x094C",
+    "address": "Base+0x094C",
     "type": "R/W",
     "description": "EMP_1200MV_0DB",
     "reset_value": "0x00000000",
@@ -3364,7 +3676,7 @@
   },
   {
     "name": "ANALOG_CTL_20",
-    "address": "Base + 0x0950",
+    "address": "Base+0x0950",
     "type": "R/W",
     "description": "EMP_400MV_3P5DB",
     "reset_value": "0x00000028",
@@ -3385,7 +3697,7 @@
   },
   {
     "name": "ANALOG_CTL_21",
-    "address": "Base + 0x0954",
+    "address": "Base+0x0954",
     "type": "R/W",
     "description": "EMP_600MV_3P5DB",
     "reset_value": "0x0000003C",
@@ -3406,7 +3718,7 @@
   },
   {
     "name": "ANALOG_CTL_22",
-    "address": "Base + 0x0958",
+    "address": "Base+0x0958",
     "type": "R/W",
     "description": "EMP_800MV_3P5DB",
     "reset_value": "0x00000050",
@@ -3427,7 +3739,7 @@
   },
   {
     "name": "ANALOG_CTL_23",
-    "address": "Base + 0x095C",
+    "address": "Base+0x095C",
     "type": "R/W",
     "description": "EMP_400MV_6DB",
     "reset_value": "0x00000050",
@@ -3448,7 +3760,7 @@
   },
   {
     "name": "ANALOG_CTL_24",
-    "address": "Base + 0x0960",
+    "address": "Base+0x0960",
     "type": "R/W",
     "description": "EMP_600MV_6DB",
     "reset_value": "0x00000078",
@@ -3469,7 +3781,7 @@
   },
   {
     "name": "ANALOG_CTL_25",
-    "address": "Base + 0x0964",
+    "address": "Base+0x0964",
     "type": "R/W",
     "description": "EMP_400MV_9DB",
     "reset_value": "0x000000A0",
@@ -3490,7 +3802,7 @@
   },
   {
     "name": "ANALOG_CTL_26",
-    "address": "Base + 0x0968",
+    "address": "Base+0x0968",
     "type": "R/W",
     "description": "PC2_400MV_0DB",
     "reset_value": "0x00000004",
@@ -3511,7 +3823,7 @@
   },
   {
     "name": "ANALOG_CTL_27",
-    "address": "Base + 0x096C",
+    "address": "Base+0x096C",
     "type": "R/W",
     "description": "PC2_600MV_0DB",
     "reset_value": "0x00000006",
@@ -3532,7 +3844,7 @@
   },
   {
     "name": "ANALOG_CTL_28",
-    "address": "Base + 0x0970",
+    "address": "Base+0x0970",
     "type": "R/W",
     "description": "PC2_800MV_0DB",
     "reset_value": "0x00000008",
@@ -3553,7 +3865,7 @@
   },
   {
     "name": "ANALOG_CTL_29",
-    "address": "Base + 0x0974",
+    "address": "Base+0x0974",
     "type": "R/W",
     "description": "PC2_1200MV_0DB",
     "reset_value": "0x0000000C",
@@ -3574,7 +3886,7 @@
   },
   {
     "name": "ANALOG_CTL_30",
-    "address": "Base + 0x0978",
+    "address": "Base+0x0978",
     "type": "R/W",
     "description": "PC2_400MV_3P5DB",
     "reset_value": "0x00000006",
@@ -3595,7 +3907,7 @@
   },
   {
     "name": "ANALOG_CTL_31",
-    "address": "Base + 0x097C",
+    "address": "Base+0x097C",
     "type": "R/W",
     "description": "PC2_600MV_3P5DB",
     "reset_value": "0x00000009",
@@ -3616,7 +3928,7 @@
   },
   {
     "name": "ANALOG_CTL_32",
-    "address": "Base + 0x0980",
+    "address": "Base+0x0980",
     "type": "R/W",
     "description": "PC2_800MV_3P5DB",
     "reset_value": "0x0000000C",
@@ -3637,7 +3949,7 @@
   },
   {
     "name": "ANALOG_CTL_33",
-    "address": "Base + 0x0984",
+    "address": "Base+0x0984",
     "type": "R/W",
     "description": "PC2_400MV_6DB",
     "reset_value": "0x00000008",
@@ -3658,7 +3970,7 @@
   },
   {
     "name": "ANALOG_CTL_34",
-    "address": "Base + 0x0988",
+    "address": "Base+0x0988",
     "type": "R/W",
     "description": "PC2_600MV_6DB",
     "reset_value": "0x0000000C",
@@ -3679,7 +3991,7 @@
   },
   {
     "name": "ANALOG_CTL_35",
-    "address": "Base + 0x098C",
+    "address": "Base+0x098C",
     "type": "R/W",
     "description": "PC2_400MV_9DB",
     "reset_value": "0x0000000C",
@@ -3700,7 +4012,7 @@
   },
   {
     "name": "ANALOG_CTL_36",
-    "address": "Base + 0x0990",
+    "address": "Base+0x0990",
     "type": "R/W",
     "description": "CH0_AMP_FORCE_VALUE",
     "reset_value": "0x00000050",
@@ -3721,7 +4033,7 @@
   },
   {
     "name": "ANALOG_CTL_37",
-    "address": "Base + 0x0994",
+    "address": "Base+0x0994",
     "type": "R/W",
     "description": "CH0_EMP_FORCE_VALUE",
     "reset_value": "0x00000000",
@@ -3742,7 +4054,7 @@
   },
   {
     "name": "ANALOG_CTL_38",
-    "address": "Base + 0x0998",
+    "address": "Base+0x0998",
     "type": "R/W",
     "description": "CH0_PC2_FORCE_VALUE",
     "reset_value": "0x00000004",
@@ -3763,7 +4075,7 @@
   },
   {
     "name": "ANALOG_CTL_39",
-    "address": "Base + 0x099C",
+    "address": "Base+0x099C",
     "type": "R/W",
     "description": "CH1_AMP_FORCE_VALUE",
     "reset_value": "0x00000050",
@@ -3784,7 +4096,7 @@
   },
   {
     "name": "ANALOG_CTL_40",
-    "address": "Base + 0x09A0",
+    "address": "Base+0x09A0",
     "type": "R/W",
     "description": "CH1_EMP_FORCE_VALUE",
     "reset_value": "0x00000000",
@@ -3805,7 +4117,7 @@
   },
   {
     "name": "ANALOG_CTL_41",
-    "address": "Base + 0x09A4",
+    "address": "Base+0x09A4",
     "type": "R/W",
     "description": "CH1_PC2_FORCE_VALUE",
     "reset_value": "0x00000004",
@@ -3826,7 +4138,7 @@
   },
   {
     "name": "ANALOG_CTL_42",
-    "address": "Base + 0x09A8",
+    "address": "Base+0x09A8",
     "type": "R/W",
     "description": "CH0_CH1_FORCE_CTRL",
     "reset_value": "0x00000000",
@@ -3877,7 +4189,7 @@
   },
   {
     "name": "ANALOG_CTL_43",
-    "address": "Base + 0x09AC",
+    "address": "Base+0x09AC",
     "type": "R/W",
     "description": "CH2_AMP_FORCE_VALUE",
     "reset_value": "0x00000050",
@@ -3898,7 +4210,7 @@
   },
   {
     "name": "ANALOG_CTL_44",
-    "address": "Base + 0x09B0",
+    "address": "Base+0x09B0",
     "type": "R/W",
     "description": "CH2_EMP_FORCE_VALUE",
     "reset_value": "0x00000000",
@@ -3919,7 +4231,7 @@
   },
   {
     "name": "ANALOG_CTL_45",
-    "address": "Base + 0x09B4",
+    "address": "Base+0x09B4",
     "type": "R/W",
     "description": "CH2_PC2_FORCE_VALUE",
     "reset_value": "0x00000004",
@@ -3940,7 +4252,7 @@
   },
   {
     "name": "ANALOG_CTL_46",
-    "address": "Base + 0x09B8",
+    "address": "Base+0x09B8",
     "type": "R/W",
     "description": "CH3_AMP_FORCE_VALUE",
     "reset_value": "0x00000050",
@@ -3961,7 +4273,7 @@
   },
   {
     "name": "ANALOG_CTL_47",
-    "address": "Base + 0x09BC",
+    "address": "Base+0x09BC",
     "type": "R/W",
     "description": "CH3_EMP_FORCE_VALUE",
     "reset_value": "0x00000000",
@@ -3973,7 +4285,7 @@
         "initial_value": "0"
       },
       {
-        "name": "R_CH3_EMP_FORCE_VAL UE",
+        "name": "R_CH3_EMP_FORCE_VALUE",
         "bits": "[7:0]",
         "description": "The forced ch3 emp value (for calculating \nch3_pre_emphasis_bit) value in specific V_diff \nand Pre_emphasis.",
         "initial_value": "0x00"
@@ -3982,7 +4294,7 @@
   },
   {
     "name": "ANALOG_CTL_48",
-    "address": "Base + 0x09C0",
+    "address": "Base+0x09C0",
     "type": "R/W",
     "description": "CH3_PC2_FORCE_VALUE",
     "reset_value": "0x00000004",
@@ -4003,7 +4315,7 @@
   },
   {
     "name": "ANALOG_CTL_49",
-    "address": "Base + 0x09C4",
+    "address": "Base+0x09C4",
     "type": "R/W",
     "description": "CH2_CH3_FORCE_CTRL",
     "reset_value": "0x00000000",
@@ -4054,7 +4366,7 @@
   },
   {
     "name": "LINK_POLICY",
-    "address": "Base + 0x09D8",
+    "address": "Base+0x09D8",
     "type": "R/W",
     "description": "Dp Link Policy",
     "reset_value": "0x00000050",
@@ -4105,7 +4417,7 @@
   },
   {
     "name": "PLL_REG_1",
-    "address": "Base + 0x00FC",
+    "address": "Base+0x00FC",
     "type": "R/W",
     "description": "Pll_control_1",
     "reset_value": "0x00000011",
@@ -4138,7 +4450,7 @@
   },
   {
     "name": "PLL_REG_2",
-    "address": "Base + 0x09E4",
+    "address": "Base+0x09E4",
     "type": "R/W",
     "description": "Pll_control_2",
     "reset_value": "0x00000011",
@@ -4177,7 +4489,7 @@
   },
   {
     "name": "PLL_REG_3",
-    "address": "Base + 0x09E8",
+    "address": "Base+0x09E8",
     "type": "R/W",
     "description": "Pll_control_3",
     "reset_value": "0x0000002B",
@@ -4228,7 +4540,7 @@
   },
   {
     "name": "PLL_REG_4",
-    "address": "Base + 0x09EC",
+    "address": "Base+0x09EC",
     "type": "R/W",
     "description": "Pll_control_4",
     "reset_value": "0x00000023",
@@ -4249,7 +4561,7 @@
   },
   {
     "name": "PLL_REG_5",
-    "address": "Base + 0x0A00",
+    "address": "Base+0x0A00",
     "type": "R/W",
     "description": "Pll_control_5",
     "reset_value": "0x00000000",
@@ -4279,7 +4591,7 @@
         "initial_value": "2\u2019b01"
       },
       {
-        "name": "CHG_PUMP_INPUT_CTRL_ OP",
+        "name": "CHG_PUMP_INPUT_CTRL_OP",
         "bits": "[0]",
         "description": "option to control charge pump input \nvoltage for 0.95V master regulator \n0: set by pll_reg5<2:1>(default) \n1: 1.8V",
         "initial_value": "0"
@@ -4288,7 +4600,7 @@
   },
   {
     "name": "PLL_REG_MAC",
-    "address": "Base + 0x0A04",
+    "address": "Base+0x0A04",
     "type": "R/W",
     "description": "Pll_control_MAC",
     "reset_value": "0x00000000",
@@ -4309,7 +4621,7 @@
   },
   {
     "name": "FREQ_IN_REG",
-    "address": "Base + 0x0A10",
+    "address": "Base+0x0A10",
     "type": "R/W",
     "description": "freq_in_reg",
     "reset_value": "0x00000080",
@@ -4330,7 +4642,7 @@
   },
   {
     "name": "P_REG_FRQ",
-    "address": "Base + 0x0A14",
+    "address": "Base+0x0A14",
     "type": "RO",
     "description": "frequency counter ,digital output for debug",
     "reset_value": "0x00000000",
@@ -4351,7 +4663,7 @@
   },
   {
     "name": "P_REG_FRQ_COUNT_RDY",
-    "address": "Base + 0x0A18",
+    "address": "Base+0x0A18",
     "type": "RO",
     "description": "frequency counter ready indicator",
     "reset_value": "0x00000000",
@@ -4372,7 +4684,7 @@
   },
   {
     "name": "P_BAND_DEC_RESET",
-    "address": "Base + 0x0A1C",
+    "address": "Base+0x0A1C",
     "type": "WO",
     "description": "reset band decoder",
     "reset_value": "0x00000000",
@@ -4393,7 +4705,7 @@
   },
   {
     "name": "SSC_REG",
-    "address": "Base + 0x0104",
+    "address": "Base+0x0104",
     "type": "R/W",
     "description": "SSC control",
     "reset_value": "0x0000000A",
@@ -4426,7 +4738,7 @@
   },
   {
     "name": "TX_COMMON",
-    "address": "Base + 0x0114",
+    "address": "Base+0x0114",
     "type": "R/W",
     "description": "Tx terminal resistor control",
     "reset_value": "0x0000003A",
@@ -4438,7 +4750,7 @@
         "initial_value": "0"
       },
       {
-        "name": "TX_SWING_PRE_EMP_MO DE_SEL",
+        "name": "TX_SWING_PRE_EMP_MODE_SEL",
         "bits": "[7]",
         "description": "TX swing and pre emphasis control mode \nselection \n1: TX swing and pre emphasis control by \nregister dp_reserv2<7:0> \n0: TX swing and pre emphasis control by \nregister chx_reg_swing<7:0> and \nchx_reg_pre<7:0>",
         "initial_value": "1"
@@ -4450,7 +4762,7 @@
         "initial_value": "0"
       },
       {
-        "name": "LP_MODE_CLK_REGULAT OR",
+        "name": "LP_MODE_CLK_REGULATOR",
         "bits": "[4]",
         "description": "Low power mode control for clock regulator \n0:low power mode \n1:high power mode",
         "initial_value": "0"
@@ -4471,7 +4783,7 @@
   },
   {
     "name": "TX_COMMON2",
-    "address": "Base + 0x0118",
+    "address": "Base+0x0118",
     "type": "R/W",
     "description": "Tx terminal resistor control2",
     "reset_value": "0x00000050",
@@ -4522,7 +4834,7 @@
   },
   {
     "name": "TX_COMMON3",
-    "address": "Base + 0x0A08",
+    "address": "Base+0x0A08",
     "type": "R/W",
     "description": "Tx terminal resistor control3",
     "reset_value": "0x00000000",
@@ -4561,7 +4873,7 @@
   },
   {
     "name": "DP_AUX",
-    "address": "Base + 0x0120",
+    "address": "Base+0x0120",
     "type": "R/W",
     "description": "Aux control",
     "reset_value": "0x00000007",
@@ -4600,7 +4912,7 @@
   },
   {
     "name": "DP_BIAS",
-    "address": "Base + 0x0124",
+    "address": "Base+0x0124",
     "type": "R/W",
     "description": "Bias control",
     "reset_value": "0x00000034",
@@ -4639,7 +4951,7 @@
   },
   {
     "name": "DP_TEST",
-    "address": "Base + 0x0128",
+    "address": "Base+0x0128",
     "type": "R/W",
     "description": "Test mode",
     "reset_value": "0x00000000",
@@ -4672,7 +4984,7 @@
   },
   {
     "name": "DP_PD",
-    "address": "Base + 0x012C",
+    "address": "Base+0x012C",
     "type": "R/W",
     "description": "Power down control",
     "reset_value": "0x000000FF",
@@ -4735,7 +5047,7 @@
   },
   {
     "name": "DP_RESERV1",
-    "address": "Base + 0x0130",
+    "address": "Base+0x0130",
     "type": "R/W",
     "description": "RESERVD1",
     "reset_value": "0x00000000",
@@ -4792,7 +5104,7 @@
   },
   {
     "name": "DP_RESERV2",
-    "address": "Base + 0x0134",
+    "address": "Base+0x0134",
     "type": "R/W",
     "description": "RESERVD2",
     "reset_value": "0x00000011",

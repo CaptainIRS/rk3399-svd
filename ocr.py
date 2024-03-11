@@ -6,7 +6,6 @@ import pytesseract
 import json
 from tqdm.contrib.concurrent import process_map
 
-# name = 'part10001-0035'
 def process_image(name):
     path = f'images/{name}.png'
     image = Image.open(path)
@@ -16,11 +15,8 @@ def process_image(name):
     for x in range(0, (1535 - 125)):
         is_black = 0
         for y in range(0, (2200 - 125)):
-            # get the pixel value
             pixel = new_image.getpixel((x, y))
-            # check if the pixel is almost white
             if pixel[0] > 180 and pixel[1] > 180 and pixel[2] > 180:
-                # change the pixel to white
                 new_image.putpixel((x, y), (255, 255, 255))
 
     new_image.save('images/whitened.png')
@@ -29,11 +25,8 @@ def process_image(name):
     for y in range(0, (2200 - 125)):
         is_black = 0
         for x in range(0, (1535 - 125)):
-            # get the pixel value
             pixel = new_image.getpixel((x, y))
-            # check if the pixel is almost black
             if pixel[0] < 100 and pixel[1] < 100 and pixel[2] < 100:
-                # change the pixel to black
                 is_black += 1
         if is_black > 75 / 100 * (1535 - 125):
             hline_coords.append(y)
@@ -56,11 +49,8 @@ def process_image(name):
         for x in range(0, (1535 - 125)):
             is_black = 0
             for y in range(y_start, y_end):
-                # get the pixel value
                 pixel = new_image.getpixel((x, y))
-                # check if the pixel is almost black
                 if pixel[0] < 100 and pixel[1] < 100 and pixel[2] < 100:
-                    # change the pixel to black
                     is_black += 1
             if is_black > 90 / 100 * (y_end - y_start):
                 cols.append(x)
@@ -108,6 +98,8 @@ def process_image(name):
 
     def add_border(image, width=2, color=(0, 0, 0)):
         image = image.convert('L')
+        if image.width < 3 * width or image.height < 3 * width:
+            return image
         new_image = image.crop((width, width, image.width - width, image.height - width))
         return new_image
 
@@ -141,6 +133,6 @@ def process_image(name):
     new_image.save(f'content/{name}/structure.png')
 
 if __name__ == '__main__':
-    names = range(1, 100)
-    names = [f'part10001-{str(i).zfill(4)}' for i in names]
+    names = range(10, 1015)
+    names = [f'part20001-{str(i).zfill(4)}' for i in names]
     process_map(process_image, names, max_workers=4)

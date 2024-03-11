@@ -50273,7 +50273,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "LOAD_COUNT_LOW BITS",
+            "name": "LOAD_COUNT_LOW_BITS",
             "bit_range": "31:0",
             "attr": "RW",
             "reset": "0x00000000",
@@ -50290,7 +50290,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "LOAD_COUNT_HIGH BITS",
+            "name": "LOAD_COUNT_HIGH_BITS",
             "bit_range": "31:0",
             "attr": "RW",
             "reset": "0x00000000",
@@ -50307,7 +50307,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "CURRENT_CNT_LOWBITS",
+            "name": "CURRENT_CNT_LOW_BITS",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
@@ -50324,7 +50324,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "CURRENT_CNT_HIGHBITS",
+            "name": "CURRENT_CNT_HIGH_BITS",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
@@ -50341,7 +50341,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "LOAD_COUNT_LOW BITS",
+            "name": "LOAD_COUNT_LOW_BITS",
             "bit_range": "31:0",
             "attr": "RW",
             "reset": "0x00000000",
@@ -50358,7 +50358,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "LOAD_COUNT_HIGH BITS",
+            "name": "LOAD_COUNT_HIGH_BITS",
             "bit_range": "31:0",
             "attr": "RW",
             "reset": "0x00000000",
@@ -50508,25 +50508,25 @@
             "description": "reserved"
           },
           {
-            "name": "PROVIDES THE SECURITY STATUS OF THE DMA MANAGER THREAD:",
+            "name": "",
             "bit_range": "9",
             "attr": "RO",
             "reset": "0x0",
-            "description": "0 = DMA manager operates in the Secure state\n1 = DMA manager operates in the Non-secure state."
+            "description": "Provides the security status of the DMA manager thread:\n0 = DMA manager operates in the Secure state\n1 = DMA manager operates in the Non-secure state."
           },
           {
-            "name": "WHEN THE DMA MANAGER THREAD EXECUTES A DMAWFE INSTRUCTION, IT",
+            "name": "",
             "bit_range": "8:4",
             "attr": "RO",
             "reset": "0x00",
-            "description": "waits for the following event to occur:\nb00000 = event[0]\nb00001 = event[1]\nb00010 = event[2]\n...\nb11111 = event[31]."
+            "description": "When the DMA manager thread executes a DMAWFE instruction, it\nwaits for the following event to occur:\nb00000 = event[0]\nb00001 = event[1]\nb00010 = event[2]\n...\nb11111 = event[31]."
           },
           {
-            "name": "THE OPERATING STATE OF THE DMA MANAGER:",
+            "name": "",
             "bit_range": "3:0",
             "attr": "RO",
             "reset": "0x0",
-            "description": "b0000 = Stopped\nb0001 = Executing\nb0010 = Cache miss\nb0011 = Updating PC\nb0100 = Waiting for event\nb0101-b1110 = reserved\nb1111 = Faulting."
+            "description": "The operating state of the DMA manager:\nb0000 = Stopped\nb0001 = Executing\nb0010 = Cache miss\nb0011 = Updating PC\nb0100 = Waiting for event\nb0101-b1110 = reserved\nb1111 = Faulting."
           }
         ],
         "description": "DMA Manager Status Register"
@@ -50539,7 +50539,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "PROGRAM COUNTER FOR THE DMA MANAGER THREAD",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
@@ -50556,11 +50556,11 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "PROGRAM THE APPROPRIATE BIT TO CONTROL HOW THE DMAC RESPONDS",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RW",
             "reset": "0x00000000",
-            "description": "when it executes DMASEV:\nBit [N] = 0 If the DMAC executes DMASEV for the event-interrupt\nresource N then the DMAC signals event N to all of the threads. Set\nbit [N] to 0 if your system design does not use irq[N] to\nsignal an interrupt request.\nBit [N] = 1 If the DMAC executes DMASEV for the event-interrupt\nresource N then the DMAC sets irq[N] HIGH. Set bit [N] to 1 if your\nsystem designer requires irq[N] to signal an interruptrequest."
+            "description": "Program the appropriate bit to control how the DMAC responds\nwhen it executes DMASEV:\nBit [N] = 0 If the DMAC executes DMASEV for the event-interrupt\nresource N then the DMAC signals event N to all of the threads. Set\nbit [N] to 0 if your system design does not use irq[N] to\nsignal an interrupt request.\nBit [N] = 1 If the DMAC executes DMASEV for the event-interrupt\nresource N then the DMAC sets irq[N] HIGH. Set bit [N] to 1 if your\nsystem designer requires irq[N] to signal an interruptrequest."
           }
         ],
         "description": "Interrupt Enable Register"
@@ -50573,11 +50573,11 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "RETURNS THE STATUS OF THE EVENT-INTERRUPT RESOURCES:",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
-            "description": "Bit [N] = 0 Event N is inactive or irq[N] is LOW.\nBit [N] = 1 Event N is active or irq[N] is HIGH."
+            "description": "Returns the status of the event-interrupt resources:\nBit [N] = 0 Event N is inactive or irq[N] is LOW.\nBit [N] = 1 Event N is active or irq[N] is HIGH."
           }
         ],
         "description": "Event-Interrupt Raw Status Register"
@@ -50590,11 +50590,11 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "PROVIDES THE STATUS OF THE INTERRUPTS THAT ARE ACTIVE IN THE DMAC:",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
-            "description": "Bit [N] = 0 Interrupt N is inactive and therefore irq[N] is LOW.\nBit [N] = 1 Interrupt N is active and therefore irq[N] is HIGH"
+            "description": "Provides the status of the interrupts that are active in the DMAC:\nBit [N] = 0 Interrupt N is inactive and therefore irq[N] is LOW.\nBit [N] = 1 Interrupt N is active and therefore irq[N] is HIGH"
           }
         ],
         "description": "Interrupt Status Register"
@@ -50607,11 +50607,11 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "CONTROLS THE CLEARING OF THE IRQ OUTPUTS:",
+            "name": "",
             "bit_range": "31:0",
             "attr": "WO",
             "reset": "0x00000000",
-            "description": "Bit [N] = 0 The status of irq[N] does not change.\nBit [N] = 1 The DMAC sets irq[N] LOW if the INTEN Register\nprograms the DMAC to signal an interrupt.\nOtherwise, the status of irq[N] does not change."
+            "description": "Controls the clearing of the irq outputs:\nBit [N] = 0 The status of irq[N] does not change.\nBit [N] = 1 The DMAC sets irq[N] LOW if the INTEN Register\nprograms the DMAC to signal an interrupt.\nOtherwise, the status of irq[N] does not change."
           }
         ],
         "description": "Interrupt Clear Register"
@@ -50624,11 +50624,11 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "PROVIDES THE FAULT STATUS OF THE DMA MANAGER. READ AS:",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
-            "description": "0 = the DMA manager thread is not in the Faulting state\n1 = the DMA manager thread is in the Faulting state."
+            "description": "Provides the fault status of the DMA manager. Read as:\n0 = the DMA manager thread is not in the Faulting state\n1 = the DMA manager thread is in the Faulting state."
           }
         ],
         "description": "Fault Status DMA Manager Register"
@@ -50641,11 +50641,11 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "EACH BIT PROVIDES THE FAULT STATUS OF THE CORRESPONDING CHANNEL.",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
-            "description": "Read as:\nBit [N] = 0 No fault is present on DMA channel N.\nBit [N] = 1 DMA channel N is in the Faulting or Faulting completing\nstate."
+            "description": "Each bit provides the fault status of the corresponding channel.\nRead as:\nBit [N] = 0 No fault is present on DMA channel N.\nBit [N] = 1 DMA channel N is in the Faulting or Faulting completing\nstate."
           }
         ],
         "description": "Fault Status DMA Channel Register"
@@ -50665,11 +50665,11 @@
             "description": "reserved"
           },
           {
-            "name": "IF THE DMA MANAGER ABORTS, THIS BIT INDICATES IF THE ERRONEOUS",
+            "name": "",
             "bit_range": "30",
             "attr": "RO",
             "reset": "0x0",
-            "description": "instruction was read from the system\nmemory or from the debug interface:\n0 = instruction that generated an abort was read from system\nmemory\n1 = instruction that generated an abort was read from the debug\ninterface."
+            "description": "If the DMA manager aborts, this bit indicates if the erroneous\ninstruction was read from the system\nmemory or from the debug interface:\n0 = instruction that generated an abort was read from system\nmemory\n1 = instruction that generated an abort was read from the debug\ninterface."
           },
           {
             "name": "RESERVED",
@@ -50679,11 +50679,11 @@
             "description": "reserved"
           },
           {
-            "name": "INDICATES THE AXI RESPONSE THAT THE DMAC RECEIVES ON THE RRESP",
+            "name": "",
             "bit_range": "16",
             "attr": "RO",
             "reset": "0x0",
-            "description": "bus, after the DMA manager\nperforms an instruction fetch:\n0 = OKAY response\n1 = EXOKAY, SLVERR, or DECERR response"
+            "description": "Indicates the AXI response that the DMAC receives on the RRESP\nbus, after the DMA manager\nperforms an instruction fetch:\n0 = OKAY response\n1 = EXOKAY, SLVERR, or DECERR response"
           },
           {
             "name": "RESERVED",
@@ -50693,18 +50693,18 @@
             "description": "reserved"
           },
           {
-            "name": "INDICATES IF THE DMA MANAGER WAS ATTEMPTING TO EXECUTE DMAWFE",
+            "name": "",
             "bit_range": "5",
             "attr": "RO",
             "reset": "0x0",
-            "description": "or DMASEV with inappropriate security permissions:\n0 = DMA manager has appropriate security to execute DMAWFE or\nDMASEV\n1 = a DMA manager thread in the Non-secure state attempted to\nexecute either:\nDMAWFE to wait for a secure event\nDMASEV to create a secure event or secure interrupt"
+            "description": "Indicates if the DMA manager was attempting to execute DMAWFE\nor DMASEV with inappropriate security permissions:\n0 = DMA manager has appropriate security to execute DMAWFE or\nDMASEV\n1 = a DMA manager thread in the Non-secure state attempted to\nexecute either:\nDMAWFE to wait for a secure event\nDMASEV to create a secure event or secure interrupt"
           },
           {
-            "name": "INDICATES IF THE DMA MANAGER WAS ATTEMPTING TO EXECUTE DMAGO",
+            "name": "",
             "bit_range": "4",
             "attr": "RO",
             "reset": "0x0",
-            "description": "with inappropriate security permissions:\n0 = DMA manager has appropriate security to execute DMAGO\n1 = DMA manager thread in the Non-secure state attempted to\nexecute DMAGO to create a DMA channel operating in the Secure\nstate."
+            "description": "Indicates if the DMA manager was attempting to execute DMAGO\nwith inappropriate security permissions:\n0 = DMA manager has appropriate security to execute DMAGO\n1 = DMA manager thread in the Non-secure state attempted to\nexecute DMAGO to create a DMA channel operating in the Secure\nstate."
           },
           {
             "name": "RESERVED",
@@ -50714,18 +50714,18 @@
             "description": "reserved"
           },
           {
-            "name": "INDICATES IF THE DMA MANAGER WAS ATTEMPTING TO EXECUTE AN",
+            "name": "",
             "bit_range": "1",
             "attr": "RO",
             "reset": "0x0",
-            "description": "instruction operand that was not valid for\nthe configuration of the DMAC:\n0 = valid operand\n1 = invalid operand."
+            "description": "Indicates if the DMA manager was attempting to execute an\ninstruction operand that was not valid for\nthe configuration of the DMAC:\n0 = valid operand\n1 = invalid operand."
           },
           {
-            "name": "INDICATES IF THE DMA MANAGER WAS ATTEMPTING TO EXECUTE AN",
+            "name": "",
             "bit_range": "0",
             "attr": "RW",
             "reset": "0x0",
-            "description": "undefined instruction:\n0 = defined instruction\n1 = undefined instruction."
+            "description": "Indicates if the DMA manager was attempting to execute an\nundefined instruction:\n0 = defined instruction\n1 = undefined instruction."
           }
         ],
         "description": "Fault Type DMA Manager Register"
@@ -50738,18 +50738,18 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "INDICATES IF THE DMA CHANNEL HAS LOCKED-UP BECAUSE OF RESOURCE",
+            "name": "",
             "bit_range": "31",
             "attr": "RO",
             "reset": "0x0",
-            "description": "starvation:\n0 = DMA channel has adequate resources\n1 = DMA channel has locked-up because of insufficient resources.\nThis fault is an imprecise abort"
+            "description": "Indicates if the DMA channel has locked-up because of resource\nstarvation:\n0 = DMA channel has adequate resources\n1 = DMA channel has locked-up because of insufficient resources.\nThis fault is an imprecise abort"
           },
           {
-            "name": "IF THE DMA CHANNEL ABORTS, THIS BIT INDICATES IF THE ERRONEOUS",
+            "name": "",
             "bit_range": "30",
             "attr": "RO",
             "reset": "0x0",
-            "description": "instruction was read from the system\nmemory or from the debug interface:\n0 = instruction that generated an abort was read from system\nmemory\n1 = instruction that generated an abort was read from the debug\ninterface.\nThis fault is an imprecise abort but the bit is only valid when a\nprecise abort occurs."
+            "description": "If the DMA channel aborts, this bit indicates if the erroneous\ninstruction was read from the system\nmemory or from the debug interface:\n0 = instruction that generated an abort was read from system\nmemory\n1 = instruction that generated an abort was read from the debug\ninterface.\nThis fault is an imprecise abort but the bit is only valid when a\nprecise abort occurs."
           },
           {
             "name": "RESERVED",
@@ -50759,25 +50759,25 @@
             "description": "reserved"
           },
           {
-            "name": "INDICATES THE AXI RESPONSE THAT THE DMAC RECEIVES ON THE RRESP",
+            "name": "",
             "bit_range": "18",
             "attr": "RO",
             "reset": "0x0",
-            "description": "bus, after the DMA channel\nthread performs a data read:\n0 = OKAY response\n1 = EXOKAY, SLVERR, or DECERR response.\nThis fault is an imprecise abort"
+            "description": "Indicates the AXI response that the DMAC receives on the RRESP\nbus, after the DMA channel\nthread performs a data read:\n0 = OKAY response\n1 = EXOKAY, SLVERR, or DECERR response.\nThis fault is an imprecise abort"
           },
           {
-            "name": "INDICATES THE AXI RESPONSE THAT THE DMAC RECEIVES ON THE BRESP",
+            "name": "",
             "bit_range": "17",
             "attr": "RO",
             "reset": "0x0",
-            "description": "bus, after the DMA channel\nthread performs a data write:\n0 = OKAY response\n1 = EXOKAY, SLVERR, or DECERR response.\nThis fault is an imprecise abort."
+            "description": "Indicates the AXI response that the DMAC receives on the BRESP\nbus, after the DMA channel\nthread performs a data write:\n0 = OKAY response\n1 = EXOKAY, SLVERR, or DECERR response.\nThis fault is an imprecise abort."
           },
           {
-            "name": "INDICATES THE AXI RESPONSE THAT THE DMAC RECEIVES ON THE RRESP",
+            "name": "",
             "bit_range": "16",
             "attr": "RO",
             "reset": "0x0",
-            "description": "bus, after the DMA channel\nthread performs an instruction fetch:\n0 = OKAY response\n1 = EXOKAY, SLVERR, or DECERR response.\nThis fault is a precise abort."
+            "description": "Indicates the AXI response that the DMAC receives on the RRESP\nbus, after the DMA channel\nthread performs an instruction fetch:\n0 = OKAY response\n1 = EXOKAY, SLVERR, or DECERR response.\nThis fault is a precise abort."
           },
           {
             "name": "RESERVED",
@@ -50787,18 +50787,18 @@
             "description": "reserved"
           },
           {
-            "name": "INDICATES IF THE MFIFO DID NOT CONTAIN THE DATA TO ENABLE THE DMAC",
+            "name": "",
             "bit_range": "13",
             "attr": "RO",
             "reset": "0x0",
-            "description": "to perform the DMAST:\n0 = MFIFO contains all the data to enable the DMAST to complete\n1 = previous DMALDs have not put enough data in the MFIFO to\nenable the DMAST to complete.\nThis fault is a precise abort."
+            "description": "Indicates if the MFIFO did not contain the data to enable the DMAC\nto perform the DMAST:\n0 = MFIFO contains all the data to enable the DMAST to complete\n1 = previous DMALDs have not put enough data in the MFIFO to\nenable the DMAST to complete.\nThis fault is a precise abort."
           },
           {
-            "name": "INDICATES IF THE MFIFO PREVENTED THE DMA CHANNEL THREAD FROM",
+            "name": "",
             "bit_range": "12",
             "attr": "RO",
             "reset": "0x0",
-            "description": "executing DMALD or DMAST. Depending on the instruction:\nDMALD  0 = MFIFO contains sufficient space\n1 = MFIFO is too small to hold the data that DMALD requires.\nDMAST  0 = MFIFO contains sufficient data\n1 = MFIFO is too small to store the data to enable DMAST to\ncomplete.\nThis fault is an imprecise abort"
+            "description": "Indicates if the MFIFO prevented the DMA channel thread from\nexecuting DMALD or DMAST. Depending on the instruction:\nDMALD  0 = MFIFO contains sufficient space\n1 = MFIFO is too small to hold the data that DMALD requires.\nDMAST  0 = MFIFO contains sufficient data\n1 = MFIFO is too small to store the data to enable DMAST to\ncomplete.\nThis fault is an imprecise abort"
           },
           {
             "name": "RESERVED",
@@ -50808,25 +50808,25 @@
             "description": "reserved"
           },
           {
-            "name": "INDICATES IF A DMA CHANNEL THREAD, IN THE NON-SECURE STATE,",
+            "name": "",
             "bit_range": "7",
             "attr": "RO",
             "reset": "0x0",
-            "description": "attempts to program the CCRn Register\nto perform a secure read or secure write:\n0 = a DMA channel thread in the Non-secure state is not violating\nthe security permissions\n1 = a DMA channel thread in the Non-secure state attempted to\nperform a secure read or secure write.\nThis fault is a precise abort"
+            "description": "Indicates if a DMA channel thread, in the Non-secure state,\nattempts to program the CCRn Register\nto perform a secure read or secure write:\n0 = a DMA channel thread in the Non-secure state is not violating\nthe security permissions\n1 = a DMA channel thread in the Non-secure state attempted to\nperform a secure read or secure write.\nThis fault is a precise abort"
           },
           {
-            "name": "INDICATES IF A DMA CHANNEL THREAD, IN THE NON-SECURE STATE,",
+            "name": "",
             "bit_range": "6",
             "attr": "RO",
             "reset": "0x0",
-            "description": "attempts to execute DMAWFP, DMALDP,\nDMASTP, or DMAFLUSHP with inappropriate security permissions:\n0 = a DMA channel thread in the Non-secure state is not violating\nthe security permissions\n1 = a DMA channel thread in the Non-secure state attempted to\nexecute either:\no DMAWFP to wait for a secure peripheral\no DMALDP or DMASTP to notify a secure peripheral\no DMAFLUSHP to flush a secure peripheral.\nThis fault is a precise abort."
+            "description": "Indicates if a DMA channel thread, in the Non-secure state,\nattempts to execute DMAWFP, DMALDP,\nDMASTP, or DMAFLUSHP with inappropriate security permissions:\n0 = a DMA channel thread in the Non-secure state is not violating\nthe security permissions\n1 = a DMA channel thread in the Non-secure state attempted to\nexecute either:\no DMAWFP to wait for a secure peripheral\no DMALDP or DMASTP to notify a secure peripheral\no DMAFLUSHP to flush a secure peripheral.\nThis fault is a precise abort."
           },
           {
-            "name": "INDICATES IF THE DMA CHANNEL THREAD ATTEMPTS TO EXECUTE DMAWFE",
+            "name": "",
             "bit_range": "5",
             "attr": "RO",
             "reset": "0x0",
-            "description": "or DMASEV with inappropriate security permissions:\n0 = a DMA channel thread in the Non-secure state is not violating\nthe security permissions\n1 = a DMA channel thread in the Non-secure state attempted to\nexecute either:\nDMAWFE to wait for a secure event\nDMASEV to create a secure event or secure interrupt.\nThis fault is a precise abort."
+            "description": "Indicates if the DMA channel thread attempts to execute DMAWFE\nor DMASEV with inappropriate security permissions:\n0 = a DMA channel thread in the Non-secure state is not violating\nthe security permissions\n1 = a DMA channel thread in the Non-secure state attempted to\nexecute either:\nDMAWFE to wait for a secure event\nDMASEV to create a secure event or secure interrupt.\nThis fault is a precise abort."
           },
           {
             "name": "RESERVED",
@@ -50836,18 +50836,18 @@
             "description": "reserved"
           },
           {
-            "name": "INDICATES IF THE DMA CHANNEL THREAD WAS ATTEMPTING TO EXECUTE AN",
+            "name": "",
             "bit_range": "1",
             "attr": "RO",
             "reset": "0x0",
-            "description": "instruction operand that was not\nvalid for the configuration of the DMAC:\n0 = valid operand\n1 = invalid operand.\nThis fault is a precise abort."
+            "description": "Indicates if the DMA channel thread was attempting to execute an\ninstruction operand that was not\nvalid for the configuration of the DMAC:\n0 = valid operand\n1 = invalid operand.\nThis fault is a precise abort."
           },
           {
-            "name": "INDICATES IF THE DMA CHANNEL THREAD WAS ATTEMPTING TO EXECUTE AN",
+            "name": "",
             "bit_range": "0",
             "attr": "RO",
             "reset": "0x0",
-            "description": "undefined instruction:\n0 = defined instruction\n1 = undefined instruction.\nThis fault is a precise abort"
+            "description": "Indicates if the DMA channel thread was attempting to execute an\nundefined instruction:\n0 = defined instruction\n1 = undefined instruction.\nThis fault is a precise abort"
           }
         ],
         "description": "Fault Type DMA Channel Register"
@@ -50867,11 +50867,11 @@
             "description": "reserved"
           },
           {
-            "name": "THE CHANNEL NON-SECURE BIT PROVIDES THE SECURITY OF THE DMA",
+            "name": "",
             "bit_range": "21",
             "attr": "RO",
             "reset": "0x0",
-            "description": "channel:\n0 = DMA channel operates in the Secure state\n1 = DMA channel operates in the Non-secure state"
+            "description": "The channel non-secure bit provides the security of the DMA\nchannel:\n0 = DMA channel operates in the Secure state\n1 = DMA channel operates in the Non-secure state"
           },
           {
             "name": "RESERVED",
@@ -50881,18 +50881,18 @@
             "description": "reserved"
           },
           {
-            "name": "WHEN THE DMA CHANNEL THREAD EXECUTES DMAWFP THIS BIT INDICATES",
+            "name": "",
             "bit_range": "15",
             "attr": "RO",
             "reset": "0x0",
-            "description": "if the periph operand was set:\n0 = DMAWFP executed with the periph operand not set\n1 = DMAWFP executed with the periph operand set"
+            "description": "When the DMA channel thread executes DMAWFP this bit indicates\nif the periph operand was set:\n0 = DMAWFP executed with the periph operand not set\n1 = DMAWFP executed with the periph operand set"
           },
           {
-            "name": "WHEN THE DMA CHANNEL THREAD EXECUTES DMAWFP THIS BIT INDICATES",
+            "name": "",
             "bit_range": "14",
             "attr": "RO",
             "reset": "0x0",
-            "description": "if the burst or single operand were set:\n0 = DMAWFP executed with the single operand set\n1 = DMAWFP executed with the burst operand set."
+            "description": "When the DMA channel thread executes DMAWFP this bit indicates\nif the burst or single operand were set:\n0 = DMAWFP executed with the single operand set\n1 = DMAWFP executed with the burst operand set."
           },
           {
             "name": "RESERVED",
@@ -50902,18 +50902,18 @@
             "description": "reserved"
           },
           {
-            "name": "IF THE DMA CHANNEL IS IN THE WAITING FOR EVENT STATE OR THE WAITING",
+            "name": "",
             "bit_range": "8:4",
             "attr": "RO",
             "reset": "0x00",
-            "description": "for peripheral state then these bits\nindicate the event or peripheral number that the channel is waiting\nfor:\nb00000 = DMA channel is waiting for event, or peripheral, 0\nb00001 = DMA channel is waiting for event, or peripheral, 1\nb00010 = DMA channel is waiting for event, or peripheral, 2\n...\nb11111 = DMA channel is waiting for event, or peripheral, 31"
+            "description": "If the DMA channel is in the Waiting for event state or the Waiting\nfor peripheral state then these bits\nindicate the event or peripheral number that the channel is waiting\nfor:\nb00000 = DMA channel is waiting for event, or peripheral, 0\nb00001 = DMA channel is waiting for event, or peripheral, 1\nb00010 = DMA channel is waiting for event, or peripheral, 2\n...\nb11111 = DMA channel is waiting for event, or peripheral, 31"
           },
           {
-            "name": "THE CHANNEL STATUS ENCODING IS:",
+            "name": "",
             "bit_range": "3:0",
             "attr": "RO",
             "reset": "0x0",
-            "description": "b0000 = Stopped\nb0001 = Executing\nb0010 = Cache miss\nb0011 = Updating PC\nb0100 = Waiting for event\nb0101 = At barrier\nb0110 = reserved\nb0111 = Waiting for peripheral\nb1000 = Killing\nb1001 = Completing\nb1010-b1101 = reserved\nb1110 = Faulting completing\nb1111 = Faulting"
+            "description": "The channel status encoding is:\nb0000 = Stopped\nb0001 = Executing\nb0010 = Cache miss\nb0011 = Updating PC\nb0100 = Waiting for event\nb0101 = At barrier\nb0110 = reserved\nb0111 = Waiting for peripheral\nb1000 = Killing\nb1001 = Completing\nb1010-b1101 = reserved\nb1110 = Faulting completing\nb1111 = Faulting"
           }
         ],
         "description": "Channel Status Registers"
@@ -50926,7 +50926,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "PROGRAM COUNTER FOR THE DMA CHANNEL 0 THREAD",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
@@ -50943,7 +50943,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "ADDRESS OF THE SOURCE DATA FOR DMA CHANNEL 0",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
@@ -50960,7 +50960,7 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "ADDRESS OF THE DESTINATION DATA FOR DMA CHANNEL 0",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
@@ -50984,74 +50984,74 @@
             "description": "reserved"
           },
           {
-            "name": "PROGRAMS THE STATE OF AWCACHE[3,1:0]A WHEN THE DMAC WRITES",
+            "name": "",
             "bit_range": "27:25",
             "attr": "RO",
             "reset": "0x0",
-            "description": "the destination data.\nBit [27]  0 = AWCACHE[3] is LOW\n1 = AWCACHE[3] is HIGH.\nBit [26]  0 = AWCACHE[1] is LOW\n1 = AWCACHE[1] is HIGH.\nBit [25]  0 = AWCACHE[0] is LOW\n1 = AWCACHE[0] is HIGH"
+            "description": "Programs the state of AWCACHE[3,1:0]a when the DMAC writes\nthe destination data.\nBit [27]  0 = AWCACHE[3] is LOW\n1 = AWCACHE[3] is HIGH.\nBit [26]  0 = AWCACHE[1] is LOW\n1 = AWCACHE[1] is HIGH.\nBit [25]  0 = AWCACHE[0] is LOW\n1 = AWCACHE[0] is HIGH"
           },
           {
-            "name": "PROGRAMS THE STATE OF AWPROT[2:0]A WHEN THE DMAC WRITES THE",
+            "name": "",
             "bit_range": "24:22",
             "attr": "RO",
             "reset": "0x0",
-            "description": "destination data.\nBit [24]  0 = AWPROT[2] is LOW\n1 = AWPROT[2] is HIGH.\nBit [23]  0 = AWPROT[1] is LOW\n1 = AWPROT[1] is HIGH.\nBit [22]  0 = AWPROT[0] is LOW\n1 = AWPROT[0] is HIGH"
+            "description": "Programs the state of AWPROT[2:0]a when the DMAC writes the\ndestination data.\nBit [24]  0 = AWPROT[2] is LOW\n1 = AWPROT[2] is HIGH.\nBit [23]  0 = AWPROT[1] is LOW\n1 = AWPROT[1] is HIGH.\nBit [22]  0 = AWPROT[0] is LOW\n1 = AWPROT[0] is HIGH"
           },
           {
-            "name": "FOR EACH BURST, THESE BITS PROGRAM THE NUMBER OF DATA TRANSFERS",
+            "name": "",
             "bit_range": "21:18",
             "attr": "RO",
             "reset": "0x0",
-            "description": "that the DMAC performs when it writes\nthe destination data:\nb0000 = 1 data transfer\nb0001 = 2 data transfers\nb0010 = 3 data transfers\n...\nb1111 = 16 data transfers.\nThe total number of bytes that the DMAC writes out of the MFIFO\nwhen it executes a DMAST instruction\nis the product of dst_burst_len and dst_burst_size"
+            "description": "For each burst, these bits program the number of data transfers\nthat the DMAC performs when it writes\nthe destination data:\nb0000 = 1 data transfer\nb0001 = 2 data transfers\nb0010 = 3 data transfers\n...\nb1111 = 16 data transfers.\nThe total number of bytes that the DMAC writes out of the MFIFO\nwhen it executes a DMAST instruction\nis the product of dst_burst_len and dst_burst_size"
           },
           {
-            "name": "FOR EACH BEAT WITHIN A BURST, IT PROGRAMS THE NUMBER OF BYTES THAT",
+            "name": "",
             "bit_range": "17:15",
             "attr": "RO",
             "reset": "0x0",
-            "description": "the DMAC writes to the destination:\nb000 = writes 1 byte per beat\nb001 = writes 2 bytes per beat\nb010 = writes 4 bytes per beat\nb011 = writes 8 bytes per beat\nb100 = writes 16 bytes per beat\nb101-b111 = reserved.\nThe total number of bytes that the DMAC writes out of the MFIFO\nwhen it executes a DMAST instruction\nis the product of dst_burst_len and dst_burst_size."
+            "description": "For each beat within a burst, it programs the number of bytes that\nthe DMAC writes to the destination:\nb000 = writes 1 byte per beat\nb001 = writes 2 bytes per beat\nb010 = writes 4 bytes per beat\nb011 = writes 8 bytes per beat\nb100 = writes 16 bytes per beat\nb101-b111 = reserved.\nThe total number of bytes that the DMAC writes out of the MFIFO\nwhen it executes a DMAST instruction\nis the product of dst_burst_len and dst_burst_size."
           },
           {
-            "name": "PROGRAMS THE BURST TYPE THAT THE DMAC PERFORMS WHEN IT WRITES THE",
+            "name": "",
             "bit_range": "14",
             "attr": "RO",
             "reset": "0x0",
-            "description": "destination data:\n0 = Fixed-address burst. The DMAC signals AWBURST[0] LOW.\n1 = Incrementing-address burst. The DMAC signals AWBURST[0]\nHIGH."
+            "description": "Programs the burst type that the DMAC performs when it writes the\ndestination data:\n0 = Fixed-address burst. The DMAC signals AWBURST[0] LOW.\n1 = Incrementing-address burst. The DMAC signals AWBURST[0]\nHIGH."
           },
           {
-            "name": "SET THE BITS TO CONTROL THE STATE OF ARCACHE[2:0]A WHEN THE DMAC",
+            "name": "",
             "bit_range": "13:11",
             "attr": "RO",
             "reset": "0x0",
-            "description": "reads the source data.\nBit [13]  0 = ARCACHE[2] is LOW\n1 = ARCACHE[2] is HIGH.\nBit [12]  0 = ARCACHE[1] is LOW\n1 = ARCACHE[1] is HIGH.\nBit [11]  0 = ARCACHE[0] is LOW\n1 = ARCACHE[0] is HIGH."
+            "description": "Set the bits to control the state of ARCACHE[2:0]a when the DMAC\nreads the source data.\nBit [13]  0 = ARCACHE[2] is LOW\n1 = ARCACHE[2] is HIGH.\nBit [12]  0 = ARCACHE[1] is LOW\n1 = ARCACHE[1] is HIGH.\nBit [11]  0 = ARCACHE[0] is LOW\n1 = ARCACHE[0] is HIGH."
           },
           {
-            "name": "PROGRAMS THE STATE OF ARPROT[2:0]A WHEN THE DMAC READS THE",
+            "name": "",
             "bit_range": "10:8",
             "attr": "RO",
             "reset": "0x0",
-            "description": "source data.\nBit [10]  0 = ARPROT[2] is LOW\n1 = ARPROT[2] is HIGH.\nBit [9]  0 = ARPROT[1] is LOW\n1 = ARPROT[1] is HIGH.\nBit [8]  0 = ARPROT[0] is LOW\n1 = ARPROT[0] is HIGH."
+            "description": "Programs the state of ARPROT[2:0]a when the DMAC reads the\nsource data.\nBit [10]  0 = ARPROT[2] is LOW\n1 = ARPROT[2] is HIGH.\nBit [9]  0 = ARPROT[1] is LOW\n1 = ARPROT[1] is HIGH.\nBit [8]  0 = ARPROT[0] is LOW\n1 = ARPROT[0] is HIGH."
           },
           {
-            "name": "FOR EACH BURST, THESE BITS PROGRAM THE NUMBER OF DATA TRANSFERS",
+            "name": "",
             "bit_range": "7:4",
             "attr": "RO",
             "reset": "0x0",
-            "description": "that the DMAC performs when it reads the source data:\nb0000 = 1 data transfer\nb0001 = 2 data transfers\nb0010 = 3 data transfers\n...\nb1111 = 16 data transfers.\nThe total number of bytes that the DMAC reads into the MFIFO\nwhen it executes a DMALD instruction\nis the product of src_burst_len and src_burst_size"
+            "description": "For each burst, these bits program the number of data transfers\nthat the DMAC performs when it reads the source data:\nb0000 = 1 data transfer\nb0001 = 2 data transfers\nb0010 = 3 data transfers\n...\nb1111 = 16 data transfers.\nThe total number of bytes that the DMAC reads into the MFIFO\nwhen it executes a DMALD instruction\nis the product of src_burst_len and src_burst_size"
           },
           {
-            "name": "FOR EACH BEAT WITHIN A BURST, IT PROGRAMS THE NUMBER OF BYTES THAT",
+            "name": "",
             "bit_range": "3:1",
             "attr": "RO",
             "reset": "0x0",
-            "description": "the DMAC reads from the source:\nb000 = reads 1 byte per beat\nb001 = reads 2 bytes per beat\nb010 = reads 4 bytes per beat\nb011 = reads 8 bytes per beat\nb100 = reads 16 bytes per beat\nb101-b111 = reserved.\nThe total number of bytes that the DMAC reads into the MFIFO\nwhen it executes a DMALD instruction\nis the product of src_burst_len and src_burst_size"
+            "description": "For each beat within a burst, it programs the number of bytes that\nthe DMAC reads from the source:\nb000 = reads 1 byte per beat\nb001 = reads 2 bytes per beat\nb010 = reads 4 bytes per beat\nb011 = reads 8 bytes per beat\nb100 = reads 16 bytes per beat\nb101-b111 = reserved.\nThe total number of bytes that the DMAC reads into the MFIFO\nwhen it executes a DMALD instruction\nis the product of src_burst_len and src_burst_size"
           },
           {
-            "name": "PROGRAMS THE BURST TYPE THAT THE DMAC PERFORMS WHEN IT READS THE",
+            "name": "",
             "bit_range": "0",
             "attr": "RO",
             "reset": "0x0",
-            "description": "source data:\n0 = Fixed-address burst. The DMAC signals ARBURST[0] LOW.\n1 = Incrementing-address burst. The DMAC signals ARBURST[0]\nHIGH"
+            "description": "Programs the burst type that the DMAC performs when it reads the\nsource data:\n0 = Fixed-address burst. The DMAC signals ARBURST[0] LOW.\n1 = Incrementing-address burst. The DMAC signals ARBURST[0]\nHIGH"
           }
         ],
         "description": "Channel Control Registers"
@@ -51071,7 +51071,7 @@
             "description": "reserved"
           },
           {
-            "name": "LOOP COUNTER 0 ITERATIONS",
+            "name": "",
             "bit_range": "7:0",
             "attr": "RO",
             "reset": "0x00",
@@ -51095,7 +51095,7 @@
             "description": "reserved"
           },
           {
-            "name": "LOOP COUNTER 1 ITERATIONS",
+            "name": "",
             "bit_range": "7:0",
             "attr": "RO",
             "reset": "0x00",
@@ -51119,11 +51119,11 @@
             "description": "reserved"
           },
           {
-            "name": "THE DEBUG ENCODING IS AS FOLLOWS:",
+            "name": "",
             "bit_range": "1:0",
             "attr": "RO",
             "reset": "0x0",
-            "description": "b00 = execute the instruction that the DBGINST [1:0] Registers\ncontain\nb01 = reserved\nb10 = reserved\nb11 = reserved."
+            "description": "The debug encoding is as follows:\nb00 = execute the instruction that the DBGINST [1:0] Registers\ncontain\nb01 = reserved\nb10 = reserved\nb11 = reserved."
           }
         ],
         "description": "Debug Status Register"
@@ -51143,11 +51143,11 @@
             "description": "reserved"
           },
           {
-            "name": "THE DEBUG ENCODING IS AS FOLLOWS:",
+            "name": "",
             "bit_range": "1:0",
             "attr": "WO",
             "reset": "0x0",
-            "description": "b00 = execute the instruction that the DBGINST [1:0] Registers\ncontain\nb01 = reserved\nb10 = reserved\nb11 = reserved"
+            "description": "The debug encoding is as follows:\nb00 = execute the instruction that the DBGINST [1:0] Registers\ncontain\nb01 = reserved\nb10 = reserved\nb11 = reserved"
           }
         ],
         "description": "Debug Command Register"
@@ -51160,14 +51160,14 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "INSTRUCTION BYTE 1",
+            "name": "",
             "bit_range": "31:24",
             "attr": "WO",
             "reset": "0x00",
             "description": "Instruction byte 1"
           },
           {
-            "name": "INSTRUCTION BYTE 0",
+            "name": "",
             "bit_range": "23:16",
             "attr": "WO",
             "reset": "0x00",
@@ -51181,11 +51181,11 @@
             "description": "reserved"
           },
           {
-            "name": "DMA CHANNEL NUMBER:",
+            "name": "",
             "bit_range": "10:8",
             "attr": "WO",
             "reset": "0x0",
-            "description": "b000 = DMA channel 0\nb001 = DMA channel 1\nb010 = DMA channel 2\n...\nb111 = DMA channel 7"
+            "description": "DMA channel number:\nb000 = DMA channel 0\nb001 = DMA channel 1\nb010 = DMA channel 2\n...\nb111 = DMA channel 7"
           },
           {
             "name": "RESERVED",
@@ -51195,11 +51195,11 @@
             "description": "reserved"
           },
           {
-            "name": "THE DEBUG THREAD ENCODING IS AS FOLLOWS:",
+            "name": "",
             "bit_range": "0",
             "attr": "WO",
             "reset": "0x0",
-            "description": "0 = DMA manager thread\n1 = DMA channel."
+            "description": "The debug thread encoding is as follows:\n0 = DMA manager thread\n1 = DMA channel."
           }
         ],
         "description": "Debug Instruction-0 Register"
@@ -51212,28 +51212,28 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "INSTRUCTION BYTE 5",
+            "name": "",
             "bit_range": "31:24",
             "attr": "WO",
             "reset": "0x00",
             "description": "Instruction byte 5"
           },
           {
-            "name": "INSTRUCTION BYTE 4",
+            "name": "",
             "bit_range": "23:16",
             "attr": "WO",
             "reset": "0x00",
             "description": "Instruction byte 4"
           },
           {
-            "name": "INSTRUCTION BYTE 3",
+            "name": "",
             "bit_range": "15:8",
             "attr": "WO",
             "reset": "0x00",
             "description": "Instruction byte 3"
           },
           {
-            "name": "INSTRUCTION BYTE 2",
+            "name": "",
             "bit_range": "7:0",
             "attr": "WO",
             "reset": "0x00",
@@ -51257,18 +51257,18 @@
             "description": "reserved"
           },
           {
-            "name": "NUMBER OF INTERRUPT OUTPUTS THAT THE DMAC PROVIDES:",
+            "name": "",
             "bit_range": "21:17",
             "attr": "RO",
             "reset": "0x02",
-            "description": "b00000 = 1 interrupt output, irq[0]\nb00001 = 2 interrupt outputs, irq[1:0]\nb00010 = 3 interrupt outputs, irq[2:0]\n...\nb11111 = 32 interrupt outputs, irq[31:0]."
+            "description": "Number of interrupt outputs that the DMAC provides:\nb00000 = 1 interrupt output, irq[0]\nb00001 = 2 interrupt outputs, irq[1:0]\nb00010 = 3 interrupt outputs, irq[2:0]\n...\nb11111 = 32 interrupt outputs, irq[31:0]."
           },
           {
-            "name": "NUMBER OF PERIPHERAL REQUEST INTERFACES THAT THE DMAC PROVIDES:",
+            "name": "",
             "bit_range": "16:12",
             "attr": "RO",
             "reset": "0x07",
-            "description": "b00000 = 1 peripheral request interface\nb00001 = 2 peripheral request interfaces\nb00010 = 3 peripheral request interfaces\n...\nb11111 = 32 peripheral request interfaces."
+            "description": "Number of peripheral request interfaces that the DMAC provides:\nb00000 = 1 peripheral request interface\nb00001 = 2 peripheral request interfaces\nb00010 = 3 peripheral request interfaces\n...\nb11111 = 32 peripheral request interfaces."
           },
           {
             "name": "RESERVED",
@@ -51278,11 +51278,11 @@
             "description": "reserved"
           },
           {
-            "name": "NUMBER OF DMA CHANNELS THAT THE DMAC SUPPORTS:",
+            "name": "",
             "bit_range": "6:4",
             "attr": "RO",
             "reset": "0x5",
-            "description": "b000 = 1 DMA channel\nb001 = 2 DMA channels\nb010 = 3 DMA channels\n...\nb111 = 8 DMA channels."
+            "description": "Number of DMA channels that the DMAC supports:\nb000 = 1 DMA channel\nb001 = 2 DMA channels\nb010 = 3 DMA channels\n...\nb111 = 8 DMA channels."
           },
           {
             "name": "RESERVED",
@@ -51292,25 +51292,25 @@
             "description": "reserved"
           },
           {
-            "name": "INDICATES THE STATUS OF THE BOOT_MANAGER_NS SIGNAL WHEN THE",
+            "name": "",
             "bit_range": "2",
             "attr": "RO",
             "reset": "0x0",
-            "description": "DMAC exited from reset:\n0 = boot_manager_ns was LOW\n1 = boot_manager_ns was HIGH."
+            "description": "Indicates the status of the boot_manager_ns signal when the\nDMAC exited from reset:\n0 = boot_manager_ns was LOW\n1 = boot_manager_ns was HIGH."
           },
           {
-            "name": "INDICATES THE STATUS OF THE BOOT_FROM_PC SIGNAL WHEN THE DMAC",
+            "name": "",
             "bit_range": "1",
             "attr": "RO",
             "reset": "0x0",
-            "description": "exited from reset:\n0 = boot_from_pc was LOW\n1 = boot_from_pc was HIGH"
+            "description": "Indicates the status of the boot_from_pc signal when the DMAC\nexited from reset:\n0 = boot_from_pc was LOW\n1 = boot_from_pc was HIGH"
           },
           {
-            "name": "SUPPORTS PERIPHERAL REQUESTS:",
+            "name": "",
             "bit_range": "0",
             "attr": "RO",
             "reset": "0x1",
-            "description": "0 = the DMAC does not provide a peripheral request interface\n1 = the DMAC provides the number of peripheral request interfaces\nthat the num_periph_req field specifies."
+            "description": "Supports peripheral requests:\n0 = the DMAC does not provide a peripheral request interface\n1 = the DMAC provides the number of peripheral request interfaces\nthat the num_periph_req field specifies."
           }
         ],
         "description": "Configuration Register 0"
@@ -51330,11 +51330,11 @@
             "description": "reserved"
           },
           {
-            "name": "[7:4] NUM_I-CACHE_LINES NUMBER OF I-CACHE LINES:",
+            "name": "",
             "bit_range": "7:4",
             "attr": "RO",
             "reset": "0x5",
-            "description": "b0000 = 1 i-cache line\nb0001 = 2 i-cache lines\nb0010 = 3 i-cache lines\n...\nb1111 = 16 i-cache lines."
+            "description": "[7:4] num_i-cache_lines Number of i-cache lines:\nb0000 = 1 i-cache line\nb0001 = 2 i-cache lines\nb0010 = 3 i-cache lines\n...\nb1111 = 16 i-cache lines."
           },
           {
             "name": "RESERVED",
@@ -51344,11 +51344,11 @@
             "description": "reserved"
           },
           {
-            "name": "THE LENGTH OF AN I-CACHE LINE:",
+            "name": "",
             "bit_range": "2:0",
             "attr": "RO",
             "reset": "0x7",
-            "description": "b000-b001 = reserved\nb010 = 4 bytes\nb011 = 8 bytes\nb100 = 16 bytes\nb101 = 32 bytes\nb110-b111 = reserved"
+            "description": "The length of an i-cache line:\nb000-b001 = reserved\nb010 = 4 bytes\nb011 = 8 bytes\nb100 = 16 bytes\nb101 = 32 bytes\nb110-b111 = reserved"
           }
         ],
         "description": "Configuration Register 1"
@@ -51361,11 +51361,11 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "PROVIDES THE VALUE OF BOOT_ADDR[31:0] WHEN THE DMAC EXITED FROM",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
-            "description": "reset"
+            "description": "Provides the value of boot_addr[31:0] when the DMAC exited from\nreset"
           }
         ],
         "description": "Configuration Register 2"
@@ -51378,11 +51378,11 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "PROVIDES THE SECURITY STATE OF AN EVENT-INTERRUPT RESOURCE:",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
-            "description": "Bit [N] = 0 Assigns event<N> or irq[N] to the Secure state.\nBit [N] = 1 Assigns event<N> or irq[N] to the Non-secure state."
+            "description": "Provides the security state of an event-interrupt resource:\nBit [N] = 0 Assigns event<N> or irq[N] to the Secure state.\nBit [N] = 1 Assigns event<N> or irq[N] to the Non-secure state."
           }
         ],
         "description": "Configuration Register 3"
@@ -51395,11 +51395,11 @@
         "reset": "0x00000000",
         "bit_ranges": [
           {
-            "name": "PROVIDES THE SECURITY STATE OF THE PERIPHERAL REQUEST INTERFACES:",
+            "name": "",
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000006",
-            "description": "Bit [N] = 0 Assigns peripheral request interface N to the Secure\nstate.\nBit [N] = 1 Assigns peripheral request interface N to the Non-secure\nstate"
+            "description": "Provides the security state of the peripheral request interfaces:\nBit [N] = 0 Assigns peripheral request interface N to the Secure\nstate.\nBit [N] = 1 Assigns peripheral request interface N to the Non-secure\nstate"
           }
         ],
         "description": "Configuration Register 4"
@@ -51419,18 +51419,18 @@
             "description": "reserved"
           },
           {
-            "name": "THE NUMBER OF LINES THAT THE DATA BUFFER CONTAINS:",
+            "name": "",
             "bit_range": "29:20",
             "attr": "RO",
             "reset": "0x020",
-            "description": "b000000000 = 1 line\nb000000001 = 2 lines\n...\nb111111111 = 1024 lines"
+            "description": "The number of lines that the data buffer contains:\nb000000000 = 1 line\nb000000001 = 2 lines\n...\nb111111111 = 1024 lines"
           },
           {
-            "name": "THE DEPTH OF THE READ QUEUE:",
+            "name": "",
             "bit_range": "19:16",
             "attr": "RO",
             "reset": "0x9",
-            "description": "b0000 = 1 line\nb0001 = 2 lines\n...\nb1111 = 16 lines."
+            "description": "The depth of the read queue:\nb0000 = 1 line\nb0001 = 2 lines\n...\nb1111 = 16 lines."
           },
           {
             "name": "RESERVED",
@@ -51440,18 +51440,18 @@
             "description": "reserved"
           },
           {
-            "name": "READ ISSUING CAPABILITY THAT PROGRAMS THE NUMBER OF OUTSTANDING",
+            "name": "",
             "bit_range": "14:12",
             "attr": "RO",
             "reset": "0x4",
-            "description": "read transactions:\nb000 = 1\nb001 = 2\n...\nb111 = 8"
+            "description": "Read issuing capability that programs the number of outstanding\nread transactions:\nb000 = 1\nb001 = 2\n...\nb111 = 8"
           },
           {
-            "name": "THE DEPTH OF THE WRITE QUEUE:",
+            "name": "",
             "bit_range": "11:8",
             "attr": "RO",
             "reset": "0x7",
-            "description": "b0000 = 1 line\nb0001 = 2 lines\n...\nb1111 = 16 lines."
+            "description": "The depth of the write queue:\nb0000 = 1 line\nb0001 = 2 lines\n...\nb1111 = 16 lines."
           },
           {
             "name": "RESERVED",
@@ -51461,11 +51461,11 @@
             "description": "reserved"
           },
           {
-            "name": "WRITE ISSUING CAPABILITY THAT PROGRAMS THE NUMBER OF OUTSTANDING",
+            "name": "",
             "bit_range": "6:4",
             "attr": "RO",
             "reset": "0x3",
-            "description": "write transactions:\nb000 = 1\nb001 = 2\n...\nb111 = 8"
+            "description": "Write issuing capability that programs the number of outstanding\nwrite transactions:\nb000 = 1\nb001 = 2\n...\nb111 = 8"
           },
           {
             "name": "RESERVED",
@@ -51475,11 +51475,11 @@
             "description": "reserved"
           },
           {
-            "name": "THE DATA BUS WIDTH OF THE AXI INTERFACE:",
+            "name": "",
             "bit_range": "2:0",
             "attr": "RO",
             "reset": "0x3",
-            "description": "b000 = reserved\nb001 = reserved\nb010 = 32-bit\nb011 = 64-bit\nb100 = 128-bit\nb101-b111 = reserved."
+            "description": "The data bus width of the AXI interface:\nb000 = reserved\nb001 = reserved\nb010 = 32-bit\nb011 = 64-bit\nb100 = 128-bit\nb101-b111 = reserved."
           }
         ],
         "description": "DMA Configuration Register"
@@ -51499,11 +51499,11 @@
             "description": "reserved"
           },
           {
-            "name": "CONTROLS HOW THE DMAC RESPONDS WHEN IT DETECTS A LOCK-UP",
+            "name": "",
             "bit_range": "0",
             "attr": "RW",
             "reset": "0x0",
-            "description": "condition:\n0 = the DMAC aborts all of the contributing DMA channels and sets\nirq_abort HIGH\n1 = the DMAC sets irq_abort HIGH."
+            "description": "Controls how the DMAC responds when it detects a lock-up\ncondition:\n0 = the DMAC aborts all of the contributing DMA channels and sets\nirq_abort HIGH\n1 = the DMAC sets irq_abort HIGH."
           }
         ],
         "description": "DMA Watchdog Register"

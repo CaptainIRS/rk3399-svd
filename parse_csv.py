@@ -114,11 +114,11 @@ def process_part(part):
                 'size': size,
                 'reset': reset,
                 'bit_ranges': [{
-                    'name': x[3].split('\n')[0].upper(),
+                    'name': x[3].split('\n')[0].upper() if final_data[-1]['name'] not in ["DMAC"] or x[3].strip().lower() == 'reserved' or ('_' in x[3].split('\n')[0] and ' ' not in x[3].split('\n')[0]) else '',
                     'bit_range': x[0],
                     'attr': x[1].replace(' ', '').replace('\n', ''),
                     'reset': x[2].replace(' ', ''),
-                    'description': '\n'.join(x[3].split('\n')[1:]) if len(x[3].split('\n')) > 1 else x[3],
+                    'description': '\n'.join(x[3].split('\n')[1:]) if len(x[3].split('\n')) > 1 and final_data[-1]['name'] not in ["DMAC"] else x[3],
                 } for x in table[1:]],
                 'description': description
             })

@@ -4817,14 +4817,14 @@
         "name": "RESERVED",
         "bits": "7:4",
         "sw": "R",
-        "description": "Reserved\nTashseoscei abtietsd  aPrhey shiacradl wFuirnecdt itoon   0",
+        "description": "Reserved\nThese bits are hardwired to 0",
         "reset": "0x0"
       },
       {
-        "name": "Ra8s",
+        "name": "BAMR0",
         "bits": "21:8",
         "sw": "R",
-        "description": "B[Ra8s]e Address - RO part [BAMR0]\nThis field defines the base address\nof the memory address range. The\nnumber of implemented bits in this\nfield determines the BAR aperture\nconfigured in BAR Configuration\nRegisters of the associated Physical\nFunction. All other bits are not\nwriteable, and are read as 0's.",
+        "description": "Base Address - RO part [BAMR0]\nThis field defines the base address\nof the memory address range. The\nnumber of implemented bits in this\nfield determines the BAR aperture\nconfigured in BAR Configuration\nRegisters of the associated Physical\nFunction. All other bits are not\nwriteable, and are read as 0's.",
         "reset": "0x0"
       },
       {
@@ -5307,7 +5307,7 @@
         "name": "L1CmMdR\neStr",
         "bits": "15:8",
         "sw": "R",
-        "description": "Common Mode Restore Time [L1CmMdR eStr\nThis field is reserved for EP.",
+        "description": "Common Mode Restore Time [L1CmMdR eStr]\nThis field is reserved for EP.",
         "reset": "0x0"
       },
       {
@@ -11523,7 +11523,7 @@
         "name": "SHDW_FUNC_NUM",
         "bits": "7:0",
         "sw": "R/W",
-        "description": "Shadow register target function number [SHDW_FUNC_NUM\nThe value here will be the target function number when f/w sets any bit in the shadow error register.",
+        "description": "Shadow register target function number [SHDW_FUNC_NUM]\nThe value here will be the target function number when f/w sets any bit in the shadow error register.",
         "reset": "0x0"
       },
       {
@@ -12647,7 +12647,7 @@
     "description": "Outbound Region Address 0\nLower 32-bits of Address Register\nfor region N",
     "bit_ranges": [
       {
-        "name": "5:0",
+        "name": "num_bits",
         "bits": "5:0",
         "sw": "R/W",
         "description": "Number_bits [5:0] [num_bits]\nNumber of bits of the addres sthat\nare  valid",
@@ -12661,7 +12661,7 @@
         "reset": "2'b00"
       },
       {
-        "name": "31:8",
+        "name": "data",
         "bits": "31:8",
         "sw": "R/W",
         "description": "Address bits [31:8] [data]\nLower 32-bits of Address Register\nfor region N",
@@ -12675,7 +12675,7 @@
     "description": "Outbound Region Address 1\nUpper 32-bits of Address Register\nfor region  N",
     "bit_ranges": [
       {
-        "name": "63:32",
+        "name": "data",
         "bits": "31:0",
         "sw": "R/W",
         "description": "Address bits [63:32] [data]\nUpper 32-bits of Address Register\nfor region  N",
@@ -12689,7 +12689,7 @@
     "description": "Outbound Region Descriptor 0\nLowest 32-bits of Address Register\nfor region  N",
     "bit_ranges": [
       {
-        "name": "31:0",
+        "name": "data",
         "bits": "31:0",
         "sw": "R/W",
         "description": "Descriptor bits [31:0] [data]\nLowest 32-bits of Address Register\nfor region  N",
@@ -12703,7 +12703,7 @@
     "description": "Outbound Region Descriptor 1\nLower middle 32-bits of Address\nRegister for region N",
     "bit_ranges": [
       {
-        "name": "63:32",
+        "name": "data",
         "bits": "31:0",
         "sw": "R/W",
         "description": "Descriptor bits [63:32] [data]\nLower middle 32-bits of Address\nRegister for region N",
@@ -12717,14 +12717,14 @@
     "description": "Outbound Region Descriptor 2\nUpper middle 32-bits of Address\nRegister for region N",
     "bit_ranges": [
       {
-        "name": "95:64",
+        "name": "data",
         "bits": "15:0",
         "sw": "R/W",
         "description": "Descriptor bits [95:64] [data]\nUpper middle 32-bits of Address\nRegister for region N",
         "reset": "16'h00000000"
       },
       {
-        "name": "95:64",
+        "name": "rsvd",
         "bits": "31:16",
         "sw": "R",
         "description": "Descriptor bits [95:64] [rsvd]\nUpper middle 32-bits of Address\nRegister for region N",
@@ -12738,7 +12738,7 @@
     "description": "Outbound Region Descriptor 3\nUpmost 32-bits of Address Register\nfor region  N",
     "bit_ranges": [
       {
-        "name": "127:96",
+        "name": "data",
         "bits": "31:0",
         "sw": "R",
         "description": "Descriptor bits [127:96] [data]\nUpmost 32-bits of Address Register\nfor region  N",
@@ -12752,7 +12752,7 @@
     "description": "RP Inbound BAR Address Translation 0\nBits [31:8] of Address Register for\nBAR N",
     "bit_ranges": [
       {
-        "name": "5:0",
+        "name": "num_bits",
         "bits": "5:0",
         "sw": "R/W",
         "description": "Number_bits [5:0] [num_bits]\nNumber of bits - 1 of the PCIE\naddress passed through",
@@ -12766,7 +12766,7 @@
         "reset": "2'b00"
       },
       {
-        "name": "31:8",
+        "name": "data",
         "bits": "31:8",
         "sw": "R/W",
         "description": "Address bits [31:8] [data]\nBits [31:8] of Address Register for\nBAR N",
@@ -12780,7 +12780,7 @@
     "description": "RP Inbound BAR Address Translation 1\nBits [63:32] of Address Register for\nBAR  N",
     "bit_ranges": [
       {
-        "name": "63:32",
+        "name": "data",
         "bits": "31:0",
         "sw": "R/W",
         "description": "Address bits [63:32] [data]\nBits [63:32] of Address Register for\nBAR  N",
@@ -12815,7 +12815,7 @@
     "description": "EP Inbound BAR Address Translation 0\nBits [31:0] of Address Register for\nBAR  N",
     "bit_ranges": [
       {
-        "name": "31:0",
+        "name": "data",
         "bits": "31:0",
         "sw": "R/W",
         "description": "Address bits [31:0] [data]\nBits [31:0] of Address Register for\nBAR  N",
@@ -12829,7 +12829,7 @@
     "description": "EP Inbound BAR Address Translation 1\nBits [63:32] of Address Register for\nBAR  N",
     "bit_ranges": [
       {
-        "name": "63:32",
+        "name": "data",
         "bits": "31:0",
         "sw": "R/W",
         "description": "Address bits [63:32] [data]\nBits [63:32] of Address Register for\nBAR  N",

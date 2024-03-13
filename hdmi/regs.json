@@ -5640,57 +5640,57 @@
   },
   {
     "name": "PHY_STAT0",
-    "description": "HDMI Hot Plug Detect indication. You may need to\nmask or change polarity of this interrupt after it\nhas become active.",
+    "description": "Status bit. TX PHY PLL lock indication. You may need\nto mask or change polarity of this interrupt after it\nhas became active.",
     "size": "8",
-    "offset": "104",
+    "offset": "3004",
     "bit_ranges": [
       {
-        "bit_range": "7:6",
+        "bit_range": "7",
+        "name": "RX_SENSE_3",
+        "access": "R",
+        "description": "Status bit. TX PHY RX_SENSE indication for TMDS\nchannel 3 driver. You may need to mask or change\npolarity of this interrupt after it has became active.",
+        "reset_value": "0x0"
+      },
+      {
+        "bit_range": "6",
+        "name": "RX_SENSE_2",
+        "access": "R",
+        "description": "Status bit. TX PHY RX_SENSE indication for TMDS\nchannel 2 driver. You may need to mask or change\npolarity of this interrupt after it has became active.",
+        "reset_value": "0x0"
+      },
+      {
+        "bit_range": "5",
+        "name": "RX_SENSE_1",
+        "access": "R",
+        "description": "Status bit. TX PHY RX_SENSE indication for TMDS\nchannel 1 driver. You may need to mask or change\npolarity of this interrupt after it has became active.",
+        "reset_value": "0x0"
+      },
+      {
+        "bit_range": "4",
+        "name": "RX_SENSE_0",
+        "access": "R",
+        "description": "Status bit. TX PHY RX_SENSE indication for TMDS\nchannel 0 driver. You may need to mask or change\npolarity of this interrupt after it has became active.",
+        "reset_value": "0x0"
+      },
+      {
+        "bit_range": "3:2",
         "name": "RESERVED",
         "access": "R",
         "description": "Reserved for future use.",
         "reset_value": "0x0"
       },
       {
-        "bit_range": "5",
-        "name": "RX_SENSE_3",
-        "access": "R/W1C",
-        "description": "TX PHY RX_SENSE indication for driver 3. You may\nneed to mask or change polarity of this interrupt\nafter it has become active.",
-        "reset_value": "0x0"
-      },
-      {
-        "bit_range": "4",
-        "name": "RX_SENSE_2",
-        "access": "R/W1C",
-        "description": "TX PHY RX_SENSE indication for driver 2. You may\nneed to mask or change polarity of this interrupt\nafter it has become active.",
-        "reset_value": "0x0"
-      },
-      {
-        "bit_range": "3",
-        "name": "RX_SENSE_1",
-        "access": "R/W1C",
-        "description": "TX PHY RX_SENSE indication for driver 1. You may\nneed to mask or change polarity of this interrupt\nafter it has become active.",
-        "reset_value": "0x0"
-      },
-      {
-        "bit_range": "2",
-        "name": "RX_SENSE_0",
-        "access": "R/W1C",
-        "description": "TX PHY RX_SENSE indication for driver 0. You may\nneed to mask or change polarity of this interrupt\nafter it has become active.",
-        "reset_value": "0x0"
-      },
-      {
         "bit_range": "1",
-        "name": "TX_PHY_LOCK",
-        "access": "R/W1C",
-        "description": "TX PHY PLL lock indication.",
+        "name": "HPD",
+        "access": "R",
+        "description": "Status bit. HDMI Hot Plug Detect indication. You may\nneed to mask or change polarity of this interrupt\nafter it has became active.",
         "reset_value": "0x0"
       },
       {
         "bit_range": "0",
-        "name": "HPD",
-        "access": "R/W1C",
-        "description": "HDMI Hot Plug Detect indication. You may need to\nmask or change polarity of this interrupt after it\nhas become active.",
+        "name": "TX_PHY_LOCK",
+        "access": "R",
+        "description": "Status bit. TX PHY PLL lock indication. You may need\nto mask or change polarity of this interrupt after it\nhas became active.",
         "reset_value": "0x0"
       }
     ]
@@ -10192,9 +10192,9 @@
   },
   {
     "name": "I2CM_SLAVE",
-    "description": "Slave address to be sent during read and write\noperations.\nPHY Gen2 slave address: 7'h69\nHEAC PHY slave address: 7'h49",
+    "description": "Slave address to be sent during read and write normal\noperations.",
     "size": "8",
-    "offset": "3020",
+    "offset": "7e00",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -10207,7 +10207,7 @@
         "bit_range": "6:0",
         "name": "SLAVEADDR",
         "access": "R/W",
-        "description": "Slave address to be sent during read and write\noperations.\nPHY Gen2 slave address: 7'h69\nHEAC PHY slave address: 7'h49",
+        "description": "Slave address to be sent during read and write normal\noperations.",
         "reset_value": "0x0"
       }
     ]
@@ -10216,7 +10216,7 @@
     "name": "I2CM_ADDRESS",
     "description": "Register address for read and write operations",
     "size": "8",
-    "offset": "3021",
+    "offset": "7e01",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10259,123 +10259,130 @@
   },
   {
     "name": "I2CM_OPERATION",
-    "description": "Read operation request",
+    "description": "Single byte read operation request",
     "size": "8",
-    "offset": "3026",
+    "offset": "7e04",
     "bit_ranges": [
       {
-        "bit_range": "7:5",
+        "bit_range": "7:6",
         "name": "RESERVED",
         "access": "R",
         "description": "Reserved for future use.",
+        "reset_value": "0x0"
+      },
+      {
+        "bit_range": "5",
+        "name": "BUSCLEAR",
+        "access": "W",
+        "description": "Bus clear operation request.",
         "reset_value": "0x0"
       },
       {
         "bit_range": "4",
         "name": "WR",
         "access": "W",
-        "description": "Write operation request",
+        "description": "Single byte write operation request.",
         "reset_value": "0x0"
       },
       {
-        "bit_range": "3:1",
-        "name": "RESERVED",
-        "access": "R",
-        "description": "Reserved for future use.",
+        "bit_range": "3",
+        "name": "RD8_EXT",
+        "access": "W",
+        "description": "Extended sequential read operation request. Eight\nbytes are read starting at the address defined in\nregister field i2cm_address.address and stored in\nregisters i2cm_read_buffx.",
+        "reset_value": "0x0"
+      },
+      {
+        "bit_range": "2",
+        "name": "RD8",
+        "access": "W",
+        "description": "Sequential read operation request. Eight bytes are\nread starting at the address defined in the\ni2cm_address.address register field and stored in the\ni2cm_read_buffx registers.",
+        "reset_value": "0x0"
+      },
+      {
+        "bit_range": "1",
+        "name": "RD_EXT",
+        "access": "W",
+        "description": "After writing 1'b1 to rd_ext bit a extended data read\noperation is started (E-DDC read operation).",
         "reset_value": "0x0"
       },
       {
         "bit_range": "0",
         "name": "RD",
         "access": "W",
-        "description": "Read operation request",
+        "description": "Single byte read operation request",
         "reset_value": "0x0"
       }
     ]
   },
   {
     "name": "I2CM_INT",
-    "description": "Operation done status bit. Marks the end of a read or\nwrite operation.",
+    "description": "Reserved for future use.",
     "size": "8",
-    "offset": "3027",
+    "offset": "7e05",
     "bit_ranges": [
       {
-        "bit_range": "7:4",
+        "bit_range": "7",
         "name": "RESERVED",
         "access": "R",
         "description": "Reserved for future use.",
         "reset_value": "0x0"
       },
       {
-        "bit_range": "3",
-        "name": "DONE_POL",
+        "bit_range": "6",
+        "name": "READ_REQ_MASK",
         "access": "R/W",
-        "description": "Done interrupt polarity configuration",
+        "description": "Read request interruption mask signal.",
         "reset_value": "0x1"
+      },
+      {
+        "bit_range": "5:3",
+        "name": "RESERVED",
+        "access": "R",
+        "description": "Reserved for future use.",
+        "reset_value": "0x0"
       },
       {
         "bit_range": "2",
         "name": "DONE_MASK",
         "access": "R/W",
-        "description": "Done interrupt mask signal",
+        "description": "Done interrupt mask signal.",
         "reset_value": "0x0"
       },
       {
-        "bit_range": "1",
-        "name": "DONE_INTERRUPT",
+        "bit_range": "1:0",
+        "name": "RESERVED",
         "access": "R",
-        "description": "Operation done interrupt bit. Only lasts for 1 SFR\nclock cycle and is auto cleared after it.\n{done_interrupt = (done_mask==0b) &&\n(done_status==done_pol)}",
-        "reset_value": "0x0"
-      },
-      {
-        "bit_range": "0",
-        "name": "DONE_STATUS",
-        "access": "R",
-        "description": "Operation done status bit. Marks the end of a read or\nwrite operation.",
+        "description": "Reserved for future use.",
         "reset_value": "0x0"
       }
     ]
   },
   {
     "name": "I2CM_CTLINT",
-    "description": "Arbitration error interrupt bit\nBits Name Attr Description\n{arbitration_interrupt = (arbitration_mask==0b) &&\n(arbitration_status==arbitration_pol)}\nNote: This bit field is read by the sticky bits present\non the ih_i2cmphy_stat0 register.",
+    "description": "Arbitration error interrupt mask signal.",
     "size": "8",
-    "offset": "3028",
+    "offset": "7e06",
     "bit_ranges": [
       {
         "bit_range": "7",
-        "name": "NACK_POL",
-        "access": "R/W",
-        "description": "Not acknowledge error interrupt polarity\nconfiguration",
-        "reset_value": "0x1"
+        "name": "RESERVED",
+        "access": "R",
+        "description": "Reserved for future use.",
+        "reset_value": "0x0"
       },
       {
         "bit_range": "6",
         "name": "NACK_MASK",
         "access": "R/W",
-        "description": "Not acknowledge error interrupt mask signal",
+        "description": "Not acknowledge error interrupt mask signal.",
         "reset_value": "0x0"
       },
       {
-        "bit_range": "5",
-        "name": "NACK_INTERRUPT",
+        "bit_range": "5:3",
+        "name": "RESERVED",
         "access": "R",
-        "description": "Not acknowledge error interrupt bit. Only lasts for\none SFR clock cycle and is auto cleared after it.\n{nack_interrupt = (nack_mask==0b) &&\n(nack_status==nack_pol)}. Note: This bit field is\nread by the sticky bits present on the\nih_i2cmphy_stat0 register.",
+        "description": "Reserved for future use.",
         "reset_value": "0x0"
-      },
-      {
-        "bit_range": "4",
-        "name": "NACK_STATUS",
-        "access": "R",
-        "description": "Not acknowledge error status bit. Error on I2C not\nacknowledge. Note: This bit field is read by the sticky\nbits present on the ih_i2cmphy_stat0 register.",
-        "reset_value": "0x0"
-      },
-      {
-        "bit_range": "3",
-        "name": "ARBITRATION_POL",
-        "access": "R/W",
-        "description": "Arbitration error interrupt polarity configuration.",
-        "reset_value": "0x1"
       },
       {
         "bit_range": "2",
@@ -10383,21 +10390,14 @@
         "access": "R/W",
         "description": "Arbitration error interrupt mask signal.",
         "reset_value": "0x0"
-      },
-      {
-        "bit_range": "1",
-        "name": "ARBITRATION_INTERRUPT",
-        "access": "R",
-        "description": "Arbitration error interrupt bit\nBits Name Attr Description\n{arbitration_interrupt = (arbitration_mask==0b) &&\n(arbitration_status==arbitration_pol)}\nNote: This bit field is read by the sticky bits present\non the ih_i2cmphy_stat0 register.",
-        "reset_value": "0x0"
       }
     ]
   },
   {
     "name": "I2CM_DIV",
-    "description": "Reserved as \"spare\" register with no associated\nfunctionality.",
+    "description": "Reserved as \"spare\" bit with no associated\nfunctionality.",
     "size": "8",
-    "offset": "3029",
+    "offset": "7e07",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -10417,7 +10417,7 @@
         "bit_range": "2:0",
         "name": "SPARE",
         "access": "R/W",
-        "description": "Reserved as \"spare\" register with no associated\nfunctionality.",
+        "description": "Reserved as \"spare\" bit with no associated\nfunctionality.",
         "reset_value": "0x3"
       }
     ]
@@ -10448,7 +10448,7 @@
     "name": "I2CM_SOFTRSTZ",
     "description": "I2C Master Software Reset. Active by writing a zero\nand auto cleared to one in the following cycle.",
     "size": "8",
-    "offset": "302a",
+    "offset": "7e09",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -10483,135 +10483,135 @@
   },
   {
     "name": "I2CM_SS_SCL_HCNT_1_ADDR",
-    "description": "PHY I2C Slow Speed SCL High Level Control Register\n1",
+    "description": "I2C DDC Slow Speed SCL High Level Control Register 1",
     "size": "8",
-    "offset": "302b",
+    "offset": "7e0b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
         "name": "I2CMP_SS_SCL_HCNT1",
         "access": "R/W",
-        "description": "PHY I2C Slow Speed SCL High Level Control Register\n1",
+        "description": "I2C DDC Slow Speed SCL High Level Control Register 1",
         "reset_value": "0x0"
       }
     ]
   },
   {
     "name": "I2CM_SS_SCL_HCNT_0_ADDR",
-    "description": "PHY I2C Slow Speed SCL High Level Control Register\n0",
+    "description": "I2C DDC Slow Speed SCL High Level Control Register 0",
     "size": "8",
-    "offset": "302c",
+    "offset": "7e0c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
         "name": "I2CMP_SS_SCL_HCNT0",
         "access": "R/W",
-        "description": "PHY I2C Slow Speed SCL High Level Control Register\n0",
+        "description": "I2C DDC Slow Speed SCL High Level Control Register 0",
         "reset_value": "0x6c"
       }
     ]
   },
   {
     "name": "I2CM_SS_SCL_LCNT_1_ADDR",
-    "description": "PHY I2C Slow Speed SCL Low Level Control Register\n1",
+    "description": "I2C DDC Slow Speed SCL Low Level Control Register 1",
     "size": "8",
-    "offset": "302d",
+    "offset": "7e0d",
     "bit_ranges": [
       {
         "bit_range": "7:0",
         "name": "I2CMP_SS_SCL_LCNT1",
         "access": "R/W",
-        "description": "PHY I2C Slow Speed SCL Low Level Control Register\n1",
+        "description": "I2C DDC Slow Speed SCL Low Level Control Register 1",
         "reset_value": "0x0"
       }
     ]
   },
   {
     "name": "I2CM_SS_SCL_LCNT_0_ADDR",
-    "description": "PHY I2C Slow Speed SCL Low Level Control Register\n0",
+    "description": "I2C DDC Slow Speed SCL Low Level Control Register 0",
     "size": "8",
-    "offset": "302e",
+    "offset": "7e0e",
     "bit_ranges": [
       {
         "bit_range": "7:0",
         "name": "I2CMP_SS_SCL_LCNT0",
         "access": "R/W",
-        "description": "PHY I2C Slow Speed SCL Low Level Control Register\n0",
+        "description": "I2C DDC Slow Speed SCL Low Level Control Register 0",
         "reset_value": "0x7f"
       }
     ]
   },
   {
     "name": "I2CM_FS_SCL_HCNT_1_ADDR",
-    "description": "PHY I2C Fast Speed SCL High Level Control Register\n1",
+    "description": "I2C DDC Fast Speed SCL High Level Control Register 1",
     "size": "8",
-    "offset": "302f",
+    "offset": "7e0f",
     "bit_ranges": [
       {
         "bit_range": "7:0",
         "name": "I2CMP_FS_SCL_HCNT1",
         "access": "R/W",
-        "description": "PHY I2C Fast Speed SCL High Level Control Register\n1",
+        "description": "I2C DDC Fast Speed SCL High Level Control Register 1",
         "reset_value": "0x0"
       }
     ]
   },
   {
     "name": "I2CM_FS_SCL_HCNT_0_ADDR",
-    "description": "PHY I2C Fast Speed SCL High Level Control Register\nBits Name Attr Description\n0",
+    "description": "I2C DDC Fast Speed SCL High Level Control Register 0",
     "size": "8",
-    "offset": "3030",
+    "offset": "7e10",
     "bit_ranges": [
       {
         "bit_range": "7:0",
         "name": "I2CMP_FS_SCL_HCNT0",
         "access": "R/W",
-        "description": "PHY I2C Fast Speed SCL High Level Control Register\nBits Name Attr Description\n0",
+        "description": "I2C DDC Fast Speed SCL High Level Control Register 0",
         "reset_value": "0x11"
       }
     ]
   },
   {
     "name": "I2CM_FS_SCL_LCNT_1_ADDR",
-    "description": "PHY I2C Fast Speed SCL Low Level Control Register 1",
+    "description": "I2C DDC Fast Speed SCL Low Level Control Register 1",
     "size": "8",
-    "offset": "3031",
+    "offset": "7e11",
     "bit_ranges": [
       {
         "bit_range": "7:0",
         "name": "I2CMP_FS_SCL_LCNT1",
         "access": "R/W",
-        "description": "PHY I2C Fast Speed SCL Low Level Control Register 1",
+        "description": "I2C DDC Fast Speed SCL Low Level Control Register 1",
         "reset_value": "0x0"
       }
     ]
   },
   {
     "name": "I2CM_FS_SCL_LCNT_0_ADDR",
-    "description": "PHY I2C Fast Speed SCL Low Level Control Register 0",
+    "description": "I2C DDC Fast Speed SCL Low Level Control Register 0",
     "size": "8",
-    "offset": "3032",
+    "offset": "7e12",
     "bit_ranges": [
       {
         "bit_range": "7:0",
         "name": "I2CMP_FS_SCL_LCNT0",
         "access": "R/W",
-        "description": "PHY I2C Fast Speed SCL Low Level Control Register 0",
+        "description": "I2C DDC Fast Speed SCL Low Level Control Register 0",
         "reset_value": "0x24"
       }
     ]
   },
   {
     "name": "I2CM_SDA_HOLD",
-    "description": "Defines the number of SFR clock cycles to meet\ntHD:DAT (300 ns)\nosda_hold = round_to_high_integer (300 ns / (1/\nisfrclk_frequency))",
+    "description": "Defines the number of SFR clock cycles to meet\ntHD;DAT (300 ns) osda_hold =\nround_to_high_integer (300 ns / (1 /\nisfrclk_frequency))",
     "size": "8",
-    "offset": "3033",
+    "offset": "7e13",
     "bit_ranges": [
       {
         "bit_range": "7:0",
         "name": "OSDA_HOLD",
         "access": "R/W",
-        "description": "Defines the number of SFR clock cycles to meet\ntHD:DAT (300 ns)\nosda_hold = round_to_high_integer (300 ns / (1/\nisfrclk_frequency))",
+        "description": "Defines the number of SFR clock cycles to meet\ntHD;DAT (300 ns) osda_hold =\nround_to_high_integer (300 ns / (1 /\nisfrclk_frequency))",
         "reset_value": "0x9"
       }
     ]

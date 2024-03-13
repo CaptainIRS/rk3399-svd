@@ -3,7 +3,7 @@
     "name": "DESIGN_ID",
     "description": "Design ID code fixed by HDMI that Identifies the\ninstantiated DWC_hdmi_tx controller. For example,\nDWC_hdmi_tx 2.11a, DESIGN_ID = 21",
     "size": "8",
-    "offset": "0",
+    "offset": "0x0",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -18,7 +18,7 @@
     "name": "REVISION_ID",
     "description": "Revision ID code fixed by HDMI that Identifies the\ninstantiated DWC_hdmi_tx controller.",
     "size": "8",
-    "offset": "1",
+    "offset": "0x1",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -33,7 +33,7 @@
     "name": "PRODUCT_ID0",
     "description": "This one byte fixed code Identifies HDMI 's product\nline (\"A0h\" for DWC_hdmi_tx products).",
     "size": "8",
-    "offset": "2",
+    "offset": "0x2",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -48,7 +48,7 @@
     "name": "PRODUCT_ID1",
     "description": "This bit Identifies H Controller according to HDMI\nproduct line.",
     "size": "8",
-    "offset": "3",
+    "offset": "0x3",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -84,7 +84,7 @@
     "name": "CONFIG0_ID",
     "description": "Indicates if HDCP is present",
     "size": "8",
-    "offset": "4",
+    "offset": "0x4",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -148,7 +148,7 @@
     "name": "CONFIG1_ID",
     "description": "Reserved for future use.",
     "size": "8",
-    "offset": "5",
+    "offset": "0x5",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -198,7 +198,7 @@
     "name": "CONFIG2_ID",
     "description": "Indicates the type of PHY interface selected: 0x00:\nLegacy PHY (HDMI Tx PHY)\n0xF2: PHY GEN2 (HDMI 3D TX PHY)\n0xE2: PHY GEN2 (HDMI 3D TX PHY) + HEAC PHY\n0xC2: PHY MHL COMBO (MHL+HDMI 2.0 TX PHY)\n0xB2: PHY MHL COMBO (MHL+HDMI 2.0 TX PHY) +\nHEAC PHY\n0xF3: PHY HDMI 20 (HDMI 2.0 TX PHY)\n0xE3: PHY HDMI 20 (HDMI 2.0 TX PHY) + HEAC PHY\n0xFE: External PHY",
     "size": "8",
-    "offset": "6",
+    "offset": "0x6",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -213,7 +213,7 @@
     "name": "CONFIG3_ID",
     "description": "Indicates that the audio interface is Generic Parallel\nAudio (GPAUD)",
     "size": "8",
-    "offset": "7",
+    "offset": "0x7",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -242,7 +242,7 @@
     "name": "IH_FC_STAT0",
     "description": "Active after successful transmission of an Null\npacket. Due to high number of audio sample\npackets transmitted, this interrupt is by default\nmasked at frame composer.",
     "size": "8",
-    "offset": "100",
+    "offset": "0x100",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -306,7 +306,7 @@
     "name": "IH_FC_STAT1",
     "description": "Active after successful transmission of an General\nControl Packet.",
     "size": "8",
-    "offset": "101",
+    "offset": "0x101",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -370,7 +370,7 @@
     "name": "IH_FC_STAT2",
     "description": "Frame Composer high priority packet queue\ndescriptor overflow indication",
     "size": "8",
-    "offset": "102",
+    "offset": "0x102",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -413,7 +413,7 @@
     "name": "IH_AS_STAT0",
     "description": "Audio Sampler audio FIFO full indication.",
     "size": "8",
-    "offset": "103",
+    "offset": "0x103",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -463,7 +463,7 @@
     "name": "IH_PHY_STAT0",
     "description": "HDMI Hot Plug Detect indication. You may need to\nmask or change polarity of this interrupt after it\nhas become active.",
     "size": "8",
-    "offset": "104",
+    "offset": "0x104",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -520,7 +520,7 @@
     "name": "IH_I2CM_STAT0",
     "description": "I2C Master error indication",
     "size": "8",
-    "offset": "105",
+    "offset": "0x105",
     "bit_ranges": [
       {
         "bit_range": "7:3",
@@ -556,7 +556,7 @@
     "name": "IH_CEC_STAT0",
     "description": "CEC Done Indication",
     "size": "8",
-    "offset": "106",
+    "offset": "0x106",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -620,7 +620,7 @@
     "name": "IH_VP_STAT0",
     "description": "Reserved and read as zero",
     "size": "8",
-    "offset": "107",
+    "offset": "0x107",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -677,7 +677,7 @@
     "name": "IH_I2CMPHY_STAT0",
     "description": "I2C Master PHY error indication",
     "size": "8",
-    "offset": "108",
+    "offset": "0x108",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -706,7 +706,7 @@
     "name": "IH_AHBDMAAUD_STAT0",
     "description": "AHB audio DMA lost ownership interrupt",
     "size": "8",
-    "offset": "109",
+    "offset": "0x109",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -742,7 +742,7 @@
     "name": "IH_DECODE",
     "description": "Interruption active at the ih_ahbdmaaud_stat0\nregister",
     "size": "8",
-    "offset": "170",
+    "offset": "0x170",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -806,7 +806,7 @@
     "name": "IH_MUTE_FC_STAT0",
     "description": "When set to 1, mutes ih_fc_stat0[0]",
     "size": "8",
-    "offset": "180",
+    "offset": "0x180",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -870,7 +870,7 @@
     "name": "IH_MUTE_FC_STAT1",
     "description": "When set to 1, mutes ih_fc_stat1[2]. Otherwise,\nthis field is a \"spare\" bit with no associated\nfunctionality.",
     "size": "8",
-    "offset": "181",
+    "offset": "0x181",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -920,7 +920,7 @@
     "name": "IH_MUTE_FC_STAT2",
     "description": "When set to 1, mutes ih_fc_stat2[0]",
     "size": "8",
-    "offset": "182",
+    "offset": "0x182",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -963,7 +963,7 @@
     "name": "IH_MUTE_AS_STAT0",
     "description": "When set to 1, mutes ih_as_stat0[0]",
     "size": "8",
-    "offset": "183",
+    "offset": "0x183",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -1013,7 +1013,7 @@
     "name": "IH_MUTE_PHY_STAT0",
     "description": "When set to 1, mutes ih_phy_stat0[0]",
     "size": "8",
-    "offset": "184",
+    "offset": "0x184",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -1070,7 +1070,7 @@
     "name": "IH_MUTE_I2CM_STAT0",
     "description": "When set to 1, mutes ih_i2cm_stat0[0]",
     "size": "8",
-    "offset": "185",
+    "offset": "0x185",
     "bit_ranges": [
       {
         "bit_range": "7:3",
@@ -1106,7 +1106,7 @@
     "name": "IH_MUTE_CEC_STAT0",
     "description": "When set to 1, mutes ih_cec_stat0[0]",
     "size": "8",
-    "offset": "186",
+    "offset": "0x186",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -1170,7 +1170,7 @@
     "name": "IH_MUTE_VP_STAT0",
     "description": "Reserved as \u201cspare\u201d bit with no associated\nfunctionality.",
     "size": "8",
-    "offset": "187",
+    "offset": "0x187",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -1234,7 +1234,7 @@
     "name": "IH_MUTE_I2CMPHY_STAT0",
     "description": "When set to 1, mutes ih_i2cmphy_stat0[0]",
     "size": "8",
-    "offset": "188",
+    "offset": "0x188",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -1263,7 +1263,7 @@
     "name": "IH_MUTE_AHBDMAAUD_STAT0",
     "description": "When set to 1, mutes ih_ahbdmaaud_stat0[0]",
     "size": "8",
-    "offset": "189",
+    "offset": "0x189",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -1327,7 +1327,7 @@
     "name": "IH_MUTE",
     "description": "When set to 1, mutes the main interrupt line\n(where all interrupts are ORed). The sticky bit\ninterrupts continue with their state; only the main\ninterrupt line is muted.",
     "size": "8",
-    "offset": "1ff",
+    "offset": "0x1ff",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -1356,7 +1356,7 @@
     "name": "TX_INVID0",
     "description": "Internal data enable (DE) generator enable. If data\nenable is not available for the input video, set this\nbit to one to activate the internal data enable\ngenerator.\nAttention: This feature only works for input video\nmodes that have native repetition (such as, all CEA\nvideos). No desired pixel repetition can be used\nwith this feature because these configurations only\naffect the Frame Composer and not this block.\nThe DE Generator does not work for the following\nconditions:\nTransmission of video with CEA VIC 39\nTransmission of 3D video using the field\nalternative structure",
     "size": "8",
-    "offset": "200",
+    "offset": "0x200",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -1371,7 +1371,7 @@
     "name": "TX_INSTUFFING",
     "description": "0b: When the dataen signal is low, the value in the\ngydata[15:0] output is the one sampled from the\ncorresponding input data.\n1b: When the dataen signal is low, the value in the\ngydata[15:0] output is given by the values in\nTX_GYDTA0 and TX_GYDATA1 registers.",
     "size": "8",
-    "offset": "201",
+    "offset": "0x201",
     "bit_ranges": [
       {
         "bit_range": "7:3",
@@ -1407,7 +1407,7 @@
     "name": "TX_GYDATA0",
     "description": "This register defines the value of gydata[7:0]\nwhen TX_INSTUFFING[0] (gydata_stuffing) is set\nto 1b.",
     "size": "8",
-    "offset": "202",
+    "offset": "0x202",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1422,7 +1422,7 @@
     "name": "TX_GYDATA1",
     "description": "This register defines the value of gydata[15:8]\nwhen TX_INSTUFFING[0] (gydata_stuffing) is set\nto 1b.",
     "size": "8",
-    "offset": "203",
+    "offset": "0x203",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1437,7 +1437,7 @@
     "name": "TX_RCRDATA0",
     "description": "This register defines the value of rcrydata[7:0]\nwhen TX_INSTUFFING[1] (rcrdata_stuffing) is set\nto 1b.",
     "size": "8",
-    "offset": "204",
+    "offset": "0x204",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1452,7 +1452,7 @@
     "name": "TX_RCRDATA1",
     "description": "This register defines the value of rcrydata[15:8]\nwhen TX_INSTUFFING[1] (rcrdata_stuffing) is set\nto 1b.",
     "size": "8",
-    "offset": "205",
+    "offset": "0x205",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1467,7 +1467,7 @@
     "name": "TX_BCBDATA0",
     "description": "This register defines the value of bcbdata[7:0]\nwhen TX_INSTUFFING[2] (bcbdata_stuffing) is set\nto 1b.",
     "size": "8",
-    "offset": "206",
+    "offset": "0x206",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1482,7 +1482,7 @@
     "name": "TX_BCBDATA1",
     "description": "This register defines the value of bcbdata[15:8]\nwhen TX_INSTUFFING[2] (bcbdata_stuffing) is set\nto 1b.",
     "size": "8",
-    "offset": "207",
+    "offset": "0x207",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1497,7 +1497,7 @@
     "name": "VP_STATUS",
     "description": "Read only register that holds the \"packing phase\"\noutput of the Video Packetizer block.",
     "size": "8",
-    "offset": "800",
+    "offset": "0x800",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -1519,7 +1519,7 @@
     "name": "VP_PR_CD",
     "description": "Desired pixel repetition factor configuration. The\nconfigured value sets H13T PHY PLL to multiply\npixel clock by the factor in order to obtain the\ndesired repetition clock. For the CEA modes some\nare already defined with pixel repetition in the\ninput video. So for CEA modes this shall be always\n0. Shall only be used if the user wants to do pixel\nrepetition using H13TCTRL controller.\nThe action is stated corresponding to\ndesired_pr_factor[3:0]:\n0000b: No pixel repetition (pixel sent only once)\n0001b: Pixel sent two times (pixel repeated once)\n0010b: Pixel sent three times\n0011b: Pixel sent four times\n0100b: Pixel sent five times\n0101b: Pixel sent six times\n0110b: Pixel sent seven times\n0111b: Pixel sent eight times\n1000b: Pixel sent nine times\n1001b: Pixel sent 10 times\nOther: Reserved. Not used",
     "size": "8",
-    "offset": "801",
+    "offset": "0x801",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -1541,7 +1541,7 @@
     "name": "VP_STUFF",
     "description": "Pixel packing stuffing control. The action is stated\ncorresponding to pp_stuffing:\n0b: Pixel packing block in direct mode (input\nblanking data goes directly to output).\n1b: Pixel packing block in stuffing mode. When\n\"de_rep\" goes to low the outputs are fixed to\n0x00.",
     "size": "8",
-    "offset": "802",
+    "offset": "0x802",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -1591,7 +1591,7 @@
     "name": "VP_REMAP",
     "description": "YCC 422 remap input video size ycc422_size[1:0]\n00b: YCC 422 16-bit input video (8 bits per\ncomponent) 01b: YCC 422 20-bit input video (10\nbits per component) 10b: YCC 422 24-bit input\nvideo (12 bits per component) 11b: Reserved. Not\nused",
     "size": "8",
-    "offset": "803",
+    "offset": "0x803",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -1613,7 +1613,7 @@
     "name": "VP_CONF",
     "description": "Video Packetizer output selection 0b: Data from\npixel packing block 1b: Data from YCC422 remap\nblock",
     "size": "8",
-    "offset": "804",
+    "offset": "0x804",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -1677,7 +1677,7 @@
     "name": "VP_MASK",
     "description": "Reserved as \u201cspare\u201d bit with no associated\nfunctionality.",
     "size": "8",
-    "offset": "807",
+    "offset": "0x807",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -1741,7 +1741,7 @@
     "name": "FC_INVIDCONF",
     "description": "Used for CEA861-D modes with fractional Vblank\n(for example, modes 5, 6, 7, 10, 11, 20, 21, and\n22). For more modes, see the CEA861-D\nspecification.\nNote: Set this field to 1 for video mode 39,\nalthough there is no Vblank oscillation.\n1b: Active high",
     "size": "8",
-    "offset": "1000",
+    "offset": "0x1000",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -1798,7 +1798,7 @@
     "name": "FC_INHACTIV0",
     "description": "Input video Horizontal active pixel region width.\nNumber of Horizontal active pixels [0...8191].",
     "size": "8",
-    "offset": "1001",
+    "offset": "0x1001",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1813,7 +1813,7 @@
     "name": "FC_INHACTIV1",
     "description": "Input video Horizontal active pixel region width\n(0 .. 16383) If the configuration parameter\nHDMI_TX_20 = True (1), this bit field holds bit 13.",
     "size": "8",
-    "offset": "1002",
+    "offset": "0x1002",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -1835,7 +1835,7 @@
     "name": "FC_INHBLANK0",
     "description": "Input video Horizontal blanking pixel region width.\nNumber of Horizontal blanking pixels [0...4095].",
     "size": "8",
-    "offset": "1003",
+    "offset": "0x1003",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1850,7 +1850,7 @@
     "name": "FC_INHBLANK1",
     "description": "Input video Horizontal blanking pixel region width\nthis bit field holds bits 9:8 of number of Horizontal\nblanking pixels.",
     "size": "8",
-    "offset": "1004",
+    "offset": "0x1004",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -1879,7 +1879,7 @@
     "name": "FC_INVACTIV0",
     "description": "Input video Vertical active pixel region width. This\nbit field holds bits 7:0 of number of Vertical active\npixels.",
     "size": "8",
-    "offset": "1005",
+    "offset": "0x1005",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1894,7 +1894,7 @@
     "name": "FC_INVACTIV1",
     "description": "Input video Vertical active pixel region width. This\nbit field holds bits 9:8 of number of Vertical active\npixels.",
     "size": "8",
-    "offset": "1006",
+    "offset": "0x1006",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -1923,7 +1923,7 @@
     "name": "FC_INVBLANK",
     "description": "Input video Vertical blanking pixel region width.\nNumber of Vertical blanking lines [0...255].",
     "size": "8",
-    "offset": "1007",
+    "offset": "0x1007",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1938,7 +1938,7 @@
     "name": "FC_HSYNCINDELAY0",
     "description": "Input video Hsync active edge delay. Integer\nnumber of pixel clock cycles from \"de\" non active\nedge of the last \"de\" valid period [0...4095].",
     "size": "8",
-    "offset": "1008",
+    "offset": "0x1008",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1953,7 +1953,7 @@
     "name": "FC_HSYNCINDELAY1",
     "description": "Input video Horizontal active edge delay.",
     "size": "8",
-    "offset": "1009",
+    "offset": "0x1009",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -1982,7 +1982,7 @@
     "name": "FC_HSYNCINWIDTH0",
     "description": "Input video Hsync active pulse width. Integer\nnumber of pixel clock cycles [0...511].",
     "size": "8",
-    "offset": "100a",
+    "offset": "0x100a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -1997,7 +1997,7 @@
     "name": "FC_HSYNCINWIDTH1",
     "description": "Input video Hsync active pulse width.",
     "size": "8",
-    "offset": "100b",
+    "offset": "0x100b",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -2026,7 +2026,7 @@
     "name": "FC_VSYNCINDELAY",
     "description": "Input video Vsync active edge delay. Integer\nnumber of Hsync pulses from \"de\" non active edge\nof the last \"de\" valid period. [0...255].",
     "size": "8",
-    "offset": "100c",
+    "offset": "0x100c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2041,7 +2041,7 @@
     "name": "FC_VSYNCINWIDTH",
     "description": "Description: Input video Vsync active pulse width.\nInteger number of video lines [0...63].",
     "size": "8",
-    "offset": "100d",
+    "offset": "0x100d",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -2063,7 +2063,7 @@
     "name": "FC_INFREQ0",
     "description": "Video refresh rate in Hz*1E3 format. This register\nis provided for debug and informative purposes.\nThe Hdmi_tx does not write any data to this\nregister; the data written by software is not used\nby the Hdmi_tx.",
     "size": "8",
-    "offset": "100e",
+    "offset": "0x100e",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2078,7 +2078,7 @@
     "name": "FC_INFREQ1",
     "description": "Video refresh rate in Hz*1E3 format. This register\nis provided for debug and informative purposes.\nThe Hdmi_tx does not write any data to this\nregister; the data written by software is not used\nby the Hdmi_tx.",
     "size": "8",
-    "offset": "100f",
+    "offset": "0x100f",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2093,7 +2093,7 @@
     "name": "FC_INFREQ2",
     "description": "Video refresh rate in Hz*1E3 format. This register\nis provided for debug and informative purposes.\nThe Hdmi_tx does not write any data to this\nregister; the data written by software is not used\nby the Hdmi_tx.",
     "size": "8",
-    "offset": "1010",
+    "offset": "0x1010",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -2115,7 +2115,7 @@
     "name": "FC_CTRLDUR",
     "description": "Configuration of the control period minimum\nduration (minimum of 12 pixel clock cycles; refer\nto HDMI 1.4b specification). Integer number of\npixel clocks cycles [0..223].",
     "size": "8",
-    "offset": "1011",
+    "offset": "0x1011",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2130,7 +2130,7 @@
     "name": "FC_EXCTRLDUR",
     "description": "Configuration of the extended control period\nminimum duration (minimum of 32 pixel clock\ncycles; refer to HDMI 1.4b specification). Integer\nnumber of pixel clocks cycles [0..223].",
     "size": "8",
-    "offset": "1012",
+    "offset": "0x1012",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2145,7 +2145,7 @@
     "name": "FC_EXCTRLSPAC",
     "description": "Configuration of the maximum spacing between\nconsecutive extended control periods (maximum of\n50ms; refer to the applicable HDMI specification).\nWhen using the HDMI 2.0 supported features\n(HDMI_TX_20 = 1):\ngenerated spacing = (1/freq tmds\nclock)*256*512*(extctrlperiodspacing +1)\nelse\ngenerated spacing = (1/freq tmds\nclock)*256*256*(extctrlperiodspacing +1)",
     "size": "8",
-    "offset": "1013",
+    "offset": "0x1013",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2160,7 +2160,7 @@
     "name": "FC_CH0PREAM",
     "description": "When in control mode, configures 8 bits that fill the\nchannel 0 data lines not used to transmit the\npreamble (for more clarification, refer to the HDMI\n1.4b specification).",
     "size": "8",
-    "offset": "1014",
+    "offset": "0x1014",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2175,7 +2175,7 @@
     "name": "FC_CH1PREAM",
     "description": "When in control mode, configures 6 bits that fill the\nchannel 1 data lines not used to transmit the\npreamble (for more clarification, refer to the HDMI\n1.4b specification).",
     "size": "8",
-    "offset": "1015",
+    "offset": "0x1015",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -2197,7 +2197,7 @@
     "name": "FC_CH2PREAM",
     "description": "When in control mode, configures 6 bits that fill the\nchannel 2 data lines not used to transmit the\npreamble (for more clarification, refer to the HDMI\n1.4b specification).",
     "size": "8",
-    "offset": "1016",
+    "offset": "0x1016",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -2219,7 +2219,7 @@
     "name": "FC_AVICONF3",
     "description": "IT content type according to CEA the specification",
     "size": "8",
-    "offset": "1017",
+    "offset": "0x1017",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -2248,7 +2248,7 @@
     "name": "FC_GCP",
     "description": "Value of \"clear_avmute\" in the GCP packet",
     "size": "8",
-    "offset": "1018",
+    "offset": "0x1018",
     "bit_ranges": [
       {
         "bit_range": "7:3",
@@ -2284,7 +2284,7 @@
     "name": "FC_AVICONF0",
     "description": "Y1,Y0 RGB or YCC indicator",
     "size": "8",
-    "offset": "1019",
+    "offset": "0x1019",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -2327,7 +2327,7 @@
     "name": "FC_AVICONF1",
     "description": "Active aspect ratio",
     "size": "8",
-    "offset": "101a",
+    "offset": "0x101a",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -2356,7 +2356,7 @@
     "name": "FC_AVICONF2",
     "description": "Non-uniform picture scaling",
     "size": "8",
-    "offset": "101b",
+    "offset": "0x101b",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -2392,7 +2392,7 @@
     "name": "FC_AVIVID",
     "description": "Configures the AVI InfoFrame Video Identification\ncode. For more information, refer to the CEA-861-\nE specification.",
     "size": "8",
-    "offset": "101c",
+    "offset": "0x101c",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -2412,9 +2412,9 @@
   },
   {
     "name": "FC_AVIETB[0:1]",
-    "description": "This register defines the AVI InfoFrame Start of\nBottom Bar value. For more information, refer to\nthe CEA-861-E specification.",
+    "description": "Defines the AVI InfoFrame End of Top Bar value.\nFor more information, refer to the CEA-861-E\nspecification.",
     "size": "8",
-    "offset": "1025",
+    "offset": "0x101d + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2427,9 +2427,9 @@
   },
   {
     "name": "FC_AVISBB[0:1]",
-    "description": "This register defines the AVI InfoFrame End of Left\nBar value. For more information, refer to the CEA-\n861-E specification.",
+    "description": "This register defines the AVI InfoFrame Start of\nBottom Bar value. For more information, refer to\nthe CEA-861-E specification.",
     "size": "8",
-    "offset": "1025",
+    "offset": "0x101f + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2442,9 +2442,9 @@
   },
   {
     "name": "FC_AVIELB[0:1]",
-    "description": "This register defines the AVI InfoFrame Start of\nRight Bar value. For more information, refer to the\nCEA-861-E specification.",
+    "description": "This register defines the AVI InfoFrame End of Left\nBar value. For more information, refer to the CEA-\n861-E specification.",
     "size": "8",
-    "offset": "1025",
+    "offset": "0x1021 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2457,9 +2457,9 @@
   },
   {
     "name": "FC_AVISRB[0:1]",
-    "description": "Reserved for future use.",
+    "description": "This register defines the AVI InfoFrame Start of\nRight Bar value. For more information, refer to the\nCEA-861-E specification.",
     "size": "8",
-    "offset": "1025",
+    "offset": "0x1023 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2474,7 +2474,7 @@
     "name": "FC_AUDICONF0",
     "description": "Coding Type",
     "size": "8",
-    "offset": "1025",
+    "offset": "0x1025",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -2503,7 +2503,7 @@
     "name": "FC_AUDICONF1",
     "description": "Sampling frequency",
     "size": "8",
-    "offset": "1026",
+    "offset": "0x1026",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -2539,7 +2539,7 @@
     "name": "FC_AUDICONF2",
     "description": "Channel allocation",
     "size": "8",
-    "offset": "1027",
+    "offset": "0x1027",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2554,7 +2554,7 @@
     "name": "FC_AUDICONF3",
     "description": "Level shift value (for down mixing)",
     "size": "8",
-    "offset": "1028",
+    "offset": "0x1028",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -2590,7 +2590,7 @@
     "name": "FC_VSDIEEEID2",
     "description": "This register configures the Vendor Specific\nInfoFrame IEEE registration identifier. For more\ninformation, refer to the CEA- 861-E specification.",
     "size": "8",
-    "offset": "1029",
+    "offset": "0x1029",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2605,7 +2605,7 @@
     "name": "FC_VSDSIZE",
     "description": "Packet size as described in the HDMI Vendor\nSpecific InfoFrame (from the HDMI specification).",
     "size": "8",
-    "offset": "102a",
+    "offset": "0x102a",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -2627,7 +2627,7 @@
     "name": "FC_VSDIEEEID1",
     "description": "This register configures the Vendor Specific\nInfoFrame IEEE registration identifier. For more\ninformation, refer to the CEA-861-E specification.",
     "size": "8",
-    "offset": "1030",
+    "offset": "0x1030",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2642,7 +2642,7 @@
     "name": "FC_VSDIEEEID0",
     "description": "This register configures the Vendor Specific\nInfoFrame IEEE registration identifier. For more\ninformation, refer to the CEA-861-E specification.",
     "size": "8",
-    "offset": "1031",
+    "offset": "0x1031",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2655,9 +2655,9 @@
   },
   {
     "name": "FC_VSDPAYLOAD[0:23]",
-    "description": "Frame Composer SPD Packet Data Vendor Name\nRegister Array Configures the Source Product\nDescriptor infoFrame 8 bytes Vendor name. For\nmore information, refer to the CEA-861-E\nspecification.",
+    "description": "Frame Composer VSI Packet Data Payload Register\nArray Configures the Vendor Specific infoFrame 24\nbytes specific payload. For more information, refer\nto the CEA-861-E specification.",
     "size": "8",
-    "offset": "1062",
+    "offset": "0x1032 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2670,9 +2670,9 @@
   },
   {
     "name": "FC_SPDVENDORNAME[0:7]",
-    "description": "Frame Composer SPD packet Data Product Name\nRegister Array Configures the Source Product\nDescriptor infoFrame 16 bytes Product name. For\nmore information, refer to the CEA-861-E\nspecification.",
+    "description": "Frame Composer SPD Packet Data Vendor Name\nRegister Array Configures the Source Product\nDescriptor infoFrame 8 bytes Vendor name. For\nmore information, refer to the CEA-861-E\nspecification.",
     "size": "8",
-    "offset": "1062",
+    "offset": "0x104a + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2685,9 +2685,9 @@
   },
   {
     "name": "FC_SPDPRODUCTNAME[0:15]",
-    "description": "Frame Composer SPD Packet Data Source Product\nDescriptor Register",
+    "description": "Frame Composer SPD packet Data Product Name\nRegister Array Configures the Source Product\nDescriptor infoFrame 16 bytes Product name. For\nmore information, refer to the CEA-861-E\nspecification.",
     "size": "8",
-    "offset": "1062",
+    "offset": "0x1052 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2702,7 +2702,7 @@
     "name": "FC_SPDDEVICEINF",
     "description": "Frame Composer SPD Packet Data Source Product\nDescriptor Register",
     "size": "8",
-    "offset": "1062",
+    "offset": "0x1062",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2717,7 +2717,7 @@
     "name": "FC_AUDSCONF",
     "description": "Set the audio packet layout to be sent in the\npacket: 1b: layout 1\n0b: layout 0\nIf HDMI_TX_20 is defined and register field\nfc_multistream_ctrl.fc_mas_packet_en is active,\nthis bit has no effect.",
     "size": "8",
-    "offset": "1063",
+    "offset": "0x1063",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -2746,7 +2746,7 @@
     "name": "FC_AUDSSTAT",
     "description": "Shows the data sample present indication of the\nlast Audio sample packet sent by the HDMI Tx\nController. This register information is at TMDS\nclock rate.",
     "size": "8",
-    "offset": "1064",
+    "offset": "0x1064",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -2768,7 +2768,7 @@
     "name": "FC_AUDSV",
     "description": "Set validity bit \"V\" for Channel 0, Left",
     "size": "8",
-    "offset": "1065",
+    "offset": "0x1065",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -2832,7 +2832,7 @@
     "name": "FC_AUDSU",
     "description": "Set user bit \"U\" for Channel 0, Left",
     "size": "8",
-    "offset": "1066",
+    "offset": "0x1066",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -2896,7 +2896,7 @@
     "name": "FC_AUDSCHNL0",
     "description": "IEC Copyright indication",
     "size": "8",
-    "offset": "1067",
+    "offset": "0x1067",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -2932,7 +2932,7 @@
     "name": "FC_AUDSCHNL1",
     "description": "Category code",
     "size": "8",
-    "offset": "1068",
+    "offset": "0x1068",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -2947,7 +2947,7 @@
     "name": "FC_AUDSCHNL2",
     "description": "Source number",
     "size": "8",
-    "offset": "1069",
+    "offset": "0x1069",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -2976,7 +2976,7 @@
     "name": "FC_AUDSCHNL3",
     "description": "Channel number for first right sample",
     "size": "8",
-    "offset": "106a",
+    "offset": "0x106a",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -2998,7 +2998,7 @@
     "name": "FC_AUDSCHNL4",
     "description": "Channel number for third right sample",
     "size": "8",
-    "offset": "106b",
+    "offset": "0x106b",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -3020,7 +3020,7 @@
     "name": "FC_AUDSCHNL5",
     "description": "Channel number for first left sample",
     "size": "8",
-    "offset": "106c",
+    "offset": "0x106c",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -3042,7 +3042,7 @@
     "name": "FC_AUDSCHNL6",
     "description": "Channel number for third left sample",
     "size": "8",
-    "offset": "106d",
+    "offset": "0x106d",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -3064,7 +3064,7 @@
     "name": "FC_AUDSCHNL7",
     "description": "Sampling frequency",
     "size": "8",
-    "offset": "106e",
+    "offset": "0x106e",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -3093,7 +3093,7 @@
     "name": "FC_AUDSCHNL8",
     "description": "Word length configuration",
     "size": "8",
-    "offset": "106f",
+    "offset": "0x106f",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -3115,7 +3115,7 @@
     "name": "FC_CTRLQHIGH",
     "description": "Configures the number of high priority packets or\naudio sample packets consecutively attended\nbefore checking low priority queue status. Valid\nrange is from 5'd1 to 5'd31.",
     "size": "8",
-    "offset": "1073",
+    "offset": "0x1073",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -3137,7 +3137,7 @@
     "name": "FC_CTRLQLOW",
     "description": "Configures the number of low priority packets or\nnull packets consecutively attended before\nchecking high priority queue status or audio\nsamples availability. Valid range is from 5'd1 to\n5'd31.",
     "size": "8",
-    "offset": "1074",
+    "offset": "0x1074",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -3159,7 +3159,7 @@
     "name": "FC_ACP0",
     "description": "Configures the ACP packet type.",
     "size": "8",
-    "offset": "1075",
+    "offset": "0x1075",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3174,7 +3174,7 @@
     "name": "FC_ACP16",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 16",
     "size": "8",
-    "offset": "1082",
+    "offset": "0x1082",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3189,7 +3189,7 @@
     "name": "FC_ACP15",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 15",
     "size": "8",
-    "offset": "1083",
+    "offset": "0x1083",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3204,7 +3204,7 @@
     "name": "FC_ACP14",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 14",
     "size": "8",
-    "offset": "1084",
+    "offset": "0x1084",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3219,7 +3219,7 @@
     "name": "FC_ACP13",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 13",
     "size": "8",
-    "offset": "1085",
+    "offset": "0x1085",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3234,7 +3234,7 @@
     "name": "FC_ACP12",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 12",
     "size": "8",
-    "offset": "1086",
+    "offset": "0x1086",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3249,7 +3249,7 @@
     "name": "FC_ACP11",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 11",
     "size": "8",
-    "offset": "1087",
+    "offset": "0x1087",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3264,7 +3264,7 @@
     "name": "FC_ACP10",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 10",
     "size": "8",
-    "offset": "1088",
+    "offset": "0x1088",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3279,7 +3279,7 @@
     "name": "FC_ACP9",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 9",
     "size": "8",
-    "offset": "1089",
+    "offset": "0x1089",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3294,7 +3294,7 @@
     "name": "FC_ACP8",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 8",
     "size": "8",
-    "offset": "108a",
+    "offset": "0x108a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3309,7 +3309,7 @@
     "name": "FC_ACP7",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 7",
     "size": "8",
-    "offset": "108b",
+    "offset": "0x108b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3324,7 +3324,7 @@
     "name": "FC_ACP6",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 6",
     "size": "8",
-    "offset": "108c",
+    "offset": "0x108c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3339,7 +3339,7 @@
     "name": "FC_ACP5",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 5",
     "size": "8",
-    "offset": "108d",
+    "offset": "0x108d",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3354,7 +3354,7 @@
     "name": "FC_ACP4",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 4",
     "size": "8",
-    "offset": "108e",
+    "offset": "0x108e",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3369,7 +3369,7 @@
     "name": "FC_ACP3",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 3",
     "size": "8",
-    "offset": "108f",
+    "offset": "0x108f",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3384,7 +3384,7 @@
     "name": "FC_ACP2",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 2",
     "size": "8",
-    "offset": "1090",
+    "offset": "0x1090",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3399,7 +3399,7 @@
     "name": "FC_ACP1",
     "description": "Frame Composer ACP Packet Body Configuration\nRegister 1",
     "size": "8",
-    "offset": "1091",
+    "offset": "0x1091",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3414,7 +3414,7 @@
     "name": "FC_ISCR1_0",
     "description": "ISRC1 Indication of packet continuation (ISRC2 will\nbe transmitted)",
     "size": "8",
-    "offset": "1092",
+    "offset": "0x1092",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -3450,7 +3450,7 @@
     "name": "FC_ISCR1_16",
     "description": "Frame Composer ISRC1 Packet Body Register 16;\nconfigures ISRC1 packet body of the ISRC1 packet",
     "size": "8",
-    "offset": "1093",
+    "offset": "0x1093",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3465,7 +3465,7 @@
     "name": "FC_ISCR1_15",
     "description": "Frame Composer ISRC1 Packet Body Register 15",
     "size": "8",
-    "offset": "1094",
+    "offset": "0x1094",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3480,7 +3480,7 @@
     "name": "FC_ISCR1_14",
     "description": "Frame Composer ISRC1 Packet Body Register 14",
     "size": "8",
-    "offset": "1095",
+    "offset": "0x1095",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3495,7 +3495,7 @@
     "name": "FC_ISCR1_13",
     "description": "Frame Composer ISRC1 Packet Body Register 13",
     "size": "8",
-    "offset": "1096",
+    "offset": "0x1096",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3510,7 +3510,7 @@
     "name": "FC_ISCR1_12",
     "description": "Frame Composer ISRC1 Packet Body Register 12",
     "size": "8",
-    "offset": "1097",
+    "offset": "0x1097",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3525,7 +3525,7 @@
     "name": "FC_ISCR1_11",
     "description": "Frame Composer ISRC1 Packet Body Register 11",
     "size": "8",
-    "offset": "1098",
+    "offset": "0x1098",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3540,7 +3540,7 @@
     "name": "FC_ISCR1_10",
     "description": "Frame Composer ISRC1 Packet Body Register 10",
     "size": "8",
-    "offset": "1099",
+    "offset": "0x1099",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3555,7 +3555,7 @@
     "name": "FC_ISCR1_9",
     "description": "Frame Composer ISRC1 Packet Body Register 9",
     "size": "8",
-    "offset": "109a",
+    "offset": "0x109a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3570,7 +3570,7 @@
     "name": "FC_ISCR1_8",
     "description": "Frame Composer ISRC1 Packet Body Register 8",
     "size": "8",
-    "offset": "109b",
+    "offset": "0x109b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3585,7 +3585,7 @@
     "name": "FC_ISCR1_7",
     "description": "Frame Composer ISRC1 Packet Body Register 7",
     "size": "8",
-    "offset": "109c",
+    "offset": "0x109c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3600,7 +3600,7 @@
     "name": "FC_ISCR1_6",
     "description": "Frame Composer ISRC1 Packet Body Register 6",
     "size": "8",
-    "offset": "109d",
+    "offset": "0x109d",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3615,7 +3615,7 @@
     "name": "FC_ISCR1_5",
     "description": "Frame Composer ISRC1 Packet Body Register 5",
     "size": "8",
-    "offset": "109e",
+    "offset": "0x109e",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3630,7 +3630,7 @@
     "name": "FC_ISCR1_4",
     "description": "Frame Composer ISRC1 Packet Body Register 4",
     "size": "8",
-    "offset": "109f",
+    "offset": "0x109f",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3645,7 +3645,7 @@
     "name": "FC_ISCR1_3",
     "description": "Frame Composer ISRC1 Packet Body Register 3",
     "size": "8",
-    "offset": "10a0",
+    "offset": "0x10a0",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3660,7 +3660,7 @@
     "name": "FC_ISCR1_2",
     "description": "Frame Composer ISRC1 Packet Body Register 2",
     "size": "8",
-    "offset": "10a1",
+    "offset": "0x10a1",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3675,7 +3675,7 @@
     "name": "FC_ISCR1_1",
     "description": "Frame Composer ISRC1 Packet Body Register 1",
     "size": "8",
-    "offset": "10a2",
+    "offset": "0x10a2",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3690,7 +3690,7 @@
     "name": "FC_ISCR2_15",
     "description": "Frame Composer ISRC2 Packet Body Register 15;\nconfigures the ISRC2 packet body of the ISRC2\npacket",
     "size": "8",
-    "offset": "10a3",
+    "offset": "0x10a3",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3705,7 +3705,7 @@
     "name": "FC_ISCR2_14",
     "description": "Frame Composer ISRC2 Packet Body Register 14",
     "size": "8",
-    "offset": "10a4",
+    "offset": "0x10a4",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3720,7 +3720,7 @@
     "name": "FC_ISCR2_13",
     "description": "Frame Composer ISRC2 Packet Body Register 13",
     "size": "8",
-    "offset": "10a5",
+    "offset": "0x10a5",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3735,7 +3735,7 @@
     "name": "FC_ISCR2_12",
     "description": "Frame Composer ISRC2 Packet Body Register 12",
     "size": "8",
-    "offset": "10a6",
+    "offset": "0x10a6",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3750,7 +3750,7 @@
     "name": "FC_ISCR2_11",
     "description": "Frame Composer ISRC2 Packet Body Register 11",
     "size": "8",
-    "offset": "10a7",
+    "offset": "0x10a7",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3765,7 +3765,7 @@
     "name": "FC_ISCR2_10",
     "description": "Frame Composer ISRC2 Packet Body Register 10",
     "size": "8",
-    "offset": "10a8",
+    "offset": "0x10a8",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3780,7 +3780,7 @@
     "name": "FC_ISCR2_9",
     "description": "Frame Composer ISRC2 Packet Body Register 9",
     "size": "8",
-    "offset": "10a9",
+    "offset": "0x10a9",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3795,7 +3795,7 @@
     "name": "FC_ISCR2_8",
     "description": "Frame Composer ISRC2 Packet Body Register 8",
     "size": "8",
-    "offset": "10aa",
+    "offset": "0x10aa",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3810,7 +3810,7 @@
     "name": "FC_ISCR2_7",
     "description": "Frame Composer ISRC2 Packet Body Register 7",
     "size": "8",
-    "offset": "10ab",
+    "offset": "0x10ab",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3825,7 +3825,7 @@
     "name": "FC_ISCR2_6",
     "description": "Frame Composer ISRC2 Packet Body Register 6",
     "size": "8",
-    "offset": "10ac",
+    "offset": "0x10ac",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3840,7 +3840,7 @@
     "name": "FC_ISCR2_5",
     "description": "Frame Composer ISRC2 Packet Body Register 5",
     "size": "8",
-    "offset": "10ad",
+    "offset": "0x10ad",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3855,7 +3855,7 @@
     "name": "FC_ISCR2_4",
     "description": "Frame Composer ISRC2 Packet Body Register 4",
     "size": "8",
-    "offset": "10ae",
+    "offset": "0x10ae",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3870,7 +3870,7 @@
     "name": "FC_ISCR2_3",
     "description": "Frame Composer ISRC2 Packet Body Register 3",
     "size": "8",
-    "offset": "10af",
+    "offset": "0x10af",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3885,7 +3885,7 @@
     "name": "FC_ISCR2_2",
     "description": "Frame Composer ISRC2 Packet Body Register 2",
     "size": "8",
-    "offset": "10b0",
+    "offset": "0x10b0",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3900,7 +3900,7 @@
     "name": "FC_ISCR2_1",
     "description": "Frame Composer ISRC2 Packet Body Register 1",
     "size": "8",
-    "offset": "10b1",
+    "offset": "0x10b1",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3915,7 +3915,7 @@
     "name": "FC_ISCR2_0",
     "description": "Frame Composer ISRC2 Packet Body Register 0",
     "size": "8",
-    "offset": "10b2",
+    "offset": "0x10b2",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -3930,7 +3930,7 @@
     "name": "FC_DATAUTO0",
     "description": "Enables ACP automatic packet scheduling",
     "size": "8",
-    "offset": "10b3",
+    "offset": "0x10b3",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -3980,7 +3980,7 @@
     "name": "FC_DATAUTO1",
     "description": "Packet frame interpolation for automatic packet\nscheduling",
     "size": "8",
-    "offset": "10b4",
+    "offset": "0x10b4",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4002,7 +4002,7 @@
     "name": "FC_DATAUTO2",
     "description": "Packets line spacing, for automatic packet\nscheduling",
     "size": "8",
-    "offset": "10b5",
+    "offset": "0x10b5",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4024,7 +4024,7 @@
     "name": "FC_DATMAN",
     "description": "ACP packet",
     "size": "8",
-    "offset": "10b6",
+    "offset": "0x10b6",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -4081,7 +4081,7 @@
     "name": "FC_DATAUTO3",
     "description": "Enables ACR packet insertion",
     "size": "8",
-    "offset": "10b7",
+    "offset": "0x10b7",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -4138,7 +4138,7 @@
     "name": "FC_RDRB0",
     "description": "ACR Frame interpolation",
     "size": "8",
-    "offset": "10b8",
+    "offset": "0x10b8",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4160,7 +4160,7 @@
     "name": "FC_RDRB1",
     "description": "ACR packet line spacing",
     "size": "8",
-    "offset": "10b9",
+    "offset": "0x10b9",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4182,7 +4182,7 @@
     "name": "FC_RDRB2",
     "description": "Audio frame interpolation",
     "size": "8",
-    "offset": "10ba",
+    "offset": "0x10ba",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4204,7 +4204,7 @@
     "name": "FC_RDRB3",
     "description": "Audio packets line spacing",
     "size": "8",
-    "offset": "10bb",
+    "offset": "0x10bb",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4226,7 +4226,7 @@
     "name": "FC_RDRB4",
     "description": "Frames interpolated between GCP packets",
     "size": "8",
-    "offset": "10bc",
+    "offset": "0x10bc",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4248,7 +4248,7 @@
     "name": "FC_RDRB5",
     "description": "GCP packets line spacing",
     "size": "8",
-    "offset": "10bd",
+    "offset": "0x10bd",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4270,7 +4270,7 @@
     "name": "FC_RDRB6",
     "description": "Frames interpolated between AVI packets",
     "size": "8",
-    "offset": "10be",
+    "offset": "0x10be",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4292,7 +4292,7 @@
     "name": "FC_RDRB7",
     "description": "AVI packets line spacing",
     "size": "8",
-    "offset": "10bf",
+    "offset": "0x10bf",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4314,7 +4314,7 @@
     "name": "FC_RDRB8",
     "description": "AMP frame interpolation",
     "size": "8",
-    "offset": "10c0",
+    "offset": "0x10c0",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4336,7 +4336,7 @@
     "name": "FC_RDRB9",
     "description": "AMP packets line spacing",
     "size": "8",
-    "offset": "10c1",
+    "offset": "0x10c1",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4358,7 +4358,7 @@
     "name": "FC_RDRB10",
     "description": "NTSC VBI frame interpolation",
     "size": "8",
-    "offset": "10c2",
+    "offset": "0x10c2",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4380,7 +4380,7 @@
     "name": "FC_RDRB11",
     "description": "NTSC VBI packets line spacing",
     "size": "8",
-    "offset": "10c3",
+    "offset": "0x10c3",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4402,7 +4402,7 @@
     "name": "FC_RDRB12",
     "description": "Description: DRM frame interpolation",
     "size": "8",
-    "offset": "10c4",
+    "offset": "0x10c4",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4424,7 +4424,7 @@
     "name": "FC_RDRB13",
     "description": "DRM packets line spacing",
     "size": "8",
-    "offset": "10c5",
+    "offset": "0x10c5",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4446,7 +4446,7 @@
     "name": "FC_MASK0",
     "description": "Mask bit for FC_INT0.NULL interrupt bit",
     "size": "8",
-    "offset": "10d2",
+    "offset": "0x10d2",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -4510,7 +4510,7 @@
     "name": "FC_MASK1",
     "description": "Mask bit for FC_INT1.GCP interrupt bit",
     "size": "8",
-    "offset": "10d6",
+    "offset": "0x10d6",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -4574,7 +4574,7 @@
     "name": "FC_MASK2",
     "description": "Mask bit for FC_INT2.HighPriority_overflow interrupt\nbit",
     "size": "8",
-    "offset": "10da",
+    "offset": "0x10da",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -4617,7 +4617,7 @@
     "name": "FC_PRCONF",
     "description": "Configures the video pixel repetition ratio to be sent\non the AVI InfoFrame. This value must be valid\naccording to the HDMI specification. The\noutput_pr_factor = incoming_pr_factor *\n(desired_pr_factor + 1) \u2013 1.\noutput_pr_factor[3:0] 0000b: No action. Not used.\n0001b: Pixel sent two times (pixel repeated once)\n0010b: Pixel sent three times\n0011b: Pixel sent four times 0100b: Pixel sent five\ntimes 0101b: Pixel sent six times 0110b: Pixel sent\nseven times 0111b: Pixel sent eight times 1000b:\nPixel sent nine times 1001b: Pixel sent 10 times\nOther: Reserved. Not used\nNote: When working in YCC422 video, the actual\nrepetition of the stream is Incoming_pr_factor *\n(desired_pr_factor + 1). This calculation is done\ninternally in the H13TCTRL and no hardware\noverflow protection is available. Care must be taken\nto avoid this result passes the maximum number of\n10 pixels repeated because no HDMI support is\navailable for this in the specification and the\nH13TPHY does not support this higher repetition\nvalues.",
     "size": "8",
-    "offset": "10e0",
+    "offset": "0x10e0",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4639,7 +4639,7 @@
     "name": "FC_SCRAMBLER_CTRL",
     "description": "When set (1'b1), this field activates the HDMI 2.0\nscrambler feature. When disabled (1'b0) the\nscrambler feature is bypassed, placing Hdmi_tx in\nHDMI 1.4b compatible mode. To activate the\nscrambler feature, you must ensure that the quasi-\nstatic\nconfiguration bit fc_invidconf.HDCP_keepout is set\n(1'b1) at configuration time, before the required\nmc_swrstzreq.tmdsswrst_req reset request is\nissued.\nThis is field can be changed in runtime.",
     "size": "8",
-    "offset": "10e1",
+    "offset": "0x10e1",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -4675,7 +4675,7 @@
     "name": "FC_MULTISTREAM_CTRL",
     "description": "This field, when set (1'b1), activates the HDMI 2.0\nMulti- Stream support. The audio stream present at\nthe input of the Hdmi_tx controller is transported\nusing Multi-Stream Audio Sample Packets.",
     "size": "8",
-    "offset": "10e2",
+    "offset": "0x10e2",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -4697,7 +4697,7 @@
     "name": "FC_PACKET_TX_EN",
     "description": "ACR packet transmission control 1b: Transmission\nenabled\n0b: Transmission disabled",
     "size": "8",
-    "offset": "10e3",
+    "offset": "0x10e3",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -4761,7 +4761,7 @@
     "name": "FC_ACTSPC_HDLR_CFG",
     "description": "Active Space Handler Control\n1b: Fixed active space value mode enabled. During\nactive space, a fixed value of 0xAA is applied to all\nTMDS channels.\n0b: Fixed active space value mode disabled",
     "size": "8",
-    "offset": "10e8",
+    "offset": "0x10e8",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -4790,7 +4790,7 @@
     "name": "FC_INVACT_2D_0",
     "description": "2D Input video vertical active pixel region width.\nNumber of 2D video vertical active lines [7:0].",
     "size": "8",
-    "offset": "10e9",
+    "offset": "0x10e9",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -4805,7 +4805,7 @@
     "name": "FC_INVACT_2D_1",
     "description": "2D Input video vertical active pixel region width.\nNumber of 2D video vertical active lines [11:8].",
     "size": "8",
-    "offset": "10ea",
+    "offset": "0x10ea",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4827,7 +4827,7 @@
     "name": "FC_GMD_STAT",
     "description": "Gamut scheduling: Current Gamut packet sequence\nnumber",
     "size": "8",
-    "offset": "1100",
+    "offset": "0x1100",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -4863,7 +4863,7 @@
     "name": "FC_GMD_EN",
     "description": "Gamut Metadata packet transmission enable (1b)",
     "size": "8",
-    "offset": "1101",
+    "offset": "0x1101",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -4885,7 +4885,7 @@
     "name": "FC_GMD_UP",
     "description": "Gamut Metadata packet update",
     "size": "8",
-    "offset": "1102",
+    "offset": "0x1102",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -4907,7 +4907,7 @@
     "name": "FC_GMD_CONF",
     "description": "Number of line spacing between the transmitted\nGMD packets",
     "size": "8",
-    "offset": "1103",
+    "offset": "0x1103",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -4929,7 +4929,7 @@
     "name": "FC_GMD_HB",
     "description": "Affected gamut sequence number",
     "size": "8",
-    "offset": "1104",
+    "offset": "0x1104",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -4956,9 +4956,9 @@
   },
   {
     "name": "FC_GMD_PB[0:27]",
-    "description": "Frame Composer AMP Packet Header Register 1",
+    "description": "Frame Composer GMD Packet Body Register Array",
     "size": "8",
-    "offset": "1128",
+    "offset": "0x1105 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -4973,7 +4973,7 @@
     "name": "FC_AMP_HB1",
     "description": "Frame Composer AMP Packet Header Register 1",
     "size": "8",
-    "offset": "1128",
+    "offset": "0x1128",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -4988,7 +4988,7 @@
     "name": "FC_AMP_HB2",
     "description": "Frame Composer AMP Packet Header Register 2",
     "size": "8",
-    "offset": "1129",
+    "offset": "0x1129",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5001,9 +5001,9 @@
   },
   {
     "name": "FC_AMP_PB[0:27]",
-    "description": "Frame Composer NTSC VBI Packet Header Register 1",
+    "description": "Frame Composer AMP Packet Body Register Array",
     "size": "8",
-    "offset": "1149",
+    "offset": "0x112a + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5018,7 +5018,7 @@
     "name": "FC_NVBI_HB1",
     "description": "Frame Composer NTSC VBI Packet Header Register 2",
     "size": "8",
-    "offset": "1149",
+    "offset": "0x1149",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5033,7 +5033,7 @@
     "name": "FC_NVBI_HB2",
     "description": "Frame Composer NTSC VBI Packet Header Register 2",
     "size": "8",
-    "offset": "1149",
+    "offset": "0x1149",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5046,9 +5046,9 @@
   },
   {
     "name": "FC_NVBI_PB[0:26]",
-    "description": "Reserved for future use.",
+    "description": "Frame Composer NTSC VBI Packet Body Register\nArray",
     "size": "8",
-    "offset": "1167",
+    "offset": "0x114a + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5063,7 +5063,7 @@
     "name": "FC_DRM_UP",
     "description": "DRM packet update",
     "size": "8",
-    "offset": "1167",
+    "offset": "0x1167",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -5083,9 +5083,9 @@
   },
   {
     "name": "FC_DRM_HB[0:1]",
-    "description": "Frame Composer DRM Packet Body Register Array",
+    "description": "Frame Composer DRM Packet Header Register Array",
     "size": "8",
-    "offset": "1200",
+    "offset": "0x1168 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5098,9 +5098,9 @@
   },
   {
     "name": "FC_DRM_PB[0:26]",
-    "description": "Reserved for future use.",
+    "description": "Frame Composer DRM Packet Body Register Array",
     "size": "8",
-    "offset": "1200",
+    "offset": "0x116a + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5115,7 +5115,7 @@
     "name": "FC_DBGFORCE",
     "description": "Force fixed video output with FC_DBGTMDSx register\ncontents.",
     "size": "8",
-    "offset": "1200",
+    "offset": "0x1200",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -5151,7 +5151,7 @@
     "name": "FC_DBGAUD0CH0",
     "description": "Frame Composer Audio Data Channel 0 Register 0",
     "size": "8",
-    "offset": "1201",
+    "offset": "0x1201",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5166,7 +5166,7 @@
     "name": "FC_DBGAUD1CH0",
     "description": "Frame Composer Audio Data Channel 0 Register 1",
     "size": "8",
-    "offset": "1202",
+    "offset": "0x1202",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5181,7 +5181,7 @@
     "name": "FC_DBGAUD2CH0",
     "description": "Frame Composer Audio Data Channel 0 Register 2",
     "size": "8",
-    "offset": "1203",
+    "offset": "0x1203",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5196,7 +5196,7 @@
     "name": "FC_DBGAUD0CH1",
     "description": "Frame Composer Audio Data Channel 1 Register 0",
     "size": "8",
-    "offset": "1204",
+    "offset": "0x1204",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5211,7 +5211,7 @@
     "name": "FC_DBGAUD1CH1",
     "description": "Frame Composer Audio Data Channel 1 Register 1",
     "size": "8",
-    "offset": "1205",
+    "offset": "0x1205",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5226,7 +5226,7 @@
     "name": "FC_DBGAUD2CH1",
     "description": "Frame Composer Audio Data Channel 1 Register 2",
     "size": "8",
-    "offset": "1206",
+    "offset": "0x1206",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5241,7 +5241,7 @@
     "name": "FC_DBGAUD0CH2",
     "description": "Frame Composer Audio Data Channel 2 Register 0",
     "size": "8",
-    "offset": "1207",
+    "offset": "0x1207",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5256,7 +5256,7 @@
     "name": "FC_DBGAUD1CH2",
     "description": "Frame Composer Audio Data Channel 2 Register 1",
     "size": "8",
-    "offset": "1208",
+    "offset": "0x1208",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5271,7 +5271,7 @@
     "name": "FC_DBGAUD2CH2",
     "description": "Frame Composer Audio Data Channel 2 Register 2",
     "size": "8",
-    "offset": "1209",
+    "offset": "0x1209",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5286,7 +5286,7 @@
     "name": "FC_DBGAUD0CH3",
     "description": "Frame Composer Audio Data Channel 3 Register 0",
     "size": "8",
-    "offset": "120a",
+    "offset": "0x120a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5301,7 +5301,7 @@
     "name": "FC_DBGAUD1CH3",
     "description": "Frame Composer Audio Data Channel 3 Register 1",
     "size": "8",
-    "offset": "120b",
+    "offset": "0x120b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5316,7 +5316,7 @@
     "name": "FC_DBGAUD2CH3",
     "description": "Frame Composer Audio Data Channel 3 Register 2",
     "size": "8",
-    "offset": "120c",
+    "offset": "0x120c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5331,7 +5331,7 @@
     "name": "FC_DBGAUD0CH4",
     "description": "Frame Composer Audio Data Channel 4 Register 0",
     "size": "8",
-    "offset": "120d",
+    "offset": "0x120d",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5346,7 +5346,7 @@
     "name": "FC_DBGAUD1CH4",
     "description": "Frame Composer Audio Data Channel 4 Register 1",
     "size": "8",
-    "offset": "120e",
+    "offset": "0x120e",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5361,7 +5361,7 @@
     "name": "FC_DBGAUD2CH4",
     "description": "Frame Composer Audio Data Channel 4 Register 2",
     "size": "8",
-    "offset": "120f",
+    "offset": "0x120f",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5376,7 +5376,7 @@
     "name": "FC_DBGAUD0CH5",
     "description": "Frame Composer Audio Data Channel 5 Register 0",
     "size": "8",
-    "offset": "1210",
+    "offset": "0x1210",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5391,7 +5391,7 @@
     "name": "FC_DBGAUD1CH5",
     "description": "Frame Composer Audio Data Channel 5 Register 1",
     "size": "8",
-    "offset": "1211",
+    "offset": "0x1211",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5406,7 +5406,7 @@
     "name": "FC_DBGAUD2CH5",
     "description": "Frame Composer Audio Data Channel 5 Register 2",
     "size": "8",
-    "offset": "1212",
+    "offset": "0x1212",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5421,7 +5421,7 @@
     "name": "FC_DBGAUD0CH6",
     "description": "Frame Composer Audio Data Channel 6 Register 0",
     "size": "8",
-    "offset": "1213",
+    "offset": "0x1213",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5436,7 +5436,7 @@
     "name": "FC_DBGAUD1CH6",
     "description": "Frame Composer Audio Data Channel 6 Register 1",
     "size": "8",
-    "offset": "1214",
+    "offset": "0x1214",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5451,7 +5451,7 @@
     "name": "FC_DBGAUD2CH6",
     "description": "Frame Composer Audio Data Channel 6 Register 2",
     "size": "8",
-    "offset": "1215",
+    "offset": "0x1215",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5466,7 +5466,7 @@
     "name": "FC_DBGAUD0CH7",
     "description": "Frame Composer Audio Data Channel 7 Register 0",
     "size": "8",
-    "offset": "1216",
+    "offset": "0x1216",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5481,7 +5481,7 @@
     "name": "FC_DBGAUD1CH7",
     "description": "Frame Composer Audio Data Channel 7 Register 1",
     "size": "8",
-    "offset": "1217",
+    "offset": "0x1217",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5496,7 +5496,7 @@
     "name": "FC_DBGAUD2CH7",
     "description": "Frame Composer Audio Data Channel 7 Register 2",
     "size": "8",
-    "offset": "1218",
+    "offset": "0x1218",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5509,9 +5509,9 @@
   },
   {
     "name": "FC_DBGTMDS[0:2]",
-    "description": "Power-down enable (active low 0b). Otherwise, this\nfield is a \"spare\" bit with no associated functionality.",
+    "description": "Frame Composer TMDS Data Channel 0 Register",
     "size": "8",
-    "offset": "3001",
+    "offset": "0x1219 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5526,7 +5526,7 @@
     "name": "PHY_CONF0",
     "description": "Test Clock signal. Otherwise, this field is a \"spare\"\nbit with no associated functionality.",
     "size": "8",
-    "offset": "3001",
+    "offset": "0x3001",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -5569,7 +5569,7 @@
     "name": "PHY_TST0",
     "description": "Test Clock signal. Otherwise, this field is a \"spare\"\nbit with no associated functionality.",
     "size": "8",
-    "offset": "3001",
+    "offset": "0x3001",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -5612,7 +5612,7 @@
     "name": "PHY_TST1",
     "description": "Test Data input Otherwise, this field is a \"spare\" bit\nwith no associated functionality.",
     "size": "8",
-    "offset": "3002",
+    "offset": "0x3002",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5627,7 +5627,7 @@
     "name": "PHY_TST2",
     "description": "Test Data output. Otherwise, this field is a \"spare\"\nbit with no associated functionality.",
     "size": "8",
-    "offset": "3003",
+    "offset": "0x3003",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5642,7 +5642,7 @@
     "name": "PHY_STAT0",
     "description": "Status bit. TX PHY PLL lock indication. You may need\nto mask or change polarity of this interrupt after it\nhas became active.",
     "size": "8",
-    "offset": "3004",
+    "offset": "0x3004",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -5699,7 +5699,7 @@
     "name": "PHY_INT0",
     "description": "Interrupt indication bit. TX PHY PLL lock indication\ninterrupt.",
     "size": "8",
-    "offset": "3005",
+    "offset": "0x3005",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -5756,7 +5756,7 @@
     "name": "PHY_MASK0",
     "description": "Mask bit for PHY_INT0.TX_PHY_LOCK interrupt bit",
     "size": "8",
-    "offset": "3006",
+    "offset": "0x3006",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -5813,7 +5813,7 @@
     "name": "PHY_POL0",
     "description": "Polarity bit for PHY_INT0.TX_PHY_LOCK interrupt bit",
     "size": "8",
-    "offset": "3007",
+    "offset": "0x3007",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -5870,7 +5870,7 @@
     "name": "PHY_PCLFREQ0",
     "description": "Pixel Clock Frequency (pclk_freq[7:0]).",
     "size": "8",
-    "offset": "3008",
+    "offset": "0x3008",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5885,7 +5885,7 @@
     "name": "PHY_PCLFREQ1",
     "description": "Pixel Clock Frequency (pclk_freq[9:8]).",
     "size": "8",
-    "offset": "3009",
+    "offset": "0x3009",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -5907,7 +5907,7 @@
     "name": "PHY_PLLCFGFREQ0",
     "description": "PLL Configuration Frequency (pllcfgfreq[7:0]).",
     "size": "8",
-    "offset": "300a",
+    "offset": "0x300a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5922,7 +5922,7 @@
     "name": "PHY_PLLCFGFREQ1",
     "description": "PLL Configuration Frequency (pllcfgfreq[15:8]).",
     "size": "8",
-    "offset": "300b",
+    "offset": "0x300b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5937,7 +5937,7 @@
     "name": "PHY_PLLCFGFREQ2",
     "description": "PLL Configuration Frequency (pllcfgfreq[23:16]).",
     "size": "8",
-    "offset": "300c",
+    "offset": "0x300c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5952,7 +5952,7 @@
     "name": "PHY_I2CM_SLAVE",
     "description": "Slave address to be sent during read and write\noperations.\nPHY Gen2 slave address: 7'h69\nHEAC PHY slave address: 7'h49",
     "size": "8",
-    "offset": "3020",
+    "offset": "0x3020",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -5974,7 +5974,7 @@
     "name": "PHY_I2CM_ADDRESS",
     "description": "Register address for read and write operations",
     "size": "8",
-    "offset": "3021",
+    "offset": "0x3021",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -5989,7 +5989,7 @@
     "name": "PHY_I2CM_DATAO_1",
     "description": "Data MSB (datao[15:8]) to be written on register\npointed by phy_i2cm_address [7:0].",
     "size": "8",
-    "offset": "3022",
+    "offset": "0x3022",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6004,7 +6004,7 @@
     "name": "PHY_I2CM_DATAO_0",
     "description": "Data LSB (datao[7:0]) to be written on register\npointed by phy_i2cm_address [7:0].",
     "size": "8",
-    "offset": "3023",
+    "offset": "0x3023",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6019,7 +6019,7 @@
     "name": "PHY_I2CM_DATAI_1",
     "description": "Data MSB (datai[15:8]) read from register pointed by\nphy_i2cm_address[7:0].",
     "size": "8",
-    "offset": "3024",
+    "offset": "0x3024",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6034,7 +6034,7 @@
     "name": "PHY_I2CM_DATAI_0",
     "description": "Data LSB (datai[7:0]) read from register pointed by\nphy_i2cm_address[7:0].",
     "size": "8",
-    "offset": "3025",
+    "offset": "0x3025",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6049,7 +6049,7 @@
     "name": "PHY_I2CM_OPERATION",
     "description": "Read operation request",
     "size": "8",
-    "offset": "3026",
+    "offset": "0x3026",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -6085,7 +6085,7 @@
     "name": "PHY_I2CM_INT",
     "description": "Operation done status bit. Marks the end of a read or\nwrite operation.",
     "size": "8",
-    "offset": "3027",
+    "offset": "0x3027",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -6128,7 +6128,7 @@
     "name": "PHY_I2CM_CTLINT",
     "description": "Arbitration error interrupt bit\nBits Name Attr Description\n{arbitration_interrupt = (arbitration_mask==0b) &&\n(arbitration_status==arbitration_pol)}\nNote: This bit field is read by the sticky bits present\non the ih_i2cmphy_stat0 register.",
     "size": "8",
-    "offset": "3028",
+    "offset": "0x3028",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -6185,7 +6185,7 @@
     "name": "PHY_I2CM_DIV",
     "description": "Reserved as \"spare\" register with no associated\nfunctionality.",
     "size": "8",
-    "offset": "3029",
+    "offset": "0x3029",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -6214,7 +6214,7 @@
     "name": "PHY_I2CM_SOFTRSTZ",
     "description": "I2C Master Software Reset. Active by writing a zero\nand auto cleared to one in the following cycle.",
     "size": "8",
-    "offset": "302a",
+    "offset": "0x302a",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -6236,7 +6236,7 @@
     "name": "PHY_I2CM_SS_SCL_HCNT_1_ADDR",
     "description": "PHY I2C Slow Speed SCL High Level Control Register\n1",
     "size": "8",
-    "offset": "302b",
+    "offset": "0x302b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6251,7 +6251,7 @@
     "name": "PHY_I2CM_SS_SCL_HCNT_0_ADDR",
     "description": "PHY I2C Slow Speed SCL High Level Control Register\n0",
     "size": "8",
-    "offset": "302c",
+    "offset": "0x302c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6266,7 +6266,7 @@
     "name": "PHY_I2CM_SS_SCL_LCNT_1_ADDR",
     "description": "PHY I2C Slow Speed SCL Low Level Control Register\n1",
     "size": "8",
-    "offset": "302d",
+    "offset": "0x302d",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6281,7 +6281,7 @@
     "name": "PHY_I2CM_SS_SCL_LCNT_0_ADDR",
     "description": "PHY I2C Slow Speed SCL Low Level Control Register\n0",
     "size": "8",
-    "offset": "302e",
+    "offset": "0x302e",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6296,7 +6296,7 @@
     "name": "PHY_I2CM_FS_SCL_HCNT_1_ADDR",
     "description": "PHY I2C Fast Speed SCL High Level Control Register\n1",
     "size": "8",
-    "offset": "302f",
+    "offset": "0x302f",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6311,7 +6311,7 @@
     "name": "PHY_I2CM_FS_SCL_HCNT_0_ADDR",
     "description": "PHY I2C Fast Speed SCL High Level Control Register\nBits Name Attr Description\n0",
     "size": "8",
-    "offset": "3030",
+    "offset": "0x3030",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6326,7 +6326,7 @@
     "name": "PHY_I2CM_FS_SCL_LCNT_1_ADDR",
     "description": "PHY I2C Fast Speed SCL Low Level Control Register 1",
     "size": "8",
-    "offset": "3031",
+    "offset": "0x3031",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6341,7 +6341,7 @@
     "name": "PHY_I2CM_FS_SCL_LCNT_0_ADDR",
     "description": "PHY I2C Fast Speed SCL Low Level Control Register 0",
     "size": "8",
-    "offset": "3032",
+    "offset": "0x3032",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6356,7 +6356,7 @@
     "name": "PHY_I2CM_SDA_HOLD",
     "description": "Defines the number of SFR clock cycles to meet\ntHD:DAT (300 ns)\nosda_hold = round_to_high_integer (300 ns / (1/\nisfrclk_frequency))",
     "size": "8",
-    "offset": "3033",
+    "offset": "0x3033",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6371,7 +6371,7 @@
     "name": "JTAG_PHY_CONFIG",
     "description": "Configures the JTAG PHY interface output pin\nBits Name Attr Description\nJTAG_TRST_N when in internal control mode\n(iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when\nPHY_EXTERNAL=1.",
     "size": "8",
-    "offset": "3034",
+    "offset": "0x3034",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -6407,7 +6407,7 @@
     "name": "JTAG_PHY_TAP_TCK",
     "description": "Configures the JTAG PHY interface pin JTAG_TCK\nwhen in internal control mode (iphy_ext_ctrl=1'b0)\nor ophyext_jtag_tck when PHY_EXTERNAL=1.",
     "size": "8",
-    "offset": "3035",
+    "offset": "0x3035",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -6429,7 +6429,7 @@
     "name": "JTAG_PHY_TAP_IN",
     "description": "Configures the JTAG PHY interface pin JTAG_TDI\nwhen in internal control mode (iphy_ext_ctrl=1'b0)\nor ophyext_jtag_tdi when PHY_EXTERNAL=1.",
     "size": "8",
-    "offset": "3036",
+    "offset": "0x3036",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -6465,7 +6465,7 @@
     "name": "JTAG_PHY_TAP_OUT",
     "description": "Read JTAG PHY interface input pin JTAG_TDO when\nin internal control mode (iphy_ext_ctrl=1'b0) or\nBits Name Attr Description\niphyext_jtag_tdo when PHY_EXTERNAL=1 Value After\nReset: 0x0\n\njtag_phy_addr\nDescription: PHY JTAG Address Control Register\nSize: 8 bits\nOffset: 0x3038\nBits Name Attr Description\n7:0 jtag_addr R/W Configures the JTAG PHY interface pin\nJTAG_ADDR[7:0] when in internal control mode\n(iphy_ext_ctrl=1'b0) or iphyext_jtag_addr[7:0] when\nPHY_EXTERNAL=1",
     "size": "8",
-    "offset": "3037",
+    "offset": "0x3037",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -6501,7 +6501,7 @@
     "name": "JTAG_PHY_ADDR",
     "description": "Configures the JTAG PHY interface pin\nJTAG_ADDR[7:0] when in internal control mode\n(iphy_ext_ctrl=1'b0) or iphyext_jtag_addr[7:0] when\nPHY_EXTERNAL=1",
     "size": "8",
-    "offset": "3038",
+    "offset": "0x3038",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6516,7 +6516,7 @@
     "name": "AUD_CONF0",
     "description": "Action\nI2S_in_en[0] - I2Sdata[0] enable I2S_in_en[1] -\nI2Sdata[1] enable I2S_in_en[2] - I2Sdata[2] enable\nI2S_in_en[3] - I2Sdata[3] enable",
     "size": "8",
-    "offset": "3100",
+    "offset": "0x3100",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -6559,7 +6559,7 @@
     "name": "AUD_CONF1",
     "description": "I2S input data width I2S_width[4:0] | Action\n00000b-01111b | Not used\n10000b | 16 bit data samples at input\n10001b | 17 bit data samples at input\n10010b | 18 bit data samples at input\n10011b | 19 bit data samples at input\n10100b | 20 bit data samples at input\n10101b | 21 bit data samples at input\n10110b | 22 bit data samples at input\n10111b | 23 bit data samples at input\n11000b | 24 bit data samples at input 11001b-\n11111b | Not Used",
     "size": "8",
-    "offset": "3101",
+    "offset": "0x3101",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -6581,7 +6581,7 @@
     "name": "AUD_INT",
     "description": "Reserved for future use.",
     "size": "8",
-    "offset": "3102",
+    "offset": "0x3102",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -6617,7 +6617,7 @@
     "name": "AUD_CONF2",
     "description": "I2S HBR Mode Enable. When enabled, the I2S audio\nstream is transmitted using HBR packets.",
     "size": "8",
-    "offset": "3103",
+    "offset": "0x3103",
     "bit_ranges": [
       {
         "bit_range": "7:3",
@@ -6653,7 +6653,7 @@
     "name": "AUD_N1",
     "description": "HDMI Audio Clock Regenerator N value",
     "size": "8",
-    "offset": "3200",
+    "offset": "0x3200",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6668,7 +6668,7 @@
     "name": "AUD_N2",
     "description": "HDMI Audio Clock Regenerator N value",
     "size": "8",
-    "offset": "3201",
+    "offset": "0x3201",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6683,7 +6683,7 @@
     "name": "AUD_N3",
     "description": "HDMI Audio Clock Regenerator N value",
     "size": "8",
-    "offset": "3202",
+    "offset": "0x3202",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -6712,7 +6712,7 @@
     "name": "AUD_CTS1",
     "description": "HDMI Audio Clock Regenerator CTS calculated value.\nThis value can be manually set using the CTS_manual\n(AUD_CTS3) mechanism.",
     "size": "8",
-    "offset": "3203",
+    "offset": "0x3203",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6727,7 +6727,7 @@
     "name": "AUD_CTS2",
     "description": "HDMI Audio Clock Regenerator CTS calculated value.\nThis value can be manually set using the CTS_manual\n(AUD_CTS3) mechanism.",
     "size": "8",
-    "offset": "3204",
+    "offset": "0x3204",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6742,7 +6742,7 @@
     "name": "AUD_CTS3",
     "description": "HDMI Audio Clock Regenerator CTS calculated value.\nThis value can be manually set using the CTS_manual\n(AUD_CTS3) mechanism.",
     "size": "8",
-    "offset": "3205",
+    "offset": "0x3205",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -6771,7 +6771,7 @@
     "name": "AUD_INPUTCLKFS",
     "description": "Fs factor configuration:\nifsfactor[2:0] | Audio Clock | Action\n0 | 128xFs | If you select the Bypass SPDIF\nDRU unit in coreConsultant, the input audio clock\n(either I2S or SPDIF according to configuration) is\nused at the audio packetizer to calculate the CTS\nvalue and ACR packet insertion rate.\n| 256xFs | The input audio clock (I2S only) is\ndivided by 2 and then used at audio packetizer to\ncalculate the CTS value and ACR packet insertion\nrate.\n| 512xFs | The input audio clock (either I2S or\nSPDIF according to configuration) used divided by 4\nand then used at the audio packetizer to calculate the\nCTS value and ACR packet insertion rate.\nNote: When the SPDIF interface is receiving an HBR\naudio stream (\"Support for HBR over SDPIF\"\nparameter must be enabled), it is required that the\nselected IFSFACTOR to be set at 512xFs in order to\ncomply with the HDMI ACR requirements for HBR\nBits Name Attr Description\naudio streams.\n| Reserved\n| 64xFs | The input audio clock (I2S only) is\nmultiplied by 2 and then used at the audio packetizer\nto calculate the CTS value and ACR packet insertion\nrate.\nothers | 128xFs | If you select the Bypass SPDIF\nDRU unit in coreConsultant, the input audio clock\n(either I2S or SPDIF according to configuration) is\nused at the audio packetizer to calculate the CTS\nvalue and ACR packet insertion rate.\nThe SPDIF interface, for non HBR audio, requires that\nthe configured oversampling value to be 128xFs when\nHTX_SPDIFBYPDRU is enabled and 512xFs if not.\nWhen the SPDIF interface is receiving HBR audio\n(HBR_ON_SPDIF must be enabled), in order to\ncomply with the HDMI ACR requirements for HBR\naudio streams.",
     "size": "8",
-    "offset": "3206",
+    "offset": "0x3206",
     "bit_ranges": [
       {
         "bit_range": "7:3",
@@ -6793,7 +6793,7 @@
     "name": "AUD_CTS_DITHER",
     "description": "Dither dividend (4'd1 if no CTS Dither). This field\nshould be configured with the value of dividend from\nthe HDMI specification.",
     "size": "8",
-    "offset": "3207",
+    "offset": "0x3207",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -6815,7 +6815,7 @@
     "name": "AUD_SPDIF0",
     "description": "Reserved as \"spare\" bit with no associated\nfunctionality.",
     "size": "8",
-    "offset": "3300",
+    "offset": "0x3300",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -6837,7 +6837,7 @@
     "name": "AUD_SPDIF1",
     "description": "When set to 1'b1, this bit field indicates that the input\nstream has a High Bit Rate (HBR) to be transmitted in\nHDMI HBR packets. When clear (1b'0), the audio is\ntransmitted in HDMI AUDS packets.Note:< Otherwise,\nthis field is a \"spare\" bit with no associated\nfunctionality.",
     "size": "8",
-    "offset": "3301",
+    "offset": "0x3301",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -6859,7 +6859,7 @@
     "name": "AUD_SPDIFINT",
     "description": "Reserved for future use.",
     "size": "8",
-    "offset": "3302",
+    "offset": "0x3302",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -6895,7 +6895,7 @@
     "name": "AUD_SPDIFINT1",
     "description": "Reserved for future use.",
     "size": "8",
-    "offset": "3303",
+    "offset": "0x3303",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -6924,7 +6924,7 @@
     "name": "AUD_SPDIF2",
     "description": "Action\nSPDIF_in_en[0] - ispdifdata[0] enable SPDIF_in_en[1]\n- ispdifdata[1] enable SPDIF_in_en[2] - ispdifdata[2]\nenable SPDIF_in_en[3] - ispdifdata[3] enable",
     "size": "8",
-    "offset": "3304",
+    "offset": "0x3304",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -6946,7 +6946,7 @@
     "name": "GP_CONF0",
     "description": "Audio FIFOs software reset\nWriting 0b: no action taken\nWriting 1b: Resets all audio FIFOs Reading from this\nregister always returns 0b.\nNote: If a FIFO reset request (via register write\ncommand) lands in the\nmiddle of an GPAUD audio transaction, the samples\nbecome misaligned (left-right sequence lost). As a\nsolution, for each FIFO reset, an associated SPDIF\nreset must be issued (writing 8'h7F to MC_SWRSTZ\nregister).",
     "size": "8",
-    "offset": "3500",
+    "offset": "0x3500",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -6968,7 +6968,7 @@
     "name": "GP_CONF1",
     "description": "Each bit controls the enabling of the respective audio\nchannel. For instance, bit 1, when set (1'b1), the\naudio Channel 1 is enabled. When cleared, the\nreferred channel is disabled.",
     "size": "8",
-    "offset": "3501",
+    "offset": "0x3501",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -6983,7 +6983,7 @@
     "name": "GP_CONF2",
     "description": "HBR packets enable. The Hdmi_tx sends the HBR\npackets. This bit is enabled when the audio frequency\nis higher than 192 kHz. If this bit is enabled, the\nnumber of channels configured in GP_CONF1 must be\nset to 8'hFF.",
     "size": "8",
-    "offset": "3502",
+    "offset": "0x3502",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -7012,7 +7012,7 @@
     "name": "GP_MASK",
     "description": "FIFO full flag mask",
     "size": "8",
-    "offset": "3506",
+    "offset": "0x3506",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -7055,7 +7055,7 @@
     "name": "AHB_DMA_CONF0",
     "description": "1'b: Forces the burst mode to be fixed beat, incremental\nburst mode designated by the incr_type[1:0] signal.\n0'b: Normal operation is unspecified length, incremental\nburst. It corresponds to INCR AHB burst mode.",
     "size": "8",
-    "offset": "3600",
+    "offset": "0x3600",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -7112,7 +7112,7 @@
     "name": "AHB_DMA_START",
     "description": "Start DMA transaction\nThis register is auto-cleared when the transfer operation\nis completed (done).",
     "size": "8",
-    "offset": "3601",
+    "offset": "0x3601",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7134,7 +7134,7 @@
     "name": "AHB_DMA_STOP",
     "description": "Stop DMA transaction\nThis register is auto-cleared when the transfer operation\nis stopped (done).",
     "size": "8",
-    "offset": "3602",
+    "offset": "0x3602",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7156,7 +7156,7 @@
     "name": "AHB_DMA_THRSLD",
     "description": "FIFO medium threshold occupation value",
     "size": "8",
-    "offset": "3603",
+    "offset": "0x3603",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7169,9 +7169,9 @@
   },
   {
     "name": "AHB_DMA_STRADDR_SET0[0:3]",
-    "description": "Defines final_addr[7:0] to end DMA burst transactions",
+    "description": "Defines init_addr[7:0] to initiate DMA burst transactions",
     "size": "8",
-    "offset": "3610",
+    "offset": "0x3604 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7184,9 +7184,9 @@
   },
   {
     "name": "AHB_DMA_STPADDR_SET0[0:3]",
-    "description": "Start address for the current burst operation",
+    "description": "Defines final_addr[7:0] to end DMA burst transactions",
     "size": "8",
-    "offset": "3610",
+    "offset": "0x3608 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7199,9 +7199,9 @@
   },
   {
     "name": "AHB_DMA_BSTRADDR[0:3]",
-    "description": "Requested burst length (mburstlength[7:0])",
+    "description": "Start address for the current burst operation",
     "size": "8",
-    "offset": "3610",
+    "offset": "0x360c + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7216,7 +7216,7 @@
     "name": "AHB_DMA_MBLENGTH0",
     "description": "Requested burst length (mburstlength[7:0])",
     "size": "8",
-    "offset": "3610",
+    "offset": "0x3610",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7231,7 +7231,7 @@
     "name": "AHB_DMA_MBLENGTH1",
     "description": "Requested burst length",
     "size": "8",
-    "offset": "3611",
+    "offset": "0x3611",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7253,7 +7253,7 @@
     "name": "AHB_DMA_MASK",
     "description": "Audio FIFO empty interrupt mask.",
     "size": "8",
-    "offset": "3614",
+    "offset": "0x3614",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -7317,7 +7317,7 @@
     "name": "AHB_DMA_CONF1",
     "description": "Each bit controls the enabling of the respective audio\nchannel. For instance, when bit 1 is set (1'b1) the audio\nChannel 1 is enabled. When cleared, the referred channel\nis disabled.",
     "size": "8",
-    "offset": "3616",
+    "offset": "0x3616",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7332,7 +7332,7 @@
     "name": "AHB_DMA_BUFFMASK",
     "description": "Buffer empty flag mask",
     "size": "8",
-    "offset": "3619",
+    "offset": "0x3619",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -7375,7 +7375,7 @@
     "name": "AHB_DMA_MASK1",
     "description": "AHB DMA FIFO overrun mask",
     "size": "8",
-    "offset": "361b",
+    "offset": "0x361b",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -7404,7 +7404,7 @@
     "name": "AHB_DMA_STATUS",
     "description": "Indicates the set of start and stop addresses currently\nused by the AHB audio DMA.\nIf cleared (1'b0), the start and stop addresses configured\nin the address range 0x3604 to 0x360B are being used.\nWhen set (1'b1), the configurations at address range\n0x3620 to 0x3627 are being used.\nThis bit is always at zero when autostart_enable is\ncleared (1'b0).",
     "size": "8",
-    "offset": "361c",
+    "offset": "0x361c",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7426,7 +7426,7 @@
     "name": "AHB_DMA_CONF2",
     "description": "Enables the AHB audio DMA auto-start feature",
     "size": "8",
-    "offset": "361d",
+    "offset": "0x361d",
     "bit_ranges": [
       {
         "bit_range": "7:2",
@@ -7453,9 +7453,9 @@
   },
   {
     "name": "AHB_DMA_STRADDR_SET1[0:3]",
-    "description": "Defines final_addr_1[7:0] to end DMA burst transactions",
+    "description": "Defines init_addr_1[7:0] to initiate DMA burst\ntransactions",
     "size": "8",
-    "offset": "4001",
+    "offset": "0x3620 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7468,9 +7468,9 @@
   },
   {
     "name": "AHB_DMA_STPADDR_SET1[0:3]",
-    "description": "HDCP22 clock synchronous disable signal. When active\n(1b), simultaneously bypasses HDCP22.",
+    "description": "Defines final_addr_1[7:0] to end DMA burst transactions",
     "size": "8",
-    "offset": "4001",
+    "offset": "0x3624 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7485,7 +7485,7 @@
     "name": "MC_CLKDIS",
     "description": "Audio Sampler clock synchronous disable signal.",
     "size": "8",
-    "offset": "4001",
+    "offset": "0x4001",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -7528,7 +7528,7 @@
     "name": "MC_SWRSTZREQ",
     "description": "Pixel software reset request.",
     "size": "8",
-    "offset": "4002",
+    "offset": "0x4002",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -7592,7 +7592,7 @@
     "name": "MC_OPCTRL",
     "description": "Block HDCP bypass mechanism\n1'b0: This is the default value. You can write to the\nhdcp_clkdisable bit of the register mc_clkdis and bypass\nHDCP by acting on the register mc_clkdis bit 6\n(hdcp_clkdisable)\n1'b1: You can still write to the hdcp_clkdisable bit of the\nregister mc_clkdis but this action disables the HDCP\nmodule and blocks the bypass mechanism. The output\ndata is frozen and the HDMI Tx and RX fail\nauthentication.\nOnce you set the value to 1'b1, you can change the\nvalue back to 1'b0 only by issuing a master reset to the\nBits Name Attr Description\nHdmi_tx. Otherwise, this field is a \"spare\" bit with no\nassociated functionality.",
     "size": "8",
-    "offset": "4003",
+    "offset": "0x4003",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -7635,7 +7635,7 @@
     "name": "MC_FLOWCTRL",
     "description": "Video path Feed Through enable bit:\n1b: Color Space Converter is in the video data path.\n0b: Color Space Converter is bypassed (not in the video\ndata path).",
     "size": "8",
-    "offset": "4004",
+    "offset": "0x4004",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7657,7 +7657,7 @@
     "name": "MC_PHYRSTZ",
     "description": "HDMI Source PHY active low reset control for PHY GEN1,\nactive high reset control for PHY GEN2.",
     "size": "8",
-    "offset": "4005",
+    "offset": "0x4005",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7679,7 +7679,7 @@
     "name": "MC_LOCKONCLOCK",
     "description": "CEC clock status. Indicates that the clock is present in\nthe system. Cleared by WR 1 to this position.",
     "size": "8",
-    "offset": "4006",
+    "offset": "0x4006",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -7743,7 +7743,7 @@
     "name": "MC_HEACPHY_RST",
     "description": "HEAC PHY reset (active high)",
     "size": "8",
-    "offset": "4007",
+    "offset": "0x4007",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7765,7 +7765,7 @@
     "name": "MC_LOCKONCLOCK_2",
     "description": "AHB audio DMA clock status. Indicates that the clock is\npresent in the system. Cleared by WR 1 to this position.",
     "size": "8",
-    "offset": "4009",
+    "offset": "0x4009",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7787,7 +7787,7 @@
     "name": "MC_SWRSTZREQ_2",
     "description": "AHB audio DMA software reset request.\nWriting 1'b1 does not result in any action.\nWriting 1'b0 to this register resets all AHB audio logic.",
     "size": "8",
-    "offset": "400a",
+    "offset": "0x400a",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7809,7 +7809,7 @@
     "name": "MC_OPSTS",
     "description": "HDCP SNPS 2.2 versus 1.4 switch value status.\n1'b0: HDCP 1.4 selected\n1'b1: HDCP 2.2 selected",
     "size": "8",
-    "offset": "4010",
+    "offset": "0x4010",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -7831,7 +7831,7 @@
     "name": "BASE_SFRDIVLOW",
     "description": "SFR clock divider Low\nThis register must be configured with the 8 least-\nsignificant bits of the value sfrclk frequency divided by\n1000 (for example, for 27 MHz base_sfrdiv[14:0] =\n27027). The configured data is used to generate a\nreference pulse of 1ms period that is needed by several\ntimers within the controller.",
     "size": "8",
-    "offset": "4018",
+    "offset": "0x4018",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7846,7 +7846,7 @@
     "name": "BASE_SFRDIVHIGH",
     "description": "SFR clock divider High\nThis register must be configured with the 7 most-\nsignificant bits of the value sfrclk frequency divided by\n1000 (for example, for 27 MHz base_sfrdiv[14:0]\n= 27027). The configured data is used to generate a\nreference pulse of 1ms period that is needed by several\ntimers within the controller.",
     "size": "8",
-    "offset": "4019",
+    "offset": "0x4019",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -7868,7 +7868,7 @@
     "name": "CSC_CFG",
     "description": "Chroma decimation configuration:\n decmode[1:0] | Chroma Decimation\n 00 | decimation disabled\n 01 | Hd (z) =1\n 10 | Hd(z)=1/ 4 + 1/2z^(-1 )+1/4 z^(-2)\n 11 | Hd(z)x2^(11)= -5+12z^(-2) - 22z^(-\n4)+39z^(-8)\n +109z^(-10) -204z^(-12)+648z^(-14) +\n1024z^(-15) +648z^(-16) -\n 204z^(-18) +109z^(-20)- 65z^(-22) +39z^(-24) -\n22z^(-26) +12z^(-\n 28)-5z^(-30)",
     "size": "8",
-    "offset": "4100",
+    "offset": "0x4100",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -7911,7 +7911,7 @@
     "name": "CSC_SCALE",
     "description": "Defines the cscscale[1:0] scale factor to apply to all\ncoefficients in Color Space Conversion. This scale\nfactor is expressed in the number of left shifts to\napply to each of the coefficients, ranging from 0 to\n2.",
     "size": "8",
-    "offset": "4101",
+    "offset": "0x4101",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -7940,7 +7940,7 @@
     "name": "CSC_COEF_A1_MSB",
     "description": "Color Space Converter Matrix A1 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "4102",
+    "offset": "0x4102",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7955,7 +7955,7 @@
     "name": "CSC_COEF_A1_LSB",
     "description": "Color Space Converter Matrix A1 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "4103",
+    "offset": "0x4103",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7970,7 +7970,7 @@
     "name": "CSC_COEF_A2_MSB",
     "description": "Color Space Converter Matrix A2 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "4104",
+    "offset": "0x4104",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -7985,7 +7985,7 @@
     "name": "CSC_COEF_A2_LSB",
     "description": "Color Space Converter Matrix A2 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "4105",
+    "offset": "0x4105",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8000,7 +8000,7 @@
     "name": "CSC_COEF_A3_MSB",
     "description": "Color Space Converter Matrix A3 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "4106",
+    "offset": "0x4106",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8015,7 +8015,7 @@
     "name": "CSC_COEF_A3_LSB",
     "description": "Color Space Converter Matrix A3 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "4107",
+    "offset": "0x4107",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8030,7 +8030,7 @@
     "name": "CSC_COEF_A4_MSB",
     "description": "Color Space Converter Matrix A4 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "4108",
+    "offset": "0x4108",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8045,7 +8045,7 @@
     "name": "CSC_COEF_A4_LSB",
     "description": "Color Space Converter Matrix A4 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "4109",
+    "offset": "0x4109",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8060,7 +8060,7 @@
     "name": "CSC_COEF_B1_MSB",
     "description": "Color Space Converter Matrix B1 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "410a",
+    "offset": "0x410a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8075,7 +8075,7 @@
     "name": "CSC_COEF_B1_LSB",
     "description": "Color Space Converter Matrix B1 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "410b",
+    "offset": "0x410b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8090,7 +8090,7 @@
     "name": "CSC_COEF_B2_MSB",
     "description": "Color Space Converter Matrix B2 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "410c",
+    "offset": "0x410c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8105,7 +8105,7 @@
     "name": "CSC_COEF_B2_LSB",
     "description": "Color Space Converter Matrix B2 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "410d",
+    "offset": "0x410d",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8120,7 +8120,7 @@
     "name": "CSC_COEF_B3_MSB",
     "description": "Color Space Converter Matrix B3 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "410e",
+    "offset": "0x410e",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8135,7 +8135,7 @@
     "name": "CSC_COEF_B3_LSB",
     "description": "Color Space Converter Matrix B3 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "410f",
+    "offset": "0x410f",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8150,7 +8150,7 @@
     "name": "CSC_COEF_B4_MSB",
     "description": "Color Space Converter Matrix B4 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "4110",
+    "offset": "0x4110",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8165,7 +8165,7 @@
     "name": "CSC_COEF_B4_LSB",
     "description": "Color Space Converter Matrix B4 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "4111",
+    "offset": "0x4111",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8180,7 +8180,7 @@
     "name": "CSC_COEF_C1_MSB",
     "description": "Color Space Converter Matrix C1 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "4112",
+    "offset": "0x4112",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8195,7 +8195,7 @@
     "name": "CSC_COEF_C1_LSB",
     "description": "Color Space Converter Matrix C1 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "4113",
+    "offset": "0x4113",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8210,7 +8210,7 @@
     "name": "CSC_COEF_C2_MSB",
     "description": "Color Space Converter Matrix C2 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "4114",
+    "offset": "0x4114",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8225,7 +8225,7 @@
     "name": "CSC_COEF_C2_LSB",
     "description": "Color Space Converter Matrix C2 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "4115",
+    "offset": "0x4115",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8240,7 +8240,7 @@
     "name": "CSC_COEF_C3_MSB",
     "description": "Color Space Converter Matrix C3 Coefficient\nRegister MSB",
     "size": "8",
-    "offset": "4116",
+    "offset": "0x4116",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8255,7 +8255,7 @@
     "name": "CSC_COEF_C3_LSB",
     "description": "Color Space Converter Matrix C3 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "4117",
+    "offset": "0x4117",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8270,7 +8270,7 @@
     "name": "CSC_COEF_C4_MSB",
     "description": "Description: Color Space Converter Matrix C4\nCoefficient Register MSB",
     "size": "8",
-    "offset": "4118",
+    "offset": "0x4118",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8285,7 +8285,7 @@
     "name": "CSC_COEF_C4_LSB",
     "description": "Color Space Converter Matrix C4 Coefficient\nRegister LSB",
     "size": "8",
-    "offset": "4119",
+    "offset": "0x4119",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8300,7 +8300,7 @@
     "name": "CSC_LIMIT_UP_MSB",
     "description": "Color Space Converter Matrix Output Upper Limit\nRegister MSB",
     "size": "8",
-    "offset": "411a",
+    "offset": "0x411a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8315,7 +8315,7 @@
     "name": "CSC_LIMIT_UP_LSB",
     "description": "Color Space Converter Matrix Output Upper Limit\nRegister LSB",
     "size": "8",
-    "offset": "411b",
+    "offset": "0x411b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8330,7 +8330,7 @@
     "name": "CSC_LIMIT_DN_MSB",
     "description": "Color Space Converter Matrix output Down Limit\nRegister MSB",
     "size": "8",
-    "offset": "411c",
+    "offset": "0x411c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8345,7 +8345,7 @@
     "name": "CSC_LIMIT_DN_LSB",
     "description": "Color Space Converter Matrix Output Down Limit\nRegister LSB",
     "size": "8",
-    "offset": "411d",
+    "offset": "0x411d",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8360,7 +8360,7 @@
     "name": "A_HDCPCFG0",
     "description": "Configures the transmitter to operate with a HDMI\ncapable device or with a DVI device.",
     "size": "8",
-    "offset": "5000",
+    "offset": "0x5000",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -8424,7 +8424,7 @@
     "name": "A_HDCPCFG1",
     "description": "Software reset signal, active by writing a zero and\nauto cleared to 1 in the following cycle.",
     "size": "8",
-    "offset": "5001",
+    "offset": "0x5001",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -8474,7 +8474,7 @@
     "name": "A_HDCPOBS0",
     "description": "Informs that the current HDMI link has the HDCP\nprotocol fully engaged.",
     "size": "8",
-    "offset": "5002",
+    "offset": "0x5002",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -8503,7 +8503,7 @@
     "name": "A_HDCPOBS1",
     "description": "Observability register informs in which state the\nrevocation machine is on.",
     "size": "8",
-    "offset": "5003",
+    "offset": "0x5003",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -8532,7 +8532,7 @@
     "name": "A_HDCPOBS2",
     "description": "Observability register informs in which state the\nEESS machine is on.",
     "size": "8",
-    "offset": "5004",
+    "offset": "0x5004",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -8561,7 +8561,7 @@
     "name": "A_HDCPOBS3",
     "description": "Register read from attached sink device:\nBcap(0x40) bit 0.",
     "size": "8",
-    "offset": "5005",
+    "offset": "0x5005",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -8625,7 +8625,7 @@
     "name": "A_APIINTCLR",
     "description": "Clears the interruption related to KSV Attr grant for\nRead-Write access.",
     "size": "8",
-    "offset": "5006",
+    "offset": "0x5006",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -8689,7 +8689,7 @@
     "name": "A_APIINTSTAT",
     "description": "Notifies that the KSV Attr as been guaranteed for\nRead-Write access.",
     "size": "8",
-    "offset": "5007",
+    "offset": "0x5007",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -8753,7 +8753,7 @@
     "name": "A_APIINTMSK",
     "description": "Masks the interruption related to KSV Attr grant for\nRead-Write access.",
     "size": "8",
-    "offset": "5008",
+    "offset": "0x5008",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -8817,7 +8817,7 @@
     "name": "A_VIDPOLCFG",
     "description": "Reserved as \"spare\" bit with no associated\nfunctionality.",
     "size": "8",
-    "offset": "5009",
+    "offset": "0x5009",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -8874,7 +8874,7 @@
     "name": "A_OESSWCFG",
     "description": "HDCP OESS WOO Configuration Register",
     "size": "8",
-    "offset": "500a",
+    "offset": "0x500a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8889,7 +8889,7 @@
     "name": "A_COREVERLSB",
     "description": "HDCP Controller Version Register LSB",
     "size": "8",
-    "offset": "5014",
+    "offset": "0x5014",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8904,7 +8904,7 @@
     "name": "A_COREVERMSB",
     "description": "HDCP Controller Version Register MSB",
     "size": "8",
-    "offset": "5015",
+    "offset": "0x5015",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8919,7 +8919,7 @@
     "name": "A_KSVMEMCTRL",
     "description": "Request access to the KSV memory; must be de-\nasserted after the access is completed by the\nsystem.",
     "size": "8",
-    "offset": "5016",
+    "offset": "0x5016",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -8967,9 +8967,9 @@
   },
   {
     "name": "HDCP_BSTATUS[0:1]",
-    "description": "HDCP M0[32:0]. If Attr has not been granted (see\nregister a_ksvmemctrl) , the value read will be\n8'hff. These values are only available on a\nconfiguration that has the SHA1 calculation by\nsoftware.",
+    "description": "HDCP BSTATUS[15:0]. If Attr has not been granted\n(see register a_ksvmemctrl), the value read will be\n8'hff.",
     "size": "8",
-    "offset": "52b9",
+    "offset": "0x5020 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8982,9 +8982,9 @@
   },
   {
     "name": "HDCP_M0[0:7]",
-    "description": "Sink KSV FIFO byte, ordered in little endian (byte at\naddress 0x502a belongs to byte 0 of KSV0). If Attr\nhas not been granted (see register a_ksvmemctrl),\nthe value read is 8'hff.\nIn this address space, 635 KSV FIFO bytes are\nmapped, which allow for 127 KSV values, each with\n5 bytes (40 bits).",
+    "description": "HDCP M0[32:0]. If Attr has not been granted (see\nregister a_ksvmemctrl) , the value read will be\n8'hff. These values are only available on a\nconfiguration that has the SHA1 calculation by\nsoftware.",
     "size": "8",
-    "offset": "52b9",
+    "offset": "0x5022 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -8997,9 +8997,9 @@
   },
   {
     "name": "HDCP_KSV[0:634]",
-    "description": "Sink VH' byte, ordered in little endian (byte at\naddress 0x525a belongs to byte 0 of VH0). If Attr\nhas not been granted (see register a_ksvmemctrl),\nthe value read is 8'hff.\nIn this address space 20 VH bytes are mapped,\nwhich allow for 5 VH values, each with 4 bytes\n(32bits).",
+    "description": "Sink KSV FIFO byte, ordered in little endian (byte at\naddress 0x502a belongs to byte 0 of KSV0). If Attr\nhas not been granted (see register a_ksvmemctrl),\nthe value read is 8'hff.\nIn this address space, 635 KSV FIFO bytes are\nmapped, which allow for 127 KSV values, each with\n5 bytes (40 bits).",
     "size": "8",
-    "offset": "52b9",
+    "offset": "0x502a + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9012,9 +9012,9 @@
   },
   {
     "name": "HDCP_VH[0:19]",
-    "description": "Register containing the LSB of KSV list size\n(ksv_list_size[7:0]). If Attr has not been granted\n(see register a_ksvmemctrl), the value read is 8'hff.",
+    "description": "Sink VH' byte, ordered in little endian (byte at\naddress 0x525a belongs to byte 0 of VH0). If Attr\nhas not been granted (see register a_ksvmemctrl),\nthe value read is 8'hff.\nIn this address space 20 VH bytes are mapped,\nwhich allow for 5 VH values, each with 4 bytes\n(32bits).",
     "size": "8",
-    "offset": "52b9",
+    "offset": "0x52a5 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9029,7 +9029,7 @@
     "name": "HDCP_REVOC_SIZE_0",
     "description": "Register containing the LSB of KSV list size\n(ksv_list_size[7:0]). If Attr has not been granted\n(see register a_ksvmemctrl), the value read is 8'hff.",
     "size": "8",
-    "offset": "52b9",
+    "offset": "0x52b9",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9044,7 +9044,7 @@
     "name": "HDCP_REVOC_SIZE_1",
     "description": "Register containing the MSB of KSV list size\n(ksv_list_size[15:8]). If Attr has not been granted\n(see register a_ksvmemctrl), the value read is 8'hff.",
     "size": "8",
-    "offset": "52ba",
+    "offset": "0x52ba",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9057,9 +9057,9 @@
   },
   {
     "name": "HDCP_REVOC_LIST[0:5059]",
-    "description": "Contains the value of BKSV[7:0].",
+    "description": "Revocation KSV byte, ordered in little endian (byte\nat address 0x52bb belongs to byte 0 of the first\nrevoked KSV). If Attr has not been granted (see\nregister a_ksvmemctrl), the value read is 8'hff.\nIn this address space 5060 revoked KSV bytes are\nmapped, which allow for 1012 KSV values, each\nwith 5 bytes (40 bits).",
     "size": "8",
-    "offset": "7800",
+    "offset": "0x52bb + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9074,7 +9074,7 @@
     "name": "HDCPREG_BKSV0",
     "description": "Contains the value of BKSV[7:0].",
     "size": "8",
-    "offset": "7800",
+    "offset": "0x7800",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9089,7 +9089,7 @@
     "name": "HDCPREG_BKSV1",
     "description": "Description: Contains the value of BKSV[15:8].",
     "size": "8",
-    "offset": "7801",
+    "offset": "0x7801",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9104,7 +9104,7 @@
     "name": "HDCPREG_BKSV2",
     "description": "Contains the value of BKSV[23:16].",
     "size": "8",
-    "offset": "7802",
+    "offset": "0x7802",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9119,7 +9119,7 @@
     "name": "HDCPREG_BKSV3",
     "description": "Contains the value of BKSV[31:24].",
     "size": "8",
-    "offset": "7803",
+    "offset": "0x7803",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9134,7 +9134,7 @@
     "name": "HDCPREG_BKSV4",
     "description": "Contains the value of BKSV[39:32].",
     "size": "8",
-    "offset": "7804",
+    "offset": "0x7804",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9149,7 +9149,7 @@
     "name": "HDCPREG_ANCONF",
     "description": "When oanbypass=1, the value of AN used in the\nHDCP engine comes from the hdcpreg_an0 to\nhdcpreg_an7 registers.\nWhen oanbypass=0, the value of AN used in the\nHDCP engine comes from the random number input.",
     "size": "8",
-    "offset": "7805",
+    "offset": "0x7805",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -9171,7 +9171,7 @@
     "name": "HDCPREG_AN0",
     "description": "Contains the value of AN[7:0]",
     "size": "8",
-    "offset": "7806",
+    "offset": "0x7806",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9186,7 +9186,7 @@
     "name": "HDCPREG_AN1",
     "description": "Contains the value of AN[15:8]",
     "size": "8",
-    "offset": "7807",
+    "offset": "0x7807",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9201,7 +9201,7 @@
     "name": "HDCPREG_AN2",
     "description": "Contains the value of AN[23:16]",
     "size": "8",
-    "offset": "7808",
+    "offset": "0x7808",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9216,7 +9216,7 @@
     "name": "HDCPREG_AN3",
     "description": "Contains the value of AN[31:24]",
     "size": "8",
-    "offset": "7809",
+    "offset": "0x7809",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9231,7 +9231,7 @@
     "name": "HDCPREG_AN4",
     "description": "Contains the value of AN[39:32]",
     "size": "8",
-    "offset": "780a",
+    "offset": "0x780a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9246,7 +9246,7 @@
     "name": "HDCPREG_AN5",
     "description": "Contains the value of AN[47:40]",
     "size": "8",
-    "offset": "780b",
+    "offset": "0x780b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9261,7 +9261,7 @@
     "name": "HDCPREG_AN6",
     "description": "Contains the value of AN[55:48]",
     "size": "8",
-    "offset": "780c",
+    "offset": "0x780c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9276,7 +9276,7 @@
     "name": "HDCPREG_AN7",
     "description": "Contains the value of BKSV[63:56]",
     "size": "8",
-    "offset": "780d",
+    "offset": "0x780d",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9291,7 +9291,7 @@
     "name": "HDCPREG_RMLCTL",
     "description": "When set (1'b1), this bit activates the decryption of\nthe Device Private keys.",
     "size": "8",
-    "offset": "780e",
+    "offset": "0x780e",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -9313,7 +9313,7 @@
     "name": "HDCPREG_RMLSTS",
     "description": "Current Device Private Key being written plus one.\nPosition 0 is occupied by the AKSV.",
     "size": "8",
-    "offset": "780f",
+    "offset": "0x780f",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -9342,7 +9342,7 @@
     "name": "HDCPREG_SEED0",
     "description": "Least significant byte of the decryption seed value\n(dpk_decrypt_seed[7:0]).",
     "size": "8",
-    "offset": "7810",
+    "offset": "0x7810",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9357,7 +9357,7 @@
     "name": "HDCPREG_SEED1",
     "description": "Most significant byte of the decryption seed value\n(dpk_decrypt_seed[15:8]).",
     "size": "8",
-    "offset": "7811",
+    "offset": "0x7811",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9372,7 +9372,7 @@
     "name": "HDCPREG_DPK0",
     "description": "Byte of the encrypted DPK value. dpk[7:0]\nWhen this byte is written, a strobe signal is\ngenerated that triggers the decryption and/or\nstorage of the DPK word on the DPK internal RAM\nmemory.",
     "size": "8",
-    "offset": "7812",
+    "offset": "0x7812",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9387,7 +9387,7 @@
     "name": "HDCPREG_DPK1",
     "description": "Byte of the encrypted DPK value. dpk[15:8]",
     "size": "8",
-    "offset": "7813",
+    "offset": "0x7813",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9402,7 +9402,7 @@
     "name": "HDCPREG_DPK2",
     "description": "Byte of the encrypted DPK value. dpk[23:16]",
     "size": "8",
-    "offset": "7814",
+    "offset": "0x7814",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9417,7 +9417,7 @@
     "name": "HDCPREG_DPK3",
     "description": "Byte of the encrypted DPK value. dpk[31:24]",
     "size": "8",
-    "offset": "7815",
+    "offset": "0x7815",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9432,7 +9432,7 @@
     "name": "HDCPREG_DPK4",
     "description": "Byte of the encrypted DPK value. dpk[39:32]",
     "size": "8",
-    "offset": "7816",
+    "offset": "0x7816",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9447,7 +9447,7 @@
     "name": "HDCPREG_DPK5",
     "description": "Contains the value of DPK[x][47:40]",
     "size": "8",
-    "offset": "7817",
+    "offset": "0x7817",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9462,7 +9462,7 @@
     "name": "HDCPREG_DPK6",
     "description": "Contains the value of DPK[x][55:48]",
     "size": "8",
-    "offset": "7818",
+    "offset": "0x7818",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -9477,7 +9477,7 @@
     "name": "HDCP22REG_ID",
     "description": "Reserved for future use.",
     "size": "8",
-    "offset": "7900",
+    "offset": "0x7900",
     "bit_ranges": [
       {
         "bit_range": "7:3",
@@ -9513,7 +9513,7 @@
     "name": "HDCP22REG_CTRL",
     "description": "HDCP 2.2 switch lock\n1'b0: Enables you to change the direction of the\nHDCP 2.2 versus\n1.4 switch by using the hdcp22_ovr_en and\nhdcp22_ovr_val.\n1'b1: You can still write to hdcp22_ovr_en and\nhdcp22_ovr_val but has no effect over the HDCP 2.2\nversus 1.4 switch, that keeps as it was configured\nby hdcp22_ovr_en and hdcp22_ovr_val at the time\nthe 1'b1 was written to this bit field.\nOnce you set the value to 1'b1, you can change the\nvalue back to 1'b0 only by issuing a master reset to\nthe Hdmi_tx.",
     "size": "8",
-    "offset": "7904",
+    "offset": "0x7904",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -9570,7 +9570,7 @@
     "name": "HDCP22REG_CTRL1",
     "description": "HDCP 2.2 versus 1.4 color depth override enable:\n1'b0: The default 1'b0 value indicates that the color\ndepth sent to the external interface is the one\nconfigured in the vp_pr_cd.color_depth register\nfield.\n1'b1: Although the used color depth for pixel\nencoding is defined by the field\nvp_pr_cd.color_depth register, the color depth sent\nto the external interface is the one defined in\nregister field hdcp22reg_ctrl1.hdcp22_cd_ovr_val.",
     "size": "8",
-    "offset": "7905",
+    "offset": "0x7905",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -9592,7 +9592,7 @@
     "name": "HDCP22REG_STS",
     "description": "HDCP 2.2 HPD external interface status after lock\nmechanism (hdcp22reg_ctrl.hdcp22_switch_lock,\nhdcp22reg_ctrl.hdcp22_ovr_en and\nhdcp22reg_ctrl.hdcp22_ovr_val).\n1'b0: Sink not detected (HPD line clear )\n1'b1: Sink detected (HPD line set)",
     "size": "8",
-    "offset": "7908",
+    "offset": "0x7908",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -9635,7 +9635,7 @@
     "name": "HDCP22REG_MASK",
     "description": "Active high interrupt mask to HDCP 2.2 capable rise\ninterrupt status",
     "size": "8",
-    "offset": "790c",
+    "offset": "0x790c",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -9692,7 +9692,7 @@
     "name": "HDCP22REG_STAT",
     "description": "HDCP 2.2 capable rise interrupt status sticky bit.\nClear by Write 1 to this bit field",
     "size": "8",
-    "offset": "790d",
+    "offset": "0x790d",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -9749,7 +9749,7 @@
     "name": "HDCP22REG_MUTE",
     "description": "Active high interrupt mute to HDCP 2.2 capable rise\ninterrupt status",
     "size": "8",
-    "offset": "790e",
+    "offset": "0x790e",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -9806,7 +9806,7 @@
     "name": "CEC_CTRL",
     "description": "2'b00: Signal Free Time = 3-bit periods. Previous\nattempt to send frame is unsuccessful.\n2'b01: Signal Free Time = 5-bit periods. New initiator\nwants to send a frame.\n2'b10: Signal Free Time = 7-bit periods. Present\ninitiator wants to send another frame immediately\nafter its previous frame. (specification CEC 9.1).\n2'b11: Illegal value. If software writes this value,\nhardware sets the value to the default 2'b01.",
     "size": "8",
-    "offset": "7d00",
+    "offset": "0x7d00",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -9842,7 +9842,7 @@
     "name": "CEC_MASK",
     "description": "The current transmission is successful (for initiator\nonly)",
     "size": "8",
-    "offset": "7d02",
+    "offset": "0x7d02",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -9906,7 +9906,7 @@
     "name": "CEC_ADDR_L",
     "description": "Logical address 0 - Device TV",
     "size": "8",
-    "offset": "7d05",
+    "offset": "0x7d05",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -9970,7 +9970,7 @@
     "name": "CEC_ADDR_H",
     "description": "Logical address 8 - Playback Device 2",
     "size": "8",
-    "offset": "7d06",
+    "offset": "0x7d06",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -10034,7 +10034,7 @@
     "name": "CEC_TX_CNT",
     "description": "CEC Transmitter Counter register 5'd0: No data needs\nto be transmitted 5'd1: Frame size is 1 byte\n5'd16: Frame size is 16 bytes",
     "size": "8",
-    "offset": "7d07",
+    "offset": "0x7d07",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -10056,7 +10056,7 @@
     "name": "CEC_RX_CNT",
     "description": "CEC Receiver Counter register: 5'd0: No data received\n5'd1: 1-byte data is received\n5'd16: 16-byte data is received",
     "size": "8",
-    "offset": "7d08",
+    "offset": "0x7d08",
     "bit_ranges": [
       {
         "bit_range": "7:5",
@@ -10078,7 +10078,7 @@
     "name": "CEC_TX_DATA[0:15]",
     "description": "Data byte[x], where x is 0 to 15",
     "size": "8",
-    "offset": "7d30",
+    "offset": "0x7d10 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10091,9 +10091,9 @@
   },
   {
     "name": "CEC_RX_DATA[0:15]",
-    "description": "Reserved for future use.",
+    "description": "Data byte[x], where x is 0 to 15",
     "size": "8",
-    "offset": "7d30",
+    "offset": "0x7d20 + (i * 0x1)",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10108,7 +10108,7 @@
     "name": "CEC_LOCK",
     "description": "When a frame is received, this bit would be active. The\nCEC controller answers to all the messages with NACK\nuntil the CPU writes it to '0'.",
     "size": "8",
-    "offset": "7d30",
+    "offset": "0x7d30",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -10130,7 +10130,7 @@
     "name": "CEC_WAKEUPCTRL",
     "description": "OPCODE 0x04 wake up enable",
     "size": "8",
-    "offset": "7d31",
+    "offset": "0x7d31",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -10194,7 +10194,7 @@
     "name": "I2CM_SLAVE",
     "description": "Slave address to be sent during read and write normal\noperations.",
     "size": "8",
-    "offset": "7e00",
+    "offset": "0x7e00",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -10216,7 +10216,7 @@
     "name": "I2CM_ADDRESS",
     "description": "Register address for read and write operations",
     "size": "8",
-    "offset": "7e01",
+    "offset": "0x7e01",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10231,7 +10231,7 @@
     "name": "I2CM_DATAO",
     "description": "Data to be written on register pointed by\naddress[7:0].",
     "size": "8",
-    "offset": "7e02",
+    "offset": "0x7e02",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10246,7 +10246,7 @@
     "name": "I2CM_DATAI",
     "description": "Data read from register pointed by address[7:0].",
     "size": "8",
-    "offset": "7e03",
+    "offset": "0x7e03",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10261,7 +10261,7 @@
     "name": "I2CM_OPERATION",
     "description": "Single byte read operation request",
     "size": "8",
-    "offset": "7e04",
+    "offset": "0x7e04",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -10318,7 +10318,7 @@
     "name": "I2CM_INT",
     "description": "Reserved for future use.",
     "size": "8",
-    "offset": "7e05",
+    "offset": "0x7e05",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -10361,7 +10361,7 @@
     "name": "I2CM_CTLINT",
     "description": "Arbitration error interrupt mask signal.",
     "size": "8",
-    "offset": "7e06",
+    "offset": "0x7e06",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -10397,7 +10397,7 @@
     "name": "I2CM_DIV",
     "description": "Reserved as \"spare\" bit with no associated\nfunctionality.",
     "size": "8",
-    "offset": "7e07",
+    "offset": "0x7e07",
     "bit_ranges": [
       {
         "bit_range": "7:4",
@@ -10426,7 +10426,7 @@
     "name": "I2CM_SEGADDR",
     "description": "I2C DDC Segment Address Configuration Register",
     "size": "8",
-    "offset": "7e08",
+    "offset": "0x7e08",
     "bit_ranges": [
       {
         "bit_range": "7",
@@ -10448,7 +10448,7 @@
     "name": "I2CM_SOFTRSTZ",
     "description": "I2C Master Software Reset. Active by writing a zero\nand auto cleared to one in the following cycle.",
     "size": "8",
-    "offset": "7e09",
+    "offset": "0x7e09",
     "bit_ranges": [
       {
         "bit_range": "7:1",
@@ -10470,7 +10470,7 @@
     "name": "I2CM_SEGPTR",
     "description": "I2C DDC Segment Pointer Register",
     "size": "8",
-    "offset": "7e0a",
+    "offset": "0x7e0a",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10485,7 +10485,7 @@
     "name": "I2CM_SS_SCL_HCNT_1_ADDR",
     "description": "I2C DDC Slow Speed SCL High Level Control Register 1",
     "size": "8",
-    "offset": "7e0b",
+    "offset": "0x7e0b",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10500,7 +10500,7 @@
     "name": "I2CM_SS_SCL_HCNT_0_ADDR",
     "description": "I2C DDC Slow Speed SCL High Level Control Register 0",
     "size": "8",
-    "offset": "7e0c",
+    "offset": "0x7e0c",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10515,7 +10515,7 @@
     "name": "I2CM_SS_SCL_LCNT_1_ADDR",
     "description": "I2C DDC Slow Speed SCL Low Level Control Register 1",
     "size": "8",
-    "offset": "7e0d",
+    "offset": "0x7e0d",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10530,7 +10530,7 @@
     "name": "I2CM_SS_SCL_LCNT_0_ADDR",
     "description": "I2C DDC Slow Speed SCL Low Level Control Register 0",
     "size": "8",
-    "offset": "7e0e",
+    "offset": "0x7e0e",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10545,7 +10545,7 @@
     "name": "I2CM_FS_SCL_HCNT_1_ADDR",
     "description": "I2C DDC Fast Speed SCL High Level Control Register 1",
     "size": "8",
-    "offset": "7e0f",
+    "offset": "0x7e0f",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10560,7 +10560,7 @@
     "name": "I2CM_FS_SCL_HCNT_0_ADDR",
     "description": "I2C DDC Fast Speed SCL High Level Control Register 0",
     "size": "8",
-    "offset": "7e10",
+    "offset": "0x7e10",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10575,7 +10575,7 @@
     "name": "I2CM_FS_SCL_LCNT_1_ADDR",
     "description": "I2C DDC Fast Speed SCL Low Level Control Register 1",
     "size": "8",
-    "offset": "7e11",
+    "offset": "0x7e11",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10590,7 +10590,7 @@
     "name": "I2CM_FS_SCL_LCNT_0_ADDR",
     "description": "I2C DDC Fast Speed SCL Low Level Control Register 0",
     "size": "8",
-    "offset": "7e12",
+    "offset": "0x7e12",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10605,7 +10605,7 @@
     "name": "I2CM_SDA_HOLD",
     "description": "Defines the number of SFR clock cycles to meet\ntHD;DAT (300 ns) osda_hold =\nround_to_high_integer (300 ns / (1 /\nisfrclk_frequency))",
     "size": "8",
-    "offset": "7e13",
+    "offset": "0x7e13",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10620,7 +10620,7 @@
     "name": "I2CM_SCDC_READ_UPDATE",
     "description": "When set to 1'b1, a SCDC Update Read is performed\nand the read data loaded into registers\ni2cm_scdc_update0 and i2cm_scdc_update1.",
     "size": "8",
-    "offset": "7e14",
+    "offset": "0x7e14",
     "bit_ranges": [
       {
         "bit_range": "7:6",
@@ -10663,7 +10663,7 @@
     "name": "I2CM_READ_BUFF0",
     "description": "Byte 0 of a I2C read buffer sequential read (from\naddress i2cm_address)",
     "size": "8",
-    "offset": "7e20",
+    "offset": "0x7e20",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10678,7 +10678,7 @@
     "name": "I2CM_READ_BUFF1",
     "description": "Byte 1 of a I2C read buffer sequential read (from\naddress i2cm_address+1)",
     "size": "8",
-    "offset": "7e21",
+    "offset": "0x7e21",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10693,7 +10693,7 @@
     "name": "I2CM_READ_BUFF2",
     "description": "Byte 2 of a I2C read buffer sequential read (from\naddress i2cm_address+2)",
     "size": "8",
-    "offset": "7e22",
+    "offset": "0x7e22",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10708,7 +10708,7 @@
     "name": "I2CM_READ_BUFF3",
     "description": "Byte 3 of a I2C read buffer sequential read (from\naddress i2cm_address+3)",
     "size": "8",
-    "offset": "7e23",
+    "offset": "0x7e23",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10723,7 +10723,7 @@
     "name": "I2CM_READ_BUFF4",
     "description": "Byte 4 of a I2C read buffer sequential read (from\naddress i2cm_address+4)",
     "size": "8",
-    "offset": "7e24",
+    "offset": "0x7e24",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10738,7 +10738,7 @@
     "name": "I2CM_READ_BUFF5",
     "description": "Byte 5 of a I2C read buffer sequential read (from\naddress i2cm_address+5)",
     "size": "8",
-    "offset": "7e25",
+    "offset": "0x7e25",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10753,7 +10753,7 @@
     "name": "I2CM_READ_BUFF6",
     "description": "Byte 6 of a I2C read buffer sequential read (from\naddress i2cm_address+6)",
     "size": "8",
-    "offset": "7e26",
+    "offset": "0x7e26",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10768,7 +10768,7 @@
     "name": "I2CM_READ_BUFF7",
     "description": "Byte 7 of a I2C read buffer sequential read (from\naddress i2cm_address+7)",
     "size": "8",
-    "offset": "7e27",
+    "offset": "0x7e27",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10783,7 +10783,7 @@
     "name": "I2CM_SCDC_UPDATE0",
     "description": "Byte 0 of a SCDC I2C update sequential read",
     "size": "8",
-    "offset": "7e30",
+    "offset": "0x7e30",
     "bit_ranges": [
       {
         "bit_range": "7:0",
@@ -10798,7 +10798,7 @@
     "name": "I2CM_SCDC_UPDATE1",
     "description": "Byte 1 of a SCDC I2C update sequential read\nBits Name Attr Description",
     "size": "8",
-    "offset": "7e31",
+    "offset": "0x7e31",
     "bit_ranges": [
       {
         "bit_range": "7:0",

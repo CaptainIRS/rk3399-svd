@@ -1236,25 +1236,25 @@
       {
         "name": "LANE3_MAP",
         "bits": "[7:6]",
-        "description": "Control physical lane 3 will map to which logic lane: \n0x11: Logic lane 3, \n0x10: Logic lane 2, \n0x01: Logic lane 1, \n0x00: Logic lane 0,",
+        "description": "Control physical lane 3 will map to which logic lane: \n0b11: Logic lane 3, \n0b10: Logic lane 2, \n0b01: Logic lane 1, \n0b00: Logic lane 0,",
         "initial_value": "3"
       },
       {
         "name": "LANE2_MAP",
         "bits": "[5:4]",
-        "description": "Control physical lane 2 will map to which logic lane: \n0x11: Logic lane 3, \n0x10: Logic lane 2, \n0x01: Logic lane 1, \n0x00: Logic lane 0,",
+        "description": "Control physical lane 2 will map to which logic lane: \n0b11: Logic lane 3, \n0b10: Logic lane 2, \n0b01: Logic lane 1, \n0b00: Logic lane 0,",
         "initial_value": "2"
       },
       {
         "name": "LANE1_MAP",
         "bits": "[3:2]",
-        "description": "Control physical lane 1 will map to which logic lane: \n0x11: Logic lane 3, \n0x10: Logic lane 2, \n0x01: Logic lane 1, \n0x00: Logic lane 0,",
+        "description": "Control physical lane 1 will map to which logic lane: \n0b11: Logic lane 3, \n0b10: Logic lane 2, \n0b01: Logic lane 1, \n0b00: Logic lane 0,",
         "initial_value": "1"
       },
       {
         "name": "LANE0_MAP",
         "bits": "[1:0]",
-        "description": "Control physical lane 0 will map to which logic lane: \n0x11: Logic lane 3, \n0x10: Logic lane 2, \n0x01: Logic lane 1, \n0x00: Logic lane 0,",
+        "description": "Control physical lane 0 will map to which logic lane: \n0b11: Logic lane 3, \n0b10: Logic lane 2, \n0b01: Logic lane 1, \n0b00: Logic lane 0,",
         "initial_value": "0"
       }
     ]

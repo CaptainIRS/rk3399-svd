@@ -5016,15 +5016,15 @@
   },
   {
     "name": "FC_NVBI_HB1",
-    "description": "Frame Composer NTSC VBI Packet Header Register 2",
+    "description": "Frame Composer NTSC VBI Packet Header Register 1",
     "size": "8",
-    "offset": "0x1149",
+    "offset": "0x1148",
     "bit_ranges": [
       {
         "bit_range": "7:0",
-        "name": "FC_NVBI_HB1",
+        "name": "FC_NVBI_HB0",
         "access": "R/W",
-        "description": "Frame Composer NTSC VBI Packet Header Register 2",
+        "description": "Frame Composer NTSC VBI Packet Header Register 1",
         "reset_value": "0x0"
       }
     ]
@@ -5524,43 +5524,64 @@
   },
   {
     "name": "PHY_CONF0",
-    "description": "Test Clock signal. Otherwise, this field is a \"spare\"\nbit with no associated functionality.",
+    "description": "Select interface control.",
     "size": "8",
-    "offset": "0x3001",
+    "offset": "0x3000",
     "bit_ranges": [
       {
-        "bit_range": "7:6",
-        "name": "SPARE_2",
+        "bit_range": "7",
+        "name": "PDZ",
         "access": "R/W",
-        "description": "Reserved as \"spare\" bit with no associated\nfunctionality.",
+        "description": "Power-down enable (active low 0b). Otherwise, this\nfield is a \"spare\" bit with no associated functionality.",
+        "reset_value": "0x0"
+      },
+      {
+        "bit_range": "6",
+        "name": "ENTMDS",
+        "access": "R/W",
+        "description": "Enable TMDS drivers, bias, and TMDS digital logic.\nOtherwise, this field is a \"spare\" bit with no\nassociated functionality.",
         "reset_value": "0x0"
       },
       {
         "bit_range": "5",
-        "name": "TESTCLR",
+        "name": "SVSRET",
         "access": "R/W",
-        "description": "Test Clear signal. Otherwise, this field is a \"spare\"\nbit with no associated functionality.",
+        "description": "PHY SVSRET signal. Otherwise, this field is a \"spare\"\nbit with no associated functionality.",
         "reset_value": "0x0"
       },
       {
         "bit_range": "4",
-        "name": "TESTEN",
+        "name": "PDDQ",
         "access": "R/W",
-        "description": "Test Enable signal. Otherwise, this field is a \"spare\"\nbit with no associated functionality.",
+        "description": "PHY PDDQ signal. Otherwise, this field is a \"spare\"\nbit with no associated functionality.",
+        "reset_value": "(PHY_MHL_COMBO== 1) ? 1 :"
+      },
+      {
+        "bit_range": "3",
+        "name": "TXPWRON",
+        "access": "R/W",
+        "description": "PHY TXPWRON signal. Otherwise, this field is a\n\"spare\" bit with no associated functionality.",
         "reset_value": "0x0"
       },
       {
-        "bit_range": "3:1",
-        "name": "SPARE_1",
+        "bit_range": "2",
+        "name": "ENHPDRXSENSE",
         "access": "R/W",
-        "description": "Reserved as \"spare\" bit with no associated\nfunctionality.",
-        "reset_value": "0x0"
+        "description": "PHY ENHPDRXSENSE signal. Otherwise, this field is a\n\"spare\" bit with no associated functionality.",
+        "reset_value": "0x1"
+      },
+      {
+        "bit_range": "1",
+        "name": "SELDATAENPOL",
+        "access": "R/W",
+        "description": "Select data enable polarity.",
+        "reset_value": "0x1"
       },
       {
         "bit_range": "0",
-        "name": "TESTCLK",
+        "name": "SELDIPIF",
         "access": "R/W",
-        "description": "Test Clock signal. Otherwise, this field is a \"spare\"\nbit with no associated functionality.",
+        "description": "Select interface control.",
         "reset_value": "0x0"
       }
     ]

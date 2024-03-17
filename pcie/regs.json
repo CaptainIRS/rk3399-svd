@@ -10901,7 +10901,7 @@
         "bits": "2:1",
         "sw": "R",
         "description": "Negotiated Lane Count [NLC]\nLane count negotiated with other\nside during link training (00 = x1, 01\n= x2, 10 = x4, 11 =  x8).",
-        "reset": "0x0 0x2"
+        "reset": "0x2"
       },
       {
         "name": "NS",

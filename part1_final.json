@@ -33307,7 +33307,99 @@
           }
         ],
         "description": "Error logger mode selection"
+      }
+    ],
+    "name": "SLV_ERRLOG",
+    "summary": [
+      {
+        "name": "ERRLOG_Id_CoreId",
+        "offset": "0x0000",
+        "size": "W",
+        "reset": "0x0000000d",
+        "description": "Contain CoreTypeId and CoreChecksum"
       },
+      {
+        "name": "ERRLOG_Id_RevisionId",
+        "offset": "0x0004",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "IP Revision ID"
+      },
+      {
+        "name": "ERRLOG_FaultEn",
+        "offset": "0x0008",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "Error interrupt enable"
+      },
+      {
+        "name": "ERRLOG_ErrVld",
+        "offset": "0x000c",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "Error staus register"
+      },
+      {
+        "name": "ERRLOG_ErrClr",
+        "offset": "0x0010",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "Error interrupt status clear register"
+      },
+      {
+        "name": "ERRLOG_ErrLog0",
+        "offset": "0x0014",
+        "size": "W",
+        "reset": "0x80000000",
+        "description": "Transport protocol header information register"
+      },
+      {
+        "name": "ERRLOG_ErrLog1",
+        "offset": "0x0018",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "Route ID register"
+      },
+      {
+        "name": "ERRLOG_ErrLog3",
+        "offset": "0x0020",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "Address register"
+      },
+      {
+        "name": "ERRLOG_ErrLog5",
+        "offset": "0x0028",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "LSB user bits in  transport protocol header"
+      },
+      {
+        "name": "ERRLOG_ErrLog6",
+        "offset": "0x002c",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "MSB user bits  in  transport protocol header"
+      },
+      {
+        "name": "ERRLOG_ErrLog7",
+        "offset": "0x0030",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "Securrity flag  in transport protocol header"
+      },
+      {
+        "name": "ERRLOG_StallEn",
+        "offset": "0x0038",
+        "size": "W",
+        "reset": "0x00000000",
+        "description": "Error logger mode selection"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "registers": [
       {
         "type": "register",
         "name": "ERRLOG_Id_CoreId",
@@ -33608,92 +33700,8 @@
         "description": "Error logger mode selection"
       }
     ],
-    "name": "ERRLOG",
+    "name": "MSCH_ERRLOG",
     "summary": [
-      {
-        "name": "ERRLOG_Id_CoreId",
-        "offset": "0x0000",
-        "size": "W",
-        "reset": "0x0000000d",
-        "description": "Contain CoreTypeId and CoreChecksum"
-      },
-      {
-        "name": "ERRLOG_Id_RevisionId",
-        "offset": "0x0004",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "IP Revision ID"
-      },
-      {
-        "name": "ERRLOG_FaultEn",
-        "offset": "0x0008",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "Error interrupt enable"
-      },
-      {
-        "name": "ERRLOG_ErrVld",
-        "offset": "0x000c",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "Error staus register"
-      },
-      {
-        "name": "ERRLOG_ErrClr",
-        "offset": "0x0010",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "Error interrupt status clear register"
-      },
-      {
-        "name": "ERRLOG_ErrLog0",
-        "offset": "0x0014",
-        "size": "W",
-        "reset": "0x80000000",
-        "description": "Transport protocol header information register"
-      },
-      {
-        "name": "ERRLOG_ErrLog1",
-        "offset": "0x0018",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "Route ID register"
-      },
-      {
-        "name": "ERRLOG_ErrLog3",
-        "offset": "0x0020",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "Address register"
-      },
-      {
-        "name": "ERRLOG_ErrLog5",
-        "offset": "0x0028",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "LSB user bits in  transport protocol header"
-      },
-      {
-        "name": "ERRLOG_ErrLog6",
-        "offset": "0x002c",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "MSB user bits  in  transport protocol header"
-      },
-      {
-        "name": "ERRLOG_ErrLog7",
-        "offset": "0x0030",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "Securrity flag  in transport protocol header"
-      },
-      {
-        "name": "ERRLOG_StallEn",
-        "offset": "0x0038",
-        "size": "W",
-        "reset": "0x00000000",
-        "description": "Error logger mode selection"
-      },
       {
         "name": "ERRLOG_Id_CoreId",
         "offset": "0x0000",
@@ -35012,7 +35020,7 @@
             "bit_range": "0",
             "attr": "RW",
             "reset": "0x0",
-            "description": "Imprecise error indicator for master interface\n0:\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
+            "description": "Imprecise error indicator for master interface\n0\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
           }
         ],
         "description": "Imprecise Error Register"
@@ -42156,1258 +42164,6 @@
           }
         ],
         "description": "DDR PHY Independent Register 199"
-      },
-      {
-        "type": "register",
-        "name": "CIC_CTRL0",
-        "offset": "0x0000",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "WRITE_ENABLE",
-            "bit_range": "31:16",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "15:12",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "DDR0_CNTRL_FREQ_CHANGE_ACK",
-            "bit_range": "11",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 0 DDR controller frequency change acknowledge"
-          },
-          {
-            "name": "DDR0_CNTRL_FREQ_CHANGE_ACK",
-            "bit_range": "10",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 0 DDR controller frequency change acknowledge"
-          },
-          {
-            "name": "DDR1_FREQ_CHANGE_ACK",
-            "bit_range": "9",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 1 DDR PHY frequency change acknowledge"
-          },
-          {
-            "name": "DDR0_FREQ_CHANGE_ACK",
-            "bit_range": "8",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 0 DDR PHY frequency change acknowledge"
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "7:6",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "CHG_FC_REG_COPY",
-            "bit_range": "5:4",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Select the copy of timing parameters that will be used after\nfrequency change."
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "3",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "FAIL_CONT_EN",
-            "bit_range": "2",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "When frequency change fail, whether continue to enable change."
-          },
-          {
-            "name": "CHG_FREQ_FINISH",
-            "bit_range": "1",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Frequency change finish\n1'b0: not finish\n1'b1: finish"
-          },
-          {
-            "name": "CHG_REQ",
-            "bit_range": "0",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Frequency change request\n1'b0: not request\n1'b1: request"
-          }
-        ],
-        "description": "DDR Controller LP Interface Control Register 0"
-      },
-      {
-        "type": "register",
-        "name": "CIC_CTRL1",
-        "offset": "0x0004",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "WRITE_ENABLE",
-            "bit_range": "31:16",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "15:12",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "SREF_MEMCG_CH1",
-            "bit_range": "11",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 1 memory clock gating in self-refresh\n1'b0: memory is not clock gated in external self-refresh\n1'b1: memory is clock gated in external self-refresh"
-          },
-          {
-            "name": "SREF_MEMCG_CH0",
-            "bit_range": "10",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 0 memory clock gating in self-refresh\n1'b0: memory is not clock gated in external self-refresh\n1'b1: memory is clock gated in external self-refresh"
-          },
-          {
-            "name": "LP_CMD_PRIO_CH1",
-            "bit_range": "9",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 1 LP command priority in external self-refresh mode\n1'b0: don't issue priority request when enter external self-refresh\n1'b1: issue priority request when enter external self-refresh"
-          },
-          {
-            "name": "LP_CMD_PRIO_CH0",
-            "bit_range": "8",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 0 LP command priority in external self-refresh mode\n1'b0: don't issue priority request when enter external self-refresh\n1'b1: issue priority request when enter external self-refresh"
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "7:6",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "STDBY_CMD_PRIO_CH1",
-            "bit_range": "5",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 1 LP command priority in standby mode\n1'b0: don't issue priority request when enter standby mode\n1'b1: issue priority request when enter standby mode"
-          },
-          {
-            "name": "STDBY_CMD_PRIO_CH0",
-            "bit_range": "4",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 0 LP command priority in standby mode\n1'b0: don't issue priority request when enter standby mode\n1'b1: issue priority request when enter standby mode"
-          },
-          {
-            "name": "STDBY_MEMCG_CH1",
-            "bit_range": "3",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 1 memory clock gating in standby mode\n1'b0: memory is not clock gated when in standby mode\n1'b1: memory is clock gated when in standby mode"
-          },
-          {
-            "name": "STDBY_MEMCG_CH0",
-            "bit_range": "2",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 0 memory clock gating in standby mode\n1'b0: memory is not clock gated when in standby mode\n1'b1: memory is clock gated when in standby mode"
-          },
-          {
-            "name": "STDBY_EN_CH1",
-            "bit_range": "1",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 1 standby mode enable\n1'b0: disable\n1'b1: enable"
-          },
-          {
-            "name": "STDBY_EN_CH0",
-            "bit_range": "0",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Channel 0 standby mode enable\n1'b0: disable\n1'b1: enable"
-          }
-        ],
-        "description": "DDR Controller LP Interface Control Register 1"
-      },
-      {
-        "type": "register",
-        "name": "CIC_IDLE_TH",
-        "offset": "0x0008",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "RESERVED",
-            "bit_range": "31:16",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "IDLE_TH",
-            "bit_range": "15:0",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "Idle counter threshold in standby mode"
-          }
-        ],
-        "description": "DDR Controller LP Interface Idle Threshold  in standby mode"
-      },
-      {
-        "type": "register",
-        "name": "CIC_CG_WAIT_TH",
-        "offset": "0x000c",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CG_EXIT_TH",
-            "bit_range": "31:16",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "Clock gating exit counter threshold in standby mode"
-          },
-          {
-            "name": "CG_WAIT_TH",
-            "bit_range": "15:0",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "Clock gating wait counter threshold in standby mode"
-          }
-        ],
-        "description": "DDR Controller LP Interface CG Wait Threshold in standby mode"
-      },
-      {
-        "type": "register",
-        "name": "CIC_STATUS0",
-        "offset": "0x0010",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "RESERVED",
-            "bit_range": "31:14",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "STATE_FC",
-            "bit_range": "13:8",
-            "attr": "RO",
-            "reset": "0x00",
-            "description": "Frequency change state machine"
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "7",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "SREF_DONE_EXT_CH1",
-            "bit_range": "6",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 1 external self-refresh done"
-          },
-          {
-            "name": "SREF_REQ_EXT_CH1",
-            "bit_range": "5",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 1 external self-refresh request"
-          },
-          {
-            "name": "SREF_DONE_EXT_CH0",
-            "bit_range": "4",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 0 external self-refresh done"
-          },
-          {
-            "name": "SREF_REQ_EXT_CH0",
-            "bit_range": "3",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 0 external self-refresh request"
-          },
-          {
-            "name": "CHG_FREQ_WAIT",
-            "bit_range": "2",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Frequency change wait"
-          },
-          {
-            "name": "CHG_FAIL",
-            "bit_range": "1",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Frequency change fail"
-          },
-          {
-            "name": "CHG_DONE",
-            "bit_range": "0",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Frequency change done"
-          }
-        ],
-        "description": "DDR Controller LP Interface Status Register 0"
-      },
-      {
-        "type": "register",
-        "name": "CIC_STATUS1",
-        "offset": "0x0014",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "RESERVED",
-            "bit_range": "31:29",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "STATE_CH1",
-            "bit_range": "28:16",
-            "attr": "RO",
-            "reset": "0x0000",
-            "description": "Channel 1 external self-refresh and standby mode state machine"
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "15:13",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "STATE_CH0",
-            "bit_range": "12:0",
-            "attr": "RO",
-            "reset": "0x0000",
-            "description": "Channel 0 external self-refresh and standby mode state machine"
-          }
-        ],
-        "description": "DDR Controller LP Interface Status Register 1"
-      },
-      {
-        "type": "register",
-        "name": "CIC_CTRL2",
-        "offset": "0x0018",
-        "size": "W",
-        "reset": "0x00000a0a",
-        "bit_ranges": [
-          {
-            "name": "WRITE_ENABLE",
-            "bit_range": "31:16",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
-          },
-          {
-            "name": "LP_CMD_CFG_CH1",
-            "bit_range": "15:8",
-            "attr": "RW",
-            "reset": "0x0a",
-            "description": "Channel 1 external self-refresh enter command"
-          },
-          {
-            "name": "LP_CMD_CFG_CH0",
-            "bit_range": "7:0",
-            "attr": "RW",
-            "reset": "0x0a",
-            "description": "Channel 0 external self-refresh enter command"
-          }
-        ],
-        "description": "DDR Controller LP Interface Control Register 2"
-      },
-      {
-        "type": "register",
-        "name": "CIC_CTRL3",
-        "offset": "0x001c",
-        "size": "W",
-        "reset": "0x00000101",
-        "bit_ranges": [
-          {
-            "name": "WRITE_ENABLE",
-            "bit_range": "31:16",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
-          },
-          {
-            "name": "LP_CMD_EXIT_CFG_CH1",
-            "bit_range": "15:8",
-            "attr": "RW",
-            "reset": "0x01",
-            "description": "Channel 1 external self-refresh exit command"
-          },
-          {
-            "name": "LP_CMD_EXIT_CFG_CH0",
-            "bit_range": "7:0",
-            "attr": "RW",
-            "reset": "0x01",
-            "description": "Channel 0 external self-refresh exit command"
-          }
-        ],
-        "description": "DDR Controller LP Interface Control Register 3"
-      },
-      {
-        "type": "register",
-        "name": "CIC_CTRL4",
-        "offset": "0x0020",
-        "size": "W",
-        "reset": "0x00008a8a",
-        "bit_ranges": [
-          {
-            "name": "WRITE_ENABLE",
-            "bit_range": "31:16",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
-          },
-          {
-            "name": "LP_CMD_FCHG_CFG_CH1",
-            "bit_range": "15:8",
-            "attr": "RW",
-            "reset": "0x8a",
-            "description": "Channel 1 frequency change enter command"
-          },
-          {
-            "name": "LP_CMD_FCHG_CFG_CH0",
-            "bit_range": "7:0",
-            "attr": "RW",
-            "reset": "0x8a",
-            "description": "Channel 0 frequency change enter command"
-          }
-        ],
-        "description": "DDR Controller LP Interface Control Register 4"
-      },
-      {
-        "type": "register",
-        "name": "CIC_STATUS2",
-        "offset": "0x0040",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "RESERVED",
-            "bit_range": "31:18",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "DDR1_CNTRL_FREQ_CHANGE_REQ",
-            "bit_range": "17",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 1 DDR controller frequency change request"
-          },
-          {
-            "name": "DDR1_CNTRL_FREQ_CHANGE_REQ_TYPE",
-            "bit_range": "16:15",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 1 DDR controller frequency change request type"
-          },
-          {
-            "name": "DDR1_FREQ_CHANGE_REQ",
-            "bit_range": "14",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 1 DDR PHY frequency change request"
-          },
-          {
-            "name": "DDR1_FREQ_CHANGE_REQ_TYPE",
-            "bit_range": "13:9",
-            "attr": "RO",
-            "reset": "0x00",
-            "description": "Channel 1 DDR PHY frequency change request type"
-          },
-          {
-            "name": "DDR0_CNTRL_FREQ_CHANGE_REQ",
-            "bit_range": "8",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 0 DDR controller frequency change request"
-          },
-          {
-            "name": "DDR0_CNTRL_FREQ_CHANGE_REQ_TYPE",
-            "bit_range": "7:6",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 0 DDR controller frequency change request type"
-          },
-          {
-            "name": "DDR0_FREQ_CHANGE_REQ",
-            "bit_range": "5",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "Channel 0 DDR PHY frequency change request"
-          },
-          {
-            "name": "DDR0_FREQ_CHANGE_REQ_TYPE",
-            "bit_range": "4:0",
-            "attr": "RO",
-            "reset": "0x00",
-            "description": "Channel 0 DDR PHY frequency change request type"
-          }
-        ],
-        "description": "DDR Controller LP Interface Status Register 2"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_IP_VERSION",
-        "offset": "0x0000",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "RESERVED",
-            "bit_range": "31:8",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "IP_VERSION",
-            "bit_range": "7:0",
-            "attr": "RO",
-            "reset": "0x20",
-            "description": "DDR monitor IP version"
-          }
-        ],
-        "description": "DDR Monitor IP Version"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CTRL",
-        "offset": "0x0004",
-        "size": "W",
-        "reset": "0x00000008",
-        "bit_ranges": [
-          {
-            "name": "WRITE_ENABLE",
-            "bit_range": "31:16",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by softwar .\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "15:5",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "LPDDR4_EN",
-            "bit_range": "4",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "LPDDR4 Mode Enable\n1'b1: enable\n1'b0: disable"
-          },
-          {
-            "name": "HARDWARE_EN",
-            "bit_range": "3",
-            "attr": "RW",
-            "reset": "0x1",
-            "description": "Hardware Mode Enable\n1'b1: enable\n1'b0: disable"
-          },
-          {
-            "name": "LPDDR3_EN",
-            "bit_range": "2",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "LPDDR3 Mode Monitor Enable\n1'b1: enable\n1'b0: disable"
-          },
-          {
-            "name": "SOFTWARE_EN",
-            "bit_range": "1",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Software Mode Enable\n1'b1: enable\n1'b0: disable"
-          },
-          {
-            "name": "TIMER_CNT_EN",
-            "bit_range": "0",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "DFI Timer Count Enable\n1'b1: enable\n1'b0: disable"
-          }
-        ],
-        "description": "DDR Monitor Control Register"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_INT_STATUS",
-        "offset": "0x0008",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "RESERVED",
-            "bit_range": "31:9",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "CH1_RD_ADDR_HIT",
-            "bit_range": "8",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "This is the interrupt status of channel 1 read address hit the setting\nrange"
-          },
-          {
-            "name": "CH1_WR_ADDR_HIT",
-            "bit_range": "7",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "This is the interrupt status of channel 1 write address hit the setting\nrange"
-          },
-          {
-            "name": "CH0_RD_ADDR_HIT",
-            "bit_range": "6",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "This is the interrupt status of channel 0 read address hit the setting\nrange"
-          },
-          {
-            "name": "CH0_WR_ADDR_HIT",
-            "bit_range": "5",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "This is the interrupt status of channel 0 write address hit the setting\nrange"
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "4",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "CH1_OVER_INT",
-            "bit_range": "3",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "This is the interrupt status of DDR read and write burst number\nmore than high threshold in channel 0"
-          },
-          {
-            "name": "CH1_BELOW_INT",
-            "bit_range": "2",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "This is the interrupt status of DDR read and write burst number less\nthan low threshold in channel 0"
-          },
-          {
-            "name": "CH0_OVER_INT",
-            "bit_range": "1",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "This is the interrupt status of DDR read and write burst number\nmore than high threshold in channel 0"
-          },
-          {
-            "name": "CH0_BELOW_INT",
-            "bit_range": "0",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "This is the interrupt status of DDR read and write burst number less\nthan low threshold in channel 0"
-          }
-        ],
-        "description": "Interrupt Status"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_INT_MASK",
-        "offset": "0x000c",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "RESERVED",
-            "bit_range": "31:9",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "INT_MASK",
-            "bit_range": "8:0",
-            "attr": "RW",
-            "reset": "0x000",
-            "description": "Interrupt mask control, when bit set to 1'b1, the corresponding\ninterrupt will disable"
-          }
-        ],
-        "description": "Interrupt mask control"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_TIMER_COUNT",
-        "offset": "0x0010",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "TIMER_COUNT",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "The DFI timer threshold, the statistics of DDR access only be done\nwhen timer counter is less then this threshold in hardware mode"
-          }
-        ],
-        "description": "The DFI Timer Threshold"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_FLOOR_NUMBER",
-        "offset": "0x0014",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "FLOOR_NUMBER",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "The low threshold in the comparison of DDR access"
-          }
-        ],
-        "description": "The Low Threshold in the Comparison of DDR Access"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_TOP_NUMBER",
-        "offset": "0x0018",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "TOP_NUMBER",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "The high threshold in the comparison of DDR access"
-          }
-        ],
-        "description": "The High Threshold in the Comparison of DDR Access"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_DFI_ACT_NUM",
-        "offset": "0x001c",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_DFI_ACT_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "DFI active command number in the statistics range of the channel\n0"
-          }
-        ],
-        "description": "Channel 0 DFI Active Command Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_DFI_WR_NUM",
-        "offset": "0x0020",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_DFI_WR_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "DFI write command number in the statistics range of the channel 0"
-          }
-        ],
-        "description": "Channel 0 DFI write Command Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_DFI_RD_NUM",
-        "offset": "0x0024",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_DFI_RD_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "DFI read command number in the statistics range of the channel 0"
-          }
-        ],
-        "description": "Channel 0 DFI read Command Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_COUNT_NUM",
-        "offset": "0x0028",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_DFI_COUNT_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Timer count number in the statistics range of the channel 0, the\nvalue should be divided by 2 as actual timer count."
-          }
-        ],
-        "description": "Channel 0 Timer Count Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_DFI_ACCESS_NUM",
-        "offset": "0x002c",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_DFI_ACCESS_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "DFI read and write command number in the statistics range of the\nchannel 0"
-          }
-        ],
-        "description": "Channel 0 DFI Read and Write Command Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_DFI_ACT_NUM",
-        "offset": "0x0030",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_DFI_ACT_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "DFI active command number in the statistics range of the channel\n1"
-          }
-        ],
-        "description": "Channel 1 DFI Active Command Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_DFI_WR_NUM",
-        "offset": "0x0034",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_DFI_WR_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "DFI write command number in the statistics range of the channel 1"
-          }
-        ],
-        "description": "Channel 1 DFI write Command Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_DFI_RD_NUM",
-        "offset": "0x0038",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_DFI_RD_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "DFI read command number in the statistics range of the channel 1"
-          }
-        ],
-        "description": "Channel 1 DFI read Command Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_COUNT_NUM",
-        "offset": "0x003c",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_DFI_COUNT_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Timer count number in the statistics range of the channel 1, the\nvalue should be divided by 2 as actual timer count."
-          }
-        ],
-        "description": "Channel 1 Timer Count Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_DFI_ACCESS_NUM",
-        "offset": "0x0040",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_DFI_ACCESS_NUM",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "DFI read and write command number in the statistics range of the\nchannel 1"
-          }
-        ],
-        "description": "Channel 1 DFI Read and Write Command Number"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_DDR_IF_CTRL",
-        "offset": "0x0200",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "WRITE_ENABLE",
-            "bit_range": "31:16",
-            "attr": "RW",
-            "reset": "0x0000",
-            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
-          },
-          {
-            "name": "RESERVED",
-            "bit_range": "15:3",
-            "attr": "RO",
-            "reset": "0x0",
-            "description": "reserved"
-          },
-          {
-            "name": "IF_MON_EN",
-            "bit_range": "2",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "DDR interface and DFI monitor enable\n1'b1: enable\n1'b0: disable"
-          },
-          {
-            "name": "CH1_DIRECTION",
-            "bit_range": "1",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Write or read monitor in channel 1 for command statistics\n1'b1: read\n1'b0: write"
-          },
-          {
-            "name": "CH0_DIRECTION",
-            "bit_range": "0",
-            "attr": "RW",
-            "reset": "0x0",
-            "description": "Write or read monitor in channel 0 for command statistics\n1'b1: read\n1'b0: write"
-          }
-        ],
-        "description": "DDR interface Control Register"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_WR_START_ADDR",
-        "offset": "0x020c",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_WR_START_ADDR",
-            "bit_range": "31:0",
-            "attr": "RW",
-            "reset": "0x00000000",
-            "description": "Channel 0 write start address for address comparison"
-          }
-        ],
-        "description": "Channel 0 Write Start Address"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_WR_END_ADDR",
-        "offset": "0x0210",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_WR_END_ADDR",
-            "bit_range": "31:0",
-            "attr": "RW",
-            "reset": "0x00000000",
-            "description": "Channel 0 write end address for address comparison"
-          }
-        ],
-        "description": "Channel 0 Write End Address"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_RD_START_ADDR",
-        "offset": "0x0214",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_RD_START_ADDR",
-            "bit_range": "31:0",
-            "attr": "RW",
-            "reset": "0x00000000",
-            "description": "Channel 0 read start address for address comparison"
-          }
-        ],
-        "description": "Channel 0 Read Start Address"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_RD_END_ADDR",
-        "offset": "0x0218",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_RD_END_ADDR",
-            "bit_range": "31:0",
-            "attr": "RW",
-            "reset": "0x00000000",
-            "description": "Channel 0 read end address for address comparison"
-          }
-        ],
-        "description": "Channel 0 Read End Address"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_WR_START_ADDR",
-        "offset": "0x0224",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_WR_START_ADDR",
-            "bit_range": "31:0",
-            "attr": "RW",
-            "reset": "0x00000000",
-            "description": "Channel 1 write start address for address comparison"
-          }
-        ],
-        "description": "Channel 1 Write Start Address"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_WR_END_ADDR",
-        "offset": "0x0228",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_WR_END_ADDR",
-            "bit_range": "31:0",
-            "attr": "RW",
-            "reset": "0x00000000",
-            "description": "Channel 1 write end address for address comparison"
-          }
-        ],
-        "description": "Channel 1 Write End Address"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_RD_START_ADDR",
-        "offset": "0x022c",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_RD_START_ADDR",
-            "bit_range": "31:0",
-            "attr": "RW",
-            "reset": "0x00000000",
-            "description": "Channel 1 read start address for address comparison"
-          }
-        ],
-        "description": "Channel 1 Read Start Address"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_RD_END_ADDR",
-        "offset": "0x0230",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_RD_END_ADDR",
-            "bit_range": "31:0",
-            "attr": "RW",
-            "reset": "0x00000000",
-            "description": "Channel 1 read end address for address comparison"
-          }
-        ],
-        "description": "Channel 1 Read End Address"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_DDR_FIFO0_ADDR",
-        "offset": "0x0240",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_DDR_FIFO0_ADDR",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Channel 0 DDR controller interface address FIFO0"
-          }
-        ],
-        "description": "DDR Channel 0 Controller Interface Address FIFO0"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_DDR_FIFO1_ADDR",
-        "offset": "0x0248",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_DDR_FIFO1_ADDR",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Channel 0 DDR controller interface address FIFO1"
-          }
-        ],
-        "description": "DDR Channel 0 Controller Interface Address FIFO1"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_DDR_FIFO2_ADDR",
-        "offset": "0x0250",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_DDR_FIFO2_ADDR",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Channel 0 DDR controller interface address FIFO2"
-          }
-        ],
-        "description": "DDR Channel 0 Controller Interface Address FIFO2"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH0_DDR_FIFO3_ADDR",
-        "offset": "0x0258",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH0_DDR_FIFO3_ADDR",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Channel 0 DDR controller interface address FIFO3"
-          }
-        ],
-        "description": "DDR Channel 0 Controller Interface Address FIFO3"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_DDR_FIFO0_ADDR",
-        "offset": "0x0260",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_DDR_FIFO0_ADDR",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Channel 1 DDR controller interface address FIFO0"
-          }
-        ],
-        "description": "DDR Channel 1 Controller Interface Address FIFO0"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_DDR_FIFO1_ADDR",
-        "offset": "0x0268",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_DDR_FIFO1_ADDR",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Channel 1 DDR controller interface address FIFO1"
-          }
-        ],
-        "description": "DDR Channel 1 Controller Interface Address FIFO1"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_DDR_FIFO2_ADDR",
-        "offset": "0x0270",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_DDR_FIFO2_ADDR",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Channel 1 DDR controller interface address FIFO2"
-          }
-        ],
-        "description": "DDR Channel 1 Controller Interface Address FIFO2"
-      },
-      {
-        "type": "register",
-        "name": "DDRMON_CH1_DDR_FIFO3_ADDR",
-        "offset": "0x0278",
-        "size": "W",
-        "reset": "0x00000000",
-        "bit_ranges": [
-          {
-            "name": "CH1_DDR_FIFO3_ADDR",
-            "bit_range": "31:0",
-            "attr": "RO",
-            "reset": "0x00000000",
-            "description": "Channel 1 DDR controller interface address FIFO3"
-          }
-        ],
-        "description": "DDR Channel 1 Controller Interface Address FIFO3"
       }
     ],
     "name": "PI",
@@ -44587,7 +43343,542 @@
         "size": "W",
         "reset": "0x00000000",
         "description": "DDR PHY Independent Register 199"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "registers": [
+      {
+        "type": "register",
+        "name": "CIC_CTRL0",
+        "offset": "0x0000",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "WRITE_ENABLE",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "15:12",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "DDR1_CNTRL_FREQ_CHANGE_ACK",
+            "bit_range": "11",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 1 DDR controller frequency change acknowledge"
+          },
+          {
+            "name": "DDR0_CNTRL_FREQ_CHANGE_ACK",
+            "bit_range": "10",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 0 DDR controller frequency change acknowledge"
+          },
+          {
+            "name": "DDR1_FREQ_CHANGE_ACK",
+            "bit_range": "9",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 1 DDR PHY frequency change acknowledge"
+          },
+          {
+            "name": "DDR0_FREQ_CHANGE_ACK",
+            "bit_range": "8",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 0 DDR PHY frequency change acknowledge"
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "7:6",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "CHG_FC_REG_COPY",
+            "bit_range": "5:4",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Select the copy of timing parameters that will be used after\nfrequency change."
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "3",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "FAIL_CONT_EN",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "When frequency change fail, whether continue to enable change."
+          },
+          {
+            "name": "CHG_FREQ_FINISH",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Frequency change finish\n1'b0: not finish\n1'b1: finish"
+          },
+          {
+            "name": "CHG_REQ",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Frequency change request\n1'b0: not request\n1'b1: request"
+          }
+        ],
+        "description": "DDR Controller LP Interface Control Register 0"
       },
+      {
+        "type": "register",
+        "name": "CIC_CTRL1",
+        "offset": "0x0004",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "WRITE_ENABLE",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "15:12",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "SREF_MEMCG_CH1",
+            "bit_range": "11",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 1 memory clock gating in self-refresh\n1'b0: memory is not clock gated in external self-refresh\n1'b1: memory is clock gated in external self-refresh"
+          },
+          {
+            "name": "SREF_MEMCG_CH0",
+            "bit_range": "10",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 0 memory clock gating in self-refresh\n1'b0: memory is not clock gated in external self-refresh\n1'b1: memory is clock gated in external self-refresh"
+          },
+          {
+            "name": "LP_CMD_PRIO_CH1",
+            "bit_range": "9",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 1 LP command priority in external self-refresh mode\n1'b0: don't issue priority request when enter external self-refresh\n1'b1: issue priority request when enter external self-refresh"
+          },
+          {
+            "name": "LP_CMD_PRIO_CH0",
+            "bit_range": "8",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 0 LP command priority in external self-refresh mode\n1'b0: don't issue priority request when enter external self-refresh\n1'b1: issue priority request when enter external self-refresh"
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "7:6",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "STDBY_CMD_PRIO_CH1",
+            "bit_range": "5",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 1 LP command priority in standby mode\n1'b0: don't issue priority request when enter standby mode\n1'b1: issue priority request when enter standby mode"
+          },
+          {
+            "name": "STDBY_CMD_PRIO_CH0",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 0 LP command priority in standby mode\n1'b0: don't issue priority request when enter standby mode\n1'b1: issue priority request when enter standby mode"
+          },
+          {
+            "name": "STDBY_MEMCG_CH1",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 1 memory clock gating in standby mode\n1'b0: memory is not clock gated when in standby mode\n1'b1: memory is clock gated when in standby mode"
+          },
+          {
+            "name": "STDBY_MEMCG_CH0",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 0 memory clock gating in standby mode\n1'b0: memory is not clock gated when in standby mode\n1'b1: memory is clock gated when in standby mode"
+          },
+          {
+            "name": "STDBY_EN_CH1",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 1 standby mode enable\n1'b0: disable\n1'b1: enable"
+          },
+          {
+            "name": "STDBY_EN_CH0",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Channel 0 standby mode enable\n1'b0: disable\n1'b1: enable"
+          }
+        ],
+        "description": "DDR Controller LP Interface Control Register 1"
+      },
+      {
+        "type": "register",
+        "name": "CIC_IDLE_TH",
+        "offset": "0x0008",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "RESERVED",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "IDLE_TH",
+            "bit_range": "15:0",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Idle counter threshold in standby mode"
+          }
+        ],
+        "description": "DDR Controller LP Interface Idle Threshold  in standby mode"
+      },
+      {
+        "type": "register",
+        "name": "CIC_CG_WAIT_TH",
+        "offset": "0x000c",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CG_EXIT_TH",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Clock gating exit counter threshold in standby mode"
+          },
+          {
+            "name": "CG_WAIT_TH",
+            "bit_range": "15:0",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Clock gating wait counter threshold in standby mode"
+          }
+        ],
+        "description": "DDR Controller LP Interface CG Wait Threshold in standby mode"
+      },
+      {
+        "type": "register",
+        "name": "CIC_STATUS0",
+        "offset": "0x0010",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "RESERVED",
+            "bit_range": "31:14",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "STATE_FC",
+            "bit_range": "13:8",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Frequency change state machine"
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "7",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "SREF_DONE_EXT_CH1",
+            "bit_range": "6",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 1 external self-refresh done"
+          },
+          {
+            "name": "SREF_REQ_EXT_CH1",
+            "bit_range": "5",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 1 external self-refresh request"
+          },
+          {
+            "name": "SREF_DONE_EXT_CH0",
+            "bit_range": "4",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 0 external self-refresh done"
+          },
+          {
+            "name": "SREF_REQ_EXT_CH0",
+            "bit_range": "3",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 0 external self-refresh request"
+          },
+          {
+            "name": "CHG_FREQ_WAIT",
+            "bit_range": "2",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Frequency change wait"
+          },
+          {
+            "name": "CHG_FAIL",
+            "bit_range": "1",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Frequency change fail"
+          },
+          {
+            "name": "CHG_DONE",
+            "bit_range": "0",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Frequency change done"
+          }
+        ],
+        "description": "DDR Controller LP Interface Status Register 0"
+      },
+      {
+        "type": "register",
+        "name": "CIC_STATUS1",
+        "offset": "0x0014",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "RESERVED",
+            "bit_range": "31:29",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "STATE_CH1",
+            "bit_range": "28:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Channel 1 external self-refresh and standby mode state machine"
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "15:13",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "STATE_CH0",
+            "bit_range": "12:0",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Channel 0 external self-refresh and standby mode state machine"
+          }
+        ],
+        "description": "DDR Controller LP Interface Status Register 1"
+      },
+      {
+        "type": "register",
+        "name": "CIC_CTRL2",
+        "offset": "0x0018",
+        "size": "W",
+        "reset": "0x00000a0a",
+        "bit_ranges": [
+          {
+            "name": "WRITE_ENABLE",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
+          },
+          {
+            "name": "LP_CMD_CFG_CH1",
+            "bit_range": "15:8",
+            "attr": "RW",
+            "reset": "0x0a",
+            "description": "Channel 1 external self-refresh enter command"
+          },
+          {
+            "name": "LP_CMD_CFG_CH0",
+            "bit_range": "7:0",
+            "attr": "RW",
+            "reset": "0x0a",
+            "description": "Channel 0 external self-refresh enter command"
+          }
+        ],
+        "description": "DDR Controller LP Interface Control Register 2"
+      },
+      {
+        "type": "register",
+        "name": "CIC_CTRL3",
+        "offset": "0x001c",
+        "size": "W",
+        "reset": "0x00000101",
+        "bit_ranges": [
+          {
+            "name": "WRITE_ENABLE",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
+          },
+          {
+            "name": "LP_CMD_EXIT_CFG_CH1",
+            "bit_range": "15:8",
+            "attr": "RW",
+            "reset": "0x01",
+            "description": "Channel 1 external self-refresh exit command"
+          },
+          {
+            "name": "LP_CMD_EXIT_CFG_CH0",
+            "bit_range": "7:0",
+            "attr": "RW",
+            "reset": "0x01",
+            "description": "Channel 0 external self-refresh exit command"
+          }
+        ],
+        "description": "DDR Controller LP Interface Control Register 3"
+      },
+      {
+        "type": "register",
+        "name": "CIC_CTRL4",
+        "offset": "0x0020",
+        "size": "W",
+        "reset": "0x00008a8a",
+        "bit_ranges": [
+          {
+            "name": "WRITE_ENABLE",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
+          },
+          {
+            "name": "LP_CMD_FCHG_CFG_CH1",
+            "bit_range": "15:8",
+            "attr": "RW",
+            "reset": "0x8a",
+            "description": "Channel 1 frequency change enter command"
+          },
+          {
+            "name": "LP_CMD_FCHG_CFG_CH0",
+            "bit_range": "7:0",
+            "attr": "RW",
+            "reset": "0x8a",
+            "description": "Channel 0 frequency change enter command"
+          }
+        ],
+        "description": "DDR Controller LP Interface Control Register 4"
+      },
+      {
+        "type": "register",
+        "name": "CIC_STATUS2",
+        "offset": "0x0040",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "RESERVED",
+            "bit_range": "31:18",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "DDR1_CNTRL_FREQ_CHANGE_REQ",
+            "bit_range": "17",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 1 DDR controller frequency change request"
+          },
+          {
+            "name": "DDR1_CNTRL_FREQ_CHANGE_REQ_TYPE",
+            "bit_range": "16:15",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 1 DDR controller frequency change request type"
+          },
+          {
+            "name": "DDR1_FREQ_CHANGE_REQ",
+            "bit_range": "14",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 1 DDR PHY frequency change request"
+          },
+          {
+            "name": "DDR1_FREQ_CHANGE_REQ_TYPE",
+            "bit_range": "13:9",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Channel 1 DDR PHY frequency change request type"
+          },
+          {
+            "name": "DDR0_CNTRL_FREQ_CHANGE_REQ",
+            "bit_range": "8",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 0 DDR controller frequency change request"
+          },
+          {
+            "name": "DDR0_CNTRL_FREQ_CHANGE_REQ_TYPE",
+            "bit_range": "7:6",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 0 DDR controller frequency change request type"
+          },
+          {
+            "name": "DDR0_FREQ_CHANGE_REQ",
+            "bit_range": "5",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Channel 0 DDR PHY frequency change request"
+          },
+          {
+            "name": "DDR0_FREQ_CHANGE_REQ_TYPE",
+            "bit_range": "4:0",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Channel 0 DDR PHY frequency change request type"
+          }
+        ],
+        "description": "DDR Controller LP Interface Status Register 2"
+      }
+    ],
+    "name": "CIC",
+    "summary": [
       {
         "name": "CIC_CTRL0",
         "offset": "0x0000",
@@ -44657,7 +43948,740 @@
         "size": "W",
         "reset": "0x00000000",
         "description": "DDR Controller LP Interface Status Register 2"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "registers": [
+      {
+        "type": "register",
+        "name": "DDRMON_IP_VERSION",
+        "offset": "0x0000",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "RESERVED",
+            "bit_range": "31:8",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "IP_VERSION",
+            "bit_range": "7:0",
+            "attr": "RO",
+            "reset": "0x20",
+            "description": "DDR monitor IP version"
+          }
+        ],
+        "description": "DDR Monitor IP Version"
       },
+      {
+        "type": "register",
+        "name": "DDRMON_CTRL",
+        "offset": "0x0004",
+        "size": "W",
+        "reset": "0x00000008",
+        "bit_ranges": [
+          {
+            "name": "WRITE_ENABLE",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by softwar .\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "15:5",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "LPDDR4_EN",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "LPDDR4 Mode Enable\n1'b1: enable\n1'b0: disable"
+          },
+          {
+            "name": "HARDWARE_EN",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "0x1",
+            "description": "Hardware Mode Enable\n1'b1: enable\n1'b0: disable"
+          },
+          {
+            "name": "LPDDR3_EN",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "LPDDR3 Mode Monitor Enable\n1'b1: enable\n1'b0: disable"
+          },
+          {
+            "name": "SOFTWARE_EN",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Software Mode Enable\n1'b1: enable\n1'b0: disable"
+          },
+          {
+            "name": "TIMER_CNT_EN",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "DFI Timer Count Enable\n1'b1: enable\n1'b0: disable"
+          }
+        ],
+        "description": "DDR Monitor Control Register"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_INT_STATUS",
+        "offset": "0x0008",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "RESERVED",
+            "bit_range": "31:9",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "CH1_RD_ADDR_HIT",
+            "bit_range": "8",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "This is the interrupt status of channel 1 read address hit the setting\nrange"
+          },
+          {
+            "name": "CH1_WR_ADDR_HIT",
+            "bit_range": "7",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "This is the interrupt status of channel 1 write address hit the setting\nrange"
+          },
+          {
+            "name": "CH0_RD_ADDR_HIT",
+            "bit_range": "6",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "This is the interrupt status of channel 0 read address hit the setting\nrange"
+          },
+          {
+            "name": "CH0_WR_ADDR_HIT",
+            "bit_range": "5",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "This is the interrupt status of channel 0 write address hit the setting\nrange"
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "4",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "CH1_OVER_INT",
+            "bit_range": "3",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "This is the interrupt status of DDR read and write burst number\nmore than high threshold in channel 0"
+          },
+          {
+            "name": "CH1_BELOW_INT",
+            "bit_range": "2",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "This is the interrupt status of DDR read and write burst number less\nthan low threshold in channel 0"
+          },
+          {
+            "name": "CH0_OVER_INT",
+            "bit_range": "1",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "This is the interrupt status of DDR read and write burst number\nmore than high threshold in channel 0"
+          },
+          {
+            "name": "CH0_BELOW_INT",
+            "bit_range": "0",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "This is the interrupt status of DDR read and write burst number less\nthan low threshold in channel 0"
+          }
+        ],
+        "description": "Interrupt Status"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_INT_MASK",
+        "offset": "0x000c",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "RESERVED",
+            "bit_range": "31:9",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "INT_MASK",
+            "bit_range": "8:0",
+            "attr": "RW",
+            "reset": "0x000",
+            "description": "Interrupt mask control, when bit set to 1'b1, the corresponding\ninterrupt will disable"
+          }
+        ],
+        "description": "Interrupt mask control"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_TIMER_COUNT",
+        "offset": "0x0010",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "TIMER_COUNT",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "The DFI timer threshold, the statistics of DDR access only be done\nwhen timer counter is less then this threshold in hardware mode"
+          }
+        ],
+        "description": "The DFI Timer Threshold"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_FLOOR_NUMBER",
+        "offset": "0x0014",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "FLOOR_NUMBER",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "The low threshold in the comparison of DDR access"
+          }
+        ],
+        "description": "The Low Threshold in the Comparison of DDR Access"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_TOP_NUMBER",
+        "offset": "0x0018",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "TOP_NUMBER",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "The high threshold in the comparison of DDR access"
+          }
+        ],
+        "description": "The High Threshold in the Comparison of DDR Access"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_DFI_ACT_NUM",
+        "offset": "0x001c",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_DFI_ACT_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "DFI active command number in the statistics range of the channel\n0"
+          }
+        ],
+        "description": "Channel 0 DFI Active Command Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_DFI_WR_NUM",
+        "offset": "0x0020",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_DFI_WR_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "DFI write command number in the statistics range of the channel 0"
+          }
+        ],
+        "description": "Channel 0 DFI write Command Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_DFI_RD_NUM",
+        "offset": "0x0024",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_DFI_RD_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "DFI read command number in the statistics range of the channel 0"
+          }
+        ],
+        "description": "Channel 0 DFI read Command Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_COUNT_NUM",
+        "offset": "0x0028",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_DFI_COUNT_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Timer count number in the statistics range of the channel 0, the\nvalue should be divided by 2 as actual timer count."
+          }
+        ],
+        "description": "Channel 0 Timer Count Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_DFI_ACCESS_NUM",
+        "offset": "0x002c",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_DFI_ACCESS_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "DFI read and write command number in the statistics range of the\nchannel 0"
+          }
+        ],
+        "description": "Channel 0 DFI Read and Write Command Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_DFI_ACT_NUM",
+        "offset": "0x0030",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_DFI_ACT_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "DFI active command number in the statistics range of the channel\n1"
+          }
+        ],
+        "description": "Channel 1 DFI Active Command Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_DFI_WR_NUM",
+        "offset": "0x0034",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_DFI_WR_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "DFI write command number in the statistics range of the channel 1"
+          }
+        ],
+        "description": "Channel 1 DFI write Command Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_DFI_RD_NUM",
+        "offset": "0x0038",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_DFI_RD_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "DFI read command number in the statistics range of the channel 1"
+          }
+        ],
+        "description": "Channel 1 DFI read Command Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_COUNT_NUM",
+        "offset": "0x003c",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_DFI_COUNT_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Timer count number in the statistics range of the channel 1, the\nvalue should be divided by 2 as actual timer count."
+          }
+        ],
+        "description": "Channel 1 Timer Count Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_DFI_ACCESS_NUM",
+        "offset": "0x0040",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_DFI_ACCESS_NUM",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "DFI read and write command number in the statistics range of the\nchannel 1"
+          }
+        ],
+        "description": "Channel 1 DFI Read and Write Command Number"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_DDR_IF_CTRL",
+        "offset": "0x0200",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "WRITE_ENABLE",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "bit0~15 write enable\nWhen bit 16=1, bit 0 can be written by software.\nWhen bit 16=0, bit 0 cannot be written by software;\nWhen bit 17=1, bit 1 can be written by software.\nWhen bit 17=0, bit 1 cannot be written by software;\n......\nWhen bit 31=1, bit 15 can be written by software.\nWhen bit 31=0, bit 15 cannot be written by software;"
+          },
+          {
+            "name": "RESERVED",
+            "bit_range": "15:3",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "reserved"
+          },
+          {
+            "name": "IF_MON_EN",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "DDR interface and DFI monitor enable\n1'b1: enable\n1'b0: disable"
+          },
+          {
+            "name": "CH1_DIRECTION",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Write or read monitor in channel 1 for command statistics\n1'b1: read\n1'b0: write"
+          },
+          {
+            "name": "CH0_DIRECTION",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Write or read monitor in channel 0 for command statistics\n1'b1: read\n1'b0: write"
+          }
+        ],
+        "description": "DDR interface Control Register"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_WR_START_ADDR",
+        "offset": "0x020c",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_WR_START_ADDR",
+            "bit_range": "31:0",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Channel 0 write start address for address comparison"
+          }
+        ],
+        "description": "Channel 0 Write Start Address"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_WR_END_ADDR",
+        "offset": "0x0210",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_WR_END_ADDR",
+            "bit_range": "31:0",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Channel 0 write end address for address comparison"
+          }
+        ],
+        "description": "Channel 0 Write End Address"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_RD_START_ADDR",
+        "offset": "0x0214",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_RD_START_ADDR",
+            "bit_range": "31:0",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Channel 0 read start address for address comparison"
+          }
+        ],
+        "description": "Channel 0 Read Start Address"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_RD_END_ADDR",
+        "offset": "0x0218",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_RD_END_ADDR",
+            "bit_range": "31:0",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Channel 0 read end address for address comparison"
+          }
+        ],
+        "description": "Channel 0 Read End Address"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_WR_START_ADDR",
+        "offset": "0x0224",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_WR_START_ADDR",
+            "bit_range": "31:0",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Channel 1 write start address for address comparison"
+          }
+        ],
+        "description": "Channel 1 Write Start Address"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_WR_END_ADDR",
+        "offset": "0x0228",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_WR_END_ADDR",
+            "bit_range": "31:0",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Channel 1 write end address for address comparison"
+          }
+        ],
+        "description": "Channel 1 Write End Address"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_RD_START_ADDR",
+        "offset": "0x022c",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_RD_START_ADDR",
+            "bit_range": "31:0",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Channel 1 read start address for address comparison"
+          }
+        ],
+        "description": "Channel 1 Read Start Address"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_RD_END_ADDR",
+        "offset": "0x0230",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_RD_END_ADDR",
+            "bit_range": "31:0",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Channel 1 read end address for address comparison"
+          }
+        ],
+        "description": "Channel 1 Read End Address"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_DDR_FIFO0_ADDR",
+        "offset": "0x0240",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_DDR_FIFO0_ADDR",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Channel 0 DDR controller interface address FIFO0"
+          }
+        ],
+        "description": "DDR Channel 0 Controller Interface Address FIFO0"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_DDR_FIFO1_ADDR",
+        "offset": "0x0248",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_DDR_FIFO1_ADDR",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Channel 0 DDR controller interface address FIFO1"
+          }
+        ],
+        "description": "DDR Channel 0 Controller Interface Address FIFO1"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_DDR_FIFO2_ADDR",
+        "offset": "0x0250",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_DDR_FIFO2_ADDR",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Channel 0 DDR controller interface address FIFO2"
+          }
+        ],
+        "description": "DDR Channel 0 Controller Interface Address FIFO2"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH0_DDR_FIFO3_ADDR",
+        "offset": "0x0258",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH0_DDR_FIFO3_ADDR",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Channel 0 DDR controller interface address FIFO3"
+          }
+        ],
+        "description": "DDR Channel 0 Controller Interface Address FIFO3"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_DDR_FIFO0_ADDR",
+        "offset": "0x0260",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_DDR_FIFO0_ADDR",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Channel 1 DDR controller interface address FIFO0"
+          }
+        ],
+        "description": "DDR Channel 1 Controller Interface Address FIFO0"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_DDR_FIFO1_ADDR",
+        "offset": "0x0268",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_DDR_FIFO1_ADDR",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Channel 1 DDR controller interface address FIFO1"
+          }
+        ],
+        "description": "DDR Channel 1 Controller Interface Address FIFO1"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_DDR_FIFO2_ADDR",
+        "offset": "0x0270",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_DDR_FIFO2_ADDR",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Channel 1 DDR controller interface address FIFO2"
+          }
+        ],
+        "description": "DDR Channel 1 Controller Interface Address FIFO2"
+      },
+      {
+        "type": "register",
+        "name": "DDRMON_CH1_DDR_FIFO3_ADDR",
+        "offset": "0x0278",
+        "size": "W",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "CH1_DDR_FIFO3_ADDR",
+            "bit_range": "31:0",
+            "attr": "RO",
+            "reset": "0x00000000",
+            "description": "Channel 1 DDR controller interface address FIFO3"
+          }
+        ],
+        "description": "DDR Channel 1 Controller Interface Address FIFO3"
+      }
+    ],
+    "name": "DDRMON",
+    "summary": [
       {
         "name": "DDRMON_IP_VERSION",
         "offset": "0x0000",

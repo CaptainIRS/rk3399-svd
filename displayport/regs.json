@@ -154,7 +154,7 @@
         "name": "IN_BPC",
         "bits": "[6:4]",
         "description": "Video input bit per color/ component (bpc). This bit \nfield is used to specify video data format in main \nstream attribute data. Note that 6 bpc mode is invalid \nin YCbCr 422 mode. \n100, 101, 110, 111: Reserved, \n011: 12 bits, \n010: 10 bits, \n001: 8 bits, \n000: 6 bits.",
-        "initial_value": "001"
+        "initial_value": "3'b001"
       },
       {
         "name": "-",
@@ -1731,13 +1731,13 @@
       {
         "name": "FORCE_DET",
         "bits": "[1]",
-        "description": "Force video stream clock detect, this bit is \nonly active when DET_CTRL is 1 \n1: Force video stream clock detected \n0: Force video stream clock not detected \nThis bit\u2019s type is R/W.",
+        "description": "Force video stream clock detect, this bit is \nonly active when DET_CTRL is 1 \n1: Force video stream clock detected \n0: Force video stream clock not detected \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "DET_CTRL",
         "bits": "[0]",
-        "description": "Video stream clock detect status control: \n1: Use force detect status \n0: Use auto-detected status \nThis bit\u2019s type is R/W.",
+        "description": "Video stream clock detect status control: \n1: Use force detect status \n0: Use auto-detected status \nThis bit's type is R/W.",
         "initial_value": "0"
       }
     ]
@@ -1758,7 +1758,7 @@
       {
         "name": "CHA_CRI",
         "bits": "[7:4]",
-        "description": "Pixel clock change detection threshold. \nThe incoming pixel clock input is counted \ncontinuously by the 24Mhz reference clock. \nThis register defines a number, if the \ncounter number change is more than this \nvalue for 2 pixel clock edges, the CHA_STA \nbit is asserted. \nThis bit\u2019s type is R/W.",
+        "description": "Pixel clock change detection threshold. \nThe incoming pixel clock input is counted \ncontinuously by the 24Mhz reference clock. \nThis register defines a number, if the \ncounter number change is more than this \nvalue for 2 pixel clock edges, the CHA_STA \nbit is asserted. \nThis bit's type is R/W.",
         "initial_value": "4"
       },
       {
@@ -1776,13 +1776,13 @@
       {
         "name": "FORCE_CHA",
         "bits": "[1]",
-        "description": "Force stream clock change status, this bit \nonly active when CHA_CTRL is 1 \n1: Force clock change. When asserted, \nCHA_STA is \u20181\u2019. \n0: Force clock not change \nThis bit\u2019s type is R/W.",
+        "description": "Force stream clock change status, this bit \nonly active when CHA_CTRL is 1 \n1: Force clock change. When asserted, \nCHA_STA is \u20181'. \n0: Force clock not change \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "CHA_CTRL",
         "bits": "[0]",
-        "description": "Pixel clock frequency change status control \n1: Use force change status \n0: Use auto-detected status \nThis bit\u2019s type is R/W.",
+        "description": "Pixel clock frequency change status control \n1: Use force change status \n0: Use auto-detected status \nThis bit's type is R/W.",
         "initial_value": "0"
       }
     ]
@@ -1803,25 +1803,25 @@
       {
         "name": "HPD_STATUS(RO)",
         "bits": "[6]",
-        "description": "Hot plug detect status. \n1: HPD is 1, \n0: HPD is 0. \nThis bit\u2019s type is RO. \nWhen this bit is 0, AUX CH will not work. \nNote that the HPD_STATUS is only changed \nafter the change of the pin I_DP_HPD \nremains for no less than hot plug deglitch \ntime. And the hot plug deglitch time is \ndefined in HPD_DEGLITCH_L and \nHPD_DEGLITCH_H.",
+        "description": "Hot plug detect status. \n1: HPD is 1, \n0: HPD is 0. \nThis bit's type is RO. \nWhen this bit is 0, AUX CH will not work. \nNote that the HPD_STATUS is only changed \nafter the change of the pin I_DP_HPD \nremains for no less than hot plug deglitch \ntime. And the hot plug deglitch time is \ndefined in HPD_DEGLITCH_L and \nHPD_DEGLITCH_H.",
         "initial_value": "0"
       },
       {
         "name": "F_HPD",
         "bits": "[5]",
-        "description": "Force hot plug detect. \n1: Force HPD 1, \n0: Force HPD 0. \nThis bit\u2019s type is R/W.",
+        "description": "Force hot plug detect. \n1: Force HPD 1, \n0: Force HPD 0. \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "HPD_CTRL",
         "bits": "[4]",
-        "description": "Hot plug detect manual control. \n1: Force HPD with F_HPD, \n0: Use PIN_HPD state. \nThis bit\u2019s type is R/W.",
+        "description": "Hot plug detect manual control. \n1: Force HPD with F_HPD, \n0: Use PIN_HPD state. \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "HDCP_RDY(RO)",
         "bits": "[3]",
-        "description": "HDCP ready status. \n1: HDCP is ready, \n0: HDCP is not ready. \nThis bit\u2019s type is RO. \nThis bit is an indicator of whether HDCP is \nready to perform. Usually, it is set as soon \nas HPD signal is detected as plugged.",
+        "description": "HDCP ready status. \n1: HDCP is ready, \n0: HDCP is not ready. \nThis bit's type is RO. \nThis bit is an indicator of whether HDCP is \nready to perform. Usually, it is set as soon \nas HPD signal is detected as plugged.",
         "initial_value": "0"
       },
       {
@@ -1833,13 +1833,13 @@
       {
         "name": "F_VALID",
         "bits": "[1]",
-        "description": "Force stream valid, this bit only active \nwhen VALID_CTRL is 1. \n1: Force input video stream valid, \n0: Force input video stream not valid. \nThis bit\u2019s type is R/W.",
+        "description": "Force stream valid, this bit only active \nwhen VALID_CTRL is 1. \n1: Force input video stream valid, \n0: Force input video stream not valid. \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "VALID_CTRL",
         "bits": "[0]",
-        "description": "Stream valid control. \n1: Use F_VALID bit to control video stream \nvalid status \n0: Use video stream valid auto-detect \nThis bit\u2019s type is R/W.",
+        "description": "Stream valid control. \n1: Use F_VALID bit to control video stream \nvalid status \n0: Use video stream valid auto-detect \nThis bit's type is R/W.",
         "initial_value": "0"
       }
     ]
@@ -1938,49 +1938,49 @@
       {
         "name": "AUDIO_INFO_UP(C)",
         "bits": "[7]",
-        "description": "Audio InfoFrame content has been \nupdated. \n1: Updated, \n0: Don\u2019t care. \nWrite 1 to this bit after Audio Packet \nContent Registers have been configured as \nAudio InfoFrame content has been \nupdated. \nThis bit\u2019s type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
+        "description": "Audio InfoFrame content has been \nupdated. \n1: Updated, \n0: Don't care. \nWrite 1 to this bit after Audio Packet \nContent Registers have been configured as \nAudio InfoFrame content has been \nupdated. \nThis bit's type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
         "initial_value": "0"
       },
       {
         "name": "AVI_INFO_UP(C)",
         "bits": "[6]",
-        "description": "AVI InfoFrame content has been updated. \n1: Updated, \n0: Don\u2019t care. \nWrite 1 to this bit after AVI Packet Content \nRegisters have been configured as AVI \nInfoFrame content has been updated. \nThis bit\u2019s type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
+        "description": "AVI InfoFrame content has been updated. \n1: Updated, \n0: Don't care. \nWrite 1 to this bit after AVI Packet Content \nRegisters have been configured as AVI \nInfoFrame content has been updated. \nThis bit's type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
         "initial_value": "0"
       },
       {
         "name": "MPEG_INFO_UP(C)",
         "bits": "[5]",
-        "description": "MPEG InfoFrame content has been \nupdated. \n1: Updated, \n0: Don\u2019t care. \nWrite 1 to this bit after MPEG Packet \nContent Registers have been configured as \nMPEG InfoFrame content has been \nupdated. \nThis bit\u2019s type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
+        "description": "MPEG InfoFrame content has been \nupdated. \n1: Updated, \n0: Don't care. \nWrite 1 to this bit after MPEG Packet \nContent Registers have been configured as \nMPEG InfoFrame content has been \nupdated. \nThis bit's type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
         "initial_value": "0"
       },
       {
         "name": "IF_UP(C)",
         "bits": "[4]",
-        "description": "Configurable InfoFrame content has been \nupdated. \n1: Updated, \n0: Don\u2019t care. \nWrite 1 to this bit after IF_TYPE and \nIF_PKT_DB1~25 Registers have been \nconfigured as configurable InfoFrame \ncontent have been updated. \nThis bit\u2019s type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
+        "description": "Configurable InfoFrame content has been \nupdated. \n1: Updated, \n0: Don't care. \nWrite 1 to this bit after IF_TYPE and \nIF_PKT_DB1~25 Registers have been \nconfigured as configurable InfoFrame \ncontent have been updated. \nThis bit's type is R/W. This bit is self \ncleared after the register configured \ncontent has been used to update the \nInfoFrame.",
         "initial_value": "0"
       },
       {
         "name": "AUDIO_INFO_EN",
         "bits": "[3]",
-        "description": "Audio InfoFrame send enable. \n1: Send Audio InfoFrame, \n0: Don\u2019t send Audio InfoFrame. \nMake sure that the Audio Packet Content \nRegisters had been configured correctly \nand the AUDIO_INFO_UP had been written \nwith 1. \nThis bit\u2019s type is R/W.",
+        "description": "Audio InfoFrame send enable. \n1: Send Audio InfoFrame, \n0: Don't send Audio InfoFrame. \nMake sure that the Audio Packet Content \nRegisters had been configured correctly \nand the AUDIO_INFO_UP had been written \nwith 1. \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "AVI_INFO_EN",
         "bits": "[2]",
-        "description": "AVI InfoFrame send enable. \n1: Send AVI InfoFrame, \n0: Don\u2019t send AVI InfoFrame. \nMake sure that the AVI Packet Content \nRegisters had been configured correctly \nand the AVI_INFO_UP had been written \nwith 1. \nThis bit\u2019s type is R/W.",
+        "description": "AVI InfoFrame send enable. \n1: Send AVI InfoFrame, \n0: Don't send AVI InfoFrame. \nMake sure that the AVI Packet Content \nRegisters had been configured correctly \nand the AVI_INFO_UP had been written \nwith 1. \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "MPEG_INFO_EN",
         "bits": "[1]",
-        "description": "MPEG InfoFrame send enable. \n1: Send MPEG InfoFrame, \n0: Don\u2019t send MPEG InfoFrame. \nMake sure that the MPEG Packet Content \nRegisters had been configured correctly \nand the MPEG_INFO_UP had been written \nwith 1. \nThis bit\u2019s type is R/W.",
+        "description": "MPEG InfoFrame send enable. \n1: Send MPEG InfoFrame, \n0: Don't send MPEG InfoFrame. \nMake sure that the MPEG Packet Content \nRegisters had been configured correctly \nand the MPEG_INFO_UP had been written \nwith 1. \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "IF_EN",
         "bits": "[0]",
-        "description": "Configurable InfoFrame send enable. \n1: Send InfoFrame defined in IF_TYPE and \nIF_PKT_DB1~25, \n0: Don\u2019t send InfoFrame. \nMake sure that the IF_TYPE and \nIF_PKT_DB1~25 Registers had been \nconfigured correctly and the IF_UP had \nbeen written with 1. \nThis bit\u2019s type is R/W.",
+        "description": "Configurable InfoFrame send enable. \n1: Send InfoFrame defined in IF_TYPE and \nIF_PKT_DB1~25, \n0: Don't send InfoFrame. \nMake sure that the IF_TYPE and \nIF_PKT_DB1~25 Registers had been \nconfigured correctly and the IF_UP had \nbeen written with 1. \nThis bit's type is R/W.",
         "initial_value": "0"
       }
     ]
@@ -2076,25 +2076,25 @@
       {
         "name": "MAX_PRE_REACH_0(RO)",
         "bits": "[5]",
-        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nThis bit\u2019s type is RO. \nNote that the MAX_PRE_REACH_0 and \nMAX_DRIVE_REACH_0 have the same \nvalue like the following table.",
+        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nThis bit's type is RO. \nNote that the MAX_PRE_REACH_0 and \nMAX_DRIVE_REACH_0 have the same \nvalue like the following table.",
         "initial_value": "0"
       },
       {
         "name": "PRE_EMPHASIS_SET_0",
         "bits": "[4:3]",
-        "description": "Lane 0 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit\u2019s type is R/W.",
+        "description": "Lane 0 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "MAX_DRIVE_REACH_0(RO)",
         "bits": "[2]",
-        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For test purpose only. This bit\u2019s \ntype is RO. For more information, refer to \nMAX_PRE_REACH_0.",
+        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For test purpose only. This bit's \ntype is RO. For more information, refer to \nMAX_PRE_REACH_0.",
         "initial_value": "0"
       },
       {
         "name": "DRIVE_CURRENT_SET_0",
         "bits": "[1:0]",
-        "description": "Lane 0 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit\u2019s type is R/W.",
+        "description": "Lane 0 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit's type is R/W.",
         "initial_value": "0"
       }
     ]
@@ -2115,25 +2115,25 @@
       {
         "name": "MAX_PRE_REACH_1(RO)",
         "bits": "[5]",
-        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nNote that the MAX_PRE_REACH_1 and \nMAX_DRIVE_REACH_1 have the same \nvalue like the following table. \nBoth of MAX_PRE_REACH_1 and \nMAX_DRIVE_REACH_1 are for test purpose \nonly. \nThis bit\u2019s type is RO.",
+        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nNote that the MAX_PRE_REACH_1 and \nMAX_DRIVE_REACH_1 have the same \nvalue like the following table. \nBoth of MAX_PRE_REACH_1 and \nMAX_DRIVE_REACH_1 are for test purpose \nonly. \nThis bit's type is RO.",
         "initial_value": "0"
       },
       {
         "name": "PRE_EMPHASIS_SET_1",
         "bits": "[4:3]",
-        "description": "Lane 1 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit\u2019s type is R/W.",
+        "description": "Lane 1 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "MAX_DRIVE_REACH_1(RO)",
         "bits": "[2]",
-        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For more information, refer to \nMAX_PRE_REACH_1. For test purpose only. \nThis bit\u2019s type is RO.",
+        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For more information, refer to \nMAX_PRE_REACH_1. For test purpose only. \nThis bit's type is RO.",
         "initial_value": "0"
       },
       {
         "name": "DRIVE_CURRENT_SET_1",
         "bits": "[1:0]",
-        "description": "Lane 1 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit\u2019s type is R/W.",
+        "description": "Lane 1 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit's type is R/W.",
         "initial_value": "0"
       }
     ]
@@ -2154,25 +2154,25 @@
       {
         "name": "MAX_PRE_REACH_2(RO)",
         "bits": "[5]",
-        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nNote that the MAX_PRE_REACH_2 and \nMAX_DRIVE_REACH_2 have the same \nvalue like the following table. \nBoth of MAX_PRE_REACH_1 and \nMAX_DRIVE_REACH_2 are for test purpose \nonly. \nThis bit\u2019s type is RO.",
+        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nNote that the MAX_PRE_REACH_2 and \nMAX_DRIVE_REACH_2 have the same \nvalue like the following table. \nBoth of MAX_PRE_REACH_1 and \nMAX_DRIVE_REACH_2 are for test purpose \nonly. \nThis bit's type is RO.",
         "initial_value": "0"
       },
       {
         "name": "PRE_EMPHASIS_SET_2",
         "bits": "[4:3]",
-        "description": "Lane 2 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit\u2019s type is R/W.",
+        "description": "Lane 2 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "MAX_DRIVE_REACH_2(RO)",
         "bits": "[2]",
-        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For more information, refer to \nMAX_PRE_REACH_2. For test purpose only. \nThis bit\u2019s type is RO.",
+        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For more information, refer to \nMAX_PRE_REACH_2. For test purpose only. \nThis bit's type is RO.",
         "initial_value": "0"
       },
       {
         "name": "DRIVE_CURRENT_SET_2",
         "bits": "[1:0]",
-        "description": "Lane 2 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit\u2019s type is R/W.",
+        "description": "Lane 2 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit's type is R/W.",
         "initial_value": "0"
       }
     ]
@@ -2193,25 +2193,25 @@
       {
         "name": "MAX_PRE_REACH_3(RO)",
         "bits": "[5]",
-        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nNote that the MAX_PRE_REACH_3 and \nMAX_DRIVE_REACH_3 have the same \nvalue like the following table. \nBoth of MAX_PRE_REACH_3 and \nMAX_DRIVE_REACH_3 are for test purpose \nonly. \nThis bit\u2019s type is RO.",
+        "description": "This bit field is set to 1 automatically when \nmax pre-emphasis level of DP Tx is \nreached. \nNote that the MAX_PRE_REACH_3 and \nMAX_DRIVE_REACH_3 have the same \nvalue like the following table. \nBoth of MAX_PRE_REACH_3 and \nMAX_DRIVE_REACH_3 are for test purpose \nonly. \nThis bit's type is RO.",
         "initial_value": "0"
       },
       {
         "name": "PRE_EMPHASIS_SET_3",
         "bits": "[4:3]",
-        "description": "Lane 3 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit\u2019s type is R/W.",
+        "description": "Lane 3 pre-emphasis level setting \n11: 9.5 dB, \n10: 6.0 dB, \n01: 3.5 dB, \n00: 0 dB (No pre-emphasis). \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "MAX_DRIVE_REACH_3(RO)",
         "bits": "[2]",
-        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For more information, refer to \nMAX_PRE_REACH_3. For test purpose only. \nThis bit\u2019s type is RO.",
+        "description": "This bit field is set to 1 automatically when \nmax driving current level of DP Tx is \nreached. For more information, refer to \nMAX_PRE_REACH_3. For test purpose only. \nThis bit's type is RO.",
         "initial_value": "0"
       },
       {
         "name": "DRIVE_CURRENT_SET_3",
         "bits": "[1:0]",
-        "description": "Lane 3 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit\u2019s type is R/W.",
+        "description": "Lane 3 output amplitude setting \n11: 1200 mV, \n10: 800 mV, \n01: 600 mV, \n00: 400 mV. \nThis bit's type is R/W.",
         "initial_value": "0"
       }
     ]
@@ -2232,7 +2232,7 @@
       {
         "name": "HW_TRAINING_ERROR_CODE(RO)",
         "bits": "[6:4]",
-        "description": "Training error code \n0: OK \n1: AUX_WRITE_ERROR \n2: MAX_DRIVE_REACHED \n3: WRONG_LANE_COUNT_SETTING \n4: LOOP_SAME_5_TIME \n5: CR_FAIL_IN_EQ \n6: EQ_LOOP_5_TIME \nThis bit\u2019s type is RO.",
+        "description": "Training error code \n0: OK \n1: AUX_WRITE_ERROR \n2: MAX_DRIVE_REACHED \n3: WRONG_LANE_COUNT_SETTING \n4: LOOP_SAME_5_TIME \n5: CR_FAIL_IN_EQ \n6: EQ_LOOP_5_TIME \nThis bit's type is RO.",
         "initial_value": "0"
       },
       {
@@ -2244,7 +2244,7 @@
       {
         "name": "HW_TRAINING_EN(C)",
         "bits": "[0]",
-        "description": "Link training sequence enable \nWrite 1 to enable training sequence, write \n0 to force training sequence stop, this bit \nwill self-clear when training done. \nThis bit\u2019s type is R/W. This bit is self \ncleared.",
+        "description": "Link training sequence enable \nWrite 1 to enable training sequence, write \n0 to force training sequence stop, this bit \nwill self-clear when training done. \nThis bit's type is R/W. This bit is self \ncleared.",
         "initial_value": "0"
       }
     ]
@@ -2265,43 +2265,43 @@
       {
         "name": "MYDP_HPD_POLLIN_EN",
         "bits": "[6]",
-        "description": "Enable the MYDP HPD status polling. If this \nbit and POLLING_EN are enabled and \nBYPASS_STATUS_POLLING is 0, hardware \npolling both of link status and MYDP HPD \nstatus. \n1: Enabled \n0: Disabled. \nThis bit\u2019s type is RW.",
+        "description": "Enable the MYDP HPD status polling. If this \nbit and POLLING_EN are enabled and \nBYPASS_STATUS_POLLING is 0, hardware \npolling both of link status and MYDP HPD \nstatus. \n1: Enabled \n0: Disabled. \nThis bit's type is RW.",
         "initial_value": "0"
       },
       {
         "name": "BYPASS_STATUS_POLLING",
         "bits": "[5]",
-        "description": "Bypass link status polling. If this bit, \nMYDP_HPD_POLLIN_EN and POLLING_EN \nare all enabled, hardware only polling \nMYDP HPD status. \n1: Enabled \n0: Disabled. \nThis bit\u2019s type is RW.",
+        "description": "Bypass link status polling. If this bit, \nMYDP_HPD_POLLIN_EN and POLLING_EN \nare all enabled, hardware only polling \nMYDP HPD status. \n1: Enabled \n0: Disabled. \nThis bit's type is RW.",
         "initial_value": "0"
       },
       {
         "name": "PLL_LOCK(RO)",
         "bits": "[4]",
-        "description": "PLL lock status \n1: PLL lock, \n0: PLL unlock. \nThis bit\u2019s type is RO.",
+        "description": "PLL lock status \n1: PLL lock, \n0: PLL unlock. \nThis bit's type is RO.",
         "initial_value": "0"
       },
       {
         "name": "F_PLL_LOCK",
         "bits": "[3]",
-        "description": "Force PLL lock, this bit is active when \nPLL_LOCK_CTRL is 1: \n1: Force PLL lock, \n0: Force PLL non-lock. \nThis bit\u2019s type is R/W",
+        "description": "Force PLL lock, this bit is active when \nPLL_LOCK_CTRL is 1: \n1: Force PLL lock, \n0: Force PLL non-lock. \nThis bit's type is R/W",
         "initial_value": "0"
       },
       {
         "name": "PLL_LOCK_CTRL",
         "bits": "[2]",
-        "description": "PLL lock register control enable \n1: PLL lock signal is controlled by register, \n0: PLL lock signal is controlled by PLL. \nThis bit\u2019s type is R/W",
+        "description": "PLL lock register control enable \n1: PLL lock signal is controlled by register, \n0: PLL lock signal is controlled by PLL. \nThis bit's type is R/W",
         "initial_value": "0"
       },
       {
         "name": "POLLING_EN",
         "bits": "[1]",
-        "description": "Enable hardware state machine to polling \nthe HPD status or link status. The interval \nof each polling is controlled by \nPOLLING_PERIOD \n1: Enable polling function. \n0: Disable polling function \nThis bit\u2019s type is R/W.",
+        "description": "Enable hardware state machine to polling \nthe HPD status or link status. The interval \nof each polling is controlled by \nPOLLING_PERIOD \n1: Enable polling function. \n0: Disable polling function \nThis bit's type is R/W.",
         "initial_value": "0"
       },
       {
         "name": "PN_INV",
         "bits": "[0]",
-        "description": "Invert SERDES output polarity \n1: Invert output polarity, \n0: Normal operation. \nThis bit\u2019s type is R/W.",
+        "description": "Invert SERDES output polarity \n1: Invert output polarity, \n0: Normal operation. \nThis bit's type is R/W.",
         "initial_value": "0"
       }
     ]
@@ -2964,7 +2964,7 @@
       {
         "name": "BUF_CLR(C)",
         "bits": "[7]",
-        "description": "Write 1 to this bit to clear AUX CH data \nbuffer (BUF_DATA_0 ~ BUF_DATA_15). \nAlways read back 0 from this bit. \nThis bit\u2019s type is R/W. This bit is self \ncleared. \nNote: For the write operation, set this bit \nto 1 before writing data to \nBUF_DATA_0~15. And for READ \noperation, this bit has only to be set \nbefore starting data transfer by setting \nAUX_EN.",
+        "description": "Write 1 to this bit to clear AUX CH data \nbuffer (BUF_DATA_0 ~ BUF_DATA_15). \nAlways read back 0 from this bit. \nThis bit's type is R/W. This bit is self \ncleared. \nNote: For the write operation, set this bit \nto 1 before writing data to \nBUF_DATA_0~15. And for READ \noperation, this bit has only to be set \nbefore starting data transfer by setting \nAUX_EN.",
         "initial_value": "0"
       },
       {
@@ -2982,7 +2982,7 @@
       {
         "name": "BUF_DATA_COUNT(RO)",
         "bits": "[3:0]",
-        "description": "The counts of data AUX CH buffer have. \nThis bit\u2019s type is RO.",
+        "description": "The counts of data AUX CH buffer have. \nThis bit's type is RO.",
         "initial_value": "0"
       }
     ]
@@ -3355,25 +3355,25 @@
         "initial_value": "0"
       },
       {
-        "name": "CH3_PC2_SEL",
+        "name": "CH3_PC2_SEL_BITS_0",
         "bits": "[7:6]",
         "description": "Ch3 post cursor2 setting: \nCH3_PC2_SEL: post cursor2 \n0x0: 0 \n0x1: 0.05 \n0x2: 0.1 \n0x3: 0.15",
         "initial_value": "0"
       },
       {
-        "name": "CH3_PC2_SEL",
+        "name": "CH3_PC2_SEL_BITS_1",
         "bits": "[5:4]",
         "description": "Ch2 post cursor2 setting: \nCH2_PC2_SEL: post cursor2 \n0x0: 0 \n0x1: 0.05 \n0x2: 0.1 \n0x3: 0.15",
         "initial_value": "0"
       },
       {
-        "name": "CH3_PC2_SEL",
+        "name": "CH3_PC2_SEL_BITS_2",
         "bits": "[3:2]",
         "description": "Ch1 post cursor2 setting: \nCH1_PC2_SEL: post cursor2 \n0x0: 0 \n0x1: 0.05 \n0x2: 0.1 \n0x3: 0.15",
         "initial_value": "0"
       },
       {
-        "name": "CH3_PC2_SEL",
+        "name": "CH3_PC2_SEL_BITS_3",
         "bits": "[1:0]",
         "description": "Ch0 post cursor2 setting: \nCH0_PC2_SEL: post cursor2 \n0x0: 0 \n0x1: 0.05 \n0x2: 0.1 \n0x3: 0.15",
         "initial_value": "0"
@@ -4465,25 +4465,25 @@
         "name": "LDO_OUTPUT_V_SEL",
         "bits": "[7:6]",
         "description": "1.5v LDO output voltage select \n00:1.35v \n01:1.40v \n10:1.45v(default) \n11:1.50v",
-        "initial_value": "2\u2019b10"
+        "initial_value": "2'b10"
       },
       {
         "name": "KVCO",
         "bits": "[5:4]",
         "description": "KVCO to control VCO band \n00: decrease KVCO by 15% \n01:(default) \n10:increase KVCO by 10% \n11:increase KVCO by 20%",
-        "initial_value": "2\u2019b01"
+        "initial_value": "2'b01"
       },
       {
         "name": "CHG_PUMP_CURRENT_SEL",
         "bits": "[3:2]",
         "description": "charge pump current select \n00:2.5u \n01(default):5u \n10:7.5u \n11:10u",
-        "initial_value": "2\u2019b01"
+        "initial_value": "2'b01"
       },
       {
         "name": "V2I_CURRENT_SEL",
         "bits": "[1:0]",
         "description": "v2i current select \n00: no adding current \n01: adding 1mA current(default) \n10: adding 2mA current \n11: adding 4.5mA current",
-        "initial_value": "2\u2019b01"
+        "initial_value": "2'b01"
       }
     ]
   },
@@ -4504,7 +4504,7 @@
         "name": "LOCK_DET_CNT_SEL",
         "bits": "[6:5]",
         "description": "lock detector output counter select, \ncounter period is twice of reference clock \n00: 64 cycle \n01: 128 cycle \n10: 256 cycle (default) \n11: 512 cycle",
-        "initial_value": "2\u2019b10"
+        "initial_value": "2'b10"
       },
       {
         "name": "LOOP_FILTER_RESET_SEL",
@@ -4576,7 +4576,7 @@
         "name": "REGULATOR_V_SEL",
         "bits": "[6:4]",
         "description": "slave regulator output voltage select \n000 900V \n001 0.925V \n010 0.950V(default) \n011 0.975V \n100 1.000V \n101 1.025V \n110 1.050V",
-        "initial_value": "3\u2019b010"
+        "initial_value": "3'b010"
       },
       {
         "name": "STANDBY_CURRENT_SEL",
@@ -4588,7 +4588,7 @@
         "name": "CHG_PUMP_INPUT_CTRL",
         "bits": "[2:1]",
         "description": "control charge pump input voltage for \n0.95V master regulator \n00: 1.1V \n01: 1.2V(default) \n10: 1.3V \n11: 1.4V",
-        "initial_value": "2\u2019b01"
+        "initial_value": "2'b01"
       },
       {
         "name": "CHG_PUMP_INPUT_CTRL_OP",
@@ -4726,13 +4726,13 @@
         "name": "SSC_MODE",
         "bits": "[5:4]",
         "description": "00:disable \n01:down spread \n10:center spread \n11:up spread",
-        "initial_value": "2\u2019b01"
+        "initial_value": "2'b01"
       },
       {
         "name": "SSC_DEPTH",
         "bits": "[3:0]",
         "description": "0000:disable \n0001:500ppm \n0010:1000ppm \n0011:1500ppm \n0100:2000ppm \n0101:2500ppm \n0110:3000ppm \n0111:3500ppm \n1000:4000ppm \n1001:4500ppm \n1010:5000ppm \n1011:5500ppm \n1100-1111:6000ppm",
-        "initial_value": "4\u2019h9"
+        "initial_value": "4'h9"
       }
     ]
   },
@@ -4777,7 +4777,7 @@
         "name": "RESISTOR_CTRL",
         "bits": "[2:0]",
         "description": "TX terminal resistor control \nwhen tx_common<3>=0 \n000: 58.54 \n. . . . . . \n011:54.6 \n. . . . . . \n111:50 \nwhen tx_common<6>=1 \n000: 49 \n. . . . . . \n011:46 \n. . . . . . \n111:42.6",
-        "initial_value": "3\u2019h7"
+        "initial_value": "3'h7"
       }
     ]
   },

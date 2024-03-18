@@ -7,7 +7,7 @@
         "bits": "31:16",
         "default": "0x2041",
         "range": "0x2041",
-        "description": "Holds the controller version number. READ-ONLY",
+        "description": "Holds the controller version number.",
         "access": "RD"
       },
       {
@@ -38,7 +38,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the depth of the controller core read data queue. READ- ONLY",
+        "description": "Reports the depth of the controller core read data queue.",
         "access": "RD"
       },
       {
@@ -46,7 +46,7 @@
         "bits": "17:16",
         "default": "0x2",
         "range": "0x0-0x2",
-        "description": "Holds the maximum number of chip selects available. READ-ONLY",
+        "description": "Holds the maximum number of chip selects available.",
         "access": "RD"
       },
       {
@@ -54,7 +54,7 @@
         "bits": "11:8",
         "default": "0xc",
         "range": "0x0-0xc",
-        "description": "Holds the maximum width of column address in DRAMs. READ- ONLY",
+        "description": "Holds the maximum width of column address in DRAMs.",
         "access": "RD"
       },
       {
@@ -62,7 +62,7 @@
         "bits": "4:0",
         "default": "0x10",
         "range": "0x0-0x10",
-        "description": "Holds the maximum width of memory address bus. READ-ONLY",
+        "description": "Holds the maximum width of memory address bus.",
         "access": "RD"
       }
     ],
@@ -77,7 +77,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the depth of the controller core read/modify/write FIFO. READ-ONLY",
+        "description": "Reports the depth of the controller core read/modify/write FIFO.",
         "access": "RD"
       },
       {
@@ -85,7 +85,7 @@
         "bits": "23:16",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the width of the controller core write data latency queue pointer. READ-ONLY",
+        "description": "Reports the width of the controller core write data latency queue pointer.",
         "access": "RD"
       },
       {
@@ -93,7 +93,7 @@
         "bits": "15:8",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the depth of the controller core write data latency queue. READ-ONLY",
+        "description": "Reports the depth of the controller core write data latency queue.",
         "access": "RD"
       },
       {
@@ -101,7 +101,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the width of the controller core read data queue pointer. READ-ONLY",
+        "description": "Reports the width of the controller core read data queue pointer.",
         "access": "RD"
       }
     ],
@@ -116,7 +116,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the depth of the DENALI port 0 write data FIFO. Value is the log2 value of the depth. READ- ONLY",
+        "description": "Reports the depth of the DENALI port 0 write data FIFO. Value is the log2 value of the depth.",
         "access": "RD"
       },
       {
@@ -124,7 +124,7 @@
         "bits": "23:16",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the depth of the DENALI port 0 read/modify/write FIFO. Value is the log2 value of the depth. READ-ONLY",
+        "description": "Reports the depth of the DENALI port 0 read/modify/write FIFO. Value is the log2 value of the depth.",
         "access": "RD"
       },
       {
@@ -132,7 +132,7 @@
         "bits": "15:8",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the depth of the DENALI port 0 command FIFO. Value is the log2 value of the depth. READ- ONLY",
+        "description": "Reports the depth of the DENALI port 0 command FIFO. Value is the log2 value of the depth.",
         "access": "RD"
       },
       {
@@ -140,7 +140,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the width of the controller core read/modify/write FIFO pointer. READ-ONLY",
+        "description": "Reports the width of the controller core read/modify/write FIFO pointer.",
         "access": "RD"
       }
     ],
@@ -163,7 +163,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Reports the depth of the DENALI port 0 processing FIFO. Value is the log2 value of the depth. READ- ONLY",
+        "description": "Reports the depth of the DENALI port 0 processing FIFO. Value is the log2 value of the depth.",
         "access": "RD"
       }
     ],
@@ -390,7 +390,7 @@
         "bits": "1:0",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Identifies the source of any MRR errors. Value of 1 indicates a violation. READ-ONLY",
+        "description": "Identifies the source of any MRR errors. Value of 1 indicates a violation.",
         "access": "RD"
       }
     ],
@@ -1408,7 +1408,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Initiate auto-refresh at the end of the current burst boundary. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Initiate auto-refresh at the end of the current burst boundary. Set to 1 to trigger.",
         "access": "WR"
       }
     ],
@@ -2074,7 +2074,7 @@
         "bits": "25:24",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Holds the error associated with the DFS interrupt. Bit (0) set indicates an illegal command and bit (1) set indicates that a shutdown occurred during DFS. READ-ONLY",
+        "description": "Holds the error associated with the DFS interrupt. Bit (0) set indicates an illegal command and bit (1) set indicates that a shutdown occurred during DFS.",
         "access": "RD"
       },
       {
@@ -2560,7 +2560,7 @@
         "bits": "9:8",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Identifies the source of any DFI PHY Master Interface errors. Value of 1 indicates a timing violation of the associated timing parameter. READ-ONLY",
+        "description": "Identifies the source of any DFI PHY Master Interface errors. Value of 1 indicates a timing violation of the associated timing parameter.",
         "access": "RD"
       },
       {
@@ -2714,7 +2714,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Low power software command request interface. Bit (0) controls exit, bit (1) controls entry, bits (4:2) define the low power state, bit (5) controls memory clock gating, bit (6) controls controller clock gating, and bit (7) controls lock. WRITE- ONLY",
+        "description": "Low power software command request interface. Bit (0) controls exit, bit (1) controls entry, bits (4:2) define the low power state, bit (5) controls memory clock gating, bit (6) controls controller clock gating, and bit (7) controls lock.",
         "access": "WR"
       },
       {
@@ -2979,7 +2979,7 @@
         "bits": "30:24",
         "default": "0x20",
         "range": "0x0-0x7f",
-        "description": "Low power state status parameter. Bits (4:0) indicate the current low power state and bit (5) set indicates that status bits are valid. READ- ONLY",
+        "description": "Low power state status parameter. Bits (4:0) indicate the current low power state and bit (5) set indicates that status bits are valid.",
         "access": "RD"
       },
       {
@@ -3296,7 +3296,7 @@
         "bits": "17:16",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Indicates the current copy of timing parameters that is in use by the controller. READ-ONLY",
+        "description": "Indicates the current copy of timing parameters that is in use by the controller.",
         "access": "RD"
       },
       {
@@ -3417,7 +3417,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Write memory mode register status. Bit (0) set indicates a WRITE_MODEREG parameter programming error. Bit (1) set indicates a PASR error. Bit (2) is Reserved. Bit (3) set indicates a self refresh or deep power down error. Bit (4) set indicates that a write to MR3 or MR11 was attempted (WRITE_MODEREG bit (25) was asserted with bit (17) set, or bit (23) was asserted with bits (7:0) defining MR3 or MR11) during tZQCAL after a ZQ calibration start command. READ-ONLY",
+        "description": "Write memory mode register status. Bit (0) set indicates a WRITE_MODEREG parameter programming error. Bit (1) set indicates a PASR error. Bit (2) is Reserved. Bit (3) set indicates a self refresh or deep power down error. Bit (4) set indicates that a write to MR3 or MR11 was attempted (WRITE_MODEREG bit (25) was asserted with bit (17) set, or bit (23) was asserted with bits (7:0) defining MR3 or MR11) during tZQCAL after a ZQ calibration start command.",
         "access": "RD"
       }
     ],
@@ -3432,7 +3432,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Data and chip returned from memory mode register read requested by the READ_MODEREG parameter. Bits (7:0) indicate the read data and bits (15:8) indicate the chip. READ- ONLY",
+        "description": "Data and chip returned from memory mode register read requested by the READ_MODEREG parameter. Bits (7:0) indicate the read data and bits (15:8) indicate the chip.",
         "access": "RD"
       }
     ],
@@ -3447,7 +3447,7 @@
         "bits": "23:8",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "MR4 data for all devices on chip 0 accessed by automatic MRR commands. Bits (3:0) correlate to the device on the lower byte, bits (7:4) correlate to the devices on the 2nd byte etc. Value indicates the OP7, OP2, OP1 and OP0 bits. READ-ONLY",
+        "description": "MR4 data for all devices on chip 0 accessed by automatic MRR commands. Bits (3:0) correlate to the device on the lower byte, bits (7:4) correlate to the devices on the 2nd byte etc. Value indicates the OP7, OP2, OP1 and OP0 bits.",
         "access": "RD"
       },
       {
@@ -3455,7 +3455,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Data and chip returned from memory mode register read requested by the READ_MODEREG parameter. Bits (7:0) indicate the read data and bits (15:8) indicate the chip. READ- ONLY",
+        "description": "Data and chip returned from memory mode register read requested by the READ_MODEREG parameter. Bits (7:0) indicate the read data and bits (15:8) indicate the chip.",
         "access": "RD"
       }
     ],
@@ -3478,7 +3478,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "MR4 data for all devices on chip 1 accessed by automatic MRR commands. Bits (3:0) correlate to the device on the lower byte, bits (7:4) correlate to the devices on the 2nd byte etc. Value indicates the OP7, OP2, OP1 and OP0 bits. READ-ONLY",
+        "description": "MR4 data for all devices on chip 1 accessed by automatic MRR commands. Bits (3:0) correlate to the device on the lower byte, bits (7:4) correlate to the devices on the 2nd byte etc. Value indicates the OP7, OP2, OP1 and OP0 bits.",
         "access": "RD"
       }
     ],
@@ -3916,7 +3916,7 @@
         "bits": "23:16",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Data read from MR8 for chip select 0. READ-ONLY",
+        "description": "Data read from MR8 for chip select 0.",
         "access": "RD"
       },
       {
@@ -4086,7 +4086,7 @@
         "bits": "15:8",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Data read from MR20 for chip select 0. READ-ONLY",
+        "description": "Data read from MR20 for chip select 0.",
         "access": "RD"
       },
       {
@@ -4278,7 +4278,7 @@
         "bits": "23:16",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Data read from MR8 for chip select 1. READ-ONLY",
+        "description": "Data read from MR8 for chip select 1.",
         "access": "RD"
       },
       {
@@ -4448,7 +4448,7 @@
         "bits": "15:8",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Data read from MR20 for chip select 1. READ-ONLY",
+        "description": "Data read from MR20 for chip select 1.",
         "access": "RD"
       },
       {
@@ -4518,7 +4518,7 @@
         "bits": "1:0",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Indicates if RL3 is supported by a connected LPDDR3 memory. Data read from MR0 bit 7. READ-ONLY",
+        "description": "Indicates if RL3 is supported by a connected LPDDR3 memory. Data read from MR0 bit 7.",
         "access": "RD"
       }
     ],
@@ -5172,7 +5172,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Indicates that a ZQ command is currently in progress or waiting to run. Value of 1 indicates command in progress or waiting to run. When this is asserted, no writes to ZQ_REQ should occur. READ- ONLY",
+        "description": "Indicates that a ZQ command is currently in progress or waiting to run. Value of 1 indicates command in progress or waiting to run. When this is asserted, no writes to ZQ_REQ should occur.",
         "access": "RD"
       },
       {
@@ -5180,7 +5180,7 @@
         "bits": "3:0",
         "default": "0x0",
         "range": "0x0-0xf",
-        "description": "User request to initiate a ZQ calibration. Program to 0x1 for ZQ Short (ZQCS), program to 0x2 for ZQ Long (ZQCL), program to 0x3 for ZQ Start, program to 0x4 for ZQ Initialization (ZQINIT), program to 0x5 for ZQ Latch, or program to 0x8 for ZQ Reset. Clearing to 0x0 will not trigger any ZQ command. This parameter should only be written when the ZQ_REQ_PENDING parameter is cleared to 0. WRITE-ONLY",
+        "description": "User request to initiate a ZQ calibration. Program to 0x1 for ZQ Short (ZQCS), program to 0x2 for ZQ Long (ZQCL), program to 0x3 for ZQ Start, program to 0x4 for ZQ Initialization (ZQINIT), program to 0x5 for ZQ Latch, or program to 0x8 for ZQ Reset. Clearing to 0x0 will not trigger any ZQ command. This parameter should only be written when the ZQ_REQ_PENDING parameter is cleared to 0.",
         "access": "WR"
       }
     ],
@@ -5663,7 +5663,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Assert the DFI controller-initiated update request signal dfi_ctrlupd_req. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Assert the DFI controller-initiated update request signal dfi_ctrlupd_req. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -5671,7 +5671,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Indicator that the controller is processing a command. Evaluates all ports for outstanding transactions. Value of 1 indicates controller busy. READ-ONLY",
+        "description": "Indicator that the controller is processing a command. Evaluates all ports for outstanding transactions. Value of 1 indicates controller busy.",
         "access": "RD"
       }
     ],
@@ -5686,7 +5686,7 @@
         "bits": "28:24",
         "default": "0x00",
         "range": "0x0-0x1f",
-        "description": "Indicates that the DFI error flag has been asserted. READ-ONLY",
+        "description": "Indicates that the DFI error flag has been asserted.",
         "access": "RD"
       },
       {
@@ -5733,7 +5733,7 @@
         "bits": "19:0",
         "default": "0x00000",
         "range": "0x0-0xfffff",
-        "description": "Holds the encoded DFI error type associated with the DFI_ERROR parameter assertion. READ-ONLY",
+        "description": "Holds the encoded DFI error type associated with the DFI_ERROR parameter assertion.",
         "access": "RD"
       }
     ],
@@ -5748,7 +5748,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Status of interrupt features in the controller. READ-ONLY",
+        "description": "Status of interrupt features in the controller.",
         "access": "RD"
       }
     ],
@@ -5763,7 +5763,7 @@
         "bits": "1:0",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Status of interrupt features in the controller. READ-ONLY",
+        "description": "Status of interrupt features in the controller.",
         "access": "RD"
       }
     ],
@@ -5778,7 +5778,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Clear mask of the INT_STATUS parameter. WRITE-ONLY",
+        "description": "Clear mask of the INT_STATUS parameter.",
         "access": "WR"
       }
     ],
@@ -5793,7 +5793,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clear mask of the INT_STATUS parameter. WRITE-ONLY",
+        "description": "Clear mask of the INT_STATUS parameter.",
         "access": "WR"
       }
     ],
@@ -5838,7 +5838,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Address of command that caused an out-of-range interrupt. READ- ONLY",
+        "description": "Address of command that caused an out-of-range interrupt.",
         "access": "RD"
       }
     ],
@@ -5853,7 +5853,7 @@
         "bits": "30:24",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Type of command that caused an out-of-range interrupt. READ-ONLY",
+        "description": "Type of command that caused an out-of-range interrupt.",
         "access": "RD"
       },
       {
@@ -5861,7 +5861,7 @@
         "bits": "17:8",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Length of command that caused an out-of-range interrupt. READ-ONLY",
+        "description": "Length of command that caused an out-of-range interrupt.",
         "access": "RD"
       },
       {
@@ -5869,7 +5869,7 @@
         "bits": "1:0",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Address of command that caused an out-of-range interrupt. READ- ONLY",
+        "description": "Address of command that caused an out-of-range interrupt.",
         "access": "RD"
       }
     ],
@@ -5908,7 +5908,7 @@
         "bits": "3:0",
         "default": "0x0",
         "range": "0x0-0xf",
-        "description": "Source ID of command that caused an out-of-range interrupt. READ- ONLY",
+        "description": "Source ID of command that caused an out-of-range interrupt.",
         "access": "RD"
       }
     ],
@@ -6352,7 +6352,7 @@
         "bits": "24",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Signals that software leveling is currently in progress. Value of 1 indicates operation complete. READ-ONLY",
+        "description": "Signals that software leveling is currently in progress. Value of 1 indicates operation complete.",
         "access": "RD"
       },
       {
@@ -6360,7 +6360,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "User request to exit software leveling. Set to 1 to exit. WRITE- ONLY",
+        "description": "User request to exit software leveling. Set to 1 to exit.",
         "access": "WR"
       },
       {
@@ -6368,7 +6368,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "User request to initiate software leveling of type in the SW_LEVELING_MODE parameter. Set to 1 to trigger. WRITE-ONLY",
+        "description": "User request to initiate software leveling of type in the SW_LEVELING_MODE parameter. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -6376,7 +6376,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "User request to load delays and execute software leveling. Set to 1 to trigger. WRITE-ONLY",
+        "description": "User request to load delays and execute software leveling. Set to 1 to trigger.",
         "access": "WR"
       }
     ],
@@ -6391,7 +6391,7 @@
         "bits": "24",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Leveling response for data slice 3. READ-ONLY",
+        "description": "Leveling response for data slice 3.",
         "access": "RD"
       },
       {
@@ -6399,7 +6399,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Leveling response for data slice 2. READ-ONLY",
+        "description": "Leveling response for data slice 2.",
         "access": "RD"
       },
       {
@@ -6407,7 +6407,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Leveling response for data slice 1. READ-ONLY",
+        "description": "Leveling response for data slice 1.",
         "access": "RD"
       },
       {
@@ -6415,7 +6415,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Leveling response for data slice 0. READ-ONLY",
+        "description": "Leveling response for data slice 0.",
         "access": "RD"
       }
     ],
@@ -6446,7 +6446,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "User request to initiate write leveling. Set to 1 to trigger. WRITE- ONLY",
+        "description": "User request to initiate write leveling. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -6555,7 +6555,7 @@
         "bits": "9:8",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Holds the error associated with the write level error interrupt. Bit (0) set indicates a TDFI_WRLVL_MAX parameter violation and bit (1) set indicates a TDFI_WRLVL_RESP parameter violation. READ-ONLY",
+        "description": "Holds the error associated with the write level error interrupt. Bit (0) set indicates a TDFI_WRLVL_MAX parameter violation and bit (1) set indicates a TDFI_WRLVL_RESP parameter violation.",
         "access": "RD"
       },
       {
@@ -6755,7 +6755,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "User request to initiate gate training. Set to 1 to trigger. WRITE- ONLY",
+        "description": "User request to initiate gate training. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -6763,7 +6763,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "User request to initiate data eye training. Set to 1 to trigger. WRITE- ONLY",
+        "description": "User request to initiate data eye training. Set to 1 to trigger.",
         "access": "WR"
       }
     ],
@@ -7256,7 +7256,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "User request to initiate CA training. Set to 1 to trigger. WRITE-ONLY",
+        "description": "User request to initiate CA training. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -7646,7 +7646,7 @@
         "bits": "25:24",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Register access to cke_status signal. READ-ONLY",
+        "description": "Register access to cke_status signal.",
         "access": "RD"
       },
       {
@@ -7693,7 +7693,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Register access to mem_rst_valid signal. READ-ONLY",
+        "description": "Register access to mem_rst_valid signal.",
         "access": "RD"
       }
     ],
@@ -7724,7 +7724,7 @@
         "bits": "14:8",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Identifies the source of any DFI MC-initiated or PHY-initiated update errors. Value of 1 indicates a timing violation of the associated timing parameter. READ-ONLY",
+        "description": "Identifies the source of any DFI MC-initiated or PHY-initiated update errors. Value of 1 indicates a timing violation of the associated timing parameter.",
         "access": "RD"
       },
       {
@@ -7732,7 +7732,7 @@
         "bits": "7:0",
         "default": "Calc Value",
         "range": "0x0-0xff",
-        "description": "Holds the calculated DFI tPHY_WRLAT timing parameter (in DFI PHY clocks), the maximum cycles between a write command and a dfi_wrdata_en assertion. READ-ONLY",
+        "description": "Holds the calculated DFI tPHY_WRLAT timing parameter (in DFI PHY clocks), the maximum cycles between a write command and a dfi_wrdata_en assertion.",
         "access": "RD"
       }
     ],
@@ -7763,7 +7763,7 @@
         "bits": "15:8",
         "default": "Calc Value",
         "range": "0x0-0xff",
-        "description": "Holds the calculated DFI tRDDATA_EN timing parameter (in DFI PHY clocks), the maximum cycles between a read command and a dfi_rddata_en assertion. READ-ONLY",
+        "description": "Holds the calculated DFI tRDDATA_EN timing parameter (in DFI PHY clocks), the maximum cycles between a read command and a dfi_rddata_en assertion.",
         "access": "RD"
       },
       {
@@ -8348,7 +8348,7 @@
         "bits": "9:8",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Holds the error associated with the read gate training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved. READ-ONLY",
+        "description": "Holds the error associated with the read gate training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved.",
         "access": "RD"
       },
       {
@@ -8356,7 +8356,7 @@
         "bits": "1:0",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Holds the error associated with the data eye training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved. READ-ONLY",
+        "description": "Holds the error associated with the data eye training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved.",
         "access": "RD"
       }
     ],
@@ -8478,7 +8478,7 @@
         "bits": "19:16",
         "default": "0x0",
         "range": "0x0-0xf",
-        "description": "Holds the error associated with the CA training error interrupt. Bit (0) set indicates a TDFI_CALVL_RESP parameter violation and bit (1) set indicates a TDFI_CALVL_MAX parameter violation. READ-ONLY",
+        "description": "Holds the error associated with the CA training error interrupt. Bit (0) set indicates a TDFI_CALVL_RESP parameter violation and bit (1) set indicates a TDFI_CALVL_MAX parameter violation.",
         "access": "RD"
       },
       {
@@ -8594,7 +8594,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "User-defined input register 0. READ-ONLY",
+        "description": "User-defined input register 0.",
         "access": "RD"
       }
     ],
@@ -9071,7 +9071,7 @@
         "bits": "24",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Initiates a snapshot of the internal observation registers for slice 0. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Initiates a snapshot of the internal observation registers for slice 0. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -9348,7 +9348,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Allows the leveling state machine to advance (when in debug mode) for slice 0. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Allows the leveling state machine to advance (when in debug mode) for slice 0. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -9480,7 +9480,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 0. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 0. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -9586,7 +9586,7 @@
         "bits": "29:24",
         "default": "0x00",
         "range": "0x0-0x3f",
-        "description": "Manual reset/clear of internal logic for slice 0. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset. WRITE-ONLY",
+        "description": "Manual reset/clear of internal logic for slice 0. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset.",
         "access": "WR"
       },
       {
@@ -9617,7 +9617,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read entry FIFO pointers for slice 0. READ- ONLY",
+        "description": "Observation register for read entry FIFO pointers for slice 0.",
         "access": "RD"
       }
     ],
@@ -9632,7 +9632,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register containing loopback status/results for slice 0. READ-ONLY",
+        "description": "Observation register containing loopback status/results for slice 0.",
         "access": "RD"
       }
     ],
@@ -9647,7 +9647,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for master delay results for slice 0. READ- ONLY",
+        "description": "Observation register for master delay results for slice 0.",
         "access": "RD"
       },
       {
@@ -9655,7 +9655,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register containing total number of loopback error data for slice 0. READ-ONLY",
+        "description": "Observation register containing total number of loopback error data for slice 0.",
         "access": "RD"
       }
     ],
@@ -9670,7 +9670,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read DQS DQ falling edge adder slave delay encoded value for slice 0. READ- ONLY",
+        "description": "Observation register for read DQS DQ falling edge adder slave delay encoded value for slice 0.",
         "access": "RD"
       },
       {
@@ -9678,7 +9678,7 @@
         "bits": "23:16",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read DQS DQ rising edge adder slave delay encoded value for slice 0. READ- ONLY",
+        "description": "Observation register for read DQS DQ rising edge adder slave delay encoded value for slice 0.",
         "access": "RD"
       },
       {
@@ -9686,7 +9686,7 @@
         "bits": "14:8",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Observation register for read DQS base slave delay encoded value for slice 0. READ-ONLY",
+        "description": "Observation register for read DQS base slave delay encoded value for slice 0.",
         "access": "RD"
       },
       {
@@ -9694,7 +9694,7 @@
         "bits": "5:0",
         "default": "0x00",
         "range": "0x0-0x3f",
-        "description": "Observation register for read DQ slave delay encoded values for slice 0. READ-ONLY",
+        "description": "Observation register for read DQ slave delay encoded values for slice 0.",
         "access": "RD"
       }
     ],
@@ -9709,7 +9709,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for write DQ base slave delay encoded value for slice 0. READ-ONLY",
+        "description": "Observation register for write DQ base slave delay encoded value for slice 0.",
         "access": "RD"
       },
       {
@@ -9717,7 +9717,7 @@
         "bits": "22:16",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Observation register for write DQS base slave delay encoded value for slice 0. READ-ONLY",
+        "description": "Observation register for write DQS base slave delay encoded value for slice 0.",
         "access": "RD"
       },
       {
@@ -9725,7 +9725,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read DQS gate slave delay encoded value for slice 0. READ-ONLY",
+        "description": "Observation register for read DQS gate slave delay encoded value for slice 0.",
         "access": "RD"
       }
     ],
@@ -9740,7 +9740,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for write leveling last hard 0 DQS slave delay for slice 0. READ-ONLY",
+        "description": "Observation register for write leveling last hard 0 DQS slave delay for slice 0.",
         "access": "RD"
       },
       {
@@ -9748,7 +9748,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Observation register for automatic half cycle and cycle shift values for slice 0. READ-ONLY",
+        "description": "Observation register for automatic half cycle and cycle shift values for slice 0.",
         "access": "RD"
       },
       {
@@ -9756,7 +9756,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for write adder slave delay encoded value for slice 0. READ-ONLY",
+        "description": "Observation register for write adder slave delay encoded value for slice 0.",
         "access": "RD"
       }
     ],
@@ -9771,7 +9771,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for write leveling first hard 1 DQS slave delay for slice 0. READ-ONLY",
+        "description": "Observation register for write leveling first hard 1 DQS slave delay for slice 0.",
         "access": "RD"
       }
     ],
@@ -9786,7 +9786,7 @@
         "bits": "16:0",
         "default": "0x00000",
         "range": "0x0-0x1ffff",
-        "description": "Observation register for write leveling status for slice 0. READ- ONLY",
+        "description": "Observation register for write leveling status for slice 0.",
         "access": "RD"
       }
     ],
@@ -9801,7 +9801,7 @@
         "bits": "24:16",
         "default": "0x000",
         "range": "0x0-0x1ff",
-        "description": "Observation register for gate sample1 slave delay encoded values for slice 0. READ-ONLY",
+        "description": "Observation register for gate sample1 slave delay encoded values for slice 0.",
         "access": "RD"
       },
       {
@@ -9809,7 +9809,7 @@
         "bits": "8:0",
         "default": "0x000",
         "range": "0x0-0x1ff",
-        "description": "Observation register for gate sample1 slave delay encoded values for slice 0. READ-ONLY",
+        "description": "Observation register for gate sample1 slave delay encoded values for slice 0.",
         "access": "RD"
       }
     ],
@@ -9824,7 +9824,7 @@
         "bits": "29:16",
         "default": "0x0000",
         "range": "0x0-0x3fff",
-        "description": "Observation register for gate training first hard 0 DQS slave delay for slice 0. READ-ONLY",
+        "description": "Observation register for gate training first hard 0 DQS slave delay for slice 0.",
         "access": "RD"
       },
       {
@@ -9832,7 +9832,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register for write leveling error status for slice 0. READ-ONLY",
+        "description": "Observation register for write leveling error status for slice 0.",
         "access": "RD"
       }
     ],
@@ -9847,7 +9847,7 @@
         "bits": "27:16",
         "default": "0x000",
         "range": "0x0-0xfff",
-        "description": "Observation register for gate training status for slice 0. READ- ONLY",
+        "description": "Observation register for gate training status for slice 0.",
         "access": "RD"
       },
       {
@@ -9855,7 +9855,7 @@
         "bits": "13:0",
         "default": "0x0000",
         "range": "0x0-0x3fff",
-        "description": "Observation register for gate training last hard 1 DQS slave delay for slice 0. READ-ONLY",
+        "description": "Observation register for gate training last hard 1 DQS slave delay for slice 0.",
         "access": "RD"
       }
     ],
@@ -9870,7 +9870,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read leveling data window trailing edge slave delay setting for slice 0. READ-ONLY",
+        "description": "Observation register for read leveling data window trailing edge slave delay setting for slice 0.",
         "access": "RD"
       },
       {
@@ -9878,7 +9878,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read leveling data window leading edge slave delay setting for slice 0. READ-ONLY",
+        "description": "Observation register for read leveling data window leading edge slave delay setting for slice 0.",
         "access": "RD"
       }
     ],
@@ -9893,7 +9893,7 @@
         "bits": "1:0",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Observation register for read leveling number of windows found for slice 0. READ-ONLY",
+        "description": "Observation register for read leveling number of windows found for slice 0.",
         "access": "RD"
       }
     ],
@@ -9908,7 +9908,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for read leveling status for slice 0. READ- ONLY",
+        "description": "Observation register for read leveling status for slice 0.",
         "access": "RD"
       }
     ],
@@ -9923,7 +9923,7 @@
         "bits": "26:16",
         "default": "0x000",
         "range": "0x0-0x7ff",
-        "description": "Observation register for write data leveling data window trailing edge slave delay setting for slice 0. READ-ONLY",
+        "description": "Observation register for write data leveling data window trailing edge slave delay setting for slice 0.",
         "access": "RD"
       },
       {
@@ -9931,7 +9931,7 @@
         "bits": "10:0",
         "default": "0x000",
         "range": "0x0-0x7ff",
-        "description": "Observation register for write data leveling data window leading edge slave delay setting for slice 0. READ-ONLY",
+        "description": "Observation register for write data leveling data window leading edge slave delay setting for slice 0.",
         "access": "RD"
       }
     ],
@@ -9946,7 +9946,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for write data leveling status for slice 0. READ- ONLY",
+        "description": "Observation register for write data leveling status for slice 0.",
         "access": "RD"
       }
     ],
@@ -9976,7 +9976,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation for slice 0. READ-ONLY",
+        "description": "DDL test observation for slice 0.",
         "access": "RD"
       }
     ],
@@ -9991,7 +9991,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation delays for slice 0 master DDL. READ-ONLY",
+        "description": "DDL test observation delays for slice 0 master DDL.",
         "access": "RD"
       }
     ],
@@ -10022,7 +10022,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Manual RX Calibration start for slice 0. WRITE-ONLY",
+        "description": "Manual RX Calibration start for slice 0.",
         "access": "WR"
       }
     ],
@@ -11324,7 +11324,7 @@
         "bits": "24",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Initiates a snapshot of the internal observation registers for slice 1. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Initiates a snapshot of the internal observation registers for slice 1. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -11601,7 +11601,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Allows the leveling state machine to advance (when in debug mode) for slice 1. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Allows the leveling state machine to advance (when in debug mode) for slice 1. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -11733,7 +11733,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 1. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 1. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -11839,7 +11839,7 @@
         "bits": "29:24",
         "default": "0x00",
         "range": "0x0-0x3f",
-        "description": "Manual reset/clear of internal logic for slice 1. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset. WRITE-ONLY",
+        "description": "Manual reset/clear of internal logic for slice 1. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset.",
         "access": "WR"
       },
       {
@@ -11870,7 +11870,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read entry FIFO pointers for slice 1. READ- ONLY",
+        "description": "Observation register for read entry FIFO pointers for slice 1.",
         "access": "RD"
       }
     ],
@@ -11885,7 +11885,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register containing loopback status/results for slice 1. READ-ONLY",
+        "description": "Observation register containing loopback status/results for slice 1.",
         "access": "RD"
       }
     ],
@@ -11900,7 +11900,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for master delay results for slice 1. READ- ONLY",
+        "description": "Observation register for master delay results for slice 1.",
         "access": "RD"
       },
       {
@@ -11908,7 +11908,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register containing total number of loopback error data for slice 1. READ-ONLY",
+        "description": "Observation register containing total number of loopback error data for slice 1.",
         "access": "RD"
       }
     ],
@@ -11923,7 +11923,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read DQS DQ falling edge adder slave delay encoded value for slice 1. READ- ONLY",
+        "description": "Observation register for read DQS DQ falling edge adder slave delay encoded value for slice 1.",
         "access": "RD"
       },
       {
@@ -11931,7 +11931,7 @@
         "bits": "23:16",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read DQS DQ rising edge adder slave delay encoded value for slice 1. READ- ONLY",
+        "description": "Observation register for read DQS DQ rising edge adder slave delay encoded value for slice 1.",
         "access": "RD"
       },
       {
@@ -11939,7 +11939,7 @@
         "bits": "14:8",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Observation register for read DQS base slave delay encoded value for slice 1. READ-ONLY",
+        "description": "Observation register for read DQS base slave delay encoded value for slice 1.",
         "access": "RD"
       },
       {
@@ -11947,7 +11947,7 @@
         "bits": "5:0",
         "default": "0x00",
         "range": "0x0-0x3f",
-        "description": "Observation register for read DQ slave delay encoded values for slice 1. READ-ONLY",
+        "description": "Observation register for read DQ slave delay encoded values for slice 1.",
         "access": "RD"
       }
     ],
@@ -11962,7 +11962,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for write DQ base slave delay encoded value for slice 1. READ-ONLY",
+        "description": "Observation register for write DQ base slave delay encoded value for slice 1.",
         "access": "RD"
       },
       {
@@ -11970,7 +11970,7 @@
         "bits": "22:16",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Observation register for write DQS base slave delay encoded value for slice 1. READ-ONLY",
+        "description": "Observation register for write DQS base slave delay encoded value for slice 1.",
         "access": "RD"
       },
       {
@@ -11978,7 +11978,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read DQS gate slave delay encoded value for slice 1. READ-ONLY",
+        "description": "Observation register for read DQS gate slave delay encoded value for slice 1.",
         "access": "RD"
       }
     ],
@@ -11993,7 +11993,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for write leveling last hard 0 DQS slave delay for slice 1. READ-ONLY",
+        "description": "Observation register for write leveling last hard 0 DQS slave delay for slice 1.",
         "access": "RD"
       },
       {
@@ -12001,7 +12001,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Observation register for automatic half cycle and cycle shift values for slice 1. READ-ONLY",
+        "description": "Observation register for automatic half cycle and cycle shift values for slice 1.",
         "access": "RD"
       },
       {
@@ -12009,7 +12009,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for write adder slave delay encoded value for slice 1. READ-ONLY",
+        "description": "Observation register for write adder slave delay encoded value for slice 1.",
         "access": "RD"
       }
     ],
@@ -12024,7 +12024,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for write leveling first hard 1 DQS slave delay for slice 1. READ-ONLY",
+        "description": "Observation register for write leveling first hard 1 DQS slave delay for slice 1.",
         "access": "RD"
       }
     ],
@@ -12039,7 +12039,7 @@
         "bits": "16:0",
         "default": "0x00000",
         "range": "0x0-0x1ffff",
-        "description": "Observation register for write leveling status for slice 1. READ- ONLY",
+        "description": "Observation register for write leveling status for slice 1.",
         "access": "RD"
       }
     ],
@@ -12054,7 +12054,7 @@
         "bits": "24:16",
         "default": "0x000",
         "range": "0x0-0x1ff",
-        "description": "Observation register for gate sample1 slave delay encoded values for slice 1. READ-ONLY",
+        "description": "Observation register for gate sample1 slave delay encoded values for slice 1.",
         "access": "RD"
       },
       {
@@ -12062,7 +12062,7 @@
         "bits": "8:0",
         "default": "0x000",
         "range": "0x0-0x1ff",
-        "description": "Observation register for gate sample1 slave delay encoded values for slice 1. READ-ONLY",
+        "description": "Observation register for gate sample1 slave delay encoded values for slice 1.",
         "access": "RD"
       }
     ],
@@ -12077,7 +12077,7 @@
         "bits": "29:16",
         "default": "0x0000",
         "range": "0x0-0x3fff",
-        "description": "Observation register for gate training first hard 0 DQS slave delay for slice 1. READ-ONLY",
+        "description": "Observation register for gate training first hard 0 DQS slave delay for slice 1.",
         "access": "RD"
       },
       {
@@ -12085,7 +12085,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register for write leveling error status for slice 1. READ-ONLY",
+        "description": "Observation register for write leveling error status for slice 1.",
         "access": "RD"
       }
     ],
@@ -12100,7 +12100,7 @@
         "bits": "27:16",
         "default": "0x000",
         "range": "0x0-0xfff",
-        "description": "Observation register for gate training status for slice 1. READ- ONLY",
+        "description": "Observation register for gate training status for slice 1.",
         "access": "RD"
       },
       {
@@ -12108,7 +12108,7 @@
         "bits": "13:0",
         "default": "0x0000",
         "range": "0x0-0x3fff",
-        "description": "Observation register for gate training last hard 1 DQS slave delay for slice 1. READ-ONLY",
+        "description": "Observation register for gate training last hard 1 DQS slave delay for slice 1.",
         "access": "RD"
       }
     ],
@@ -12123,7 +12123,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read leveling data window trailing edge slave delay setting for slice 1. READ-ONLY",
+        "description": "Observation register for read leveling data window trailing edge slave delay setting for slice 1.",
         "access": "RD"
       },
       {
@@ -12131,7 +12131,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read leveling data window leading edge slave delay setting for slice 1. READ-ONLY",
+        "description": "Observation register for read leveling data window leading edge slave delay setting for slice 1.",
         "access": "RD"
       }
     ],
@@ -12146,7 +12146,7 @@
         "bits": "1:0",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Observation register for read leveling number of windows found for slice 1. READ-ONLY",
+        "description": "Observation register for read leveling number of windows found for slice 1.",
         "access": "RD"
       }
     ],
@@ -12161,7 +12161,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for read leveling status for slice 1. READ- ONLY",
+        "description": "Observation register for read leveling status for slice 1.",
         "access": "RD"
       }
     ],
@@ -12176,7 +12176,7 @@
         "bits": "26:16",
         "default": "0x000",
         "range": "0x0-0x7ff",
-        "description": "Observation register for write data leveling data window trailing edge slave delay setting for slice 1. READ-ONLY",
+        "description": "Observation register for write data leveling data window trailing edge slave delay setting for slice 1.",
         "access": "RD"
       },
       {
@@ -12184,7 +12184,7 @@
         "bits": "10:0",
         "default": "0x000",
         "range": "0x0-0x7ff",
-        "description": "Observation register for write data leveling data window leading edge slave delay setting for slice 1. READ-ONLY",
+        "description": "Observation register for write data leveling data window leading edge slave delay setting for slice 1.",
         "access": "RD"
       }
     ],
@@ -12199,7 +12199,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for write data leveling status for slice 1. READ- ONLY",
+        "description": "Observation register for write data leveling status for slice 1.",
         "access": "RD"
       }
     ],
@@ -12229,7 +12229,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation for slice 1. READ-ONLY",
+        "description": "DDL test observation for slice 1.",
         "access": "RD"
       }
     ],
@@ -12244,7 +12244,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation delays for slice 1 master DDL. READ-ONLY",
+        "description": "DDL test observation delays for slice 1 master DDL.",
         "access": "RD"
       }
     ],
@@ -12275,7 +12275,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Manual RX Calibration start for slice 1. WRITE-ONLY",
+        "description": "Manual RX Calibration start for slice 1.",
         "access": "WR"
       }
     ],
@@ -13577,7 +13577,7 @@
         "bits": "24",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Initiates a snapshot of the internal observation registers for slice 2. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Initiates a snapshot of the internal observation registers for slice 2. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -13854,7 +13854,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Allows the leveling state machine to advance (when in debug mode) for slice 2. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Allows the leveling state machine to advance (when in debug mode) for slice 2. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -13986,7 +13986,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 2. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 2. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -14092,7 +14092,7 @@
         "bits": "29:24",
         "default": "0x00",
         "range": "0x0-0x3f",
-        "description": "Manual reset/clear of internal logic for slice 2. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset. WRITE-ONLY",
+        "description": "Manual reset/clear of internal logic for slice 2. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset.",
         "access": "WR"
       },
       {
@@ -14123,7 +14123,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read entry FIFO pointers for slice 2. READ- ONLY",
+        "description": "Observation register for read entry FIFO pointers for slice 2.",
         "access": "RD"
       }
     ],
@@ -14138,7 +14138,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register containing loopback status/results for slice 2. READ-ONLY",
+        "description": "Observation register containing loopback status/results for slice 2.",
         "access": "RD"
       }
     ],
@@ -14153,7 +14153,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for master delay results for slice 2. READ- ONLY",
+        "description": "Observation register for master delay results for slice 2.",
         "access": "RD"
       },
       {
@@ -14161,7 +14161,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register containing total number of loopback error data for slice 2. READ-ONLY",
+        "description": "Observation register containing total number of loopback error data for slice 2.",
         "access": "RD"
       }
     ],
@@ -14176,7 +14176,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read DQS DQ falling edge adder slave delay encoded value for slice 2. READ- ONLY",
+        "description": "Observation register for read DQS DQ falling edge adder slave delay encoded value for slice 2.",
         "access": "RD"
       },
       {
@@ -14184,7 +14184,7 @@
         "bits": "23:16",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read DQS DQ rising edge adder slave delay encoded value for slice 2. READ- ONLY",
+        "description": "Observation register for read DQS DQ rising edge adder slave delay encoded value for slice 2.",
         "access": "RD"
       },
       {
@@ -14192,7 +14192,7 @@
         "bits": "14:8",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Observation register for read DQS base slave delay encoded value for slice 2. READ-ONLY",
+        "description": "Observation register for read DQS base slave delay encoded value for slice 2.",
         "access": "RD"
       },
       {
@@ -14200,7 +14200,7 @@
         "bits": "5:0",
         "default": "0x00",
         "range": "0x0-0x3f",
-        "description": "Observation register for read DQ slave delay encoded values for slice 2. READ-ONLY",
+        "description": "Observation register for read DQ slave delay encoded values for slice 2.",
         "access": "RD"
       }
     ],
@@ -14215,7 +14215,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for write DQ base slave delay encoded value for slice 2. READ-ONLY",
+        "description": "Observation register for write DQ base slave delay encoded value for slice 2.",
         "access": "RD"
       },
       {
@@ -14223,7 +14223,7 @@
         "bits": "22:16",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Observation register for write DQS base slave delay encoded value for slice 2. READ-ONLY",
+        "description": "Observation register for write DQS base slave delay encoded value for slice 2.",
         "access": "RD"
       },
       {
@@ -14231,7 +14231,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read DQS gate slave delay encoded value for slice 2. READ-ONLY",
+        "description": "Observation register for read DQS gate slave delay encoded value for slice 2.",
         "access": "RD"
       }
     ],
@@ -14246,7 +14246,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for write leveling last hard 0 DQS slave delay for slice 2. READ-ONLY",
+        "description": "Observation register for write leveling last hard 0 DQS slave delay for slice 2.",
         "access": "RD"
       },
       {
@@ -14254,7 +14254,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Observation register for automatic half cycle and cycle shift values for slice 2. READ-ONLY",
+        "description": "Observation register for automatic half cycle and cycle shift values for slice 2.",
         "access": "RD"
       },
       {
@@ -14262,7 +14262,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for write adder slave delay encoded value for slice 2. READ-ONLY",
+        "description": "Observation register for write adder slave delay encoded value for slice 2.",
         "access": "RD"
       }
     ],
@@ -14277,7 +14277,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for write leveling first hard 1 DQS slave delay for slice 2. READ-ONLY",
+        "description": "Observation register for write leveling first hard 1 DQS slave delay for slice 2.",
         "access": "RD"
       }
     ],
@@ -14292,7 +14292,7 @@
         "bits": "16:0",
         "default": "0x00000",
         "range": "0x0-0x1ffff",
-        "description": "Observation register for write leveling status for slice 2. READ- ONLY",
+        "description": "Observation register for write leveling status for slice 2.",
         "access": "RD"
       }
     ],
@@ -14307,7 +14307,7 @@
         "bits": "24:16",
         "default": "0x000",
         "range": "0x0-0x1ff",
-        "description": "Observation register for gate sample1 slave delay encoded values for slice 2. READ-ONLY",
+        "description": "Observation register for gate sample1 slave delay encoded values for slice 2.",
         "access": "RD"
       },
       {
@@ -14315,7 +14315,7 @@
         "bits": "8:0",
         "default": "0x000",
         "range": "0x0-0x1ff",
-        "description": "Observation register for gate sample1 slave delay encoded values for slice 2. READ-ONLY",
+        "description": "Observation register for gate sample1 slave delay encoded values for slice 2.",
         "access": "RD"
       }
     ],
@@ -14330,7 +14330,7 @@
         "bits": "29:16",
         "default": "0x0000",
         "range": "0x0-0x3fff",
-        "description": "Observation register for gate training first hard 0 DQS slave delay for slice 2. READ-ONLY",
+        "description": "Observation register for gate training first hard 0 DQS slave delay for slice 2.",
         "access": "RD"
       },
       {
@@ -14338,7 +14338,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register for write leveling error status for slice 2. READ-ONLY",
+        "description": "Observation register for write leveling error status for slice 2.",
         "access": "RD"
       }
     ],
@@ -14353,7 +14353,7 @@
         "bits": "27:16",
         "default": "0x000",
         "range": "0x0-0xfff",
-        "description": "Observation register for gate training status for slice 2. READ- ONLY",
+        "description": "Observation register for gate training status for slice 2.",
         "access": "RD"
       },
       {
@@ -14361,7 +14361,7 @@
         "bits": "13:0",
         "default": "0x0000",
         "range": "0x0-0x3fff",
-        "description": "Observation register for gate training last hard 1 DQS slave delay for slice 2. READ-ONLY",
+        "description": "Observation register for gate training last hard 1 DQS slave delay for slice 2.",
         "access": "RD"
       }
     ],
@@ -14376,7 +14376,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read leveling data window trailing edge slave delay setting for slice 2. READ-ONLY",
+        "description": "Observation register for read leveling data window trailing edge slave delay setting for slice 2.",
         "access": "RD"
       },
       {
@@ -14384,7 +14384,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read leveling data window leading edge slave delay setting for slice 2. READ-ONLY",
+        "description": "Observation register for read leveling data window leading edge slave delay setting for slice 2.",
         "access": "RD"
       }
     ],
@@ -14399,7 +14399,7 @@
         "bits": "1:0",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Observation register for read leveling number of windows found for slice 2. READ-ONLY",
+        "description": "Observation register for read leveling number of windows found for slice 2.",
         "access": "RD"
       }
     ],
@@ -14414,7 +14414,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for read leveling status for slice 2. READ- ONLY",
+        "description": "Observation register for read leveling status for slice 2.",
         "access": "RD"
       }
     ],
@@ -14429,7 +14429,7 @@
         "bits": "26:16",
         "default": "0x000",
         "range": "0x0-0x7ff",
-        "description": "Observation register for write data leveling data window trailing edge slave delay setting for slice 2. READ-ONLY",
+        "description": "Observation register for write data leveling data window trailing edge slave delay setting for slice 2.",
         "access": "RD"
       },
       {
@@ -14437,7 +14437,7 @@
         "bits": "10:0",
         "default": "0x000",
         "range": "0x0-0x7ff",
-        "description": "Observation register for write data leveling data window leading edge slave delay setting for slice 2. READ-ONLY",
+        "description": "Observation register for write data leveling data window leading edge slave delay setting for slice 2.",
         "access": "RD"
       }
     ],
@@ -14452,7 +14452,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for write data leveling status for slice 2. READ- ONLY",
+        "description": "Observation register for write data leveling status for slice 2.",
         "access": "RD"
       }
     ],
@@ -14482,7 +14482,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation for slice 2. READ-ONLY",
+        "description": "DDL test observation for slice 2.",
         "access": "RD"
       }
     ],
@@ -14497,7 +14497,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation delays for slice 2 master DDL. READ-ONLY",
+        "description": "DDL test observation delays for slice 2 master DDL.",
         "access": "RD"
       }
     ],
@@ -14528,7 +14528,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Manual RX Calibration start for slice 2. WRITE-ONLY",
+        "description": "Manual RX Calibration start for slice 2.",
         "access": "WR"
       }
     ],
@@ -15830,7 +15830,7 @@
         "bits": "24",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Initiates a snapshot of the internal observation registers for slice 3. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Initiates a snapshot of the internal observation registers for slice 3. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -16107,7 +16107,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Allows the leveling state machine to advance (when in debug mode) for slice 3. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Allows the leveling state machine to advance (when in debug mode) for slice 3. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -16239,7 +16239,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 3. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 3. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -16345,7 +16345,7 @@
         "bits": "29:24",
         "default": "0x00",
         "range": "0x0-0x3f",
-        "description": "Manual reset/clear of internal logic for slice 3. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset. WRITE-ONLY",
+        "description": "Manual reset/clear of internal logic for slice 3. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset.",
         "access": "WR"
       },
       {
@@ -16376,7 +16376,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read entry FIFO pointers for slice 3. READ- ONLY",
+        "description": "Observation register for read entry FIFO pointers for slice 3.",
         "access": "RD"
       }
     ],
@@ -16391,7 +16391,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register containing loopback status/results for slice 3. READ-ONLY",
+        "description": "Observation register containing loopback status/results for slice 3.",
         "access": "RD"
       }
     ],
@@ -16406,7 +16406,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for master delay results for slice 3. READ- ONLY",
+        "description": "Observation register for master delay results for slice 3.",
         "access": "RD"
       },
       {
@@ -16414,7 +16414,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register containing total number of loopback error data for slice 3. READ-ONLY",
+        "description": "Observation register containing total number of loopback error data for slice 3.",
         "access": "RD"
       }
     ],
@@ -16429,7 +16429,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read DQS DQ falling edge adder slave delay encoded value for slice 3. READ- ONLY",
+        "description": "Observation register for read DQS DQ falling edge adder slave delay encoded value for slice 3.",
         "access": "RD"
       },
       {
@@ -16437,7 +16437,7 @@
         "bits": "23:16",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for read DQS DQ rising edge adder slave delay encoded value for slice 3. READ- ONLY",
+        "description": "Observation register for read DQS DQ rising edge adder slave delay encoded value for slice 3.",
         "access": "RD"
       },
       {
@@ -16445,7 +16445,7 @@
         "bits": "14:8",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Observation register for read DQS base slave delay encoded value for slice 3. READ-ONLY",
+        "description": "Observation register for read DQS base slave delay encoded value for slice 3.",
         "access": "RD"
       },
       {
@@ -16453,7 +16453,7 @@
         "bits": "5:0",
         "default": "0x00",
         "range": "0x0-0x3f",
-        "description": "Observation register for read DQ slave delay encoded values for slice 3. READ-ONLY",
+        "description": "Observation register for read DQ slave delay encoded values for slice 3.",
         "access": "RD"
       }
     ],
@@ -16468,7 +16468,7 @@
         "bits": "31:24",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for write DQ base slave delay encoded value for slice 3. READ-ONLY",
+        "description": "Observation register for write DQ base slave delay encoded value for slice 3.",
         "access": "RD"
       },
       {
@@ -16476,7 +16476,7 @@
         "bits": "22:16",
         "default": "0x00",
         "range": "0x0-0x7f",
-        "description": "Observation register for write DQS base slave delay encoded value for slice 3. READ-ONLY",
+        "description": "Observation register for write DQS base slave delay encoded value for slice 3.",
         "access": "RD"
       },
       {
@@ -16484,7 +16484,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read DQS gate slave delay encoded value for slice 3. READ-ONLY",
+        "description": "Observation register for read DQS gate slave delay encoded value for slice 3.",
         "access": "RD"
       }
     ],
@@ -16499,7 +16499,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for write leveling last hard 0 DQS slave delay for slice 3. READ-ONLY",
+        "description": "Observation register for write leveling last hard 0 DQS slave delay for slice 3.",
         "access": "RD"
       },
       {
@@ -16507,7 +16507,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Observation register for automatic half cycle and cycle shift values for slice 3. READ-ONLY",
+        "description": "Observation register for automatic half cycle and cycle shift values for slice 3.",
         "access": "RD"
       },
       {
@@ -16515,7 +16515,7 @@
         "bits": "7:0",
         "default": "0x00",
         "range": "0x0-0xff",
-        "description": "Observation register for write adder slave delay encoded value for slice 3. READ-ONLY",
+        "description": "Observation register for write adder slave delay encoded value for slice 3.",
         "access": "RD"
       }
     ],
@@ -16530,7 +16530,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for write leveling first hard 1 DQS slave delay for slice 3. READ-ONLY",
+        "description": "Observation register for write leveling first hard 1 DQS slave delay for slice 3.",
         "access": "RD"
       }
     ],
@@ -16545,7 +16545,7 @@
         "bits": "16:0",
         "default": "0x00000",
         "range": "0x0-0x1ffff",
-        "description": "Observation register for write leveling status for slice 3. READ- ONLY",
+        "description": "Observation register for write leveling status for slice 3.",
         "access": "RD"
       }
     ],
@@ -16560,7 +16560,7 @@
         "bits": "24:16",
         "default": "0x000",
         "range": "0x0-0x1ff",
-        "description": "Observation register for gate sample1 slave delay encoded values for slice 3. READ-ONLY",
+        "description": "Observation register for gate sample1 slave delay encoded values for slice 3.",
         "access": "RD"
       },
       {
@@ -16568,7 +16568,7 @@
         "bits": "8:0",
         "default": "0x000",
         "range": "0x0-0x1ff",
-        "description": "Observation register for gate sample1 slave delay encoded values for slice 3. READ-ONLY",
+        "description": "Observation register for gate sample1 slave delay encoded values for slice 3.",
         "access": "RD"
       }
     ],
@@ -16583,7 +16583,7 @@
         "bits": "29:16",
         "default": "0x0000",
         "range": "0x0-0x3fff",
-        "description": "Observation register for gate training first hard 0 DQS slave delay for slice 3. READ-ONLY",
+        "description": "Observation register for gate training first hard 0 DQS slave delay for slice 3.",
         "access": "RD"
       },
       {
@@ -16591,7 +16591,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register for write leveling error status for slice 3. READ-ONLY",
+        "description": "Observation register for write leveling error status for slice 3.",
         "access": "RD"
       }
     ],
@@ -16606,7 +16606,7 @@
         "bits": "27:16",
         "default": "0x000",
         "range": "0x0-0xfff",
-        "description": "Observation register for gate training status for slice 3. READ- ONLY",
+        "description": "Observation register for gate training status for slice 3.",
         "access": "RD"
       },
       {
@@ -16614,7 +16614,7 @@
         "bits": "13:0",
         "default": "0x0000",
         "range": "0x0-0x3fff",
-        "description": "Observation register for gate training last hard 1 DQS slave delay for slice 3. READ-ONLY",
+        "description": "Observation register for gate training last hard 1 DQS slave delay for slice 3.",
         "access": "RD"
       }
     ],
@@ -16629,7 +16629,7 @@
         "bits": "25:16",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read leveling data window trailing edge slave delay setting for slice 3. READ-ONLY",
+        "description": "Observation register for read leveling data window trailing edge slave delay setting for slice 3.",
         "access": "RD"
       },
       {
@@ -16637,7 +16637,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for read leveling data window leading edge slave delay setting for slice 3. READ-ONLY",
+        "description": "Observation register for read leveling data window leading edge slave delay setting for slice 3.",
         "access": "RD"
       }
     ],
@@ -16652,7 +16652,7 @@
         "bits": "1:0",
         "default": "0x0",
         "range": "0x0-0x3",
-        "description": "Observation register for read leveling number of windows found for slice 3. READ-ONLY",
+        "description": "Observation register for read leveling number of windows found for slice 3.",
         "access": "RD"
       }
     ],
@@ -16667,7 +16667,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for read leveling status for slice 3. READ- ONLY",
+        "description": "Observation register for read leveling status for slice 3.",
         "access": "RD"
       }
     ],
@@ -16682,7 +16682,7 @@
         "bits": "26:16",
         "default": "0x000",
         "range": "0x0-0x7ff",
-        "description": "Observation register for write data leveling data window trailing edge slave delay setting for slice 3. READ-ONLY",
+        "description": "Observation register for write data leveling data window trailing edge slave delay setting for slice 3.",
         "access": "RD"
       },
       {
@@ -16690,7 +16690,7 @@
         "bits": "10:0",
         "default": "0x000",
         "range": "0x0-0x7ff",
-        "description": "Observation register for write data leveling data window leading edge slave delay setting for slice 3. READ-ONLY",
+        "description": "Observation register for write data leveling data window leading edge slave delay setting for slice 3.",
         "access": "RD"
       }
     ],
@@ -16705,7 +16705,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for write data leveling status for slice 3. READ- ONLY",
+        "description": "Observation register for write data leveling status for slice 3.",
         "access": "RD"
       }
     ],
@@ -16735,7 +16735,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation for slice 3. READ-ONLY",
+        "description": "DDL test observation for slice 3.",
         "access": "RD"
       }
     ],
@@ -16750,7 +16750,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation delays for slice 3 master DDL. READ-ONLY",
+        "description": "DDL test observation delays for slice 3 master DDL.",
         "access": "RD"
       }
     ],
@@ -16781,7 +16781,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Manual RX Calibration start for slice 3. WRITE-ONLY",
+        "description": "Manual RX Calibration start for slice 3.",
         "access": "WR"
       }
     ],
@@ -17820,7 +17820,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Manual reset/clear of internal logic for address slice 0. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset. WRITE-ONLY",
+        "description": "Manual reset/clear of internal logic for address slice 0. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset.",
         "access": "WR"
       },
       {
@@ -17843,7 +17843,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register containing loopback status/results for address slice 0. READ-ONLY",
+        "description": "Observation register containing loopback status/results for address slice 0.",
         "access": "RD"
       }
     ],
@@ -17866,7 +17866,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register containing total number of loopback error data for address slice 0. READ-ONLY",
+        "description": "Observation register containing total number of loopback error data for address slice 0.",
         "access": "RD"
       }
     ],
@@ -17897,7 +17897,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for master delay results for address slice 0. READ-ONLY",
+        "description": "Observation register for master delay results for address slice 0.",
         "access": "RD"
       }
     ],
@@ -17936,7 +17936,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Initiates a snapshot of the internal observation registers for address slice 0. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Initiates a snapshot of the internal observation registers for address slice 0. Set to 1 to trigger.",
         "access": "WR"
       }
     ],
@@ -17959,7 +17959,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Observation register for automatic half cycle and cycle shift values for address slice 0. READ-ONLY",
+        "description": "Observation register for automatic half cycle and cycle shift values for address slice 0.",
         "access": "RD"
       },
       {
@@ -17997,7 +17997,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation for address slice 0. READ-ONLY",
+        "description": "DDL test observation for address slice 0.",
         "access": "RD"
       }
     ],
@@ -18012,7 +18012,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation delays for address slice 0 master DDL. READ-ONLY",
+        "description": "DDL test observation delays for address slice 0 master DDL.",
         "access": "RD"
       }
     ],
@@ -18180,7 +18180,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clears the CA training state machine error status for address slice 0. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Clears the CA training state machine error status for address slice 0. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -18188,7 +18188,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Allows the CA training state machine to advance (when in debug mode) for address slice 0. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Allows the CA training state machine to advance (when in debug mode) for address slice 0. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -18211,7 +18211,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for CA training for slice 0. READ-ONLY",
+        "description": "Observation register for CA training for slice 0.",
         "access": "RD"
       }
     ],
@@ -18226,7 +18226,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for CA training for slice 0. READ-ONLY",
+        "description": "Observation register for CA training for slice 0.",
         "access": "RD"
       }
     ],
@@ -18638,7 +18638,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Manual reset/clear of internal logic for address slice 1. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset. WRITE-ONLY",
+        "description": "Manual reset/clear of internal logic for address slice 1. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset.",
         "access": "WR"
       },
       {
@@ -18661,7 +18661,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register containing loopback status/results for address slice 1. READ-ONLY",
+        "description": "Observation register containing loopback status/results for address slice 1.",
         "access": "RD"
       }
     ],
@@ -18684,7 +18684,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register containing total number of loopback error data for address slice 1. READ-ONLY",
+        "description": "Observation register containing total number of loopback error data for address slice 1.",
         "access": "RD"
       }
     ],
@@ -18715,7 +18715,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for master delay results for address slice 1. READ-ONLY",
+        "description": "Observation register for master delay results for address slice 1.",
         "access": "RD"
       }
     ],
@@ -18754,7 +18754,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Initiates a snapshot of the internal observation registers for address slice 1. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Initiates a snapshot of the internal observation registers for address slice 1. Set to 1 to trigger.",
         "access": "WR"
       }
     ],
@@ -18777,7 +18777,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Observation register for automatic half cycle and cycle shift values for address slice 1. READ-ONLY",
+        "description": "Observation register for automatic half cycle and cycle shift values for address slice 1.",
         "access": "RD"
       },
       {
@@ -18815,7 +18815,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation for address slice 1. READ-ONLY",
+        "description": "DDL test observation for address slice 1.",
         "access": "RD"
       }
     ],
@@ -18830,7 +18830,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation delays for address slice 1 master DDL. READ-ONLY",
+        "description": "DDL test observation delays for address slice 1 master DDL.",
         "access": "RD"
       }
     ],
@@ -18998,7 +18998,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clears the CA training state machine error status for address slice 1. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Clears the CA training state machine error status for address slice 1. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -19006,7 +19006,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Allows the CA training state machine to advance (when in debug mode) for address slice 1. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Allows the CA training state machine to advance (when in debug mode) for address slice 1. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -19029,7 +19029,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for CA training for slice 1. READ-ONLY",
+        "description": "Observation register for CA training for slice 1.",
         "access": "RD"
       }
     ],
@@ -19044,7 +19044,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for CA training for slice 1. READ-ONLY",
+        "description": "Observation register for CA training for slice 1.",
         "access": "RD"
       }
     ],
@@ -19456,7 +19456,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Manual reset/clear of internal logic for address slice 2. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset. WRITE-ONLY",
+        "description": "Manual reset/clear of internal logic for address slice 2. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset.",
         "access": "WR"
       },
       {
@@ -19479,7 +19479,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register containing loopback status/results for address slice 2. READ-ONLY",
+        "description": "Observation register containing loopback status/results for address slice 2.",
         "access": "RD"
       }
     ],
@@ -19502,7 +19502,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register containing total number of loopback error data for address slice 2. READ-ONLY",
+        "description": "Observation register containing total number of loopback error data for address slice 2.",
         "access": "RD"
       }
     ],
@@ -19533,7 +19533,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for master delay results for address slice 2. READ-ONLY",
+        "description": "Observation register for master delay results for address slice 2.",
         "access": "RD"
       }
     ],
@@ -19572,7 +19572,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Initiates a snapshot of the internal observation registers for address slice 2. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Initiates a snapshot of the internal observation registers for address slice 2. Set to 1 to trigger.",
         "access": "WR"
       }
     ],
@@ -19595,7 +19595,7 @@
         "bits": "10:8",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Observation register for automatic half cycle and cycle shift values for address slice 2. READ-ONLY",
+        "description": "Observation register for automatic half cycle and cycle shift values for address slice 2.",
         "access": "RD"
       },
       {
@@ -19633,7 +19633,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation for address slice 2. READ-ONLY",
+        "description": "DDL test observation for address slice 2.",
         "access": "RD"
       }
     ],
@@ -19648,7 +19648,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "DDL test observation delays for address slice 2 master DDL. READ-ONLY",
+        "description": "DDL test observation delays for address slice 2 master DDL.",
         "access": "RD"
       }
     ],
@@ -19816,7 +19816,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clears the CA training state machine error status for address slice 2. Set to 1 to trigger. WRITE- ONLY",
+        "description": "Clears the CA training state machine error status for address slice 2. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -19824,7 +19824,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Allows the CA training state machine to advance (when in debug mode) for address slice 2. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Allows the CA training state machine to advance (when in debug mode) for address slice 2. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -19847,7 +19847,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for CA training for slice 2. READ-ONLY",
+        "description": "Observation register for CA training for slice 2.",
         "access": "RD"
       }
     ],
@@ -19862,7 +19862,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for CA training for slice 2. READ-ONLY",
+        "description": "Observation register for CA training for slice 2.",
         "access": "RD"
       }
     ],
@@ -20282,7 +20282,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Manual update of all slave delay line settings. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Manual update of all slave delay line settings. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -20398,7 +20398,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clears the CS training state machine error status. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Clears the CS training state machine error status. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -20406,7 +20406,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Allows the CS training state machine to advance (when in debug mode). Set to 1 to trigger. WRITE-ONLY",
+        "description": "Allows the CS training state machine to advance (when in debug mode). Set to 1 to trigger.",
         "access": "WR"
       }
     ],
@@ -20421,7 +20421,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for CS training. READ-ONLY",
+        "description": "Observation register for CS training.",
         "access": "RD"
       }
     ],
@@ -20436,7 +20436,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for CS training. READ-ONLY",
+        "description": "Observation register for CS training.",
         "access": "RD"
       }
     ],
@@ -20490,7 +20490,7 @@
         "bits": "18:16",
         "default": "0x0",
         "range": "0x0-0x7",
-        "description": "Observation register for the address/control group automatic half cycle and cycle shift values. READ-ONLY",
+        "description": "Observation register for the address/control group automatic half cycle and cycle shift values.",
         "access": "RD"
       },
       {
@@ -20498,7 +20498,7 @@
         "bits": "9:0",
         "default": "0x000",
         "range": "0x0-0x3ff",
-        "description": "Observation register for all address/control group slice slave delay encoded values. READ- ONLY",
+        "description": "Observation register for all address/control group slice slave delay encoded values.",
         "access": "RD"
       }
     ],
@@ -20537,7 +20537,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Initiates a snapshot of the internal observation registers for the address/control block. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Initiates a snapshot of the internal observation registers for the address/control block. Set to 1 to trigger.",
         "access": "WR"
       }
     ],
@@ -20844,7 +20844,7 @@
         "bits": "31:16",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "PHY clock PLL_0 observe values. READ-ONLY",
+        "description": "PHY clock PLL_0 observe values.",
         "access": "RD"
       },
       {
@@ -20867,7 +20867,7 @@
         "bits": "31:16",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "PHY clock PLL_2 observe values. READ-ONLY",
+        "description": "PHY clock PLL_2 observe values.",
         "access": "RD"
       },
       {
@@ -20875,7 +20875,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "PHY clock PLL_1 observe values. READ-ONLY",
+        "description": "PHY clock PLL_1 observe values.",
         "access": "RD"
       }
     ],
@@ -20906,7 +20906,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "PHY TOP level clock PLL_3 observe values. READ-ONLY",
+        "description": "PHY TOP level clock PLL_3 observe values.",
         "access": "RD"
       }
     ],
@@ -21291,7 +21291,7 @@
         "bits": "8",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Manual start for the pad calibration state machine for block 0. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Manual start for the pad calibration state machine for block 0. Set to 1 to trigger.",
         "access": "WR"
       },
       {
@@ -21299,7 +21299,7 @@
         "bits": "0",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Clear the pad calibration state machine and results for block 0. Set to 1 to trigger. WRITE-ONLY",
+        "description": "Clear the pad calibration state machine and results for block 0. Set to 1 to trigger.",
         "access": "WR"
       }
     ],
@@ -21352,7 +21352,7 @@
         "bits": "23:0",
         "default": "0x000000",
         "range": "0x0-0xffffff",
-        "description": "Pad calibration results observation values for block 0. READ-ONLY",
+        "description": "Pad calibration results observation values for block 0.",
         "access": "RD"
       }
     ],
@@ -21367,7 +21367,7 @@
         "bits": "23:0",
         "default": "0x000000",
         "range": "0x0-0xffffff",
-        "description": "Pad calibration results (CKE/ RESET_N) observation values for block 0. READ-ONLY",
+        "description": "Pad calibration results (CKE/ RESET_N) observation values for block 0.",
         "access": "RD"
       }
     ],
@@ -21382,7 +21382,7 @@
         "bits": "24",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Address/control loopback error clear. Set to 1 to clear error. WRITE-ONLY",
+        "description": "Address/control loopback error clear. Set to 1 to clear error.",
         "access": "WR"
       },
       {
@@ -21390,7 +21390,7 @@
         "bits": "16",
         "default": "0x0",
         "range": "0x0-0x1",
-        "description": "Address/control manual update of slave delay lines. Set to 1 to update. WRITE-ONLY",
+        "description": "Address/control manual update of slave delay lines. Set to 1 to update.",
         "access": "WR"
       },
       {
@@ -21444,7 +21444,7 @@
         "bits": "31:0",
         "default": "0x00000000",
         "range": "0x0-0xffffffff",
-        "description": "Observation register for the address/control slices. READ- ONLY",
+        "description": "Observation register for the address/control slices.",
         "access": "RD"
       }
     ],
@@ -21506,7 +21506,7 @@
         "bits": "15:0",
         "default": "0x0000",
         "range": "0x0-0xffff",
-        "description": "Observation register for mem clk blocks. READ-ONLY",
+        "description": "Observation register for mem clk blocks.",
         "access": "RD"
       }
     ],
@@ -21598,7 +21598,7 @@
         "bits": "19:16",
         "default": "0x0",
         "range": "0x0-0xf",
-        "description": "Observation register for dfi_init_complete for data slice. Bit0 is for data_slice0; bit1 is for data_slice 1,... READ-ONLY",
+        "description": "Observation register for dfi_init_complete for data slice. Bit0 is for data_slice0; bit1 is for data_slice 1,...",
         "access": "RD"
       },
       {
@@ -21606,7 +21606,7 @@
         "bits": "11:0",
         "default": "0x000",
         "range": "0x0-0xfff",
-        "description": "Observation register for dfi_init_complete for adr and ac slice. Bit 0 is for dfi_init_complete for all slices. Bit(7:4) is for adr slice, bit4 is adr_slice0..., if the adr slice number is 3, bit7 is 0. Bit8 is for ac_slice0; bit9 is for ac_slice 1,... READ-ONLY",
+        "description": "Observation register for dfi_init_complete for adr and ac slice. Bit 0 is for dfi_init_complete for all slices. Bit(7:4) is for adr slice, bit4 is adr_slice0..., if the adr slice number is 3, bit7 is 0. Bit8 is for ac_slice0; bit9 is for ac_slice 1,...",
         "access": "RD"
       }
     ],

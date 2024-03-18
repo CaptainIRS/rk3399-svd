@@ -33309,7 +33309,7 @@
         "description": "Error logger mode selection"
       }
     ],
-    "name": "SLV_ERRLOG",
+    "name": "ERR_LOGGER_SLV",
     "summary": [
       {
         "name": "ERRLOG_Id_CoreId",
@@ -33700,7 +33700,7 @@
         "description": "Error logger mode selection"
       }
     ],
-    "name": "MSCH_ERRLOG",
+    "name": "ERR_LOGGER_MSCH",
     "summary": [
       {
         "name": "ERRLOG_Id_CoreId",
@@ -34985,42 +34985,42 @@
             "bit_range": "5",
             "attr": "RW",
             "reset": "0x0",
-            "description": "Imprecise error indicator for master interface\n5\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
+            "description": "Imprecise error indicator for master interface 5\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
           },
           {
             "name": "IMPRECISE_ERR_MST4",
             "bit_range": "4",
             "attr": "RW",
             "reset": "0x0",
-            "description": "Imprecise error indicator for master interface\n4\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
+            "description": "Imprecise error indicator for master interface 4\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
           },
           {
             "name": "IMPRECISE_ERR_MST3",
             "bit_range": "3",
             "attr": "RW",
             "reset": "0x0",
-            "description": "Imprecise error indicator for master interface\n3\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
+            "description": "Imprecise error indicator for master interface 3\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
           },
           {
             "name": "IMPRECISE_ERR_MST2",
             "bit_range": "2",
             "attr": "RW",
             "reset": "0x0",
-            "description": "Imprecise error indicator for master interface\n2\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
+            "description": "Imprecise error indicator for master interface 2\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
           },
           {
             "name": "IMPRECISE_ERR_MST1",
             "bit_range": "1",
             "attr": "RW",
             "reset": "0x0",
-            "description": "Imprecise error indicator for master interface\n1\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
+            "description": "Imprecise error indicator for master interface 1\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
           },
           {
             "name": "IMPRECISE_ERR_MST0",
             "bit_range": "0",
             "attr": "RW",
             "reset": "0x0",
-            "description": "Imprecise error indicator for master interface\n0\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
+            "description": "Imprecise error indicator for master interface 0\n0:  No error from the time this bit was last\nreset.\n1:  An error response has been received, but\nnot signalled precisely."
           }
         ],
         "description": "Imprecise Error Register"
@@ -42166,7 +42166,7 @@
         "description": "DDR PHY Independent Register 199"
       }
     ],
-    "name": "PI",
+    "name": "DDR_PI",
     "summary": [
       {
         "name": "PI_REG_0",
@@ -43877,7 +43877,7 @@
         "description": "DDR Controller LP Interface Status Register 2"
       }
     ],
-    "name": "CIC",
+    "name": "DDR_CIC",
     "summary": [
       {
         "name": "CIC_CTRL0",
@@ -44204,7 +44204,7 @@
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
-            "description": "DFI active command number in the statistics range of the channel\n0"
+            "description": "DFI active command number in the statistics range of the channel 0"
           }
         ],
         "description": "Channel 0 DFI Active Command Number"
@@ -44289,7 +44289,7 @@
             "bit_range": "31:0",
             "attr": "RO",
             "reset": "0x00000000",
-            "description": "DFI active command number in the statistics range of the channel\n1"
+            "description": "DFI active command number in the statistics range of the channel 1"
           }
         ],
         "description": "Channel 1 DFI Active Command Number"
@@ -44680,7 +44680,7 @@
         "description": "DDR Channel 1 Controller Interface Address FIFO3"
       }
     ],
-    "name": "DDRMON",
+    "name": "DDR_MON",
     "summary": [
       {
         "name": "DDRMON_IP_VERSION",

@@ -3383,7 +3383,7 @@
             "bit_range": "18",
             "attr": "RW",
             "reset": "0x1",
-            "description": "DELAYP1TRANS\nDelay PHY power change from P0 to P1/P2/P3 when link state\nchanging from U0 to U1/U2/U3 respectively.\n1'b1: When entering U1/U2/U3, delay the transition to P1/P2/P3\nuntil the pipe3 signals, Pipe3_RxElecIlde is 1 and pipe3_RxValid is\n0\n1'b0: When entering U1/U2/U3, transition to P1/P2/P3 without\nchecking for Pipe3_RxElecIlde and pipe3_RxValid."
+            "description": "DELAYP1TRANS\nDelay PHY power change from P0 to P1/P2/P3 when link state\nchanging from U0 to U1/U2/U3 respectively.\n1'b1: When entering U1/U2/U3, delay the transition to P1/P2/P3\nuntil the pipe3 signals, Pipe3_RxElecIlde is 1 and pipe3_RxValid is 0\n1'b0: When entering U1/U2/U3, transition to P1/P2/P3 without\nchecking for Pipe3_RxElecIlde and pipe3_RxValid."
           },
           {
             "name": "SUSPENDENABLE",
@@ -15908,7 +15908,7 @@
         "name": "EMMCCORE_CAP",
         "offset": "0x0040",
         "size": "DW",
-        "reset": "0x80002007\n44ed0000",
+        "reset": "CALC",
         "bit_ranges": [
           {
             "name": "HS400SUPPORT",
@@ -19381,7 +19381,7 @@
         "description": "Configuration no used"
       }
     ],
-    "name": "PCIE",
+    "name": "PCIE_CLIENT",
     "summary": [
       {
         "name": "PCIE_CLIENT_BASIC_STRAP_CONF",

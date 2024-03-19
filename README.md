@@ -1,6 +1,6 @@
 # RK3399 SVD
 
-![GitHub Release](https://img.shields.io/github/v/release/CaptainIRS/rk3399-svd?label=Download)
+[![GitHub Release](https://img.shields.io/github/v/release/CaptainIRS/rk3399-svd?label=Download)](https://github.com/CaptainIRS/rk3399-svd/releases/latest/download/rk3399.svd)
 
 This repository contains the SVD (System View Description) file for the RK3399 SoC from Rockchip.
 

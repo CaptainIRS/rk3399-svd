@@ -878,12 +878,17 @@ for group in part1 + part2:
             elif re.match(r'^.*\d+~.*\d+$', register_element['name']):
                 matches = re.match(r'^.*(\d+)~.*(\d+)$', register_element['name'])
                 start, end = matches.groups()
-                register_element['name'] = re.sub(r'\d+~.*\d+$', '%s', register_element['name'])
+                register_element['name'] = re.sub(r'_?\d+~.*\d+$', '%s', register_element['name'])
             else:
                 print('Invalid range', register_element['name'])
             register_element['dim'] = str(int(end) - int(start) + 1)
             if group['name'] == "DMAC":
-                register_element['dimIncrement'] = "0x20"
+                if 'FTR' in register_element['name']:
+                    register_element['dimIncrement'] = "0x4"
+                elif 'CSR' in register_element['name'] or 'CPC' in register_element['name']:
+                    register_element['dimIncrement'] = "0x8"
+                else:
+                    register_element['dimIncrement'] = "0x20"
             else:
                 register_element['dimIncrement'] = "0x4"
             register_element['dimIndex'] = f"{start}-{end}"

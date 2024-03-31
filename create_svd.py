@@ -617,7 +617,7 @@ device_maps = {
 
     ],
     "CCI500": [
-        {"name": "CCI500", "base": "0xff9c0000", "description": "Cache Coherent Interconnect 500 (CCI500) Registers"},
+        {"name": "CCI500", "base": "0xFFB00000", "description": "Cache Coherent Interconnect 500 (CCI500) Registers"},
     ],
     "TIMER": [
         {"name": "TIMER0", "base": "0xff850000", "description": "Timer 0 Registers"},
@@ -718,12 +718,12 @@ group_descriptions = {
 }
 
 group_block_sizes = {
-    "MSCH": "0x10000",
-    "WDT": "0x10000",
+    "MSCH": "0x2000",
+    "WDT": "0x8000",
     "RKI2C": "0x10000",
     "PMUCRU": "0x10000",
     "SDMMC": "0x10000",
-    "GPIO": "0x10000",
+    "GPIO": "0x8000",
     "PMUGRF": "0x10000",
     "ERR_LOGGER_SLV": "0x40",
     "ERR_LOGGER_MSCH": "0x40",
@@ -832,7 +832,7 @@ for group in part1 + part2:
             print(register['name'])
         register_element = {
             "name": register['name'],
-            "description": register['description'],
+            "description": register['description'].replace('"', "'"),
             "addressOffset": register['offset'],
             "resetValue": register['reset'].replace(' ', '').replace('\n', ''),
             "size": size,
@@ -842,7 +842,7 @@ for group in part1 + part2:
             access, modifiedWriteValues, readAction = svd_access_map[bit_range['attr'].replace('\n', '')]
             field_element = {
                 "name": bit_range['name'].replace(' ', '_'),
-                "description": bit_range['description'],
+                "description": bit_range['description'].replace('"', "'"),
                 "bitRange": f"[{bit_range['bit_range']}]",
                 "access": access,
                 "resetValue": bit_range['reset']
@@ -882,9 +882,20 @@ for group in part1 + part2:
             else:
                 print('Invalid range', register_element['name'])
             register_element['dim'] = str(int(end) - int(start) + 1)
-            register_element['dimIncrement'] = "4"
+            if group['name'] == "DMAC":
+                register_element['dimIncrement'] = "0x20"
+            else:
+                register_element['dimIncrement'] = "0x4"
             register_element['dimIndex'] = f"{start}-{end}"
             register_element['addressOffset'] = register_element['addressOffset'].split('~')[0]
+        exceptions = ['DDRMON', 'CIC', 'ERRLOG']
+        if register_element['name'].startswith(group['name'] + '_'):
+            register_element['name'] = register_element['name'][len(group['name']) + 1:]
+        else:
+            for exception in exceptions:
+                if register_element['name'].startswith(exception + '_'):
+                    register_element['name'] = register_element['name'][len(exception) + 1:]
+                    break
         peripherals[group['name']]['registers'].append(register_element)
 
 
@@ -893,7 +904,7 @@ ddrc_element = {
     "baseAddress": "0xffa80000",
     "description": "DDR Controller (DDRC) Registers",
     "groupName": "DDR",
-    "blockSize": "0x10000",
+    "blockSize": "0x4000",
     "registers": [],
 }
 for register in ddr:
@@ -902,9 +913,9 @@ for register in ddr:
     elif register['base'] == "PHY_BASE_ADDR":
         offset = hex((int(register['offset'], 16)) * 4 + 0x2000)
     elif register['base'] == "PHY_AC_BASE_ADDR":
-        offset = hex((int(register['offset'], 16) + 0x896) * 4 + 0x2000)
+        offset = hex((int(register['offset'], 16) + 896) * 4 + 0x2000)
     register_element = {
-        "name": 'DDR_' + register['name'],
+        "name": register['name'],
         "description": "",
         "addressOffset": offset,
         "resetValue": "CALC",
@@ -916,7 +927,7 @@ for register in ddr:
         field_name = re.sub(r' ?\[.*\]', '', field_name)
         field_element = {
             "name": field_name,
-            "description": bit_range['description'],
+            "description": bit_range['description'].replace('"', "'"),
             "bitRange": f"[{bit_range['bits']}]",
             "access": access,
             "resetValue": bit_range['default'] if bit_range['default'] != 'Calc Value' else '0x0',
@@ -935,7 +946,7 @@ for register in ddr:
     ddrc_element['registers'].append(register_element)
 for register in peripherals['DDR_PI']['registers']:
     register['name'] = 'DDR_' + register['name']
-    register['addressOffset'] = hex((int(register['addressOffset'], 16)) * 4 + 0x800)
+    register['addressOffset'] = hex((int(register['addressOffset'], 16)) + 0x800)
     ddrc_element['registers'].append(register.copy())
 peripherals['DDRC'] = ddrc_element
 del peripherals['DDR_PI']
@@ -955,7 +966,6 @@ peripherals['DDRC1'] = {
     "description": "DDR Controller 1 (DDRC1) Registers",
     "groupName": "DDR",
     "derivedFrom": "DDRC",
-    "alternatePeripheral": "DDRC",
 }
 
 import json
@@ -995,7 +1005,7 @@ for group in pcie_groups:
             name = group['name'] + '_' + name
         register_element = {
             "name": name,
-            "description": register['description'],
+            "description": register['description'].replace('"', "'").strip(),
             "addressOffset": addressOffset,
             "resetValue": "CALC",
             "fields": []
@@ -1022,7 +1032,7 @@ for group in pcie_groups:
                 raise e
             field_element = {
                 "name": bit_range['name'].replace('/', '_').replace('(' , '').replace(')', '').replace(',', '').replace('\n', '').replace(' ', '').replace('.', ''),
-                "description": bit_range['description'],
+                "description": bit_range['description'].replace('"', "'"),
                 "bitRange": f"[{bit_range['bits']}]",
                 "access": access,
                 "resetValue": reset
@@ -1119,7 +1129,6 @@ hdmi_element = {
     "baseAddress": "0xFF940000",
     "description": "HDMI Registers",
     "groupName": "HDMI",
-    "size": "32",
     "blockSize": "0x20000",
     "registers": [],
 }
@@ -1185,14 +1194,14 @@ cpu = ET.SubElement(root, 'cpu')
 ET.SubElement(cpu, 'fpuPresent').text = '1'
 ET.SubElement(cpu, 'mpuPresent').text = '1'
 ET.SubElement(cpu, 'dcachePresent').text = '1'
-ET.SubElement(cpu, 'name').text = 'CA7'
+ET.SubElement(cpu, 'name').text = 'CA72'
 ET.SubElement(cpu, 'endian').text = 'little'
 ET.SubElement(cpu, 'vtorPresent').text = '1'
 ET.SubElement(cpu, 'nvicPrioBits').text = '4'
 ET.SubElement(cpu, 'vendorSystickConfig').text = '0'
 ET.SubElement(cpu, 'icachePresent').text = '1'
 ET.SubElement(cpu, 'revision').text = 'r0p1'
-ET.SubElement(cpu, 'deviceNumInterrupts').text = '144'
+ET.SubElement(cpu, 'deviceNumInterrupts').text = '172'
 
 
 peripherals_element = ET.SubElement(root, 'peripherals')
@@ -1229,6 +1238,8 @@ for peripheral in peripherals:
             ET.SubElement(peripheral_element, 'size').text = peripherals[peripheral]['size']
         registers_element = ET.SubElement(peripheral_element, 'registers')
         for r, register in enumerate(peripherals[peripheral]['registers']):
+            if sum('reserved' in field['name'].lower() or 'reserve_' in field['name'].lower() for field in register['fields']) == len(register['fields']):
+                continue
             register_element = ET.SubElement(registers_element, 'register')
             ET.SubElement(register_element, 'name').text = register['name']
             ET.SubElement(register_element, 'description').text = register['description'].replace('\n', '\\n\\n')
@@ -1357,6 +1368,8 @@ for peripheral in peripherals:
                         if dec > max_value:
                             print('Out of range', register['name'], field['name'], value, dec, max_value)
                             continue
+                        if description.lower() == 'reserved':
+                            continue
                         enumerated_value_element = ET.SubElement(enumerated_values_element, 'enumeratedValue')
                         ET.SubElement(enumerated_value_element, 'name').text = name
                         ET.SubElement(enumerated_value_element, 'value').text = value
@@ -1387,7 +1400,7 @@ for peripheral in peripherals:
     if peripheral in interrupts:
         for interrupt in interrupts[peripheral]:
             interrupt_element = ET.SubElement(peripheral_element, 'interrupt')
-            ET.SubElement(interrupt_element, 'name').text = interrupt['name']
+            ET.SubElement(interrupt_element, 'name').text = interrupt['name'].replace('_intr', '').replace('_int', '').replace('_irq', '')
             ET.SubElement(interrupt_element, 'value').text = str(interrupt['value'])
             ET.SubElement(interrupt_element, 'description').text = 'Interrupt ' + interrupt['name']
 tree = ET.ElementTree(root)

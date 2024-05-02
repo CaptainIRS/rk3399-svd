@@ -1,0 +1,2466 @@
+[
+  {
+    "type": "group",
+    "registers": [
+      {
+        "type": "register",
+        "name": "VENDOR_ID",
+        "offset": "0x0000",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and \nignore read value. Always reads0."
+          },
+          {
+            "name": "Vendor_ID_VID",
+            "bit_range": "15:0",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "A unique 16-bit unsigned integer. \nAssigned by the USB-IF to the \nVendor."
+          }
+        ],
+        "description": "Vendor ID Register"
+      },
+      {
+        "type": "register",
+        "name": "PRODUCT_ID",
+        "offset": "0x0004",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and \nignore read value. Always reads0."
+          },
+          {
+            "name": "USB_Product_ID_PID",
+            "bit_range": "15:0",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "A unique 16-bit unsigned integer. \nAssigned uniquely by the Vendor to \nidentify the TCPC."
+          }
+        ],
+        "description": "Product ID Register"
+      },
+      {
+        "type": "register",
+        "name": "DEVICE_ID",
+        "offset": "0x0008",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and \nignore read value. Always reads0."
+          },
+          {
+            "name": "bcdDevice",
+            "bit_range": "15:0",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "A unique 16-bit unsigned integer. \nAssigned by the Vendor to identify \nthe version of the TCPC."
+          }
+        ],
+        "description": "Device ID Register"
+      },
+      {
+        "type": "register",
+        "name": "USBTYPEC_REV",
+        "offset": "0x000C",
+        "size": "32",
+        "reset": "0x00000011",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and \nignore read value. Always reads0."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15:8",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Reserved. Always write as 0 and \nignore read value. Always reads0."
+          },
+          {
+            "name": "USB_Type_C_Revision",
+            "bit_range": "7:0",
+            "attr": "RO",
+            "reset": "0x11",
+            "description": "Version number assigned by \nUSB-IF (Currently at Revision \n1.1 - 00010001)"
+          }
+        ],
+        "description": "USB Type-C Revision Register"
+      },
+      {
+        "type": "register",
+        "name": "USBPD_REV_VER",
+        "offset": "0x0010",
+        "size": "32",
+        "reset": "0x00002011",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and \nignore read value. Always reads0."
+          },
+          {
+            "name": "bcdUSBPD_Revision",
+            "bit_range": "15:8",
+            "attr": "RO",
+            "reset": "0x20",
+            "description": "0010 0000 - Revision2.0"
+          },
+          {
+            "name": "bcdUSBPD_Version",
+            "bit_range": "7:0",
+            "attr": "RO",
+            "reset": "0x11",
+            "description": "0001 0000 - Version1.0, \n0001 0001 - Version 1.1, etc."
+          }
+        ],
+        "description": "USB PD Version Register"
+      },
+      {
+        "type": "register",
+        "name": "PD_INTERFACE_REV",
+        "offset": "0x0014",
+        "size": "32",
+        "reset": "0x00001010",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and \nignore \nread \nvalue. \nAlways \nreads0."
+          },
+          {
+            "name": "bcd_USB_PD_InterBlock_Specification_Revision",
+            "bit_range": "15:8",
+            "attr": "RO",
+            "reset": "0x10",
+            "description": "0001 0000 - Revision 1.0 (this \nrelease)"
+          },
+          {
+            "name": "bcd_USB_PD_InterBlock_Specification_Version",
+            "bit_range": "7:0",
+            "attr": "RO",
+            "reset": "0x10",
+            "description": "0001 0000 - Version1.0 \n0001 0001 \n- \nVersion \n1.1 Etc."
+          }
+        ],
+        "description": "PD Interface Block Version Register"
+      },
+      {
+        "type": "register",
+        "name": "ALERT",
+        "offset": "0x0020",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15:12",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "VBUS_Sink_Disconnect_Detected",
+            "bit_range": "11",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b:Cleared \n1b: A Vbus Sink Disconnect Threshold \ncrossing has been detected"
+          },
+          {
+            "name": "Rx_Buffer_Overflow",
+            "bit_range": "10",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: \nTCPC \nRx \nbuffer \nis \nfunctioning properly 1b: TCPC \nRx buffer has overflowed \nWriting 1 to this register acknowledges \nthe overflow. The overflow is cleared by \nwriting to ALERT.RecevieSOP* Message \nStatus"
+          },
+          {
+            "name": "Fault",
+            "bit_range": "9",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: No Fault \n1b: An Fault has occurred. \nRead \nthe \nFAULT_STATUS \nregister"
+          },
+          {
+            "name": "VBUS_Voltage_Alarm_Lo",
+            "bit_range": "8",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b:Cleared \n1b: A low-voltage alarm has occurred"
+          },
+          {
+            "name": "VBUS_Voltage_Alarm_Hi",
+            "bit_range": "7",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b:Cleared \n1b: A high-voltage alarm has occurred"
+          },
+          {
+            "name": "Transmit_SOP_Message_successful",
+            "bit_range": "6",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b:Cleared, \n1b: \nReset \nor \nSOP* \nmessage \ntransmission \nsuccessful. \nGoodCRC \nresponse \nreceived on SOP* message \ntransmission. Transmit SOP* message \nbuffer registers are empty."
+          },
+          {
+            "name": "Transmit_SOP_Message_discarded",
+            "bit_range": "5",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b:Cleared, \n1b: \nReset \nor \nSOP* \nmessage \ntransmission not sent due to incoming \nreceive message. \nTransmit \nSOP* \nmessage buffer registers are empty."
+          },
+          {
+            "name": "Transmit_SOP_Message_failed",
+            "bit_range": "4",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b:Cleared, \n1b: SOP* message transmission not \nsuccessful, \nno \nGoodCRC \nresponse \nreceived \non \nSOP* \nmessage \ntransmission. Transmit SOP* message \nbuffer registers are empty."
+          },
+          {
+            "name": "Received_Hard_Reset",
+            "bit_range": "3",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b:Cleared, \n1b: Received Hard Reset message \nNote: The TCPM is not expected to \nmask the \u2019\u2019Received Hard Reset\u2019\u2019 \nalert bit."
+          },
+          {
+            "name": "Receive_SOP_Message_Status",
+            "bit_range": "2",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b:Cleared, \n1b: RECEIVE_BUFFER register changed. \nRECEIVE_BYTE_COUNT being set to 0 \ndoes not set this bit."
+          },
+          {
+            "name": "Port_Power_Status",
+            "bit_range": "1",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: Cleared, 1b: Port status changed"
+          },
+          {
+            "name": "CC_Status",
+            "bit_range": "0",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: Cleared, 1b: CC status changed"
+          }
+        ],
+        "description": "ALERT Status Register"
+      },
+      {
+        "type": "register",
+        "name": "ALERT_MASK",
+        "offset": "0x0024",
+        "size": "32",
+        "reset": "0x00000FFF",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15:12",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and \nignore read value."
+          },
+          {
+            "name": "VBUS_Sink_Disconnect_Detected",
+            "bit_range": "11",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "Rx_Buffer_Overflow",
+            "bit_range": "10",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "Fault",
+            "bit_range": "9",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "VBUS_Voltage_Alarm_Lo",
+            "bit_range": "8",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "VBUS_Voltage_Alarm_Hi",
+            "bit_range": "7",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "Transmit_SOP_Message_successful_Interrupt_Mask",
+            "bit_range": "6",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "Transmit_SOP_Message_discarded_Interrupt_Mask",
+            "bit_range": "5",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "Transmit_SOP_Message_failed_Interrupt_Mask",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "Received_Hard_Reset_Message_Status_Interrupt_Mask",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked \n(The Hard Reset should generally not \nbe masked)"
+          },
+          {
+            "name": "Receive_SOP_Message_Status_Interrupt_Mask",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "Port_Power_Status_Interrupt_Mask",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          },
+          {
+            "name": "CC_Status_Interrupt_Mask",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Interrupt masked, 1b: Interrupt \nunmasked"
+          }
+        ],
+        "description": "ALERT Status Mask Register"
+      },
+      {
+        "type": "register",
+        "name": "POWER_STATUS_MASK",
+        "offset": "0x0028",
+        "size": "32",
+        "reset": "0x000000FF",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Debug_Accessory_Connected",
+            "bit_range": "7",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "TCPC_Initialization_Status_Mask",
+            "bit_range": "6",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "Sourcing_High_Voltage_Status_Interrupt_Mask",
+            "bit_range": "5",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "Sourcing_VBUS_Status_Interrupt_Mask",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "VBUS_Present_Detection_Status_Interrupt_Mask",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "VBUS_Present_Status_Interrupt_Mask",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "VCONN_Present_Status_Interrupt_Mask",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "Sinking_VBUS_Status_Interrupt_Mask",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          }
+        ],
+        "description": "Power Status Mask Register"
+      },
+      {
+        "type": "register",
+        "name": "FAULT_STATUS_MASK",
+        "offset": "0x002C",
+        "size": "32",
+        "reset": "0x0000007F",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7",
+            "attr": "RW",
+            "reset": "0",
+            "description": "Reserved. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Force_Off_Vbus_Interrupt_Status_Mask",
+            "bit_range": "6",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "Auto_Discharge_Failed_Mask",
+            "bit_range": "5",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "Force_Discharge_Failed_Mask",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "Vbus_Over_Current_Protection_Fault_Interrupt_Status_Mask",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "Vbus_Over_Voltage_Protection_Fault_Interrupt_Status_Mask",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "Vconn_Over_Current_Fault_Interrupt_Status_Mask",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          },
+          {
+            "name": "Interface_Error_Interrupt_Status_Mask",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: \nInterrupt masked, 1b: \nInterrupt \nunmasked"
+          }
+        ],
+        "description": "FAULT Status Mask Register"
+      },
+      {
+        "type": "register",
+        "name": "CONFIG_STANDARD_OUTPUT",
+        "offset": "0x0034",
+        "size": "32",
+        "reset": "0x00000060",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "High_Impedance_outputs",
+            "bit_range": "7",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: Standard output control (default) \n1b: \nForce \nall \noutputs \nto \nhigh \nimpedance May be used to save power \nin Sleep Controlled by the TCPM."
+          },
+          {
+            "name": "Debug_Accessory_Connected",
+            "bit_range": "6",
+            "attr": "RisW",
+            "reset": "1",
+            "description": "0b: Debug Accessory Connected# output \ndriven \nlow 1b: Debug Accessory Connected# \noutput is driven high(default) \nControlled by either the TCPM or TCPC. The \nTCPC \nshall \nignore writes \nto \nthis \nbit \nif \nTCPC_CONTROL.DebugAccessoryControl =0b."
+          },
+          {
+            "name": "Audio_Accessory_Connected",
+            "bit_range": "5",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: Audio Accessory connected \n1b: \nNo \nAudio \nAccessory \nconnected(default) \nControlled \nby \nthe \nTCPM"
+          },
+          {
+            "name": "Active_Cable_Connected",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: \nNo \nActive \nCable \nconnected \n(default) 1b: Active Cable connected \nControlled by the TCPM"
+          },
+          {
+            "name": "MUX_Control",
+            "bit_range": "3:2",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "00b: No connection (default) \n01b: USB3.1Connected \n10b: DP Alternate Mode - 4lanes \n11b: USB3.1 + Display Port Lanes 0 & \n1 Controlled by the TCPM"
+          },
+          {
+            "name": "Connection_Present",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: No Connection (default) \n1b:Connection \nControlled by the TCPM."
+          },
+          {
+            "name": "Connector_Orientation",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: Normal (CC1=A5, CC2=B5,TX1=A2/A3, \nRX1=B10/B11)default \n1b: \nFlipped \n(CC2=A5, \nCC1=B5,TX1=B2/B3, RX1=A10/A11) \nControlled by the TCPM \nThe TCPC shall ignore writes to this bit if \nTCPC_CONTROL.DebugAccessoryControl =0"
+          }
+        ],
+        "description": "Configure Standard Output Register"
+      },
+      {
+        "type": "register",
+        "name": "TCPC_CONTROL",
+        "offset": "0x0038",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7:5",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Debug_Accessory_Control",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: Controlled by TCPC (power on default) \n1b: Controlled by TCPM. The TCPM writes 1b \nto \nthis \nregister \nto \ntake over control of \nasserting the DebugAccessoryConnected#. \nRequired \n(Register \nis \nrequired \nbut \noutput is not required)"
+          },
+          {
+            "name": "Reserved32",
+            "bit_range": "3:2",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "BIST_Test_Mode",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "0",
+            "description": "Setting this bit to 1 is intended to be used \nonly when a USB compliance tester is using \nUSB BIST Test Data to test the PHY layer of \nthe TCPC. The TCPM should clear it when a \ndetach is detected. \n0: Normal Operation. Incoming messages \nenabled by RECEIVE_DETECT passed to TCPM \nvia Alert. \n1: BIST Test Mode. \nIncoming messages \nenabled \nby \nRECEIVE_DETECT \nresult \nin \nGoodCRC response but may not be passed to \nthe TCPM via Alert. TCPC may temporarily \nstore \nincoming messages \nin \nthe Receive \nMessage Buffer, but this may or may not \nresult in a Receive SOP* Message Status or a \nRx Buffer Overflow alert. \nThe TCPM can mask or \nignore \nreceived \nmessage alerts when this bit is set to 1 since \nthe TCPC may or may not assert the alert. \nThe TCPM may also treat received messages \nin this mode in the same way as received \nmessages during normal operation."
+          },
+          {
+            "name": "Plug_Orientation",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: When Vconn is enabled, apply it to the \nCC2 pin. Monitor \nthe CC1 pin \nfor BMC \ncommunications if PD messaging is enabled. \n1b: When Vconn is enabled, apply it to the \nCC1pin. Monitor \nthe CC2 pin \nfor BMC \ncommunications if PD messaging is enabled. \nRequired"
+          }
+        ],
+        "description": "TCPC Control Register"
+      },
+      {
+        "type": "register",
+        "name": "ROLE_CONTROL",
+        "offset": "0x003C",
+        "size": "32",
+        "reset": "0x0000001F",
+        "bit_ranges": [
+          {
+            "name": "Reserved",
+            "bit_range": "7",
+            "attr": "RW",
+            "reset": "0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "DRP",
+            "bit_range": "6",
+            "attr": "RaW",
+            "reset": "0",
+            "description": "0b: No DRP. Bits B3..0 determine Rp/Rd/Ra or \nopen settings \n1b:DRP \nThe TCPC shall use the Rp value defined \ninB5..4 when a connection is resolved, ie. \nUpon entry to Potential_Connect_as_Src in \nFigure 4-11. TCPC State Machine before a \nConnection. \nThe TCPC toggles CC1 & CC2 after receiving \nCOMMAND.Look4Connection \nand \nuntil \nconnection \nis detected. Upon connection, \nthe \nTCPC shall resolve to either an Rp or Rd and \nreport the CC1/CC2 State \nin the CC_STATUS \nregister. \nThe \nCC \npins \nshall \nstay \nin \nPotential_start_as_SRC \nor \nPotential_start_as_Sink \nuntil \ndirectedotherwise."
+          },
+          {
+            "name": "Rp_Value",
+            "bit_range": "5:4",
+            "attr": "RW",
+            "reset": "0x1",
+            "description": "00b: \nRp \ndefault \n01b: Rp1.5A \n10b: Rp3.0A \n11b:Reserved"
+          },
+          {
+            "name": "CC2",
+            "bit_range": "3:2",
+            "attr": "RW",
+            "reset": "0x3",
+            "description": "00b:Ra \n01b: Rp \n(Use Rp definition \nin \nB5..4) 10b:Rd \n11b: Open (Disconnect or don\u2019t care)"
+          },
+          {
+            "name": "CC1",
+            "bit_range": "1:0",
+            "attr": "RW",
+            "reset": "0x3",
+            "description": "00b:Ra \n01b: Rp \n(Use Rp definition \nin \nB5..4) 10b:Rd \n11b: Open (Disconnect or don\u2019t care)"
+          }
+        ],
+        "description": "Role Control Register"
+      },
+      {
+        "type": "register",
+        "name": "FAULT_CONTROL",
+        "offset": "0x0040",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7:5",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Force_Off_VBUS_Source_or_Sink",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: Allow STANDARD INPUT SIGNAL Force Off \nVbus control(default) \n1b: Block STANDARD INPUT SIGNAL Force Off \nVbus control \nThis enables or disables \nthe STANDARD \nINPUT \nSIGNAL \nForce \nOff \nVbus \n(4.5.1) \nfunctionality for debug purposes. \nRequired \nif \nSTANDARD_INPUT_CAPABILITES.ForceOff \nVBUS"
+          },
+          {
+            "name": "VBUS_Discharge_Fault_Detection_Timer",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: VBUS Discharge Fault Detection Timer \nenabled 1b: VBUS Discharge Fault Detection \nTimer disabled This enables the timers for \nboth \nFAULT_STATUTS.AutoDischargeFailed \nand FAULT_STATUS.ForceDischargeFailed \nRequired"
+          },
+          {
+            "name": "Internal_or_External_OCP_VBUS_Over_Current_Protection_Fault",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: Internal and External OCP circuit \nenabled 1b: Internal and External OCP \ncircuit disabled Required if \nDEVICE_CAPABILIITES_1.VBUSOCPReporting \n=1b"
+          },
+          {
+            "name": "Internal_or_External_OVP_VBUS_Over_Voltage_Protection_Fault",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: Internal and External OVP circuit \nenabled 1b: Internal and External OVP \ncircuit disabled Required if \nDEVICE_CAPABILIITES_1.VBUSOVPReporting \n=1b"
+          },
+          {
+            "name": "VCONN_Over_Current_Fault",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: \nFault \ndetection \ncircuit \nenabled 1b: \nFault detection \ncircuit disabled Required if \nDEVICE_CAPABILITIES_2.VCONNOvercurrent\nFaultCapable =1b"
+          }
+        ],
+        "description": "Fault Control Register"
+      },
+      {
+        "type": "register",
+        "name": "POWER_CONTROL",
+        "offset": "0x0044",
+        "size": "32",
+        "reset": "0x00000010",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7",
+            "attr": "RW",
+            "reset": "0",
+            "description": "Reserved. \nAlways \nwrite \nas \n0 \nand \nignore \nreadvalue."
+          },
+          {
+            "name": "VBUS_VOLTAGE_Monitor",
+            "bit_range": "6",
+            "attr": "RifW",
+            "reset": "0",
+            "description": "0b: \nVBUS_VOLTAGE Monitoring \nis \nenabled \n(default) \n1b: VBUS_VOLTAGE Monitoring \nis \ndisabled \nControls \nonly \nVBUS_VOLTAGE \nMonitoring. \nVBUS_VOLTAGE shall report all zeros if disabled. \nRequired \nDEVICE_CAPABILITIES_1.VBUSMeasurementandA\nlarmCapable =1b"
+          },
+          {
+            "name": "Disable_Voltage_Alarms",
+            "bit_range": "5",
+            "attr": "RWif",
+            "reset": "0",
+            "description": "0b: Voltage Alarms Power status reporting is \nenabled (default) \n1b: Voltage Alarms Power status reporting \nis \ndisabled \nControls \nVBUS_VOLTAGE_ALARM_HI_CFG \nand \nVBUS_VOLTAGE_ALARM_LO_CFG. \nRequired \nDEVICE_CAPABILITIES_1.VBUSMeasurementandA\nlarmCapable =1b"
+          },
+          {
+            "name": "AutoDischargeDisconnect",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "1",
+            "description": "0b: The TCPC shall not automatically discharge \nVBUS based on VBUS voltage. \n1b: The TCPC \nshall \nautomatically discharge \n(default) \nRefer \nto \n4.4.5.4.1 \nand \n4.4.5.4.2. \nStrength of discharge set by tAutoDischarge in \nTable4-18 \nSetting \nthis bit \nin \na Source TCPC \ntriggers \nthefollowing actions upon disconnection detection: \n1. Disable sourcing power over VBUS \n2. VBUS discharge \nSourcing power over VBUS shall be disabled \nbefore or at same time as starting VBUS discharge. \nSetting this bit in a Sink TCPC triggers the \nfollowing action upon disconnection detection: \n1. VBUS discharge \nThe TCPC shall automatically disable discharge \nonce the voltage on VBUS is below vSafe0V (max) \nor VBUS_STOP_DISCHARGE_THRESHOLD. \nDisconnect detection is defined in Figure 4-\n12. \nVBUS_STOP_DISCHARGE_THRESHOLD,if \nenabled, \ntakes \npriority \nover \nvSafe0V. \nRequired"
+          },
+          {
+            "name": "Enable_Bleed_Discharge",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: Disable bleed discharge(default) \n1b: Enable bleed discharge of VBUS \nBleed Discharge is a low current discharge to \nprovide a minimum load current if needed \n10K Ohms or 2mArecommended \nRequired if \nDEVICE_CAPABILITIES_1.BleedDischarge =1b"
+          },
+          {
+            "name": "Force_Discharge",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: \nDisable \nforced \ndischarge \n(default) 1b: Enable forced discharge \nof VBUS. Required if \nDEVICE_CAPABILITIES_1.ForceDischarge =1b"
+          }
+        ],
+        "description": "Power Control Register"
+      },
+      {
+        "type": "register",
+        "name": "CC_STATUS",
+        "offset": "0x0048",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RO",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue. Always reads0."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7:6",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue. Always reads0."
+          },
+          {
+            "name": "Looking4Connection",
+            "bit_range": "5",
+            "attr": "RO",
+            "reset": "0",
+            "description": "0b: TCPC is not actively looking for a connection. A \ntransition \nfrom \n\u20191\u2019 \nto \n\u20190\u2019 \nindicates a potential \nconnection has been found. \n1b: TCPC is looking for a connection (toggling as \na DRP or looking for a connection as Sink/Source \nonly condition)"
+          },
+          {
+            "name": "ConnectResult",
+            "bit_range": "4",
+            "attr": "RO",
+            "reset": "0",
+            "description": "0b: the TCPC is presenting Rp 1b: \nthe TCPC is presenting Rd"
+          },
+          {
+            "name": "CC2_State",
+            "bit_range": "3:2",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "If \n(ROLE_CONTROL.CC2=Rp) \nor \n(ConnectResult=0) 00b: SRC.Open (Open,Rp) \n01b: SRC.Ra (below maximumvRa) \n10b: SRC.Rd (within the vRd range) \n11b:reserved \n \nIf \n(ROLE_CONTROL.CC2=Rd) \nor \n(ConnectResult=1) \n00b: \nSNK.Open \n(Below \nmaximumvRa) \n01b: SNK.Default (Above minimum vRd-Connect) \n10b: \nSNK.Power1.5 \n(Above minimum \nvRd-\nConnect) Detects Rp1.5A \n11b: \nSNK.Power3.0 \n(Above minimum \nvRd-\nConnect) Detects Rp3.0A \n \nIf ROLE_CONTROL.CC2=Ra, this field is set to00b \nIf ROLE_CONTROL.CC2=Open, this field is set to00b \n \nThis \nfield \nalways \nreturns \n00b \nif \n(Looking4Connection=1) \nor \n(POWER_CONTROL.EnableVconn=1 \nand \nPOWER_CONTROL.PlugOrientation=0). \nOtherwise, the returned value depends upon \nROLE_CONTROL.CC2."
+          },
+          {
+            "name": "CC1_State",
+            "bit_range": "1:0",
+            "attr": "orRO",
+            "reset": "0x0",
+            "description": "If (ROLE_CONTROL.CC1 = Rp)or \n(ConnectResult=0) \n00b: SRC.Open (Open,Rp) \n01b: SRC.Ra (below maximumvRa) \n10b: SRC.Rd (within the vRd range) \n11b:reserved \n \nIf \n(ROLE_CONTROL.CC1 \n= \nRd) \n(ConnectResult=1) \n00b: \nSNK.Open \n(Below \nmaximumvRa) \n01b: SNK.Default (Above minimum vRd-Connect) \n10b: \nSNK.Power1.5 \n(Above minimum \nvRd-\nConnect) DetectsRp-1.5A \n11b: \nSNK.Power3.0 \n(Above minimum \nvRd-\nConnect) DetectsRp-3.0A \n \nIf ROLE_CONTROL.CC1=Ra, this field is set to00b \nIf ROLE_CONTROL.CC1=Open, this field is set to00b \n \nThis \nfield \nalways \nreturns \n00b \nif \n(Looking4Connection=1) \nor \n(POWER_CONTROL.EnableVconn=1 \nand \nPOWER_CONTROL.PlugOrientation=0). \nOtherwise, the returned value depends upon \nROLE_CONTROL.CC1."
+          }
+        ],
+        "description": "CC Status Register"
+      },
+      {
+        "type": "register",
+        "name": "POWER_STATUS",
+        "offset": "0x004C",
+        "size": "32",
+        "reset": "0x00000048",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RO",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue. Always reads0."
+          },
+          {
+            "name": "Debug_Accessory_Connected",
+            "bit_range": "7",
+            "attr": "RO",
+            "reset": "0",
+            "description": "0b: \nNo \nDebug \nAccessory \nconnected \n(default) 1b: Debug Accessoryconnected \nReflects \nthe \nstate \nof \ntheDebugAccessoryConnected# \noutput \nif \nsupported Required \n(Register \nis \nrequired but \noutput is not required)"
+          },
+          {
+            "name": "TCPC_Initialization_Status",
+            "bit_range": "6",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: The TCPC has completed initialization and \nall registers are valid \n1b: \nThe \nTCPC \nis \nstill \nperforming \ninternal \ninitialization and \nthe only \nregisters \nthat are \nguaranteed \nto \nreturn \nthe \ncorrect values are \n00h..0Fh.  \nRequired"
+          },
+          {
+            "name": "Sourcing_High_Voltage",
+            "bit_range": "5",
+            "attr": "RO",
+            "reset": "0",
+            "description": "0b:vSafe5V \n1b: HighVoltage \nThis does not control the path, just provides a \nmonitor of the status. Assert as long as supplying \nvoltage greater than vSafe5V. \nRequired if voltage higher than vSafe5V can \nbe sourced"
+          },
+          {
+            "name": "Sourcing_VBUS",
+            "bit_range": "4",
+            "attr": "RO",
+            "reset": "0",
+            "description": "0b: Sourcing Vbus is disabled \n1b: Sourcing Vbus is enabled \nThis does not control the path, just provides a \nmonitor of the status. \nRequired"
+          },
+          {
+            "name": "VBUS_Present_Detection_Enabled",
+            "bit_range": "3",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: VBUS Present Detection Disabled \n1b: VBUS Present Detection Enabled (default) \nIndicates \nif the TCPC \nis monitoring \nfor VBUS \nPresent or if the circuit has been powered off. \nRequired"
+          },
+          {
+            "name": "VBUS_Present",
+            "bit_range": "2",
+            "attr": "RO",
+            "reset": "0",
+            "description": "0b: \nVBUS \nDisconnected \n1b: VBUSConnected \nThe TCPC shall report VBUS present when TCPC \ndetects VBUS rises above 4V. The TCPC shall \nreport VBUS is not present when TCPC detects \nVBUS falls below 3.5V. The TCPC may report \nVBUS is not present if VBUS is between 3.5V \nand4V. \nRequired"
+          },
+          {
+            "name": "VCONN_Present",
+            "bit_range": "1",
+            "attr": "RO",
+            "reset": "0",
+            "description": "0b: VCONN is not present \n1b: This bit is asserted when VCONN is enabled \nfor CC1 or CC2. Measurement of board-level \nVCONN supply is not supported. \nIf POWER_CONTROL.EnableVCONN is disabled \nVCONN Present will be set to0b. \nRequired"
+          },
+          {
+            "name": "Sink_VBUS",
+            "bit_range": "0",
+            "attr": "RO",
+            "reset": "0",
+            "description": "0b: Sink is Disconnected (Default and if \nnot supported) \n1b: TCPC is sinking VBUS to the system \nload Required"
+          }
+        ],
+        "description": "Power Status Register"
+      },
+      {
+        "type": "register",
+        "name": "FAULT_STATUS",
+        "offset": "0x0050",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "Reserved",
+            "bit_range": "7",
+            "attr": "RO",
+            "reset": "0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue. Always reads0."
+          },
+          {
+            "name": "Force_Off_VBUS_Source_or_Sink",
+            "bit_range": "6",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: No Fault Detected, no action (default \nand not supported) \n1b: VBUS Source/Sink has been forced off \ndue to external fault \nThe TCPC has disconnected VBUS due \nto STANDARD_INPUT.ForceOffVbus. \nRequired \nif \nSTANDARD_INPUT_CAPABILITIES_1.ForceOffV\nbus \n=1b"
+          },
+          {
+            "name": "Auto_Discharge_Failed",
+            "bit_range": "5",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: No dischargefailure \n1b: Discharge commanded by the TCPMfailed \nIf \nPOWER_CONTROL.AutoDischargeDisconnect \nis set, the TCPC shall report discharge fails if \nVBUS is not below vSafe0V withintSafe0V. \nRequired"
+          },
+          {
+            "name": "Force_Discharge_Failed",
+            "bit_range": "4",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: No dischargefailure \n1b: Discharge commanded by the TCPMfailed \nIf POWER_CONTROL.ForceDischarge is set, \nthe TCPC shall report a discharge fails if \nVBUS is not below vSafe0V withintSafe0V. \nRequired \nif \nDEVICE_CAPABILITIES_1.ForceDischarge=\n1b"
+          },
+          {
+            "name": "Internal_or_External_OCP_VBUS_Over_Current_Protection_Fault",
+            "bit_range": "3",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: \nNot \nin \nan \nover-current \nprotectionstate \n1b: \nOver-current \nfaultlatched \nRequired \nif \nDEVICE_CAPABILIITES_1.VBUSOCPReportin\ng= \n1b"
+          },
+          {
+            "name": "Internal_or_External_OVP_VBUS_Over_Voltage_Protection_Fault",
+            "bit_range": "2",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: Not in an over-voltage protection \nstate 1b: Over-voltage faultlatched. \nRequired \nif \nDEVICE_CAPABILIITES_1.VBUSOVPReportin\ng= \n1b"
+          },
+          {
+            "name": "VCONN_Over_Current_Fault",
+            "bit_range": "1",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: No Faultdetected \n1b: Over \ncurrent VCONN \nfault \nlatched Requiredif \nDEVICE_CAPABILITIES_2.VCONNOvercurrentF\nault Capable =1b"
+          },
+          {
+            "name": "Interface_Error",
+            "bit_range": "0",
+            "attr": "RWW1toClr",
+            "reset": "0",
+            "description": "0b: NoError \n1b: Error hasoccurred. \nA TRANSMIT has been sent with an \nempty TRANSMIT_BUFFER. \nMay be asserted if a non-zero value has been \nwritten to a reserved bit in aregister. \nRequired"
+          }
+        ],
+        "description": "Fault Status Register"
+      },
+      {
+        "type": "register",
+        "name": "COMMAND",
+        "offset": "0x005C",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and \nignore \nreadvalue."
+          },
+          {
+            "name": "Command",
+            "bit_range": "7:0",
+            "attr": "WO",
+            "reset": "0x00",
+            "description": "0001 0001b Wake Interface (no action \nis \ntaken other than to wake the interface). \n0010 0010b DisableVbusDetect. Disable Vbus \npresent detection. The TCPC shall ignore this \ncommand \nand \nassert \nthe \nFAULT_STATUS.InterfaceError if it has sourcing \nor sinking power over Vbus enabled. \n0011 0011b EnableVbusDetect. Enable Vbus \npresent detection. \n0100 0100b DisableSinkVbus. Disable sinking \npower over Vbus. This COMMAND does not \ndisable \nPOWER_STATUS.VBUSPresent \ndetection. \nTheTCPC \nshall \nclear \nFAULT_STATUS.InternalorExternalOCP \nandFAULT_STATUS.InternalorExternalOVP. \n0101 0101b SinkVbus. Enable sinking power \nover Vbus and enable Vbus present detection. \nThe TCPC shall \nignore \nthis command and \nassert the FAULT_STATUS.InterfaceError if it \nhas sourcing power over Vbus enabled. \n0110 \n0110b DisableSourceVbus. Disable \nsourcing power over Vbus. The TCPC shall \nstop reporting FAULT_STATUS. Internal or \nExternal OCP or OVP Faults. This COMMAND \ndoes \nnot \ndisable \nPOWER_STATUS.VBUSPresentdetection. \n0111 0111b SourceVbusDefaultVoltage. Enable \nsourcing vSafe5V over Vbus and enable Vbus \npresent detection. Source shall transition to \nvSafe5V if at a high voltage. The TCPC shall \nignore \nthis \ncommand \nand \nassert \nthe \nFAULT_STATUS.InterfaceError if it has sinking\npower over Vbus enabled. \n1000 1000b SourceVbusHighVoltage. Execute \nsourcing high voltage over Vbus. The TCPC shall \nignore \nthis \ncommand \nand \nassert \nthe \nFAULT_STATUS.InterfaceError if it is currently \nsinking voltage from Vbus or does not have \nability to source voltages higher than vSafe5V. \nThe TCPC shall ignore this command and assert \nthe FAULT_STATUS.InterfaceError if not already \nsourcing vSafe5V. The actual voltage to be \nsourced may be set in a vendor defined manner. \nThe TCPM may need to send vendor defined \ncommands before sending this COMMAND. \n1001 \n1001b \nLook4Connection. Start DRP \nToggling if ROLE_CONTROL.DRP=1b.If \nROLE_CONTROL.CC1/CC2=01b start with Rp, if \nROLE_CONTROL.CC1/CC2=10b start with Rd. \nIf ROLE_CONTROL.CC1/CC2 are not 01b or \n10b, then do not start toggling. The TCPM shall \nissue COMMAND.Look4Connection \nto enable \nthe TCPCto restart Connection Detection \nin \ncases where the ROLE_CONTROL contents will \nnot change. An example of this is when a \npotential connection as a Source occurred but \nwas further debounced by the TCPM to find the \nSink disconnected. In this case a Source Only \nor DRP should go back to its Unattached.Src \nstate. This would result \nin ROLE_CONTROL \nstaying the same. TCPC to  \nMAINTAIN_STATE in Figure4-11 \n1010 \n1010b \nRxOneMore. \nConfigure \nthe \nreceiver \nto \nautomatically \nclear \nthe \nRECEIVE_DETECT register after sending the \nnext GoodCRC. This \nis used \nto shutdown \nreception \nof \npackets \nat \na \nknown \npoint \nregardless of packet separation or the depth \nof the receive FIFO in the TCPC. \n1100 \n1100b \nReserved. \nNo \nAction  \n1101 \n1101b \nReserved. \nNo \nAction  \n1110 \n1110b \nReserved. \nNoAction \n1111 0000b Enable 1st VBUS source (sets bit \n[0] of vbus_source_en output when VBUS \nsourcing is activated and clear all others).\n1111 0001b Enable 2nd VBUS source (sets bit \n[1] of vbus_source_en output when VBUS \nsourcing is activated and clear all others). \n1111 0010b Enable 3rd VBUS source (sets bit \n[2] of vbus_source_en output when vbus \nsourcing is activated and clear all others). \n1111 0011b Enable 4th VBUS source (sets bit \n[3] of vbus_source_en output when VBUS \nsourcing is activated and clear all others). \n1111 1111b Reserved. NoAction"
+          }
+        ],
+        "description": "Command Register"
+      },
+      {
+        "type": "register",
+        "name": "DEVICE_CAPABILITIES_1",
+        "offset": "0x0060",
+        "size": "32",
+        "reset": "0x00007EDF",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue. Always reads0."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15",
+            "attr": "RO",
+            "reset": "0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue. Always reads0."
+          },
+          {
+            "name": "VBUS_OCP_Reporting",
+            "bit_range": "14",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: VBUS OCP is not reported by the \nTCPC. 1b: VBUS OCP is reported by the \nTCPC \nSupport \nfor \nboth \nFAULT_STATUS.InternalorExternalOCP \nand \nFAULT_CONTROL.InternalorExternalOC\nP implemented"
+          },
+          {
+            "name": "VBUS_OVP_Reporting",
+            "bit_range": "13",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: VBUS OVP is not reported by the \nTCPC. 1b: VBUS OVP is reported by the \nTCPC \nSupport \nfor \nboth \nFAULT_STATUS.InternalorExternalOVP \nand \nFAULT_CONTROL.InternalorExternalOVP \nimplemented"
+          },
+          {
+            "name": "BleedDischarge",
+            "bit_range": "12",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: No Bleed Discharge implemented in \nTCPC. 1b: Bleed Discharge is implemented \nin \nthe \nTCPC \nSupport \nfor \nPOWER_CONTROL.EnableBleedDischarge \nimplemented"
+          },
+          {
+            "name": "ForceDischarge",
+            "bit_range": "11",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: No Force Discharge \nimplemented \nin \nTCPC. 1b: Force Discharge is implemented in \nthe \nTCPC \nSupport \nfor \nPOWER_CONTROL.ForceDischarge, \nFAULT_STATUS.VbusDischargeFail, \nFAULT_STATUS.VBUSDischargeFaultDetectionTi\nmer, \nand \nVBUS_STOP_DISCHARGE_THRESHOLD \nimplemented"
+          },
+          {
+            "name": "VBUS_Measurement_and_Alarm_Capable",
+            "bit_range": "10",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: No \nVBUS \nvoltage measurement \nnor \nVBUSAlarms. 1b: VBUS voltage measurement \nand VBUS Alarms Support for VBUS_VOLTAGE, \nVBUS_VOLTAGE_ALARM_HI_CFG, \nVBUS_VOLTAGE_ALARM_LO_CFG implemented"
+          },
+          {
+            "name": "Source_Resistor_Supported",
+            "bit_range": "9:8",
+            "attr": "RO",
+            "reset": "0x2",
+            "description": "00b: Rp default \nonly. \n01b: Rp 1.5A and default. \n10b: Rp 3.0A, 1.5A, and \ndefault.11b:Reserved. \nRp values which may be configured by the \nTCPM via the ROLE_CONTROL register"
+          },
+          {
+            "name": "Roles_Supported",
+            "bit_range": "7:5",
+            "attr": "RO",
+            "reset": "0x6",
+            "description": "000b: \nUSB \nType-C \nPort Manager \ncan \nconfigure the Port as Source only or Sink only \n(not DRP). 001b: Source only. 010b: Sink \nonly. 011b: Sink with accessory support. \n100b: DRP only. 101b: Source, Sink, DRP, \nAdapter/Cable all supported. 110b: Source, \nSink, DRP. 111b: Not valid"
+          },
+          {
+            "name": "SOPp_DBG_SOPb_DBG_Support",
+            "bit_range": "4",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: \nAll \nSOP* \nexcept \nSOP\u2019_DBG/SOP\u2019\u2019_DBG. 1b: All SOP* \nmessages are supported Configured in \nRECEIVE_DETECT and TRANSMIT"
+          },
+          {
+            "name": "Source_VCONN",
+            "bit_range": "3",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: TCPC is not capable of switching \nVCONN. 1b: TCPC is capable of switching \nVCONN \nSupport for POWER_CONTROL.EnableV CONN \nand \nPOWER_STATUS.VCONNPresent \nimplemented"
+          },
+          {
+            "name": "Sink_VBUS",
+            "bit_range": "2",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: TCPC is not capable controlling the sink \npath to the system load. 1b: TCPC is capable \nof controlling the sink path to the system load"
+          },
+          {
+            "name": "Source_High_Voltage_VBUS",
+            "bit_range": "1",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: TCPC \nis not capable of controlling the \nsource high voltage path to VBUS. 1b: TCPC is \ncapable of controlling the source high voltage \npath \nto \nVBUS \nSupport \nfor \nPOWER_STATUS.SourcingHighVoltage \nand \nCOMMAND.SourceVbusHighVoltage \nimplemented"
+          },
+          {
+            "name": "Source_VBUS",
+            "bit_range": "0",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: TCPC \nis not capable of controlling the \nsource path to VBUS. 1b: TCPC is capable of \ncontrolling the source path to VBUS \nSupport \nfor \nPOWER_STATUS.SourcingVbus, \nCOMMAND.SourceVbusDefaultVoltage, \nCOMMAND.DisableSourceVbus, \nCOMMAND.EnableVbusDetect \nand \nCOMMAND.DisableVbusDetect \nimplemented"
+          }
+        ],
+        "description": "Device Capabilities Register 1"
+      },
+      {
+        "type": "register",
+        "name": "DEVICE_CAPABILITIES_2",
+        "offset": "0x0064",
+        "size": "32",
+        "reset": "0x000000CF",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and ignore \nreadv alue. Always reads0."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15:8",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Reserved. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "Sink_Disconnect_Detection",
+            "bit_range": "7",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: \nVBUS_SINK_ \nDISCONNECT_THRESHOLD not \nimplemented \n(default: \nUse \nPOWER_STATUS.VbusPresent=0b \nto \nindicate a Sink disconnect) \n1b: VBUS_SINK_DISCONNECT_THRESHOLD \nimplemented"
+          },
+          {
+            "name": "Stop_Discharge_Threshold",
+            "bit_range": "6",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: VBUS_STOP_DISCHARGE_THRESHOLD \nnot implemented (default) \n1b:VBUS_STOP_DISCHARGE_THRESHOLD \nimplemented"
+          },
+          {
+            "name": "VBUS_Voltage_Alarm_LSB",
+            "bit_range": "5:4",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "00: TCPC has 25mV LSB for its voltage \nalarm \nand \nuses \nall \n10 \nbits \nin \nVBUS_VOLTAGE_ALARM_HI_CFG \nand \nVBUS_VOLTAGE_ALARM_LO_CFG. \n01: TCPC has 50mV LSB for its voltage \nalarm and uses only 9bits. \nVBUS_VOLTAGE_ALARM_HI_CFG[0]and \nVBUS_VOLTAGE_ALARM_LO_CFG[0] \nare \nignored by TCPC. \n10: TCPC has 100mV LSB for its voltage \nalarm and uses only 8bits. \nVBUS_VOLTAGE_ALARM_HI_CFG[1:0] and \nVBUS_VOLTAGE_ALARM_LO_CFG[1:0] \nare \nignored by TCPC. \n11:reserved \nSupport \nfor \nVBUS_VOLTAGE_ALARM_LO_CFG \nand \nVBUS_VOLTAGE_ALARM_HI implemented"
+          },
+          {
+            "name": "VCONN_Power_Supported",
+            "bit_range": "3:1",
+            "attr": "RO",
+            "reset": "0x7",
+            "description": "000b:1.0W \n001b:1.5W \n010b:2.0W \n011b:3W \n100b:4W \n101b:5W \n110b:6W \n111b:External"
+          },
+          {
+            "name": "Vconn_Overcurrent_Fault_Capable",
+            "bit_range": "0",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: TCPC is not capable of detecting a \nVconnfault \n1b: \nTCPC \nis \ncapable \nof \ndetecting \na \nVconn \nfault \nSupport \nfor \nFAULT_STATUS. VCONNOverCurrentFault \nand \nFAULT_CONTROL.VCONNOverCurrentFaul\nt implemented"
+          }
+        ],
+        "description": "Device Capabilities Register 2"
+      },
+      {
+        "type": "register",
+        "name": "STANDARD_INPUT_CAPABILITIES",
+        "offset": "0x0068",
+        "size": "32",
+        "reset": "0x00000007",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RO",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7:3",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Reserved. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "Vbus_External_Over_Voltage_Fault",
+            "bit_range": "2",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: Not present in \nTCPC 1b: Present \nin TCPC"
+          },
+          {
+            "name": "Vbus_External_Over_Current_Fault",
+            "bit_range": "1",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: Not present in \nTCPC 1b: Present \nin TCPC"
+          },
+          {
+            "name": "Force_Off_VBUS_Source_or_Sink",
+            "bit_range": "0",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: Not present in \nTCPC 1b: Present \nin TCPC"
+          }
+        ],
+        "description": "Standard Input Capabilities Register"
+      },
+      {
+        "type": "register",
+        "name": "STANDARD_OUTPUT_CAPABILITIES",
+        "offset": "0x006C",
+        "size": "32",
+        "reset": "0x0000007F",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RO",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7",
+            "attr": "RO",
+            "reset": "0",
+            "description": "Reserved. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "Debug_Accessory_Indicator",
+            "bit_range": "6",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: Not present in \nTCPC 1b: Present in \nTCPC"
+          },
+          {
+            "name": "VBUS_Present_Monitor",
+            "bit_range": "5",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: Not present in \nTCPC 1b: Present in \nTCPC"
+          },
+          {
+            "name": "Audio_Adapter_Accessory_Indicator",
+            "bit_range": "4",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: Not present in \nTCPC 1b: Present in \nTCPC"
+          },
+          {
+            "name": "Active_Cable_Indicator",
+            "bit_range": "3",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: Not present in \nTCPC 1b: Present in \nTCPC"
+          },
+          {
+            "name": "MUX_Configuration_Control",
+            "bit_range": "2",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: Not present in \nTCPC 1b: Present \ninTCPC"
+          },
+          {
+            "name": "Connection_Present",
+            "bit_range": "1",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: No \nConnection \n1b:Connection \nControlled by theTCPM."
+          },
+          {
+            "name": "Connector_Orientation",
+            "bit_range": "0",
+            "attr": "RO",
+            "reset": "1",
+            "description": "0b: Not present in \nTCPC 1b: Present \ninTCPC"
+          }
+        ],
+        "description": "Standard Output Capabilities Register"
+      },
+      {
+        "type": "register",
+        "name": "MESSAGE_HEADER_INFO",
+        "offset": "0x007C",
+        "size": "32",
+        "reset": "0x00000002",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7:5",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Cable_Plug",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: Message originated from Source, Sink, or \nDRP. 1b: Message originated \nfrom a Cable \nPlug"
+          },
+          {
+            "name": "Data_Role",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: \nUFP \n1b:DFP"
+          },
+          {
+            "name": "USB_PD_Specification_Revision",
+            "bit_range": "2:1",
+            "attr": "RW",
+            "reset": "0x1",
+            "description": "00b: Revision1.0 \n01b: Revision 2.0  \n10b - 11b:Reserved"
+          },
+          {
+            "name": "Power_Role",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: \nSink \n1b:Source"
+          }
+        ],
+        "description": "Message Header Information Register"
+      },
+      {
+        "type": "register",
+        "name": "RECEIVE_DETECT",
+        "offset": "0x0080",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7",
+            "attr": "RW",
+            "reset": "0",
+            "description": "Reserved. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Enable_Cable_Reset",
+            "bit_range": "6",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: TCPC does not detect Cable \nReset signaling (default) \n1b: TCPC detects Cable Reset signaling"
+          },
+          {
+            "name": "Enable_Hard_Reset",
+            "bit_range": "5",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: TCPC does not detect Hard \nReset signaling (default) \n1b: TCPC detects Hard Reset signaling"
+          },
+          {
+            "name": "Enable_SOP_DBG_b_message",
+            "bit_range": "4",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: \nTCPC \ndoes \nnot \ndetect \nSOP_DBG\u2019\u2019 message (default) \n1b: TCPC detects SOP_DBG\u2019\u2019 message"
+          },
+          {
+            "name": "Enable_SOP_DBG_p_message",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: TCPC does not detect SOP_DBG\u2019 \nmessage (default) \n1b: TCPC detects SOP_DBG\u201c message"
+          },
+          {
+            "name": "Enable_SOP_b_message",
+            "bit_range": "2",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: \nTCPC \ndoes \nnot \ndetect SOP\u2019\u2019 \nmessage (default) 1b: TCPC detects \nSOP\u2019\u2019 message"
+          },
+          {
+            "name": "Enable_SOP_p_message",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: \nTCPC \ndoes \nnot \ndetect \nSOP\u2019 \nmessage (default) 1b: TCPC detects \nSOP\u2019 message"
+          },
+          {
+            "name": "Enable_SOP_message",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b: \nTCPC \ndoes \nnot \ndetect \nSOP \nmessage (default) 1b: TCPC detects \nSOP message"
+          }
+        ],
+        "description": "Receive Detect Register"
+      },
+      {
+        "type": "register",
+        "name": "RECEIVE_BYTE_COUNT",
+        "offset": "0x0084",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RO",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "RECEIVE_BYTE_COUNT",
+            "bit_range": "7:0",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Indicates number of bytes in this register \nthat are not stale. The TCPM should read \nthe first RECEIVE_BYTE_COUNT bytes in \nthis register. This is the number of bytes \nin the RX_BUFFER_DATA_OBJECTS plus \nthree (for the RX_BUF_FRAME_TYPE and \nRX_BUF_HEADER)."
+          }
+        ],
+        "description": "Receive Detect Register"
+      },
+      {
+        "type": "register",
+        "name": "RX_BUF_FRAME_TYPE",
+        "offset": "0x0088",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RO",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue. Always reads0."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7:3",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue. Always reads0."
+          },
+          {
+            "name": "Received_SOP_Message",
+            "bit_range": "2:0",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "000b: Received SOP.  \n001b: Received SOP\u2019 \n010b: Received SOP\u2019\u2019 \n011b: Received SOP_DBG\u2019 \n100b: Received SOP_DBG\u2019\u2019 \n110b: Received Cable Reset \nAll others are reserved."
+          }
+        ],
+        "description": "RX Buffer Frame Type Register"
+      },
+      {
+        "type": "register",
+        "name": "RX_BUF_HEADER_BYTE_10",
+        "offset": "0x008C",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "RX_BUF_HEADER_BYTE_1",
+            "bit_range": "15:8",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Byte 1 (bits 15..8) of USB PD message \nheader"
+          },
+          {
+            "name": "RX_BUF_HEADER_BYTE_0",
+            "bit_range": "7:0",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Byte 0 (bits 7..0) of USB PD message \nheader"
+          }
+        ],
+        "description": "RX Buffer Message Header Byte Register"
+      },
+      {
+        "type": "register",
+        "name": "RX_BUF_OBJX_BYTE_3210",
+        "offset": "0x0090",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "RX_BUF_OBJX_BYTE_3",
+            "bit_range": "31:24",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Byte 3 (bits 31..24) of X data object"
+          },
+          {
+            "name": "RX_BUF_OBJX_BYTE_2",
+            "bit_range": "23:16",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Byte 2 (bits 23..16) of X data object"
+          },
+          {
+            "name": "RX_BUF_OBJX_BYTE_1",
+            "bit_range": "15:8",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Byte 1 (bits 15..8) of X data object"
+          },
+          {
+            "name": "RX_BUF_OBJX_BYTE_0",
+            "bit_range": "7:0",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Byte 0 (bits 7..0) of X data object"
+          }
+        ],
+        "description": "RX Buffer OBJX Byte3~0 Register"
+      },
+      {
+        "type": "register",
+        "name": "TRANSMIT",
+        "offset": "0x00AC",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "7:6",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Retry_Counter",
+            "bit_range": "5:4",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "00b: No message retry is required \n01b: \nAutomatically \nretry \nmessage \ntransmission once  \n10b: \nAutomatically \nretry \nmessage \ntransmission twice  \n11b: \nAutomatically \nretry \nmessage \ntransmission three times"
+          },
+          {
+            "name": "Reserved3",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "0",
+            "description": "Reserved. Always write as 0 and ignore read \nvalue."
+          },
+          {
+            "name": "Transmit_SOP_message",
+            "bit_range": "2:0",
+            "attr": "RW",
+            "reset": "0x0",
+            "description": "000b:Transmit SOP \n001b:Transmit SOP\u2019  \n010b:Transmit SOP\u2019\u2019 \n011b:Transmit SOP_DBG\u2019 \n100b:Transmit SOP_DBG\u2019\u2019  \n101b:Transmit Hard Reset  \n110b:Transmit CableReset \n111b: Transmit BIST Carrier Mode 2 (TCPC \nshall \nexit \nthe BIST mode no \nlater \nthan \ntBISTContModemax)"
+          }
+        ],
+        "description": "Transmit Register"
+      },
+      {
+        "type": "register",
+        "name": "TRANSMIT_BYTE_COUNT",
+        "offset": "0x00B0",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:8",
+            "attr": "RW",
+            "reset": "0x000000",
+            "description": "Not used. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "TRANSMIT_BYTE_COUNT",
+            "bit_range": "7:0",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "The number of bytes the TCPM \nwill write This is the number of \nbytes in the \nTX_BUFFER_DATA_OBJECTS \nplus \ntwo (for the TX_BUF_HEADER)."
+          }
+        ],
+        "description": "Transmit Byte Count Register"
+      },
+      {
+        "type": "register",
+        "name": "TX_BUF_HEADER_BYTE_10",
+        "offset": "0x00B4",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and ignore \nread value"
+          },
+          {
+            "name": "TX_BUF_HEADER_BYTE_1",
+            "bit_range": "15:8",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Byte 1 (bits 15..8) of USB PD message \nheader"
+          },
+          {
+            "name": "TX_BUF_HEADER_BYTE_0",
+            "bit_range": "7:0",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Byte 0 (bits 7..0) of USB PD message \nheader"
+          }
+        ],
+        "description": "Transmit Byte Count Register"
+      },
+      {
+        "type": "register",
+        "name": "TX_BUF_OBJX_BYTE_3210",
+        "offset": "0x00B8",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "TX_BUF_OBJX_BYTE_3",
+            "bit_range": "31:24",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Byte 3 (bits 31..24) of X data object"
+          },
+          {
+            "name": "TX_BUF_OBJX_BYTE_2",
+            "bit_range": "23:16",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Byte 2 (bits 23..16) of X data object"
+          },
+          {
+            "name": "TX_BUF_OBJX_BYTE_1",
+            "bit_range": "15:8",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Byte 1 (bits 15..8) of X data object"
+          },
+          {
+            "name": "TX_BUF_OBJX_BYTE_0",
+            "bit_range": "7:0",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Byte 0 (bits 7..0) of X data object"
+          }
+        ],
+        "description": "TX Buffer OBJX Byte3~0 Register"
+      },
+      {
+        "type": "register",
+        "name": "VBUS_VOLTAGE",
+        "offset": "0x00D4",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RO",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15:12",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "Scale_Factor",
+            "bit_range": "11:10",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "00: VBUS measurement not \nscaled. 01: VBUS measurement \ndivided by2 \n10: VBUS measurement divided by4 \n11: reserved. \nThis \nfield \nis \nfixed \nfor \nany \ngiven \nconfiguration of the TCPC. Currently fixed \nat00."
+          },
+          {
+            "name": "VBUS_voltage_measurement",
+            "bit_range": "9:0",
+            "attr": "RO",
+            "reset": "0x000",
+            "description": "10-bit measurement of (VBUS / ScaleFactor) \nTCPM multiplies this value by the scale factor \nto obtain the voltage measurement. Voltages \ngreater than or equal to 4V shall meet +/- 2% \nabsolute value or +/- 50mV, whichever is \ngreater. The LSB is25mV. \nThis \nregister \nrefreshes \nbased \non \nthe \nvbus_voltage[9:0] input at an approximate \nrate of once every120us. \nIt is therefore recommended that the register \nis read twice to obtain a stable value, with the \ninterval \nbetween \nthe \nreads \ngreater \nthan120us."
+          }
+        ],
+        "description": "Vbus Voltage Register"
+      },
+      {
+        "type": "register",
+        "name": "VBUS_SINK_DISCONNECT_THRESHOLD",
+        "offset": "0x00D8",
+        "size": "32",
+        "reset": "0x000000A2",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15:10",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Reserved. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Voltage_trip_point",
+            "bit_range": "9:0",
+            "attr": "RW",
+            "reset": "0x0A2",
+            "description": "10-bit for voltage threshold with \n25mV LSB.(Default vSafe5V) \n+/- 5%accuracy. \nA value of B9:0=000h disables this \nthreshold \nThe TCPC may ignore B0 or B1 & B0 \ndepending upon \nDEVICE_CAPABILITIES_2.VbusVoltageAl\narmLsb."
+          }
+        ],
+        "description": "Vbus Sink Disconnect Threshold Register"
+      },
+      {
+        "type": "register",
+        "name": "VBUS_STOP_DISCHARGE_THRESHOLD",
+        "offset": "0x00DC",
+        "size": "32",
+        "reset": "0x00000020",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15:10",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Reserved. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "Voltage_trip_point",
+            "bit_range": "9:0",
+            "attr": "RW",
+            "reset": "0x020",
+            "description": "10-bit for voltage threshold with \n25mV LSB.(Default vSafe0V) \n+/- 5%accuracy. \nThe TCPC may ignore B0 or B1 & B0 \ndepending upon \nDEVICE_CAPABILITIES_2.VbusVoltageAl\narmLsb."
+          }
+        ],
+        "description": "Vbus Stop Discharge Threshold Register"
+      },
+      {
+        "type": "register",
+        "name": "VBUS_VOLTAGE_ALARM_HI_CFG",
+        "offset": "0x00E0",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and \nignore read \nvalue."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15:10",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Reserved. Always write as 0 and \nignore read \nvalue."
+          },
+          {
+            "name": "Voltage_trip_point",
+            "bit_range": "9:0",
+            "attr": "RW",
+            "reset": "0x000",
+            "description": "10-bit for voltage threshold with 25mVLSB. \n+/- 5%accuracy. \nThe TCPC may ignore B0 or B1 & B0 depending \nupon \nDEVICE_CAPABILITIES_2.VbusVoltageAlarmLsb."
+          }
+        ],
+        "description": "Vbus Voltage Alarm High Cfg Register"
+      },
+      {
+        "type": "register",
+        "name": "VBUS_VOLTAGE_ALARM_LO_CFG",
+        "offset": "0x00E4",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "not_used",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Not used. Always write as 0 and \nignore read \nvalue."
+          },
+          {
+            "name": "Reserved",
+            "bit_range": "15:10",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Reserved. Always write as 0 and \nignore read \nvalue."
+          },
+          {
+            "name": "Voltage_trip_point",
+            "bit_range": "9:0",
+            "attr": "RW",
+            "reset": "0x000",
+            "description": "10-bit for voltage threshold with 25mVLSB. \n+/- 5%accuracy. \nThe TCPC may ignore B0 or B1 & B0 depending \nupon \nDEVICE_CAPABILITIES_2.VbusVoltageAlarmLsb."
+          }
+        ],
+        "description": "Vbus Voltage Alarm Low Cfg Register"
+      },
+      {
+        "type": "register",
+        "name": "RX_ERR_CNT",
+        "offset": "0x00F4",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "Reserved",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "Reserved. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "RX_Error_Counter",
+            "bit_range": "15:0",
+            "attr": "RW",
+            "reset": "0x0000",
+            "description": "RX Error Counter"
+          }
+        ],
+        "description": "RX Error Counter Register"
+      },
+      {
+        "type": "register",
+        "name": "PHY_MUX_CTRL",
+        "offset": "0x00F8",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "SBU_MUX_Control",
+            "bit_range": "31:30",
+            "attr": "RtoW",
+            "reset": "0x0",
+            "description": "00b: SBU1/SBU2 are disconnected \n01b: \nSBU1/SBU2 \nmaps \nAUX_CH_N/AUX_CH_P \n10b: \nSBU1/SBU2 \nmaps \nto \nAUX_CH_P/AUX_CH_N  \n11b:Reserved"
+          },
+          {
+            "name": "Lane_control",
+            "bit_range": "29:0",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Lane control"
+          }
+        ],
+        "description": "PHY MUX Ctrl Register"
+      },
+      {
+        "type": "register",
+        "name": "CC_PD_TEST_DBG",
+        "offset": "0x00FC",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "Reserved",
+            "bit_range": "31:1",
+            "attr": "RW",
+            "reset": "0x00000000",
+            "description": "Reserved. Always write as 0 and ignore \nread value."
+          },
+          {
+            "name": "PD_Serial_Loopback_enable",
+            "bit_range": "0",
+            "attr": "RW",
+            "reset": "0",
+            "description": "1b: Enable PD Tx to Rx serial \nloopback.  \n0b: \nTx \nto \nRx \nloopback \ndisabled."
+          }
+        ],
+        "description": "CC PD Test Debug Register"
+      },
+      {
+        "type": "register",
+        "name": "SFC_REG_0",
+        "offset": "0x0100",
+        "size": "32",
+        "reset": "0x00000101",
+        "bit_ranges": [
+          {
+            "name": "Reserved",
+            "bit_range": "31:28",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "PWRITE_M",
+            "bit_range": "27",
+            "attr": "atRW",
+            "reset": "0",
+            "description": "Value \nof \nthis \nbit \nis \npresents \npenable_moutput."
+          },
+          {
+            "name": "Reserved2",
+            "bit_range": "26",
+            "attr": "RO",
+            "reset": "0",
+            "description": "Reserved. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "TRANSFER",
+            "bit_range": "25",
+            "attr": "RW",
+            "reset": "0",
+            "description": "Start APB transfer. Writing one to this \nregister \ninitiates \nAPB \ntransfer. \nThis \nregister is cleared by HW APB transfer \nwas finished (pready_m assert). \nType of this bit is RWAC - Read Write Auto \nClear."
+          },
+          {
+            "name": "PRESET_N_M",
+            "bit_range": "24",
+            "attr": "atRW",
+            "reset": "0",
+            "description": "Value \nof \nthis \nbit \nis \npresents \npreset_n_m output."
+          },
+          {
+            "name": "Reserved3",
+            "bit_range": "23:16",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Reserved. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "ALERT_CMN_READY",
+            "bit_range": "15",
+            "attr": "RO",
+            "reset": "0",
+            "description": "When asserted TCPC PHY is ready"
+          },
+          {
+            "name": "ALERT_CMN_RESET_N",
+            "bit_range": "14",
+            "attr": "atRW",
+            "reset": "0",
+            "description": "Value \nof \nthis \nbit \nis \npresents \ncmn_reset_n output."
+          },
+          {
+            "name": "ALERT_INIT",
+            "bit_range": "13",
+            "attr": "RO",
+            "reset": "0",
+            "description": "Controller \ninitialization \nstatus: \n0b \u2013 TCPC initialized \n1b \n- \nTCPC \nbeing \ninitialized \n- \nonly \nSFRs[0..3] are readable. No SFR shall be \nwritten during initialization."
+          },
+          {
+            "name": "ALERT_APB_BUSY",
+            "bit_range": "12",
+            "attr": "RO",
+            "reset": "0",
+            "description": "Last APB Slave transfer status. \n0b - processed. Ready for next transfer. \n1b - transfer pending. Next transfer will \nbe postponed. Note: Read from the first \n4 SFR is never postponed."
+          },
+          {
+            "name": "Reserved4",
+            "bit_range": "11:10",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "ALERT_DP_HPD",
+            "bit_range": "9",
+            "attr": "pinRW",
+            "reset": "0",
+            "description": "State \nof \nDisplay \nPort \nHPD \n(source_hpd)."
+          },
+          {
+            "name": "ALERT_ALERT",
+            "bit_range": "8",
+            "attr": "RW",
+            "reset": "1",
+            "description": "State of alert_n pin. \nDefault value is 1(inactive)."
+          },
+          {
+            "name": "CFG_STRAP",
+            "bit_range": "7:6",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Value \nof \nStrap \npins: 00b - do not \nadvertise 01b \n- \nadvertise as DFP \n10b \n- advertise \nas UFP 11b - start \nas DRP"
+          },
+          {
+            "name": "Reserved5",
+            "bit_range": "5:4",
+            "attr": "RO",
+            "reset": "0x0",
+            "description": "Reserved. Always write as 0 and ignore \nread value. Always reads0."
+          },
+          {
+            "name": "PHY_RESET",
+            "bit_range": "3",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b - TCPC PD PHY layer reset \ndeasserted 1b - TCPC PD PHY \nlayer reset asserted"
+          },
+          {
+            "name": "CFG_SLEEP",
+            "bit_range": "2",
+            "attr": "RO",
+            "reset": "0",
+            "description": "0b - Xtensa is in sleep mode \n1b - Xtensa is not in sleep mode"
+          },
+          {
+            "name": "CFG_STALL",
+            "bit_range": "1",
+            "attr": "RW",
+            "reset": "0",
+            "description": "0b \n- \nXtensa \nstall \ndeasserted \n1b \n- \nXtensa stall asserted \nXtensa - RO, APB -\nRW"
+          }
+        ],
+        "description": "SFC Reg0 Register"
+      },
+      {
+        "type": "register",
+        "name": "SFC_REG_1",
+        "offset": "0x0104",
+        "size": "32",
+        "reset": "0x00000000",
+        "bit_ranges": [
+          {
+            "name": "PWDATA_M_1",
+            "bit_range": "31:24",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Bits [15:8] of pwdata_m output."
+          },
+          {
+            "name": "PWDATA_M_0",
+            "bit_range": "23:16",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Bits [7:0] of pwdata_m output."
+          },
+          {
+            "name": "PADDR_M_1",
+            "bit_range": "15:8",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Bits [15:8] of paddr_m output."
+          },
+          {
+            "name": "PADDR_M_0",
+            "bit_range": "7:0",
+            "attr": "RW",
+            "reset": "0x00",
+            "description": "Bits [7:0] of paddr_m output."
+          }
+        ],
+        "description": "SFC Reg1 Register"
+      },
+      {
+        "type": "register",
+        "name": "SFC_REG_2",
+        "offset": "0x0108",
+        "size": "32",
+        "reset": "0x00020000",
+        "bit_ranges": [
+          {
+            "name": "Reserved",
+            "bit_range": "31:16",
+            "attr": "RW",
+            "reset": "0x0002",
+            "description": "This is a vendor defined capability. \nThis part of register is reserved. These \nbits of register should not be accessed \nby software. It is described only for \ninformative purposes."
+          },
+          {
+            "name": "PRDATA_M_1",
+            "bit_range": "15:8",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Bits [15:8] of prdata_m input."
+          },
+          {
+            "name": "PRDATA_M_0",
+            "bit_range": "7:0",
+            "attr": "RO",
+            "reset": "0x00",
+            "description": "Bits [7:0] of prdata_m input."
+          }
+        ],
+        "description": "SFC Reg2 Register"
+      }
+    ],
+    "name": "VENDOR",
+    "summary": [
+      {
+        "name": "VENDOR_ID",
+        "offset": "0x0000",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RO"
+      },
+      {
+        "name": "PRODUCT_ID",
+        "offset": "0x0004",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RO"
+      },
+      {
+        "name": "DEVICE_ID",
+        "offset": "0x0008",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RO"
+      },
+      {
+        "name": "USBTYPEC_REV",
+        "offset": "0x000C",
+        "size": "32",
+        "reset": "0x00000011",
+        "description": "RO"
+      },
+      {
+        "name": "USBPD_REV_VER",
+        "offset": "0x0010",
+        "size": "32",
+        "reset": "0x00002011",
+        "description": "RO"
+      },
+      {
+        "name": "PD_INTERFACE_REV",
+        "offset": "0x0014",
+        "size": "32",
+        "reset": "0x00001010",
+        "description": "RO"
+      },
+      {
+        "name": "ALERT",
+        "offset": "0x0020",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "ALERT_MASK",
+        "offset": "0x0024",
+        "size": "32",
+        "reset": "0x00000FFF",
+        "description": "RW"
+      },
+      {
+        "name": "POWER_STATUS_MASK",
+        "offset": "0x0028",
+        "size": "32",
+        "reset": "0x000000FF",
+        "description": "RW"
+      },
+      {
+        "name": "FAULT_STATUS_MASK",
+        "offset": "0x002C",
+        "size": "32",
+        "reset": "0x0000007F",
+        "description": "RW"
+      },
+      {
+        "name": "CONFIG_STANDARD_OUTPUT",
+        "offset": "0x0034",
+        "size": "32",
+        "reset": "0x00000060",
+        "description": "RW"
+      },
+      {
+        "name": "TCPC_CONTROL",
+        "offset": "0x0038",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "ROLE_CONTROL",
+        "offset": "0x003C",
+        "size": "32",
+        "reset": "0x0000001F",
+        "description": "RW"
+      },
+      {
+        "name": "FAULT_CONTROL",
+        "offset": "0x0040",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "POWER_CONTROL",
+        "offset": "0x0044",
+        "size": "32",
+        "reset": "0x00000010",
+        "description": "RW"
+      },
+      {
+        "name": "CC_STATUS",
+        "offset": "0x0048",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RO"
+      },
+      {
+        "name": "POWER_STATUS",
+        "offset": "0x004C",
+        "size": "32",
+        "reset": "0x00000048",
+        "description": "RO"
+      },
+      {
+        "name": "FAULT_STATUS",
+        "offset": "0x0050",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "COMMAND",
+        "offset": "0x005C",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "DEVICE_CAPABILITIES_1",
+        "offset": "0x0060",
+        "size": "32",
+        "reset": "0x00007EDF",
+        "description": "RO"
+      },
+      {
+        "name": "DEVICE_CAPABILITIES_2",
+        "offset": "0x0064",
+        "size": "32",
+        "reset": "0x000000CF",
+        "description": "RO"
+      },
+      {
+        "name": "STANDARD_INPUT_CAPABILITIES",
+        "offset": "0x0068",
+        "size": "32",
+        "reset": "0x00000007",
+        "description": "RO"
+      },
+      {
+        "name": "STANDARD_OUTPUT_CAPABILITIES",
+        "offset": "0x006C",
+        "size": "32",
+        "reset": "0x0000007F",
+        "description": "RO"
+      },
+      {
+        "name": "MESSAGE_HEADER_INFO",
+        "offset": "0x007C",
+        "size": "32",
+        "reset": "0x00000002",
+        "description": "RW"
+      },
+      {
+        "name": "RECEIVE_DETECT",
+        "offset": "0x0080",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "RECEIVE_BYTE_COUNT",
+        "offset": "0x0084",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RO"
+      },
+      {
+        "name": "RX_BUF_FRAME_TYPE",
+        "offset": "0x0088",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RO"
+      },
+      {
+        "name": "RX_BUF_HEADER_BYTE_10",
+        "offset": "0x008C",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RO"
+      },
+      {
+        "name": "RX_BUF_OBJX_BYTE_3210",
+        "offset": "0x0090",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RO"
+      },
+      {
+        "name": "TRANSMIT",
+        "offset": "0x00AC",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "TRANSMIT_BYTE_COUNT",
+        "offset": "0x00B0",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "TX_BUF_HEADER_BYTE_10",
+        "offset": "0x00B4",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "TX_BUF_OBJX_BYTE_3210",
+        "offset": "0x00B8",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "VBUS_VOLTAGE",
+        "offset": "0x00D4",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RO"
+      },
+      {
+        "name": "VBUS_SINK_DISCONNECT_THRESHOLD",
+        "offset": "0x00D8",
+        "size": "32",
+        "reset": "0x000000A2",
+        "description": "RW"
+      },
+      {
+        "name": "VBUS_STOP_DISCHARGE_THRESHOLD",
+        "offset": "0x00DC",
+        "size": "32",
+        "reset": "0x00000020",
+        "description": "RW"
+      },
+      {
+        "name": "VBUS_VOLTAGE_ALARM_HI_CFG",
+        "offset": "0x00E0",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "VBUS_VOLTAGE_ALARM_LO_CFG",
+        "offset": "0x00E4",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "RX_ERR_CNT",
+        "offset": "0x00F4",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "PHY_MUX_CTRL",
+        "offset": "0x00F8",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "CC_PD_TEST_DBG",
+        "offset": "0x00FC",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "SFC_REG_0",
+        "offset": "0x0100",
+        "size": "32",
+        "reset": "0x00000101",
+        "description": "RW"
+      },
+      {
+        "name": "SFC_REG_1",
+        "offset": "0x0104",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "SFC_REG_2",
+        "offset": "0x0108",
+        "size": "32",
+        "reset": "0x00020000",
+        "description": "RW"
+      },
+      {
+        "name": "SFC_REG_3-SFC_REG_63",
+        "offset": "0x010C-0x01FC",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      },
+      {
+        "name": "IRAM_REG_SPACE_0-IRAM_REG_SPACE_4095",
+        "offset": "0x8000-0xBFFC",
+        "size": "32",
+        "reset": "0x00000000",
+        "description": "RW"
+      }
+    ]
+  }
+]

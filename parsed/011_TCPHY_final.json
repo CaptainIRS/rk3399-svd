@@ -1,0 +1,2589 @@
+[
+  {
+    "type": "group",
+    "registers": [
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_LANE_CFG",
+        "offset": "0b110000000000000000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n14",
+            "attr": "R/W",
+            "reset": "1",
+            "description": "PHY DP lane selection - when PHY DP I/F is selected for PMA lane 3, \nthis field selects which PHY DP lane drives PMA lane 3. (Only valid \nwith bit [12] == 1.) When configured for PHY DP, the same PHY DP \nlane can be mapped to only 1 PMA lane. This mapping is applicable \nfor a normal connector orientation. The logic automatically adjusts \nthe lane mapping for a flipped connector orientation."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "13",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "PMA lane 3 interface select - selects between PIPE PCS and PHY \nDP to drive PMA lane 3. 0 = PIPE PCS; 1 = PHY DP I/F."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "11:\n10",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "PHY DP lane selection - when PHY DP I/F is selected for PMA lane 2, \nthis field selects which PHY DP lane drives PMA lane 2. (Only valid \nwith bit [8] == 1.) When configured for DP, the same PHY DP lane \ncan be mapped to only 1 PMA lane. This mapping is applicable for a \nnormal connector orientation. The logic automatically adjusts the \nlane mapping for a flipped connector orientation."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "9",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "PMA lane 2 interface select - selects between PIPE PCS and PHY \nDP to drive PMA lane 2. 0 = PIPE PCS; 1 = PHY DP I/F."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "7:6",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "PHY DP lane selection - when PHY DP I/F is selected for PMA lane 1, \nthis field selects which PHY DP lane drives PMA lane 1. (Only valid \nwith bit [4] == 1.) When configured for DP, the same PHY DP lane \ncan be mapped to only 1 PMA lane. This mapping is applicable for a \nnormal connector orientation. The logic automatically adjusts the \nlane mapping for a flipped connector orientation."
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "5",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD8",
+            "bit_range": "4",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "PMA lane 1 interface select - selects between PIPE PCS and PHY DP \ninterface to drive PMA lane 1. 0 = PIPE PCS; 1 = PHY DP I/F."
+          },
+          {
+            "name": "FIELD9",
+            "bit_range": "3:2",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "PHY DP lane selection - when PHY DP I/F is selected for PMA lane 0, \nthis field selects which PHY DP lane drives PMA lane 0. (Only valid \nwith bit [0] == 1.) When configured for DP, the same PHY DP lane \ncan be mapped to only 1 PMA lane. This mapping is applicable for a \nnormal connector orientation. The logic automatically adjusts the \nlane mapping for a flipped connector orientation."
+          },
+          {
+            "name": "FIELD10",
+            "bit_range": "1",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD11",
+            "bit_range": "0",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "PMA lane 0 interface select - selects between PIPE PCS and PHY \nDP to drive PMA lane 0. 0 = PIPE PCS; 1 = PHY DP I/F. (Note: \nPHY DP I/F refers to PHY PMA transmit data interface, i.e. \nphy_pma_tx_data_ln_<>/phy_pma_tx_data_clk_in, and the \ninternal DP configuration and control registers."
+          }
+        ],
+        "description": "PMA lane configuration register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PIPE_CMN_CTRL1",
+        "offset": "0b110000000000000100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:9",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "Comma  realign:  This  field  controls  the  comma  alignment  state \nmachine to re-align to new bit position without going to loss of sync \nstate.  The  requirement  of  the  new  bit  position  should  meet  the \nnumber  of  COMMAs  as  per  Symbol  unlock  count  register  definition. \nWhen  new  bit  position \nis \nidentified  the  comma  alignment  state \nmachine remains in sync state with the alignment now locked to the \nnew  bit  position. This  field needs to be programmed during the PHY \ninitialization routine before training sequences are received. The effect \nhere is that pipe_rx_valid is not de-asserted upon re-alignment. When \nthis  bit  is  0,  pipe_rx_valid  will  be  de-asserted  upon  loss  of  COMMA \nlock and subsequent re-alignment."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "7:5",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "4",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "TX electrical idle pre release : When this bit is set, the TX electrical \nidle release to the PMA is advanced 1 cycle to allow the adjustment of \nthe datapath timing."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "2",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "USB PIPE3 Compatibility Mode enable : When this bit is set to 1, \nUSB  PIPE3  compatibility  mode \nis  enabled.  In \nthis  mode,  when \noperating in nominal empty Elasticity Buffer mode, when the EB buffer \ngoes empty, instead of de-asserting PIPE RxDataValid, a USB SKIP OS \nis inserted into the data stream. This is the behavior as defined in PIPE \nversion 3.  When this bit is low, PIPE RxDataValid is de-asserted when \nthe EB buffer goes empty, as recommended by PIPE version 4."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "1",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "USB Loopback Slave Error Count disable : When this bit is set \nto  1,  the  error  count  insertion  for USB  loopback  slave  is  disabled, \nsuch that the error count is not inserted into the BCNT OS."
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "0",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "USB Elasticity Buffer Re-align enable : When this bit is set to 1, \nwhen RX for a USB link is started, the elasticity buffer is re-aligned to \nits  idle  point  upon  seeing  the  3  consective  COMMAs  in  the  same \nrelative bit position (first instance only). This will re-align the elasticity \nbuffer (i.e. CTC FIFO) after receiving the TSEQ data which contains no \nSKIP OSs."
+          }
+        ],
+        "description": "PIPE common control1 register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PIPE_CMN_CTRL2",
+        "offset": "0b110000000000001000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n12",
+            "attr": "R/W",
+            "reset": "11",
+            "description": "USB SuperSpeed TX LFPS Stretch : Minimum number of data rate \nclock cycles in which PMA tx_lfps_en signal is asserted.    Number of \ndata rate clock cycles must be > 1 PMA RefClk cycle."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "11:0",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          }
+        ],
+        "description": "PIPE common control2 register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PIPE_COM_LOCK_CFG1",
+        "offset": "0b110000000000001100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:12",
+            "attr": "R/W",
+            "reset": "0x4",
+            "description": "Symbol unlock count: The number of COMMA symbols that need \nto  be  seen  in  the  wrong  bit position  before  the  comma  alignment \nstate machine will transition to RESYNC or LOS state"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "11:0",
+            "attr": "R/W",
+            "reset": "0x400",
+            "description": "comma full lock count: The number of COMMA symbols that need \nto be seen in the same bit position for  the  comma  alignment  state \nmachine to lock. The field is used for initial reset lock."
+          }
+        ],
+        "description": "PIPE comma lock configuration1 register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PIPE_COM_LOCK_CFG2",
+        "offset": "0b110000000000010000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n8",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "7:0",
+            "attr": "R/W",
+            "reset": "0x20",
+            "description": "comma lock count: The number of COMMA symbols that needs to \nbe  seen  in  the  same  bit  position  for  the  comma  state  machine  to \nlock. This field is used while the PCS is transitioning back to the P0 \npower state."
+          }
+        ],
+        "description": "PIPE comma lock configuration2 register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PIPE_RCV_DET_INH",
+        "offset": "0b110000000000010100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n0",
+            "attr": "R/W",
+            "reset": "0x3d09",
+            "description": "Receiver Detect Inhibit Counter Load Value: Counter load value \nto delay receiver detection request to PMA until PMA common mode \nis within the required range. The timer starts once the PHY signals \nready by de-assertion of pipe_phystatus. If receiver detect request \nis received while timer has not expired, the PCS will wait until the \ntimer expires before signaling the request to the PMA. Load value is \nspecified in multiples of 128 ns with a default value of 2 ms. Note: \nUnder normal operation the effect of this timer is transparent since \nthe USB controller's LTSSM state machine will wait 12 ms in the \neSS.Inactive.Quiet state before performing requesting a receiver \ndetect operation."
+          }
+        ],
+        "description": "PIPE receiver detect inhibit register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_USB_BER_CNT",
+        "offset": "0b110001000000000000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:8",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "7:0",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Current value of USB 30 loopback lsave Bit Error Count from the PCS.   \n(Not re-synchronized to apb_pclk)"
+          }
+        ],
+        "description": "USB loopback slave BER count isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_DP_MODE_CTL",
+        "offset": "0b110000000000100000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:12",
+            "attr": "R/W",
+            "reset": "0b1100",
+            "description": "PHY DP lane disable - 0 = enable associated PHY DP lane; 1 = \ndisable/powerdown the associated PHY DP lane. This field is used \nto disable PHY lanes when not used. For example, for VESA DP Alt \nMode pin assignments A, C and E, this field would be used to \ndisable unused lanes for 1 or 2 lane DP configura- tions.   \nAdditionally, any PMA lanes mapped to the PHY DP lane will be \ndisabled and powered down. \n\u2022 [12] = PHY DP lane 0 \n\u2022 [13] = PHY DP lane 1 \n\u2022 [14] = PHY DP lane 2 \n\u2022 [15] = PHY DP lane 3"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "11:9",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "DP link reset - Reset for DP link. 0 = reset asserted, 1 = reset de-\nasserted. Clearing this bit places all of the DP configured PMA lanes \ninto  reset  even  when  phy_reset_n  is  de-asserted.  It  is  used  to \nchange the DP configuration (i.e. number of active lanes) when a \nPHY reset is not possible (i.e. due to simultaneous USB operation)."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "7:4",
+            "attr": "R/O",
+            "reset": "0b0000",
+            "description": "PHY \nDP \nPower \nState \nAcknowledgement \n- \npower \nstate \nacknowledgement  for  PHY  DP  lanes.  (Re-synchro-  nized  to  APB \nclock.) \nAfter \nre-synchronization \nto  APB  clock, \nthis \nis \nthe  AND  of \nxcvr_power_state_ack[3:0] for each enabled HPHY DP lane."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "3:0",
+            "attr": "R/W",
+            "reset": "0b0000",
+            "description": "PHY DP Power State - power state for PHY DP lanes.  Direct mapping \nto the PMA's A0 to A3 power states (A0 = 0b0001, A1 = 0b0010, A2 \n=  0b0100  and  A3  =  0b1000).  (Re-synchronized  to  PSM  clock.) \nAutomatically, cleared to 0x0, upon [7:4] == [3:0], i.e. upon the \ncompletion of the power state change.  This eliminates the need to \nwrite this register back to 0x0.    The initial power state is set to A2. \nNote: The PMA has 2 other defined power states, A4 and A5.  These \nwill  not  be  used  by  HPHY  DP  and  are  thus  not  provided  in  this \nregister. \nDrives \nxcvr_power_state_req_ln_<>[3:0] \n(after \nre-\nsynchronization to the PSM clock) for each enabled PHY DP lane."
+          }
+        ],
+        "description": "DP Mode Control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_DP_CLK_CTL",
+        "offset": "0b110000000000100100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:1\n2",
+            "attr": "R/O",
+            "reset": "1",
+            "description": "DP PLL data rate 1 clock divider value. Divider value for \nthe \nPLL \nclock \nto \ngenerate \nphy_pma_char_clk_out.   \n(HBR2 = 1, RBR/HBR = 2.)"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "11:8",
+            "attr": "R/W",
+            "reset": "2",
+            "description": "DP PLL data rate 0 clock divider value. Divider value for \nthe  PLL  clock  to  generate  phy_pma_tx_data_clk_out.   \n(HBR2 = 2, RBR/HBR = 4.)"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "7:4",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "DP PLL clock enable acknowledge - Indicates whether DP PLL's data rate \nand full rate clocks are active/ enabled.    1 = clocks enabled/active, 0 \n= clocks disabled/gated."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "2",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "DP PLL clock enable - Clock enable for DP PLL's data rate and full rate \nclocks out of PMA. 1 = enable PLL data rate and full rate clocks, 0 = gate \nPLL data rate and full rate clocks"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "1",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "DP PLL ready - DP PLL's ready indication for DP high speed clocks.    1 = \nPLL ready, 0 = PLL not ready."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "0",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "DP PLL enable - DP PLL's enable for DP high speed clocks.    1 = enabled, \n0 = disabled."
+          }
+        ],
+        "description": "DP Clock Control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_STS",
+        "offset": "0b110000000000111100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "RC",
+            "reset": "0b0",
+            "description": "PHY APB access timeout: When set, an APB read/write request to PHY \nregisters failed (i.e. timed out). When set, this bit is cleared upon read."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14:\n0",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          }
+        ],
+        "description": "PHY status register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_DP_TX_CTL_LANE0",
+        "offset": "0b110001000000100000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:6",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "5:4",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "TX Voltage Level - Dxrives tx_vmargin PMA input for the mapped \nPMA lane (for functional and isolation modes). This field is used to \nset the DP Voltage Swing Level (0b00 = Level 0, 0b01 = Level 1, \n0b10 = Level 2 and 0b11 = Level 3).    TBD if Voltage Swing Level \n3 supported."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "3:2",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "1:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "TX  Deemphasis  setting  -  Drives  tx_deemphasis  PMA  input  for  the \nmapped PMA lane . This field is used to set the DP Pre-emphasis Level \n(0b00 = Level 0, 0b01 = Level 1, 0b10 = Level 2 and 0b11 = Level \n3).  TBD if Pre-emphasis Level 3 supported."
+          }
+        ],
+        "description": "DP Lane Configuration register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_DP_TX_CTL_LANE1",
+        "offset": "0b110001000100100000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:6",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "5:4",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "TX Voltage Level - Dxrives tx_vmargin PMA input for the mapped \nPMA lane (for functional and isolation modes). This field is used to \nset the DP Voltage Swing Level (0b00 = Level 0, 0b01 = Level 1, \n0b10 = Level 2 and 0b11 = Level 3).    TBD if Voltage Swing Level \n3 supported."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "3:2",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "1:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "TX  Deemphasis  setting  -  Drives  tx_deemphasis  PMA  input  for  the \nmapped PMA lane . This field is used to set the DP Pre-emphasis Level \n(0b00 = Level 0, 0b01 = Level 1, 0b10 = Level 2 and 0b11 = Level \n3).  TBD if Pre-emphasis Level 3 supported."
+          }
+        ],
+        "description": "DP Lane Configuration register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_DP_TX_CTL_LANE2",
+        "offset": "0b110001001000100000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:6",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "5:4",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "TX Voltage Level - Dxrives tx_vmargin PMA input for the mapped \nPMA lane (for functional and isolation modes). This field is used to \nset the DP Voltage Swing Level (0b00 = Level 0, 0b01 = Level 1, \n0b10 = Level 2 and 0b11 = Level 3).    TBD if Voltage Swing Level \n3 supported."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "3:2",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "1:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "TX  Deemphasis  setting  -  Drives  tx_deemphasis  PMA  input  for  the \nmapped PMA lane . This field is used to set the DP Pre-emphasis Level \n(0b00 = Level 0, 0b01 = Level 1, 0b10 = Level 2 and 0b11 = Level \n3).  TBD if Pre-emphasis Level 3 supported."
+          }
+        ],
+        "description": "DP Lane Configuration register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_DP_TX_CTL_LANE3",
+        "offset": "0b110001001100100000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:6",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "5:4",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "TX Voltage Level - Dxrives tx_vmargin PMA input for the mapped \nPMA lane (for functional and isolation modes). This field is used to \nset the DP Voltage Swing Level (0b00 = Level 0, 0b01 = Level 1, \n0b10 = Level 2 and 0b11 = Level 3).    TBD if Voltage Swing Level \n3 supported."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "3:2",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "1:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "TX  Deemphasis  setting  -  Drives  tx_deemphasis  PMA  input  for  the \nmapped PMA lane . This field is used to set the DP Pre-emphasis Level \n(0b00 = Level 0, 0b01 = Level 1, 0b10 = Level 2 and 0b11 = Level \n3).  TBD if Pre-emphasis Level 3 supported."
+          }
+        ],
+        "description": "DP Lane Configuration register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_CMN_CTRL1",
+        "offset": "0b110010000000000000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:14",
+            "attr": "R/W",
+            "reset": "0b00",
+            "description": "Drives cmn_ref_clk_ana_div PMA input"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "13:12",
+            "attr": "R/W",
+            "reset": "0b00",
+            "description": "Drives cmn_ref_clk_dig_div PMA input"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "11:10",
+            "attr": "R/W",
+            "reset": "0b00",
+            "description": "Drives cmn_psm_clk_dig_div PMA input"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "9:7",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "6:4",
+            "attr": "R/W",
+            "reset": "0b000",
+            "description": "Drives cmn_ref_clk_sel PMA input"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "3",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives cmn_ref_clk_rcv_out_en PMA input"
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "2",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of cmn_macro_suspend_ack PMA output"
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "1",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of cmn_refclk_active PMA output"
+          },
+          {
+            "name": "FIELD8",
+            "bit_range": "0",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of cmn_ready pin PMA output"
+          }
+        ],
+        "description": "PMA common control1 register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_PLL_CTRL0",
+        "offset": "0b110010000001000100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:4",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "3",
+            "attr": "R/W",
+            "reset": "1",
+            "description": "Drives  cmn_pll1_clk_datart_en  PMA  input  when  in  PMA  isolation \nmode"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "2",
+            "attr": "R/W",
+            "reset": "1",
+            "description": "Drives  cmn_pll0_clk_datart_en  PMA  input  when  in  PMA  isolation \nmode"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "1",
+            "attr": "R/W",
+            "reset": "1",
+            "description": "Drives cmn_pll1_en PMA input when in PMA isolation mode"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "0",
+            "attr": "R/W",
+            "reset": "1",
+            "description": "Drives cmn_pll0_en PMA input when in PMA isolation mode"
+          }
+        ],
+        "description": "PMA PLL control0 isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_PLL_CTRL1",
+        "offset": "0b110010000001001000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:1\n2",
+            "attr": "R/W",
+            "reset": "0b0001",
+            "description": "Drives  cmn_pll1_clk_datart1_div  PMA  input  when  in  PMA  isolation \nmode"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "11:8",
+            "attr": "R/W",
+            "reset": "0b0001",
+            "description": "Drives  cmn_pll1_clk_datart0_div  PMA  input  when  in  PMA  isolation \nmode"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "7:4",
+            "attr": "R/W",
+            "reset": "0b0010",
+            "description": "Drives  cmn_pll0_clk_datart1_div  PMA  input  when  in  PMA  isolation \nmode"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "3:0",
+            "attr": "R/W",
+            "reset": "0b0010",
+            "description": "Drives  cmn_pll0_clk_datart0_div  PMA  input  when  in  PMA  isolation \nmode"
+          }
+        ],
+        "description": "PMA PLL control1 isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_ISOLATION_CTRL",
+        "offset": "0b110010000001111100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "PHY/PMA \nisolation \nenable \n(isolation_en) \n-  When \nset, \nenables   \nisolation (PHY or PMA)."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "PHY/PMA common isolation enable (cmn_isolation_en) - When in PHY \nMacro  Isolation  Mode,  the  PHY  common  isolation  register(s)  are \nselected.  When  in  PMA  Isolation  Mode,  the  PMA  common  isolation \nreg- ister(s) are selected."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "PHY/PMA \nisolation  mode \nselect \n(isolation_mode_sel) \n-  When \nisolation_en  is  set,  this  bit  selects between  PHY  isolation  and  PMA \nisolation mode.    0 = PHY isolation mode; 1 = PMA isolation mode."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "11:8",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "7:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "PHY/PMA lane isolation enable (ln_isolation_en) - When in PHY Macro \nIsolation  Mode,  the  selected  PHY \nlane(s) \nisolation  registers  are \nselected.  When  in  PMA  Isolation  Mode,  the  selected  PMA  lane(s) \nisolation registers are selected."
+          }
+        ],
+        "description": "Isolation control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_XCVR_CTRL_LANE0",
+        "offset": "0b110011000001000000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of xcvr_pll_clk_en_ack PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  xcvr_pll_clk_en  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_lfps_en PMA input for the associated lane when in PMA isolation \nmode."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  tx_elec_idle  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "11",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of xcvr_psm_ready PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "10",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of tx_rcv_detected PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "9",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of tx_rcv_detect_done PMA ouptut for the associated lane."
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_rcv_detect_en PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD8",
+            "bit_range": "7",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives \nrx_eq_training_data_valid_ln_{nnnn}  PMA \ninput \nfor \nthe \nassociated lane when in PMA isolation mode.    Valid for PMA lanes 2 \nand 3 only.    For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD9",
+            "bit_range": "6",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  rx_eq_training  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode.  Valid for PMA lanes 2 and 3 only.    For PMA lanes 0 and \n3, reserved."
+          },
+          {
+            "name": "FIELD10",
+            "bit_range": "5",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives xcvr_link_reset_n PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD11",
+            "bit_range": "4",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives xcvr_lane_suspend PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD12",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of rx_lfps_detect PMA output for the assocaited lane. Valid \nfor PMA lanes 2 and 3 only. For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD13",
+            "bit_range": "2",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of rx_signal_detect PMA output for the associated lane. \nValid for PMA lanes 2 and 3 only. For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD14",
+            "bit_range": "1",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  rx_termination  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode.  Valid for PMA lanes 2 and 3 only.    For PMA lanes 0 and \n3, reserved."
+          },
+          {
+            "name": "FIELD15",
+            "bit_range": "0",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  xcvr_lane_en  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          }
+        ],
+        "description": "PMA Isolation Tansceiver control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_XCVR_CTRL_LANE1",
+        "offset": "0b110011000101000000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of xcvr_pll_clk_en_ack PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  xcvr_pll_clk_en  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_lfps_en PMA input for the associated lane when in PMA isolation \nmode."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  tx_elec_idle  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "11",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of xcvr_psm_ready PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "10",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of tx_rcv_detected PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "9",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of tx_rcv_detect_done PMA ouptut for the associated lane."
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_rcv_detect_en PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD8",
+            "bit_range": "7",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives \nrx_eq_training_data_valid_ln_{nnnn}  PMA \ninput \nfor \nthe \nassociated lane when in PMA isolation mode.    Valid for PMA lanes 2 \nand 3 only.    For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD9",
+            "bit_range": "6",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  rx_eq_training  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode.  Valid for PMA lanes 2 and 3 only.    For PMA lanes 0 and \n3, reserved."
+          },
+          {
+            "name": "FIELD10",
+            "bit_range": "5",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives xcvr_link_reset_n PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD11",
+            "bit_range": "4",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives xcvr_lane_suspend PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD12",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of rx_lfps_detect PMA output for the assocaited lane. Valid \nfor PMA lanes 2 and 3 only. For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD13",
+            "bit_range": "2",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of rx_signal_detect PMA output for the associated lane. \nValid for PMA lanes 2 and 3 only. For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD14",
+            "bit_range": "1",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  rx_termination  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode.  Valid for PMA lanes 2 and 3 only.    For PMA lanes 0 and \n3, reserved."
+          },
+          {
+            "name": "FIELD15",
+            "bit_range": "0",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  xcvr_lane_en  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          }
+        ],
+        "description": "PMA Isolation Tansceiver control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_XCVR_CTRL_LANE2",
+        "offset": "0b110011001001000000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of xcvr_pll_clk_en_ack PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  xcvr_pll_clk_en  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_lfps_en PMA input for the associated lane when in PMA isolation \nmode."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  tx_elec_idle  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "11",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of xcvr_psm_ready PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "10",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of tx_rcv_detected PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "9",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of tx_rcv_detect_done PMA ouptut for the associated lane."
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_rcv_detect_en PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD8",
+            "bit_range": "7",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives \nrx_eq_training_data_valid_ln_{nnnn}  PMA \ninput \nfor \nthe \nassociated lane when in PMA isolation mode.    Valid for PMA lanes 2 \nand 3 only.    For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD9",
+            "bit_range": "6",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  rx_eq_training  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode.  Valid for PMA lanes 2 and 3 only.    For PMA lanes 0 and \n3, reserved."
+          },
+          {
+            "name": "FIELD10",
+            "bit_range": "5",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives xcvr_link_reset_n PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD11",
+            "bit_range": "4",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives xcvr_lane_suspend PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD12",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of rx_lfps_detect PMA output for the assocaited lane. Valid \nfor PMA lanes 2 and 3 only. For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD13",
+            "bit_range": "2",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of rx_signal_detect PMA output for the associated lane. \nValid for PMA lanes 2 and 3 only. For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD14",
+            "bit_range": "1",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  rx_termination  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode.  Valid for PMA lanes 2 and 3 only.    For PMA lanes 0 and \n3, reserved."
+          },
+          {
+            "name": "FIELD15",
+            "bit_range": "0",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  xcvr_lane_en  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          }
+        ],
+        "description": "PMA Isolation Tansceiver control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_XCVR_CTRL_LANE3",
+        "offset": "0b110011001101000000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of xcvr_pll_clk_en_ack PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  xcvr_pll_clk_en  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_lfps_en PMA input for the associated lane when in PMA isolation \nmode."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  tx_elec_idle  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "11",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of xcvr_psm_ready PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "10",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of tx_rcv_detected PMA output for the associated lane."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "9",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of tx_rcv_detect_done PMA ouptut for the associated lane."
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_rcv_detect_en PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD8",
+            "bit_range": "7",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives \nrx_eq_training_data_valid_ln_{nnnn}  PMA \ninput \nfor \nthe \nassociated lane when in PMA isolation mode.    Valid for PMA lanes 2 \nand 3 only.    For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD9",
+            "bit_range": "6",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  rx_eq_training  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode.  Valid for PMA lanes 2 and 3 only.    For PMA lanes 0 and \n3, reserved."
+          },
+          {
+            "name": "FIELD10",
+            "bit_range": "5",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives xcvr_link_reset_n PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD11",
+            "bit_range": "4",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives xcvr_lane_suspend PMA input for the associated lane when in PMA \nisolation mode."
+          },
+          {
+            "name": "FIELD12",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of rx_lfps_detect PMA output for the assocaited lane. Valid \nfor PMA lanes 2 and 3 only. For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD13",
+            "bit_range": "2",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Current value of rx_signal_detect PMA output for the associated lane. \nValid for PMA lanes 2 and 3 only. For PMA lanes 0 and 3, reserved."
+          },
+          {
+            "name": "FIELD14",
+            "bit_range": "1",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  rx_termination  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode.  Valid for PMA lanes 2 and 3 only.    For PMA lanes 0 and \n3, reserved."
+          },
+          {
+            "name": "FIELD15",
+            "bit_range": "0",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives  xcvr_lane_en  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode."
+          }
+        ],
+        "description": "PMA Isolation Tansceiver control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_CFG_LANE0",
+        "offset": "0b110011000001000100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n14",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "13:\n12",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives  tx_deemphasis  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "11:\n9",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_low_power_swing_en PMA input for the associated lane."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "7:3",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "2:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives tx_vmargin PMA input for the associated lane."
+          }
+        ],
+        "description": "PMA TX configuration register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_CFG_LANE1",
+        "offset": "0b110011000101000100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n14",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "13:\n12",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives  tx_deemphasis  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "11:\n9",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_low_power_swing_en PMA input for the associated lane."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "7:3",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "2:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives tx_vmargin PMA input for the associated lane."
+          }
+        ],
+        "description": "PMA TX configuration register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_CFG_LANE2",
+        "offset": "0b110011001001000100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n14",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "13:\n12",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives  tx_deemphasis  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "11:\n9",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_low_power_swing_en PMA input for the associated lane."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "7:3",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "2:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives tx_vmargin PMA input for the associated lane."
+          }
+        ],
+        "description": "PMA TX configuration register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_CFG_LANE3",
+        "offset": "0b110011001101000100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n14",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "13:\n12",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives  tx_deemphasis  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "11:\n9",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "8",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives tx_low_power_swing_en PMA input for the associated lane."
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "7:3",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "2:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives tx_vmargin PMA input for the associated lane."
+          }
+        ],
+        "description": "PMA TX configuration register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_LINK_MODE_LANE0",
+        "offset": "0b110011000001001000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "tx_reset_n PMA input for the associated lane when in PMA isolation \nmode."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "rx_reset_n PMA input for the associated lane when in PMA isolation \nmode. Valid for  PMA  lanes 2  and  3  only.    For  PMA  lanes  0 and  3, \nreserved."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives the tx_high_z PMA input for the associated lane when in PMA \nisolation mode"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "11:6",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "5:4",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives xcvr_standard_mode PMA input for the associated lane when \nin PMA isolation mode."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "2:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives  xcvr_data_width  PMA  input  for  the  associated  lane  when  in \nPMA isolation mode."
+          }
+        ],
+        "description": "PMA Isolation mode control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_LINK_MODE_LANE1",
+        "offset": "0b110011000101001000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "tx_reset_n PMA input for the associated lane when in PMA isolation \nmode."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "rx_reset_n PMA input for the associated lane when in PMA isolation \nmode. Valid for  PMA  lanes 2  and  3  only.    For  PMA  lanes  0 and  3, \nreserved."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives the tx_high_z PMA input for the associated lane when in PMA \nisolation mode"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "11:6",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "5:4",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives xcvr_standard_mode PMA input for the associated lane when \nin PMA isolation mode."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "2:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives  xcvr_data_width  PMA  input  for  the  associated  lane  when  in \nPMA isolation mode."
+          }
+        ],
+        "description": "PMA Isolation mode control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_LINK_MODE_LANE2",
+        "offset": "0b110011001001001000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "tx_reset_n PMA input for the associated lane when in PMA isolation \nmode."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "rx_reset_n PMA input for the associated lane when in PMA isolation \nmode. Valid for  PMA  lanes 2  and  3  only.    For  PMA  lanes  0 and  3, \nreserved."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives the tx_high_z PMA input for the associated lane when in PMA \nisolation mode"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "11:6",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "5:4",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives xcvr_standard_mode PMA input for the associated lane when \nin PMA isolation mode."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "2:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives  xcvr_data_width  PMA  input  for  the  associated  lane  when  in \nPMA isolation mode."
+          }
+        ],
+        "description": "PMA Isolation mode control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_LINK_MODE_LANE3",
+        "offset": "0b110011001101001000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "tx_reset_n PMA input for the associated lane when in PMA isolation \nmode."
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b1",
+            "description": "rx_reset_n PMA input for the associated lane when in PMA isolation \nmode. Valid for  PMA  lanes 2  and  3  only.    For  PMA  lanes  0 and  3, \nreserved."
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "12",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives the tx_high_z PMA input for the associated lane when in PMA \nisolation mode"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "11:6",
+            "attr": "R/O",
+            "reset": "0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD5",
+            "bit_range": "5:4",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives xcvr_standard_mode PMA input for the associated lane when \nin PMA isolation mode."
+          },
+          {
+            "name": "FIELD6",
+            "bit_range": "3",
+            "attr": "R/O",
+            "reset": "0b0",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD7",
+            "bit_range": "2:0",
+            "attr": "R/W",
+            "reset": "0",
+            "description": "Drives  xcvr_data_width  PMA  input  for  the  associated  lane  when  in \nPMA isolation mode."
+          }
+        ],
+        "description": "PMA Isolation mode control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_PWRST_CTRL_LANE0",
+        "offset": "0b110011000001001100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives rx_sig_det_en_ext_} PMA input for the associated lane when \nin PMA isolation mode.  Valid for PMA lanes  2  and  3  only.    For  PMA \nlanes 0 and 3, reserved.    (Used for PCIe)"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives \ntx_cmn_mode_en_ext \nPMA \ninput \nfor \nthe \nassociated \nlanewhen in PMA isolation mode. (Used for PCIe)"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13:8",
+            "attr": "R/O",
+            "reset": "0x00",
+            "description": "Current value of xcvr_power_state_ack PMA output for the associated \nlane."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "7:6",
+            "attr": "R/O",
+            "reset": "0b00",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "5:0",
+            "attr": "R/W",
+            "reset": "0x00",
+            "description": "Drives  xcvr_power_state_req    PMA  input  for  the  associated  lane \nwhen in PMA isolation mode."
+          }
+        ],
+        "description": "PMA Isolation power state control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_PWRST_CTRL_LANE1",
+        "offset": "0b110011000101001100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives rx_sig_det_en_ext_} PMA input for the associated lane when \nin PMA isolation mode.  Valid for PMA lanes  2  and  3  only.    For  PMA \nlanes 0 and 3, reserved.    (Used for PCIe)"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives \ntx_cmn_mode_en_ext \nPMA \ninput \nfor \nthe \nassociated \nlanewhen in PMA isolation mode. (Used for PCIe)"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13:8",
+            "attr": "R/O",
+            "reset": "0x00",
+            "description": "Current value of xcvr_power_state_ack PMA output for the associated \nlane."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "7:6",
+            "attr": "R/O",
+            "reset": "0b00",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "5:0",
+            "attr": "R/W",
+            "reset": "0x00",
+            "description": "Drives  xcvr_power_state_req    PMA  input  for  the  associated  lane \nwhen in PMA isolation mode."
+          }
+        ],
+        "description": "PMA Isolation power state control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_PWRST_CTRL_LANE2",
+        "offset": "0b110011001001001100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives rx_sig_det_en_ext_} PMA input for the associated lane when \nin PMA isolation mode.  Valid for PMA lanes  2  and  3  only.    For  PMA \nlanes 0 and 3, reserved.    (Used for PCIe)"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives \ntx_cmn_mode_en_ext \nPMA \ninput \nfor \nthe \nassociated \nlanewhen in PMA isolation mode. (Used for PCIe)"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13:8",
+            "attr": "R/O",
+            "reset": "0x00",
+            "description": "Current value of xcvr_power_state_ack PMA output for the associated \nlane."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "7:6",
+            "attr": "R/O",
+            "reset": "0b00",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "5:0",
+            "attr": "R/W",
+            "reset": "0x00",
+            "description": "Drives  xcvr_power_state_req    PMA  input  for  the  associated  lane \nwhen in PMA isolation mode."
+          }
+        ],
+        "description": "PMA Isolation power state control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_PWRST_CTRL_LANE3",
+        "offset": "0b110011001101001100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives rx_sig_det_en_ext_} PMA input for the associated lane when \nin PMA isolation mode.  Valid for PMA lanes  2  and  3  only.    For  PMA \nlanes 0 and 3, reserved.    (Used for PCIe)"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "14",
+            "attr": "R/W",
+            "reset": "0b0",
+            "description": "Drives \ntx_cmn_mode_en_ext \nPMA \ninput \nfor \nthe \nassociated \nlanewhen in PMA isolation mode. (Used for PCIe)"
+          },
+          {
+            "name": "FIELD2",
+            "bit_range": "13:8",
+            "attr": "R/O",
+            "reset": "0x00",
+            "description": "Current value of xcvr_power_state_ack PMA output for the associated \nlane."
+          },
+          {
+            "name": "FIELD3",
+            "bit_range": "7:6",
+            "attr": "R/O",
+            "reset": "0b00",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD4",
+            "bit_range": "5:0",
+            "attr": "R/W",
+            "reset": "0x00",
+            "description": "Drives  xcvr_power_state_req    PMA  input  for  the  associated  lane \nwhen in PMA isolation mode."
+          }
+        ],
+        "description": "PMA Isolation power state control register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_LO_LANE0",
+        "offset": "0b110011000001010000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:0",
+            "attr": "R/W",
+            "reset": "0x0000",
+            "description": "Drives tx_td[15:0] PMA input for the associated lane when in PMA \nisolation mode.  (Not re-synchronized to apb_pclk)."
+          }
+        ],
+        "description": "PMA transmit low data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_LO_LANE1",
+        "offset": "0b110011000101010000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:0",
+            "attr": "R/W",
+            "reset": "0x0000",
+            "description": "Drives tx_td[15:0] PMA input for the associated lane when in PMA \nisolation mode.  (Not re-synchronized to apb_pclk)."
+          }
+        ],
+        "description": "PMA transmit low data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_LO_LANE2",
+        "offset": "0b110011001001010000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:0",
+            "attr": "R/W",
+            "reset": "0x0000",
+            "description": "Drives tx_td[15:0] PMA input for the associated lane when in PMA \nisolation mode.  (Not re-synchronized to apb_pclk)."
+          }
+        ],
+        "description": "PMA transmit low data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_LO_LANE3",
+        "offset": "0b110011001101010000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:0",
+            "attr": "R/W",
+            "reset": "0x0000",
+            "description": "Drives tx_td[15:0] PMA input for the associated lane when in PMA \nisolation mode.  (Not re-synchronized to apb_pclk)."
+          }
+        ],
+        "description": "PMA transmit low data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_HI_LANE0",
+        "offset": "0b110011000001010100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n4",
+            "attr": "R/O",
+            "reset": "0x000",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "3:0",
+            "attr": "R/W",
+            "reset": "0x0",
+            "description": "Drives  tx_td[19:16]  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode. (Not re-synchronized to apb_pclk)."
+          }
+        ],
+        "description": "PMA transmit high data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_HI_LANE1",
+        "offset": "0b110011000101010100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n4",
+            "attr": "R/O",
+            "reset": "0x000",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "3:0",
+            "attr": "R/W",
+            "reset": "0x0",
+            "description": "Drives  tx_td[19:16]  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode. (Not re-synchronized to apb_pclk)."
+          }
+        ],
+        "description": "PMA transmit high data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_HI_LANE2",
+        "offset": "0b110011001001010100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n4",
+            "attr": "R/O",
+            "reset": "0x000",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "3:0",
+            "attr": "R/W",
+            "reset": "0x0",
+            "description": "Drives  tx_td[19:16]  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode. (Not re-synchronized to apb_pclk)."
+          }
+        ],
+        "description": "PMA transmit high data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_HI_LANE3",
+        "offset": "0b110011001101010100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:\n4",
+            "attr": "R/O",
+            "reset": "0x000",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "3:0",
+            "attr": "R/W",
+            "reset": "0x0",
+            "description": "Drives  tx_td[19:16]  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode. (Not re-synchronized to apb_pclk)."
+          }
+        ],
+        "description": "PMA transmit high data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_LO_LANE0",
+        "offset": "0b110011000001011000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:0",
+            "attr": "R/O",
+            "reset": "0x0000",
+            "description": "Current value of rx_rd[15:0] PMA output for the associated lane. (Not \nre-synchronized to apb_pclk). Valid for PMA lanes 2 and 3 only.    For \nPMA lanes 0 and 3, reserved."
+          }
+        ],
+        "description": "PMA receive low data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_LO_LANE1",
+        "offset": "0b110011000101011000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:0",
+            "attr": "R/O",
+            "reset": "0x0000",
+            "description": "Current value of rx_rd[15:0] PMA output for the associated lane. (Not \nre-synchronized to apb_pclk). Valid for PMA lanes 2 and 3 only.    For \nPMA lanes 0 and 3, reserved."
+          }
+        ],
+        "description": "PMA receive low data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_LO_LANE2",
+        "offset": "0b110011001001011000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:0",
+            "attr": "R/O",
+            "reset": "0x0000",
+            "description": "Current value of rx_rd[15:0] PMA output for the associated lane. (Not \nre-synchronized to apb_pclk). Valid for PMA lanes 2 and 3 only.    For \nPMA lanes 0 and 3, reserved."
+          }
+        ],
+        "description": "PMA receive low data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_LO_LANE3",
+        "offset": "0b110011001101011000",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:0",
+            "attr": "R/O",
+            "reset": "0x0000",
+            "description": "Current value of rx_rd[15:0] PMA output for the associated lane. (Not \nre-synchronized to apb_pclk). Valid for PMA lanes 2 and 3 only.    For \nPMA lanes 0 and 3, reserved."
+          }
+        ],
+        "description": "PMA receive low data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_HI_LANE0",
+        "offset": "0b110011000001011100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:4",
+            "attr": "R/O",
+            "reset": "0x000",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "3:0",
+            "attr": "R/O",
+            "reset": "0x0",
+            "description": "Drives  rx_rd[19:16]  PMA \ninput \nfor  the  associated \nlane.  (Not  re-\nsynchronized to apb_pclk). Valid for PMA lanes 2 and 3 only.    For PMA \nlanes 0 and 3, reserved."
+          }
+        ],
+        "description": "PMA receive high data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_HI_LANE1",
+        "offset": "0b110011000101011100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:4",
+            "attr": "R/O",
+            "reset": "0x000",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "3:0",
+            "attr": "R/O",
+            "reset": "0x0",
+            "description": "Drives  rx_rd[19:16]  PMA \ninput \nfor  the  associated \nlane.  (Not  re-\nsynchronized to apb_pclk). Valid for PMA lanes 2 and 3 only.    For PMA \nlanes 0 and 3, reserved."
+          }
+        ],
+        "description": "PMA receive high data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_HI_LANE2",
+        "offset": "0b110011001001011100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:4",
+            "attr": "R/O",
+            "reset": "0x000",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "3:0",
+            "attr": "R/O",
+            "reset": "0x0",
+            "description": "Drives  rx_rd[19:16]  PMA \ninput \nfor  the  associated \nlane.  (Not  re-\nsynchronized to apb_pclk). Valid for PMA lanes 2 and 3 only.    For PMA \nlanes 0 and 3, reserved."
+          }
+        ],
+        "description": "PMA receive high data isolation register"
+      },
+      {
+        "type": "register",
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_HI_LANE3",
+        "offset": "0b110011001101011100",
+        "size": "16",
+        "reset": "CALC",
+        "bit_ranges": [
+          {
+            "name": "FIELD0",
+            "bit_range": "15:4",
+            "attr": "R/O",
+            "reset": "0x000",
+            "description": "Reserved"
+          },
+          {
+            "name": "FIELD1",
+            "bit_range": "3:0",
+            "attr": "R/O",
+            "reset": "0x0",
+            "description": "Drives  rx_rd[19:16]  PMA \ninput \nfor  the  associated \nlane.  (Not  re-\nsynchronized to apb_pclk). Valid for PMA lanes 2 and 3 only.    For PMA \nlanes 0 and 3, reserved."
+          }
+        ],
+        "description": "PMA receive high data isolation register"
+      }
+    ],
+    "name": "TYPEC_PHY",
+    "summary": [
+      {
+        "name": "TYPEC_PHY_PMA_LANE_CFG",
+        "offset": "0b110000000000000000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA lane configuration register"
+      },
+      {
+        "name": "TYPEC_PHY_PIPE_CMN_CTRL1",
+        "offset": "0b110000000000000100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PIPE common control1 register"
+      },
+      {
+        "name": "TYPEC_PHY_PIPE_CMN_CTRL2",
+        "offset": "0b110000000000001000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PIPE common control2 register"
+      },
+      {
+        "name": "TYPEC_PHY_PIPE_COM_LOCK_CFG1",
+        "offset": "0b110000000000001100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PIPE comma lock configuration1 register"
+      },
+      {
+        "name": "TYPEC_PHY_PIPE_COM_LOCK_CFG2",
+        "offset": "0b110000000000010000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PIPE comma lock configuration2 register"
+      },
+      {
+        "name": "TYPEC_PHY_PIPE_RCV_DET_INH",
+        "offset": "0b110000000000010100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PIPE receiver detect inhibit register"
+      },
+      {
+        "name": "TYPEC_PHY_USB_BER_CNT",
+        "offset": "0b110001000000000000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "USB loopback slave BER count isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_DP_MODE_CTL",
+        "offset": "0b110000000000100000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "DP Mode Control register"
+      },
+      {
+        "name": "TYPEC_PHY_DP_CLK_CTL",
+        "offset": "0b110000000000100100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "DP Clock Control register"
+      },
+      {
+        "name": "TYPEC_PHY_STS",
+        "offset": "0b110000000000111100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PHY status register"
+      },
+      {
+        "name": "TYPEC_PHY_DP_TX_CTL_LANE0",
+        "offset": "0b110001000000100000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "DP Lane Configuration register"
+      },
+      {
+        "name": "TYPEC_PHY_DP_TX_CTL_LANE1",
+        "offset": "0b110001000100100000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "DP Lane Configuration register"
+      },
+      {
+        "name": "TYPEC_PHY_DP_TX_CTL_LANE2",
+        "offset": "0b110001001000100000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "DP Lane Configuration register"
+      },
+      {
+        "name": "TYPEC_PHY_DP_TX_CTL_LANE3",
+        "offset": "0b110001001100100000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "DP Lane Configuration register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_CMN_CTRL1",
+        "offset": "0b110010000000000000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA common control1 register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_PLL_CTRL0",
+        "offset": "0b110010000001000100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA PLL control0 isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_PLL_CTRL1",
+        "offset": "0b110010000001001000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA PLL control1 isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_ISOLATION_CTRL",
+        "offset": "0b110010000001111100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "Isolation control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_XCVR_CTRL_LANE0",
+        "offset": "0b110011000001000000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation Tansceiver control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_XCVR_CTRL_LANE1",
+        "offset": "0b110011000101000000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation Tansceiver control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_XCVR_CTRL_LANE2",
+        "offset": "0b110011001001000000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation Tansceiver control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_XCVR_CTRL_LANE3",
+        "offset": "0b110011001101000000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation Tansceiver control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_CFG_LANE0",
+        "offset": "0b110011000001000100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA TX configuration register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_CFG_LANE1",
+        "offset": "0b110011000101000100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA TX configuration register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_CFG_LANE2",
+        "offset": "0b110011001001000100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA TX configuration register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_CFG_LANE3",
+        "offset": "0b110011001101000100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA TX configuration register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_LINK_MODE_LANE0",
+        "offset": "0b110011000001001000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation mode control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_LINK_MODE_LANE1",
+        "offset": "0b110011000101001000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation mode control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_LINK_MODE_LANE2",
+        "offset": "0b110011001001001000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation mode control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_LINK_MODE_LANE3",
+        "offset": "0b110011001101001000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation mode control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_PWRST_CTRL_LANE0",
+        "offset": "0b110011000001001100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation power state control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_PWRST_CTRL_LANE1",
+        "offset": "0b110011000101001100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation power state control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_PWRST_CTRL_LANE2",
+        "offset": "0b110011001001001100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation power state control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_PWRST_CTRL_LANE3",
+        "offset": "0b110011001101001100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA Isolation power state control register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_LO_LANE0",
+        "offset": "0b110011000001010000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA transmit low data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_LO_LANE1",
+        "offset": "0b110011000101010000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA transmit low data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_LO_LANE2",
+        "offset": "0b110011001001010000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA transmit low data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_LO_LANE3",
+        "offset": "0b110011001101010000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA transmit low data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_HI_LANE0",
+        "offset": "0b110011000001010100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA transmit high data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_HI_LANE1",
+        "offset": "0b110011000101010100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA transmit high data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_HI_LANE2",
+        "offset": "0b110011001001010100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA transmit high data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_TX_DATA_HI_LANE3",
+        "offset": "0b110011001101010100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA transmit high data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_LO_LANE0",
+        "offset": "0b110011000001011000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA receive low data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_LO_LANE1",
+        "offset": "0b110011000101011000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA receive low data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_LO_LANE2",
+        "offset": "0b110011001001011000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA receive low data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_LO_LANE3",
+        "offset": "0b110011001101011000",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA receive low data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_HI_LANE0",
+        "offset": "0b110011000001011100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA receive high data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_HI_LANE1",
+        "offset": "0b110011000101011100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA receive high data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_HI_LANE2",
+        "offset": "0b110011001001011100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA receive high data isolation register"
+      },
+      {
+        "name": "TYPEC_PHY_PMA_ISO_RX_DATA_HI_LANE3",
+        "offset": "0b110011001101011100",
+        "size": "16",
+        "reset": "CALC",
+        "description": "PMA receive high data isolation register"
+      }
+    ]
+  }
+]

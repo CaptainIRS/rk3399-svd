@@ -10,9 +10,12 @@ ddr = json.load(open('ddr.json'))
 hdmi = json.load(open('hdmi/regs.json'))
 displayport = json.load(open('displayport/regs.json'))
 pcie = json.load(open('pcie/regs.json'))
+pd = json.load(open('pdfs/009_PD_final.json'))
+isp = json.load(open('pdfs/005_ISP_final.json'))
+typecphy = json.load(open('pdfs/011_TCPHY_final.json'))
 
 attrs = []
-for group in part1 + part2 + part3:
+for group in part1 + part2 + part3 + pd + isp + typecphy:
     for register in group['registers']:
         for bit_range in register['bit_ranges']:
             attrs.append(bit_range['attr'].replace('\n', ''))
@@ -717,6 +720,18 @@ device_maps = {
     ],
     "IEP": [
         {"name": "IEP", "base": "0xFF670000", "description": "Image Enhancement Processor (IEP) Registers"},
+    ],
+    "TYPEC_PD": [
+        {"name": "TYPEC_PD0", "base": "0xFF7A0000", "description": "Type-C Power Delivery (TYPEC_PD) 0 Registers"},
+        {"name": "TYPEC_PD1", "base": "0xFF7B0000", "description": "Type-C Power Delivery (TYPEC_PD) 1 Registers"},
+    ],
+    "ISP": [
+        {"name": "ISP0", "base": "0xFF910000", "description": "Image Signal Processor 0 (ISP0) Registers"},
+        {"name": "ISP1", "base": "0xFF920000", "description": "Image Signal Processor 1 (ISP1) Registers"},
+    ],
+    "TYPEC_PHY": [
+        {"name": "TYPEC_PHY0", "base": "0xFF7C0000", "description": "Type-C PHY 0 Registers"},
+        {"name": "TYPEC_PHY1", "base": "0xFF800000", "description": "Type-C PHY 1 Registers"},
     ]
 }
 
@@ -766,6 +781,9 @@ group_descriptions = {
     "VOPB": "Visual Output Processor (Big) (VOPB) Registers",
     "VOPL": "Visual Output Processor (Little) (VOPL) Registers",
     "IEP": "Image Enhancement Processor (IEP) Registers",
+    "TYPEC_PD": "Type-C Power Delivery (TYPEC_PD) Registers",
+    "ISP": "Image Signal Processor (ISP) Registers",
+    "TYPEC_PHY": "Type-C PHY Registers",
 }
 
 group_block_sizes = {
@@ -814,6 +832,9 @@ group_block_sizes = {
     "VOPB": "0x3000",
     "VOPL": "0x3000",
     "IEP": "0x800",
+    "TYPEC_PD": "0x10000",
+    "ISP": "0x4000",
+    "TYPEC_PHY": "0x40000",
 }
 
 # (access, modifiedWriteValues, readAction)
@@ -835,11 +856,17 @@ svd_access_map = {
     'R/W1C': ('read-write', 'oneToClear', None),
     'R/WSC': ('read-write', 'set', None),
     'RW+': ('read-write', 'modify', None),
+    'RWW1toClr': ('read-write', 'oneToClear', None),
+    'rw': ('read-write', 'modify', None),
+    'r': ('read-only', None, None),
+    'w': ('write-only', 'modify', None),
+    'rwh': ('read-write', 'modify', None),
+    'R/O': ('read-only', None, None),
 }
 
 peripherals = {}
 
-for group in part1 + part2 + part3:
+for group in part1 + part2 + part3 + pd + isp + typecphy:
     device_map_groups = device_maps[group['name']]
     base_group = device_map_groups[0]
     if group['name'] not in peripherals:
@@ -880,7 +907,7 @@ for group in part1 + part2 + part3:
     for register in group['registers']:
         register['offset'] = register['offset'].replace(' ', '').replace('\n', '')
         if not re.match(r'^[a-zA-Z0-9_]+$', register['offset']):
-            print(register['name'])
+            print('Offset error', register['name'], register['offset'])
         size = register['size']
         if size == 'W':
             size = '32'
@@ -890,8 +917,10 @@ for group in part1 + part2 + part3:
             size = '64'
         elif size == 'B':
             size = '8'
+        elif size.isdigit():
+            size = size
         else:
-            print(register['name'])
+            print('Size error', register['name'], size)
         register_element = {
             "name": register['name'],
             "description": register['description'].replace('"', "'"),
@@ -902,6 +931,7 @@ for group in part1 + part2 + part3:
         }
         for bit_range in register['bit_ranges']:
             access, modifiedWriteValues, readAction = svd_access_map[bit_range['attr'].replace('\n', '')]
+            bit_range['bit_range'] = bit_range['bit_range'].replace(' ', '').replace('\n', '')
             field_element = {
                 "name": bit_range['name'].replace(' ', '_'),
                 "description": bit_range['description'].replace('"', "'"),
@@ -915,7 +945,7 @@ for group in part1 + part2 + part3:
                 else:
                     field_element["bitRange"] = f'[{int(base_group["bandwidth_bits"])-1}:0]'
             if not re.match(r'^[0-9:]+$', bit_range['bit_range']):
-                print(bit_range['name'])
+                print('Bit range error', bit_range['name'], bit_range['bit_range'])
             if modifiedWriteValues:
                 field_element["modifiedWriteValues"] = modifiedWriteValues
             if readAction:
@@ -931,16 +961,39 @@ for group in part1 + part2 + part3:
             register_element['dim'] = "8"
             register_element['dimIncrement'] = "4"
             register_element['addressOffset'] = register_element['addressOffset'].split('~')[0]
-        elif '~' in register_element['name']:
+        elif register_element['name'] == 'RX_BUF_OBJX_BYTE_3210':
+            register_element['name'] = 'RX_BUF_OBJ%s_BYTE_3210'
+            register_element['dim'] = "7"
+            register_element['dimIndex'] = "1-7"
+            register_element['dimIncrement'] = "4"
+            register_element['addressOffset'] = register_element['addressOffset']
+        elif register_element['name'] == 'TX_BUF_OBJX_BYTE_3210':
+            register_element['name'] = 'TX_BUF_OBJ%s_BYTE_3210'
+            register_element['dim'] = "7"
+            register_element['dimIndex'] = "1-7"
+            register_element['dimIncrement'] = "4"
+            register_element['addressOffset'] = register_element['addressOffset']
+        elif register_element['name'] in ['ISP_GAMMA_R_Y', 'ISP_GAMMA_G_Y', 'ISP_GAMMA_B_Y', 'ISP_GAMMA_OUT_Y', 'ISP_DPF_NLL_COEFF', 'ISP_WDR_TONECURVE_YM', 'ISP_WDR_TONECURVE_YM_SHD', 'ISP_CT_COEFF', 'ISP_HIST_BIN']:
+            register_element['name'] = register_element['name'] + '_%s'
+            register_element['dim'] = "17"
+            if register_element['name'] == 'ISP_CT_COEFF_%s':
+                register_element['dim'] = "9"
+            elif register_element['name'] == 'ISP_HIST_BIN_%s':
+                register_element['dim'] = "16"
+            elif 'ISP_WDR_TONECURVE_YM' in register_element['name']:
+                register_element['dim'] = "33"
+            register_element['dimIncrement'] = "4"
+            register_element['addressOffset'] = register_element['addressOffset']
+        elif '~' in register_element['name'] or '-' in register_element['name']:
             start, end = None, None
             if re.match(r'^.*\d+~\d+$', register_element['name']):
                 matches = re.match(r'^.*(\d+)~(\d+)$', register_element['name'])
                 start, end = matches.groups()
                 register_element['name'] = re.sub(r'\d+~\d+$', '%s', register_element['name'])
-            elif re.match(r'^.*\d+~.*\d+$', register_element['name']):
-                matches = re.match(r'^.*(\d+)~.*(\d+)$', register_element['name'])
+            elif re.match(r'^.*\d+[~\-].*\d+$', register_element['name']):
+                matches = re.match(r'^.*(\d+)[~\-].*(\d+)$', register_element['name'])
                 start, end = matches.groups()
-                register_element['name'] = re.sub(r'_?\d+~.*\d+$', '%s', register_element['name'])
+                register_element['name'] = re.sub(r'\d+[~\-].*\d+$', '%s', register_element['name'])
             else:
                 print('Invalid range', register_element['name'])
             register_element['dim'] = str(int(end) - int(start) + 1)
@@ -954,7 +1007,7 @@ for group in part1 + part2 + part3:
             else:
                 register_element['dimIncrement'] = "0x4"
             register_element['dimIndex'] = f"{start}-{end}"
-            register_element['addressOffset'] = register_element['addressOffset'].split('~')[0]
+            register_element['addressOffset'] = register_element['addressOffset'].split('~')[0].split('-')[0]
         exceptions = ['DDRMON', 'CIC', 'ERRLOG']
         if register_element['name'].startswith(group['name'] + '_'):
             register_element['name'] = register_element['name'][len(group['name']) + 1:]
@@ -1355,7 +1408,7 @@ for peripheral in peripherals:
                         else:
                             non_enums.append(line)
                 # enum_exclusions = ['DP_TEST', 'TX_COMMON', 'RKI2C_ST', 'SDMMC_HCON', 'USB3_DSTS', 'USB3_GCTL', 'USB3_DCTL', 'CCI500_ERROR_STATUS', 'SDMMC_STATUS', 'EMMCCORE_CLKCTRL', 'DP_TX_VERSION']
-                field_exclusions = ['HCON', 'SCALEDOWN', 'ULSTCHNGREQ', 'USBLNKST', 'SCL_ST', 'SDA_ST', 'RESISTOR_CTRL', 'SDCLKFREQSEL', 'DP_TX_VERSION', 'SW_H264ORVP9_ERROR_MODE', 'SW_YUV_CONV_RANGE', 'SW_PP_IN_CRBF_EN', 'WIN1_CSC_MODE', 'WIN0_CSC_MODE', 'WIN0_DATA_FMT']
+                field_exclusions = ['HCON', 'SCALEDOWN', 'ULSTCHNGREQ', 'USBLNKST', 'SCL_ST', 'SDA_ST', 'RESISTOR_CTRL', 'SDCLKFREQSEL', 'DP_TX_VERSION', 'SW_H264ORVP9_ERROR_MODE', 'SW_YUV_CONV_RANGE', 'SW_PP_IN_CRBF_EN', 'WIN1_CSC_MODE', 'WIN0_CSC_MODE', 'WIN0_DATA_FMT', 'CC2_State', 'CC1_State', 'mp_write_format']
                 register_exclusions = ['DP_TEST']
                 if len(enums) >= 2 and '......' not in field['description'] and field['name'] not in field_exclusions and register['name'] not in register_exclusions:
                     field['description'] = '\n'.join(non_enums)

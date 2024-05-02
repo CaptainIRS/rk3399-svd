@@ -974,11 +974,11 @@ for group in part1 + part2 + part3 + pd + isp + typecphy:
             register_element['dimIncrement'] = "4"
             register_element['addressOffset'] = register_element['addressOffset']
         elif register_element['name'] in ['ISP_GAMMA_R_Y', 'ISP_GAMMA_G_Y', 'ISP_GAMMA_B_Y', 'ISP_GAMMA_OUT_Y', 'ISP_DPF_NLL_COEFF', 'ISP_WDR_TONECURVE_YM', 'ISP_WDR_TONECURVE_YM_SHD', 'ISP_CT_COEFF', 'ISP_HIST_BIN']:
-            register_element['name'] = register_element['name'] + '_%s'
+            register_element['name'] = register_element['name'] + '%s'
             register_element['dim'] = "17"
-            if register_element['name'] == 'ISP_CT_COEFF_%s':
+            if register_element['name'] == 'ISP_CT_COEFF%s':
                 register_element['dim'] = "9"
-            elif register_element['name'] == 'ISP_HIST_BIN_%s':
+            elif register_element['name'] == 'ISP_HIST_BIN%s':
                 register_element['dim'] = "16"
             elif 'ISP_WDR_TONECURVE_YM' in register_element['name']:
                 register_element['dim'] = "33"
@@ -993,7 +993,7 @@ for group in part1 + part2 + part3 + pd + isp + typecphy:
             elif re.match(r'^.*\d+[~\-].*\d+$', register_element['name']):
                 matches = re.match(r'^.*(\d+)[~\-].*(\d+)$', register_element['name'])
                 start, end = matches.groups()
-                register_element['name'] = re.sub(r'\d+[~\-].*\d+$', '%s', register_element['name'])
+                register_element['name'] = re.sub(r'_?\d+[~\-].*\d+$', '%s', register_element['name'])
             else:
                 print('Invalid range', register_element['name'])
             register_element['dim'] = str(int(end) - int(start) + 1)

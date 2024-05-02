@@ -10,9 +10,9 @@ ddr = json.load(open('ddr.json'))
 hdmi = json.load(open('hdmi/regs.json'))
 displayport = json.load(open('displayport/regs.json'))
 pcie = json.load(open('pcie/regs.json'))
-pd = json.load(open('pdfs/009_PD_final.json'))
-isp = json.load(open('pdfs/005_ISP_final.json'))
-typecphy = json.load(open('pdfs/011_TCPHY_final.json'))
+pd = json.load(open('parsed/009_PD_final.json'))
+isp = json.load(open('parsed/005_ISP_final.json'))
+typecphy = json.load(open('parsed/011_TCPHY_final.json'))
 
 attrs = []
 for group in part1 + part2 + part3 + pd + isp + typecphy:

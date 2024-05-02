@@ -11,7 +11,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n14",
+            "bit_range": "15:14",
             "attr": "R/W",
             "reset": "1",
             "description": "PHY DP lane selection - when PHY DP I/F is selected for PMA lane 3, \nthis field selects which PHY DP lane drives PMA lane 3. (Only valid \nwith bit [12] == 1.) When configured for PHY DP, the same PHY DP \nlane can be mapped to only 1 PMA lane. This mapping is applicable \nfor a normal connector orientation. The logic automatically adjusts \nthe lane mapping for a flipped connector orientation."
@@ -32,7 +32,7 @@
           },
           {
             "name": "FIELD3",
-            "bit_range": "11:\n10",
+            "bit_range": "11:10",
             "attr": "R/W",
             "reset": "0",
             "description": "PHY DP lane selection - when PHY DP I/F is selected for PMA lane 2, \nthis field selects which PHY DP lane drives PMA lane 2. (Only valid \nwith bit [8] == 1.) When configured for DP, the same PHY DP lane \ncan be mapped to only 1 PMA lane. This mapping is applicable for a \nnormal connector orientation. The logic automatically adjusts the \nlane mapping for a flipped connector orientation."
@@ -171,7 +171,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n12",
+            "bit_range": "15:12",
             "attr": "R/W",
             "reset": "11",
             "description": "USB SuperSpeed TX LFPS Stretch : Minimum number of data rate \nclock cycles in which PMA tx_lfps_en signal is asserted.    Number of \ndata rate clock cycles must be > 1 PMA RefClk cycle."
@@ -219,7 +219,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n8",
+            "bit_range": "15:8",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
@@ -243,7 +243,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n0",
+            "bit_range": "15:0",
             "attr": "R/W",
             "reset": "0x3d09",
             "description": "Receiver Detect Inhibit Counter Load Value: Counter load value \nto delay receiver detection request to PMA until PMA common mode \nis within the required range. The timer starts once the PHY signals \nready by de-assertion of pipe_phystatus. If receiver detect request \nis received while timer has not expired, the PCS will wait until the \ntimer expires before signaling the request to the PMA. Load value is \nspecified in multiples of 128 ns with a default value of 2 ms. Note: \nUnder normal operation the effect of this timer is transparent since \nthe USB controller's LTSSM state machine will wait 12 ms in the \neSS.Inactive.Quiet state before performing requesting a receiver \ndetect operation."
@@ -329,7 +329,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:1\n2",
+            "bit_range": "15:12",
             "attr": "R/O",
             "reset": "1",
             "description": "DP PLL data rate 1 clock divider value. Divider value for \nthe \nPLL \nclock \nto \ngenerate \nphy_pma_char_clk_out.   \n(HBR2 = 1, RBR/HBR = 2.)"
@@ -395,7 +395,7 @@
           },
           {
             "name": "FIELD1",
-            "bit_range": "14:\n0",
+            "bit_range": "14:0",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
@@ -682,7 +682,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:1\n2",
+            "bit_range": "15:12",
             "attr": "R/W",
             "reset": "0b0001",
             "description": "Drives  cmn_pll1_clk_datart1_div  PMA  input  when  in  PMA  isolation \nmode"
@@ -1260,21 +1260,21 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n14",
+            "bit_range": "15:14",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
           },
           {
             "name": "FIELD1",
-            "bit_range": "13:\n12",
+            "bit_range": "13:12",
             "attr": "R/W",
             "reset": "0",
             "description": "Drives  tx_deemphasis  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode"
           },
           {
             "name": "FIELD2",
-            "bit_range": "11:\n9",
+            "bit_range": "11:9",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
@@ -1312,21 +1312,21 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n14",
+            "bit_range": "15:14",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
           },
           {
             "name": "FIELD1",
-            "bit_range": "13:\n12",
+            "bit_range": "13:12",
             "attr": "R/W",
             "reset": "0",
             "description": "Drives  tx_deemphasis  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode"
           },
           {
             "name": "FIELD2",
-            "bit_range": "11:\n9",
+            "bit_range": "11:9",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
@@ -1364,21 +1364,21 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n14",
+            "bit_range": "15:14",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
           },
           {
             "name": "FIELD1",
-            "bit_range": "13:\n12",
+            "bit_range": "13:12",
             "attr": "R/W",
             "reset": "0",
             "description": "Drives  tx_deemphasis  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode"
           },
           {
             "name": "FIELD2",
-            "bit_range": "11:\n9",
+            "bit_range": "11:9",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
@@ -1416,21 +1416,21 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n14",
+            "bit_range": "15:14",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
           },
           {
             "name": "FIELD1",
-            "bit_range": "13:\n12",
+            "bit_range": "13:12",
             "attr": "R/W",
             "reset": "0",
             "description": "Drives  tx_deemphasis  PMA  input  for  the  associated  lane  when  in  PMA \nisolation mode"
           },
           {
             "name": "FIELD2",
-            "bit_range": "11:\n9",
+            "bit_range": "11:9",
             "attr": "R/O",
             "reset": "0",
             "description": "Reserved"
@@ -1980,7 +1980,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n4",
+            "bit_range": "15:4",
             "attr": "R/O",
             "reset": "0x000",
             "description": "Reserved"
@@ -2004,7 +2004,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n4",
+            "bit_range": "15:4",
             "attr": "R/O",
             "reset": "0x000",
             "description": "Reserved"
@@ -2028,7 +2028,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n4",
+            "bit_range": "15:4",
             "attr": "R/O",
             "reset": "0x000",
             "description": "Reserved"
@@ -2052,7 +2052,7 @@
         "bit_ranges": [
           {
             "name": "FIELD0",
-            "bit_range": "15:\n4",
+            "bit_range": "15:4",
             "attr": "R/O",
             "reset": "0x000",
             "description": "Reserved"

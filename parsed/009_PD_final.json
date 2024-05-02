@@ -553,7 +553,7 @@
           {
             "name": "Debug_Accessory_Connected",
             "bit_range": "6",
-            "attr": "RisW",
+            "attr": "RW",
             "reset": "1",
             "description": "0b: Debug Accessory Connected# output \ndriven \nlow 1b: Debug Accessory Connected# \noutput is driven high(default) \nControlled by either the TCPM or TCPC. The \nTCPC \nshall \nignore writes \nto \nthis \nbit \nif \nTCPC_CONTROL.DebugAccessoryControl =0b."
           },
@@ -664,7 +664,7 @@
           {
             "name": "DRP",
             "bit_range": "6",
-            "attr": "RaW",
+            "attr": "RW",
             "reset": "0",
             "description": "0b: No DRP. Bits B3..0 determine Rp/Rd/Ra or \nopen settings \n1b:DRP \nThe TCPC shall use the Rp value defined \ninB5..4 when a connection is resolved, ie. \nUpon entry to Potential_Connect_as_Src in \nFigure 4-11. TCPC State Machine before a \nConnection. \nThe TCPC toggles CC1 & CC2 after receiving \nCOMMAND.Look4Connection \nand \nuntil \nconnection \nis detected. Upon connection, \nthe \nTCPC shall resolve to either an Rp or Rd and \nreport the CC1/CC2 State \nin the CC_STATUS \nregister. \nThe \nCC \npins \nshall \nstay \nin \nPotential_start_as_SRC \nor \nPotential_start_as_Sink \nuntil \ndirectedotherwise."
           },
@@ -775,14 +775,14 @@
           {
             "name": "VBUS_VOLTAGE_Monitor",
             "bit_range": "6",
-            "attr": "RifW",
+            "attr": "RW",
             "reset": "0",
             "description": "0b: \nVBUS_VOLTAGE Monitoring \nis \nenabled \n(default) \n1b: VBUS_VOLTAGE Monitoring \nis \ndisabled \nControls \nonly \nVBUS_VOLTAGE \nMonitoring. \nVBUS_VOLTAGE shall report all zeros if disabled. \nRequired \nDEVICE_CAPABILITIES_1.VBUSMeasurementandA\nlarmCapable =1b"
           },
           {
             "name": "Disable_Voltage_Alarms",
             "bit_range": "5",
-            "attr": "RWif",
+            "attr": "RW",
             "reset": "0",
             "description": "0b: Voltage Alarms Power status reporting is \nenabled (default) \n1b: Voltage Alarms Power status reporting \nis \ndisabled \nControls \nVBUS_VOLTAGE_ALARM_HI_CFG \nand \nVBUS_VOLTAGE_ALARM_LO_CFG. \nRequired \nDEVICE_CAPABILITIES_1.VBUSMeasurementandA\nlarmCapable =1b"
           },
@@ -855,7 +855,7 @@
           {
             "name": "CC1_State",
             "bit_range": "1:0",
-            "attr": "orRO",
+            "attr": "RO",
             "reset": "0x0",
             "description": "If (ROLE_CONTROL.CC1 = Rp)or \n(ConnectResult=0) \n00b: SRC.Open (Open,Rp) \n01b: SRC.Ra (below maximumvRa) \n10b: SRC.Rd (within the vRd range) \n11b:reserved \n \nIf \n(ROLE_CONTROL.CC1 \n= \nRd) \n(ConnectResult=1) \n00b: \nSNK.Open \n(Below \nmaximumvRa) \n01b: SNK.Default (Above minimum vRd-Connect) \n10b: \nSNK.Power1.5 \n(Above minimum \nvRd-\nConnect) DetectsRp-1.5A \n11b: \nSNK.Power3.0 \n(Above minimum \nvRd-\nConnect) DetectsRp-3.0A \n \nIf ROLE_CONTROL.CC1=Ra, this field is set to00b \nIf ROLE_CONTROL.CC1=Open, this field is set to00b \n \nThis \nfield \nalways \nreturns \n00b \nif \n(Looking4Connection=1) \nor \n(POWER_CONTROL.EnableVconn=1 \nand \nPOWER_CONTROL.PlugOrientation=0). \nOtherwise, the returned value depends upon \nROLE_CONTROL.CC1."
           }
@@ -1893,7 +1893,7 @@
           {
             "name": "SBU_MUX_Control",
             "bit_range": "31:30",
-            "attr": "RtoW",
+            "attr": "RW",
             "reset": "0x0",
             "description": "00b: SBU1/SBU2 are disconnected \n01b: \nSBU1/SBU2 \nmaps \nAUX_CH_N/AUX_CH_P \n10b: \nSBU1/SBU2 \nmaps \nto \nAUX_CH_P/AUX_CH_N  \n11b:Reserved"
           },
@@ -1948,7 +1948,7 @@
           {
             "name": "PWRITE_M",
             "bit_range": "27",
-            "attr": "atRW",
+            "attr": "RW",
             "reset": "0",
             "description": "Value \nof \nthis \nbit \nis \npresents \npenable_moutput."
           },
@@ -1969,7 +1969,7 @@
           {
             "name": "PRESET_N_M",
             "bit_range": "24",
-            "attr": "atRW",
+            "attr": "RW",
             "reset": "0",
             "description": "Value \nof \nthis \nbit \nis \npresents \npreset_n_m output."
           },
@@ -1990,7 +1990,7 @@
           {
             "name": "ALERT_CMN_RESET_N",
             "bit_range": "14",
-            "attr": "atRW",
+            "attr": "RW",
             "reset": "0",
             "description": "Value \nof \nthis \nbit \nis \npresents \ncmn_reset_n output."
           },
@@ -2018,7 +2018,7 @@
           {
             "name": "ALERT_DP_HPD",
             "bit_range": "9",
-            "attr": "pinRW",
+            "attr": "RW",
             "reset": "0",
             "description": "State \nof \nDisplay \nPort \nHPD \n(source_hpd)."
           },
@@ -2137,7 +2137,7 @@
         "description": "SFC Reg2 Register"
       }
     ],
-    "name": "VENDOR",
+    "name": "TYPEC_PD",
     "summary": [
       {
         "name": "VENDOR_ID",

@@ -27,7 +27,7 @@ The SVD file is generated from the TRM (Technical Reference Manual) of the RK339
 > * Type-C Power Delivery (PD) - v1.1 part 2 chapter 18
 > * Video Output Processor (VOP) - v1.1 part 3 chapter 3
 >
-> The TRMs are also uploaded in the [trm](./trm) directory of this repository for reference.
+> The TRMs are also uploaded in the [trms](./trms) directory of this repository for reference.
 
 ## Credits
 
